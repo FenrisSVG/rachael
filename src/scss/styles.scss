@@ -1,0 +1,32 @@
+//Configuración guias de estilo
+@import "config/colors";
+// @import "config/fonts";
+
+//Mixins
+@import "mixins/breakpoints";
+@import "mixins/reset-list";
+
+//Estilos base
+@import "base/normalize";
+@import "base/base";
+
+//Bloques
+@import "blocks/nav";
+@import "blocks/main";
+@import "blocks/section";
+@import "blocks/video";
+@import "blocks/socials";
+@import "blocks/banner";
+@import "blocks/historial";
+@import "blocks/paginacion";
+@import "blocks/footer";
+
+//Pages
+@import "pages/contact.scss";
+@import "pages/rachael.scss";
+@import "pages/test.scss";
+@import "pages/trastorno.scss";
+@import "pages/psicologos.scss";
+@import "pages/ansiedad.scss";
+@import "pages/quesillo.scss";
+@import "pages/antecedentes.scss";

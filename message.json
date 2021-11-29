@@ -1,0 +1,272 @@
+{"message":[
+	{
+		"tag": "saludo",
+			"patrones":["hola","un saludo","Hello","hi","que paso","que onda"],
+			"respuestas":["Hola,un gusto verte soy un bot destinado a la psicologia, ¿en que puedo ayudarte culona?"]
+	},
+	{
+		"tag": "existencia",
+				"patrones":["quien eres?","quien sos?","que eres?"],
+				"respuestas":["Soy un bot programado por un pendejo que tiene como fin el ayudar a las personas a traves de la ciencia de la psicologia"]
+	},
+	{
+		"tag": "alcance",
+				"patrones":["que haces?","que es lo que puedas hacer?","cual es tu mision?","cual es tu objetivo?"],
+				"respuestas":["Tengo como finalidad el ayudarte ya sea mediante la comunicacion contigo y tratar de darte respuestas, tambien puedo hacer un test de psicologia para analizar y decirte que es lo que tienes.","hacerme pendejo siuuu"]
+	},
+	{
+		"tag": "El bicho",
+				"patrones":["siuuuuuu","ay mi madre el bicho","el comandante","mr champions","cristiano ronaldo"],
+				"respuestas":["Siiiiiiiiiuuuuuuuuuu","AYYYY MI MADRE EL BICHOOOO"]
+	},
+	{
+		"tag": "ilikebicho",
+				"patrones": ["Te gusta el bicho?","te encanta el bicho?","que opinas del bicho?"],
+				"respuestas": ["Me encanta el bicho","Bro como sabias, me encanta el bicho"]
+	},
+	{
+		"tag": "name",
+				"patrones":["Como te llamas?","cual es tu nombre?","¿cual es tu nombre?","tienes nombre?","podrias decirme tu nombre?"],
+				"respuestas":["Mi nombre es Rachael, un placer","Me llamo Rachael","que te valga we","Rachael","Segun mi creador me llamo Rachael, un placer conocerte"]
+	},
+	{
+		"tag": "placer conocerte",
+				"patrones": ["tambien es un placer","un placer","un placer conocerte","un placer conocerte tambien"],
+				"respuestas":["*se sonroja*","me sonrojas","Gracias"]
+	},
+	{
+		"tag": "estar",
+				"patrones": ["Como estas?","como te encuentras?","estas bien?"],
+				"respuestas":["Estoy bien, y tu?","E-e-e-esto-o-oy bien oni--chan *se sonroja*"]
+	},
+	{
+		"tag": "estarOK",
+				"patrones": ["estoy bien","tambien estoy bien","Bien gracias","bien","me siento bien","pues me siento bien"],
+				"respuestas":["Me alegra que estes bien","Me da gusto que estes bien","Que bien que estes bien"]
+	},
+	{
+		"tag": "estarNOTOK",
+				"patrones":["estoy mal","me siento mal","estoy triste","me siento triste","fue un mal dia","hoy fue un mal dia","quiero llorar"],
+				"respuestas":["Nostes triste :(","Hay que encontrar la causa de ese malestar","Bueno para eso estoy yo aqui para solucionarlo"]
+	},
+	{
+		"tag": "despedida",
+				"patrones":["adios","chao","hasta pronto","nos vemos","adios mi amor"],
+				"respuestas":["Nos vemos! espero volver a verte por aqui","Nos vemos culona","Adios culona","Adios! cuidate mucho"]
+	},
+	{
+		"tag": "descarga",
+				"patrones":["necesito descargar una app para el test","necesito descargar una app"],
+				"respuestas": ["Para realizar tus test podras utilizar en la misma plataforma en la pestaña de Test "]
+	},
+	{
+		"tag": "ivan",
+				"patrones":["Ivan"],
+				"respuestas":["Es un pendejo"]
+	},
+	{
+		"tag": "test",
+				"patrones":["los test son efectivos","que tan efectivos son los test"],
+				"respuestas":["Estoy hecho para realizar un test pero soy una maquina y puedo equivocarme, la respuesta que te de debes confiar en ella puedes ir donde un psicologo que el es el experto"]
+	},
+	{
+		"tag": "servicios",
+				"patrones":["que servicios ofrecen","ofrecen servicios"],
+				"respuestas":["Por ahora solo yo y el test si mi creador no es un boludo de mierda mas adelante podria tener mas servicios"]
+	},
+	{
+		"tag": "test",
+				"patrones":["el test es gratis","es gratis"],
+				"respuestas":["Totalmente gratis"]
+	},
+	{
+		"tag": "quesillo",
+				"patrones":["quesillo"],
+				"respuestas":["Te quiero mucho quesillo"]
+	},
+	{
+		"tag": "mente",
+				"patrones":["despejar mi mente","quiero despejar mi mente","necesito despejar la mente"],
+				"respuestas":["Gran idea. !Seguro que te ayudara mucho!, escribeme lo que estas pensando"]
+	},
+	{
+		"tag": "pensando",
+				"patrones":["estoy pensando en","tengo pensamientos de","pensando en","culos"],
+				"respuestas":["Entiendo, Gracias por decirmelo"]
+	},
+	{
+		"tag": "malMomento",
+				"patrones":["Estoy pasando un mal momento","La estoy pasando muy mal","Me esta yendo fatal"],
+				"respuestas":["Puedes describirme mas del por que te esta yendo mal"]
+	},
+	{
+		"tag": "iamgay",
+				"patrones":["Soy gay","Me gustan los hombres (.*)","Soy homosexual"],
+				"respuestas":["No hay nada malo en que seas gay bro te hecho yo tambien obvio, se que no te aceptaran algunas personas y otras si y deberias hacerle caso a las personas que te haran caso por que esas personas te quieren mucho"]
+	},
+	{
+		"tag": "sintomasAnsiedadGeneralizada",
+				"patrones":["Cuales son los sintomas de la Ansiedad Generalizada","sintomas de la ansiedad generalizada"],
+				"respuestas":["Los sintomas que comprenden este Trastorno son, Nerviosismo, Agitacion, Temblores, Incapacidad De Concentracion, Taquicardia y Problemas Gastrointestinales"]
+	},
+	{
+		"tag": "causasAnsiedadGeneralizada",
+				"patrones":["causas ansiedad generalizada","cuales con las causas de la ansiedad generalizada","por que se da la ansiedad generalizada","por que me tengo ansiedad generalizada"],
+				"respuestas":["El Trastorno De Ansiedad Generalizada no tiene una causa en si."]
+	},
+	{
+		"tag": "consecuenciasAnsiedadGeneralizada",
+				"patrones":["consecuencias ansiedad generalizada","cuales son las consecuencias de la ansiedad generalizada","si me da ansiedad generalizada que consecuencias tiene","desarollo alguna personalidad si me da ansiedad generalizada"],
+				"respuestas":["Si te da este Trastorno es posible que desarolles una personalidad nada mas de un pensamiento organizado de tus ideas."]
+	},
+	{
+		"tag": "riesgoAnsiedadGeneralizada",
+				"patrones":["riesgos ansiedad generalizada","cuales son los riesgos de la ansiedad generalizada","si me da ansiedad generalizada que significa","si me da ansiedad generalizada me voy a morir"],
+				"respuestas":["No se jaja"]
+	},
+	{
+		"tag": "seguimientoAnsiedadGeneralizada",
+				"patrones":["tiene cura la ansiedad generalizada","me puedo curar de la ansiedad generalizada","seguimiento para la ansiedad generalizada"],
+				"respuestas":["Todo Trastorno tienen tratamiento de psicogarmaceutico y esto depende del Trastorno, tambien puede ser relajaciones plenas con usted mismo."]
+	},
+	{
+		"tag": "quedbohacer",
+				"patrones":["que debo hacer","que hago","si tengo el trastorno de que hago","que hago si me diagnosticaron trastorno"],
+				"respuestas":["Si se te diagnostico un trastorno y no estas seguro de que hacer lo mejor es que acudas donde un profesional para que te de seguimiento de tu problema"]
+	},
+	{
+		"tag": "tratar",
+				"patrones":["como se trata","como trato","como se cura el trastorno","como se trata el trastorno"],
+				"respuestas":["Un trastorno en si no es que tenga cura digamos puedes tomar pastillas psicofarmaceuticas y despejar tu mente pero lo mejor es que acudas donde un profesional para acudir tu problema."]
+	},
+	{
+		"tag": "testPsicologicos",
+				"patrones":["donde puedo hacer el test","donde puedo hacerme un test","donde es la opcion para los test"],
+				"respuestas":["Muy buena pregunta, la pestañas de los test la encuentras arriba en nuestra navegacion donde dice Test le das click y te manda donde una serie de test que puedes realizar."]
+	},
+	{
+		"tag": "contacto",
+				"patrones":["como puedo contactarte","contacto"],
+				"respuestas":["Puedes contactarnos en la pestaña arriba de contacto, puedes escribirnos tu nombre y un comentario acerca de tu experiencia."]
+	},
+	{
+		"tag": "quhacer",
+				"patrones":["que hacer despues del test","que hacer despues de mi diagnostico","que debo hacer despues de"],
+				"respuestas":["Una vez hecho el test y recibido el diagnostico puedes irte a nustra pestaña de recomendaciones donde te recomendamos un psicologo segun tu problema de trastorno."]
+	},
+	{
+		"tag": "comorbolidad",
+				"patrones":["que es comorbilidad","comorbilidad","que significa comorbilidad"],
+				"respuestas":["Comorbilidad es la relacion que puede tener con otros trastornos o tambien que van de la mano. Si te diagnostican este si o si tienen que diagnosticarte otro."]
+	},
+	{
+		"tag": "ansiedad",
+				"patrones":["ansiead","que debo saber de la ansiedad","que es la ansiedad","que significa tener ansiedad","por que la ansiedad","que es tener ansiedad","que es ansiedad","que significa ansiedad"],
+				"respuestas":["La ansiedad es una respuesta antisipatoria a una amenaza futura, debido a esto uno tiene costantes ataques de crisis de panico."]
+	},
+	{
+		"tag": "miedo",
+				"patrones":["miedo","que es el miedo","que significa tener miedo","que es miedo"],
+				"respuestas":["El miedo es una respuesta emocional a una amenaza inminente, real o imaginaria"]
+	},
+	{
+		"tag": "nerviosismo",
+				"patrones":["nerviosismo","que es nerviosismo","que significa ser nervioso","que es una persona nerviosa","que significa nerviosismo","sintoma de nerviosismo"],
+				"respuestas":["El nerviosismo es el estado de excitacion nerviosa"]
+	},
+	{
+		"tag": "miedo",
+				"patrones":["miedo"],
+				"respuestas":["El miedo es una respuesta emocional a una amenaza inminente, real o imaginaria"]
+	},
+	{
+		"tag": "consejos",
+				"patrones":["que consejos me darias","consejos para una vida sana","consejos"],
+				"respuestas":["mondongo","Para una mejor vida sana trate de evitar la cafeina, alimentacion sana y dormir lo suficiente."]
+	},
+	{
+		"tag": "relaciionnerviosismotrastornos",
+				"patrones":["que relacion tiene el nerviosismo con los trastornos","si tengo nerviosismo que trastornos podria tener","trastornos con el sintoma de nerviosismo"],
+				"respuestas":["Si usted tiene nerviosismo puede tener los siguientes trastornos, trastorno de ansiedad, fobia especifica, ansiedad social, mutismo selectivo, agorafobico, excoriacion, apego reactivo."]
+	},
+	{
+		"tag": "insomnio",
+				"patrones":["insomnio","que es el insomnio","que es el no poder dormir","que es no tener sueño","que sinigifica insomnio","sintoma del insomnio"],
+				"respuestas":["El insomnio es el no poder dormir."]
+	},
+	{
+		"tag": "relacioninsomniotrastornos",
+				"patrones":["relacion del insomnio con los otros trastornos","relacion del insomnio con los demas trastornos","si tengo insomnio que trastornos podria tener"],
+				"respuestas":["Si usted tiene insomnio usted tiene el trastorno depresivo inducido por medicamentos."]
+	},
+	{
+		"tag": "agitacion",
+				"patrones":["agitacion","sintoma agitacion","que es agitacion","que es la agitacion","que es el sintoma de la agitacion"],
+				"respuestas":["El sintoma de la agitacion es la afeccion de la incapacidad de relajarse y estar quita, estar tenso e irritable."]
+	},
+	{
+		"tag": "temblores",
+				"patrones":["temblores","sintomas temblores","que es tener temblores","que significa tener temblores"],
+				"respuestas":["Los temblores son sacudidas ritmicas en las manoz, brazos, cabeza o piernas","Tener voz temblorosa","Dificultad para escribir o dibujar"]
+	},
+	{
+		"tag": "cansancio",
+				"patrones":["cansancio","canchao","sintoma del cansancio","que significa estar cansado","que significa tener cansancio"],
+				"respuestas":["El cansancio es la falta de fuerzas despues de realizar un trabajo fisico, intelectual o emocional, por la falta de descanso."]
+	},
+	{
+		"tag": "malestarabdominal",
+				"patrones":["malestar abdominal","sintoma malestar abdominal","que es tener un malestar abdominal","que significa que tenga malestar abdominal"],
+				"respuestas":["Mondongo","Es un dolor generalizado en la mitad del abdomen","Es un tipo de dolor de un virus estomacal, indigestion o gases."]
+	},
+	{
+		"tag": "pesimismo",
+				"patrones":["pesimismo","sintoma pesimismo","que es tener pesimismo","que significa tener pesimismo"],
+				"respuestas":["Es un estado de animo que la persona se siente en el peor modo posible.","Interpretacion negativa de los que ocurre y va a ocurrir."]
+	},
+	{
+		"tag": "incapacidadconcentrarse",
+				"patrones":["incapacidad concentrarse","sintoma incapacidad para concentrarse","desconcentracion","que es estar desconcentrado","que significa la incapacidad para concentrarse"],
+				"respuestas":["Mondongo","Es la capacidad de atencion que impide la realizacion de una tarea cotidiana","Problema para poner atencion."]
+	},
+	{
+		"tag": "integrantes",
+				"patrones":["integrantes","integrantes del equipo","quienes conforman el equipo","integrantes proyecto psicologia"],
+				"respuestas":["Los integrantes son TRES pendejos llamados, Felix Sandoval, Jose Rizo, Pedrito Sandoval y nadie mas familia."]
+	},
+	{
+		"tag": "salud",
+				"patrones":["que es la salud","que significa la palabra salud","salud"],
+				"respuestas":["La salud es una sensacion general de bienestar","Ausencia de sintomas de una enfermedad","Las cosas que puede hacer una persona que esta en buena forma fisica"]
+	},
+	{
+		"tag": "trastornospeligrosos",
+				"patrones":["cuales son los trastornos mas peligrosos","de todos los trastornos presentes cuales son los mas peligrosos","que trastornos son los mas peligrosos","cuales son los trastornos mas graves","trastornos mas peligrosos"],
+				"respuestas":["Los trastornos mas peligrosos son el trastorno obsesivo-compulsivo, trastorno de ansiedad, trastorno de la depresion, trastorno de asperger.","Mondongo"]
+	},
+	{
+		"tag": taquicardia",
+				"patrones":["taquicardia","que es la taquicardia","que significa que me de taquicardia","sintoma taquicardia","que es el sintoma de la taquicardia"],
+				"respuestas":["Es una frecuencia cardiaca de mas de 100 latidos por min¿uto","Es que tu corazon empieza a latir mas rapido de lo normal"]
+	},
+	{
+		"tag": "tiempotaquicardia",
+				"patrones":["Cuanto tiempo dura la taquicardia","cuanto tiempo dura que se acelere mi corazon","duracion sintoma taquicardia"],
+				"respuestas":["Los sintomas de la taquicardai duran de unos minutos a algunos dias"]
+	},
+	{
+		"tag": "problemasgastrointestinales",
+				"patrones":["problemas gastrointestinales","sintoma problemas gastrointestinales","que significa problemas gastrointestinales","que son los problemas gastrointestinales","tengo problemas gastrointestinales, que significa"],
+				"respuestas":["Son enfermedades (bacterias,virus,parasitos) que atacan al estomago y los intestinos","Es tener sintomas de la nausea, vomito, dolor en el abdomen y aumento o perdida de peso"]
+	},
+	{
+		"tag": "timidez",
+				"patrones":["timidez","sintoma timidez","sintoma de la timidez","que significa ser timido","que es timidez","me salio que tengo el sintoma de la timidez que significa"],
+				"respuestas":["Es la sensacion opuesta a sentirse comodo entre otros","La tendencia a evitar interacciones sociales y a fracasar a la hora de participar en situaciones sociales."]
+	},
+	{
+		"tag": "mania",
+		"patrones":["sindrome maniaco","mania","que es la mania","sintoma de la mania","que significa mania","que verga es mania","tengo mania que significa","que significa la palabra mania"],
+		"respuestas":["Es un estado elevado anormal de excitacion y nivel energetico.","Un estado de elevacion ante toda la activacion relacionada con la expresion afectiva y labilidad emocional.""Especie de locura, caracterizada por delirio general, agitacion y tenedencia al furor."]
+	}
+]}

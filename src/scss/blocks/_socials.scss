@@ -1,0 +1,49 @@
+.socials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: #111;
+
+    @include tablet-4{
+        height: 150px;
+    }
+
+    &-container{
+        padding: 15px;
+
+        @include tablet-2{
+            margin: 5px 10px;
+        }
+
+        & span i{
+            color: $danger-color;
+            font-size: 35px;
+
+            @include tablet-4{
+                font-size: 45px;
+            }
+
+            @include laptop{
+                cursor: pointer;
+                margin: 5px 15px;   
+                font-size: 35px;
+            }
+
+            &:hover{
+                @include laptop{
+                    animation: palpitar .8s infinite;
+                    transform-origin: center;
+                }
+            }
+        }
+
+    }
+
+}
+
+@keyframes palpitar{
+    from { transform: none; }
+    50% { transform: scale(1.4); }
+    to { transform: none; }
+}

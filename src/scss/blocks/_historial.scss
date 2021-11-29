@@ -1,0 +1,35 @@
+.historial-article{
+    &__header{
+        text-align: center;
+        & h2{
+            color: #fff;
+            font-size: 30px;
+
+            & span{
+                color: var(--danger-color);
+            }
+        }
+        
+        & p{
+            letter-spacing: 2px;
+            font-size: 20px;
+            color: #fff;
+        }
+    }
+
+    &__footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1.5em;
+
+        & a{
+            padding: .8em 2em;
+            margin: 0 1em;
+            text-decoration: none;
+            border-radius: 6px;
+            color: #fff;
+            background-color: var(--danger-color);
+        }
+    }
+}

@@ -1,0 +1,532 @@
+.menu{
+    position: absolute;
+    top: 1.25em;
+    right: 1.875em;
+    width: 1.5625em;
+    height: 0.3125em;
+    border-radius: 0.3125em;
+    background-color: #fff;
+    z-index: 20;
+
+    @include tablet{
+        top: 1.5625em;
+        right: 2.1875em;
+    }
+
+    @include tablet-2{
+        right: 2.5em;
+    }
+    @include tablet-4{
+        right: 2em;
+        top: 2em;
+    }
+
+    @include tablet-5{
+        right: 3.2em;
+    }
+    
+    &::after,
+    &::before{
+        position:absolute;
+        display: block;
+        content: '';
+        width: 1.5625em;
+        height: 4px;
+        border-radius: 5px;
+        background-color: #fff;
+        transition: transform .3s ease-in;
+    }
+
+    &::after{
+        bottom: 8px
+    }
+
+    &::before{
+        top: 8px
+    }
+
+    &--close{
+        position: fixed;
+        height: 0;
+
+        &::before,
+        &::after{
+            top: 0;
+            transform: rotate(-45deg);
+        }
+
+        &::after{
+            transform: rotate(45deg);
+        }
+    }
+
+    @include laptop{
+        display: none;
+    }
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    right:0;
+    margin-left: 2.1825em;
+    width: 90%;
+    height: 100vh;
+    background-color: $primary-color;
+    transform: translateX(120%);
+    transition: transform .4s ease-in;
+    z-index: 10;
+
+    @include laptop{
+        position: relative;
+        height: auto;
+        transform: translateX(0);
+        width: 100%;
+        background-color: $background-color;
+    }
+
+    @include desktop{
+        height: 100%;
+    }
+}
+
+.header{
+    @include laptop{
+        position: relative;
+        display: grid;
+        grid-template-columns: 400px minmax(min-content,1fr);
+        grid-template-rows: 80px;
+        align-items: center;
+        justify-items: flex-end;
+        border-bottom: 1px solid var(--danger-color);
+    }
+}
+
+.main-menu{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3em;
+    margin-left: .625em;
+    width: 95%;
+    background-color: $background-color;
+
+    @include tablet{
+        width: 90%;
+        margin-top: 3.5em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @include tablet-4{
+        margin-top: 4.5em;
+        width: 85%;
+        height: 450px;
+    }
+
+    @include laptop{
+        flex-direction: row;
+        justify-content: flex-end;
+        height: auto;
+        margin-top: 0;
+        margin-right: 0;
+        background-color: none;
+    }
+
+    @include desktop{
+        align-items: flex-end;
+        height: 100%;
+    }
+
+    &__item{
+        @include reset-list;
+        padding: 1.2em;
+        border-bottom: 2px solid $primary-color;
+        width: 85%;
+
+        @include tablet-4{
+            margin: 1em 0;
+            width: 90%;
+        }
+
+        @include laptop{
+            border-bottom: none;
+            margin: 0;
+            overflow:hidden;
+        }
+
+        @include desktop{
+            padding: 1.8em 1em;
+        }
+
+
+        &:last-child{
+            border-bottom: none;
+
+            & span i{
+                margin-right: .4375em;
+            }
+        }
+
+        &--icon{
+            display: flex;
+            justify-content: space-between;
+
+            & span i{
+                transform: rotate(180deg);
+                transition: transform .2s ease-out;
+            }
+        }
+    }   
+
+    &__link,
+    .submenu-menu__link{
+        text-decoration: none;
+        color:#fff;
+
+        @include laptop{
+            cursor: pointer;
+        }
+
+        @include desktop{
+            font-size: 17px;
+        }
+    }
+
+    &__link{
+        position: relative;
+
+        &::before,
+        &::after{
+            @include laptop{
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: var(--danger-color);
+                transition: transform .5s;
+                z-index: 10;
+            }
+        }
+
+        &::before{
+            @include laptop{
+                top: -10px;
+                transform: translateX(-210%);
+            }
+        }
+
+        &::after{
+            @include laptop{
+                bottom: -10px;
+                transform: translateX(450%);
+            }
+        }
+
+        &:hover::before,
+        &:hover::after{
+            @include laptop{
+               transform: translateX(0);
+            }
+        }
+    }
+}
+
+
+a.router-link-exact-active{
+    @include laptop{
+        color: var(--danger-color);
+    }
+}
+
+.active{
+    transform: translateX(0);
+}
+
+.logo{
+    max-width: 13%;
+
+    @include tablet{
+        max-width: 10%;
+    }
+
+    @include tablet-5{
+        max-width: 6%;
+    }
+
+    @include laptop{
+        max-width: 50%;
+    }
+
+    @include desktop{
+        max-width: 10%;
+    }
+
+}
+
+.logo-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 3.125em;
+    padding: 5px 1em;
+
+    @include tablet-2{
+        padding: 2em 1.8em;
+    }
+
+    @include tablet-3{
+        padding: 2.5em 1.8em;
+    }
+
+    @include tablet-4{
+        padding: 2.7em 1.9em;
+    }
+
+    @include tablet-5{
+        padding: 2.7em 2.1em;
+    }
+
+    @include desktop{
+        padding: 2em 1em;
+    }
+
+    & h6{
+        margin-top: 2.5em;
+        margin-left: 7px;
+        font-size: 1.125rem;
+        color: #fff;
+
+        @include laptop{
+            font-size: 22px;
+            margin-top:2em;
+        }
+
+        @include desktop{
+            font-size: 18px;
+            margin-top: 2.1em;
+        }
+    }
+}
+
+.search{
+    position: relative;
+    margin-left: 17px;
+
+    & i{
+        position:absolute;
+        top: 8px;
+        left: 8px;
+        color: var(--danger-color);
+    }
+
+    & input{
+        outline: none;
+        border-radius: 5px;
+        padding-left: 28px;
+        width: 250px;
+        height: 35px;
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        border-bottom: 1px solid var(--danger-color);
+    }
+}
+
+::placeholder{
+    color: aliceblue;
+}
+
+.icon-red{
+    color: $danger-color;
+}
+
+#icon{
+    display: none;
+}
+
+.submenu{
+    position: relative;
+    display: none;
+    width: 85%;
+
+    @include laptop{
+        display: block;
+        position: absolute;
+        top: 75px;
+        right: 37%;
+        width: auto;
+        background-color: $primary-color;
+        transform: scale(0);
+        transition: transform .5s;
+        z-index: 100;
+    }
+
+    &::before{
+        position: absolute;
+        display: block;
+        content: '';
+        top: -15px;
+        right: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 15px solid $primary-color
+    }
+}
+
+.submenu-menu{
+    @include reset-list;
+    
+    &__item{
+        padding: .75em 1.875em;
+        width: 100%;
+    }
+
+}
+
+.show{
+    display: block;
+}
+
+.scale{
+    transform: scale(1);
+    transition: transform .5s ease-in;
+}
+
+.login{
+    @include laptop{
+        width: 275px;
+        height: 250px;
+        color: #fff;
+        padding: 1em;
+        border-radius: 10px;
+        background: #222222;
+        position: absolute;
+        right: 0em;
+        top: 4.8em; 
+        display: none;
+    }
+
+    &-form{
+        margin-top: -4.8em;
+    }
+
+    &__title{
+        @include laptop{
+            font-size: 1em;
+            margin: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        &::after{
+            @include laptop{
+                content: "";
+                display: block;
+                position: absolute;
+                width: 275px;
+                height: 2px;
+                margin-left: -1em;
+                background-color: #ccc;
+                margin-top: 1em;
+            }
+        }
+    }
+
+    &-form input{
+        @include laptop{
+            width: 95%;
+            height: 35px;
+            background: none;
+            outline: none;
+            color: #fff;
+            border: 1px solid #b70e21;
+        }
+    }
+}
+
+.mail{
+    margin-top: 6.5em;
+}
+
+.pass{
+    margin-top: 1em;
+}
+
+.login-form button{
+    text-decoration: none;
+    margin-top: 15px;
+    background-color: var(--danger-color);
+    border: 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 10px 95px;
+    border-radius: 10px;
+    cursor:pointer;
+    z-index:100;
+}
+
+.login-text{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+
+.login-text a{
+    text-decoration: none;
+    color: steelblue;
+    margin-bottom: -3em;
+    font-size: .75em;
+}
+
+.login-text__link{
+    margin-bottom: -.8em;
+}
+
+
+input[type=email]:focus,
+input[type=password]:focus{
+    border-color: var(--danger-color);
+    box-shadow: 0 0 8px 0 var(--danger-color);
+}
+
+.login-button button:hover,
+.login-button button:focus{
+    background-color: var(--danger-color);
+    color: #fff;
+    transition: background-color 1s ease-out;
+    outline: 0;
+}
+
+.login-form input[type=text],
+.login-form input[type=password]{
+    padding-left: 20px;
+    font-size: 1em;
+}
+
+.login--show{
+    display: block;
+    z-index: 100;
+}
+
+
+ @keyframes reveal {
+   0% {
+     transform: translateY(-100%);
+   }
+   15%,
+   85% {
+     transform: translateY(0);
+   }
+ }
+
+.username-login{
+    color: #fff;
+}
+
+
+.p{
+    top: 18px;
+}

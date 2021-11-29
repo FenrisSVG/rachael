@@ -1,0 +1,82 @@
+.footer{
+    padding-bottom: 1em;
+
+    @include laptop{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        align-items: center;
+    }
+    
+    &-image{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 1.25em;
+        color: $title-color;
+
+        @include tablet-4{
+            justify-content: center;
+        }
+    }
+    
+    &-image img{
+        max-width: 15%;
+
+        @include tablet-4{
+            max-width: 10%;
+        }
+    }
+
+    & p{
+        @include tablet{
+            margin-right: 25px;
+        }
+        
+        @include tablet-4{
+            margin-left: 30px;
+            font-size: 20px;
+        }
+    }
+
+    &-about{
+
+        text-align: center;
+
+        @include laptop{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            align-items: center;
+        }
+
+        &__nav{
+            color: $text-color;
+
+            & h6{
+                font-size: 16px;
+                margin: .9375em;
+                color: $title-color;
+            }
+        }
+
+        &__menu{
+            @include reset-list;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2em;
+        }
+
+        &__item{
+            padding: 12px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        &__link{
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+}

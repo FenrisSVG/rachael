@@ -1,0 +1,17 @@
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+  html{
+    background-color: $background-color;
+  }
+
+
+:is(h1,h2,h3,h4,h5,h6){
+  font-family: 'Roboto', sans-serif;
+}
+
+:is(p,a){
+  font-family: 'Open Sans', sans-serif;
+}

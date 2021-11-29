@@ -1,0 +1,307 @@
+.entrevista{
+    position: relative;
+    margin-top: 5em;
+    height: 620px;
+    transition: height .8s ease-in;
+    overflow: hidden;
+
+    & h2{
+        color: var(--title-color);
+        text-align: center;
+        padding-bottom: .4em;
+    }
+
+    &-form{
+        position: relative;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        height: 450px;
+    }
+}
+
+.datos{
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
+    width: 80%;
+    color: #fff;
+    background-color: var(--primary-color);
+    padding-bottom: 2em;
+    border-radius: 10px;
+    transform: translate(-50%); 
+    opacity: 0;
+    transition: opacity .8s ease-out;
+
+    & h2{
+        text-align: center;
+        align-self: center;
+        background-color: var(--background-color);
+        grid-column: 1/3;
+        font-size: 20px;
+        color: var(--title-color);
+        padding-top: 1.5em;
+        margin-bottom: .65em;
+        height: 100%;
+    }
+
+    &-personales input{
+        outline: none;
+        padding: 3px 0 3px 8px;
+        font-size: 14px;
+        border-radius: 5px;
+
+        &:focus{
+            border: 2px solid var(--danger-color);
+            transition: border .5s ease-in;
+        }
+    }
+
+    &-personales{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 250px;
+
+        &__surname{
+            padding: 1em 0 0;
+        }
+    }
+
+    &-personales:nth-child(2){
+        justify-self: end;
+        align-items: center;
+        flex-direction: row;
+        width: 320px;
+    }
+
+    &-personales:nth-child(2) > label{
+        margin: 0 .3em;
+    }
+
+    &-personales:nth-child(3){
+        align-self: start;
+        justify-self: center;
+        width: 210px;
+    }
+
+    &-personales:nth-child(3) > *{
+        margin: .2em 0;
+    }
+
+    &-personales:nth-child(4){ 
+        justify-self: end;
+        width: 220px;
+        margin-right: 5.8em;
+    }
+    
+    &-personales:nth-child(4) > *{ 
+        margin: .3em 0;
+    }
+
+    &-personales:nth-child(5){
+        width: 210px;
+        align-self: start;
+        justify-self: center;
+    }
+
+    &-personales:nth-child(5) > *{
+        margin: .2em 0;
+    }
+
+    &-personales:nth-child(6){
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-items: center;
+        justify-self: end;
+        margin-right: 3.6em;
+        margin-top: .4em;
+        width: 260px;
+    }
+
+    &-personales:nth-child(6) p{
+        margin-bottom: .4em;
+        font-size: 14px;
+        margin-right: 10em;
+        display: block;
+    }
+
+    &-personales:nth-child(6) > *{
+        margin: 0 .3em;
+    }
+}
+
+.antecedentes-form{
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    margin: 0 auto;
+    padding-bottom: 1em;
+    width: 80%;
+    color: #fff;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    transform: translate(-50%);
+    opacity: 0;
+    transition: opacity .8s ease-out;
+
+    & h2{
+        text-align: center;
+        align-self: center;
+        background-color: var(--background-color);
+        grid-column: 1/3;
+        font-size: 20px;
+        color: var(--title-color);
+        padding-top: 1.5em;
+        margin-bottom: .65em;
+        height: 100%;
+    }
+
+    .antecedentes-input{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 250px;
+
+        & textarea, & input{
+            resize: none;
+            outline: none;
+            padding: 3px 0 3px 8px;
+            font-size: 14px;
+        }
+
+        & textarea{
+            margin-top: .5em;
+            margin-left: .6em;
+            width: 250px;
+        }
+    }
+
+    .antecedentes-input:nth-child(2){
+        justify-self: end;
+        width: 360px;
+        padding-top: 1em;
+    }
+
+    .antecedentes-input:nth-child(2) label{
+        margin: .2em 0;
+    }
+
+    .antecedentes-input:nth-child(2) input{
+        margin: .8em;
+    }
+
+    .antecedentes-input:nth-child(3){
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-self: start;
+        justify-self: center;
+        align-items: center;
+        justify-content: start;
+        padding-top: 1em;
+        width: 390px;
+    }
+
+    .antecedentes-input:nth-child(3) h6{
+        font-size: 12px;
+        margin: .5em 0;
+    }
+
+    .antecedentes-input:nth-child(3) > *{
+        margin: 0 .35em;
+    }
+
+    .antecedentes-input:nth-child(4),
+    .antecedentes-input:nth-child(5),
+    .antecedentes-input:nth-child(6){
+        grid-column: 1/3;
+        width: 100%;
+        padding: .5em 11.5em .8em;
+    }
+
+    .antecedentes-input:nth-child(4) h6,
+    .antecedentes-input:nth-child(5) h6,
+    .antecedentes-input:nth-child(6) h6{
+       font-size: 14px;
+       margin: .8em 0;
+    }
+
+    .antecedentes-input:nth-child(4),
+    .antecedentes-input:nth-child(5){
+
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            width: 70%;
+            height: 2px;
+            background-color: var(--danger-color)
+           }
+    }
+
+    .antecedentes-input:nth-child(4){
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            width: 70%;
+            height: 2px;
+            background-color: var(--danger-color)
+        }
+    }
+
+
+}
+
+.referencia{
+    margin-top: .8em;
+}
+
+.habitos > *,
+.consumo > *,
+.medicamente > *,
+.familiares > *,
+.sexo > *,
+.familia > *,
+.traumas > *,
+.traumas-familia > *,
+.traumas-exposicion > *{
+    margin: 0 .34em;
+}
+
+.habitos,
+.consumo,
+.medicamente,
+.familiares,
+.sexo,
+.familia,
+.traumas,
+.traumas-familia,
+.traumas-exposicion{
+    margin-top: .6em;
+}
+
+.entrevista__submit{
+    opacity: 0;
+    transition: opacity .5s ease-in;
+
+    & input{
+        height: 45px;
+        width: 110px;
+        border-radius: 4px;
+    }
+}
+
+
