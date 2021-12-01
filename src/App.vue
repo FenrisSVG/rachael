@@ -34,12 +34,12 @@
           <div class="login" id="login-form">
             <p class="login__title">Log-In</p>  
             <form method="POST" class="login-form" id="form-login" action="/">
-                <input type="text" name="text" class="mail" placeholder="Username" autofocus required v-model="username">
+                <input type="text" name="text" class="mail" placeholder="Username" autofocus required v-model="username" v-on:change="mostrarLogin">
                 <input type="password" v-model="password" name="password" class="pass" placeholder="Contraseña" required>
                 <button type="submit" @click="login()">Login</button>
             </form>
             <div class="login-text">
-                <a href="#">Sign-up</a>
+                <router-link to="/signup" @click="close()">Sign-up</router-link>
                 <a href="#" class="login-text__link">¿Forgot ur password?</a>
             </div>
           </div>
@@ -54,6 +54,7 @@
 <script>
 // import axios from 'axios'
 import Search from './components/Search.vue'
+import Swal from 'sweetalert2'
 import axios from 'axios'
 
 export default{
@@ -139,31 +140,63 @@ export default{
       if(formLogin){
         formLogin.addEventListener('submit',(e)=>{
           e.preventDefault();
-          if(this.username == this.user && this.password == '123456789'){
+          if(this.username == this.user && this.password == this.clave){
             loginForm.classList.remove('login--show');
-            const p = document.createElement('span');
-            p.innerHTML = this.username;
-            p.className = 'username-login'
-            p.id = 'username-login'
-            fragment.appendChild(p);
-            loginLink.replaceWith(fragment);
+            (async()=>{
+              await Swal.fire({
+                  title: 'Inicio de Sesion',
+                  text: `Inicio de Sesion del Usuario: ${this.user} exitosamente`,
+                  icon: 'success',
+                  timer: 10000,
+                  background: '#161719',
+                  backdrop: true,
+                  allowOutsideClick: true,
+                  allowEscapeKey: true,
+                  stopKeydownPropagation: false,
+                  confirmButtonColor: '#972745',
+                  showCloseButton: true
+              })
+              const p = document.createElement('span');
+              p.innerHTML = this.username;
+              p.className = 'username-login'
+              p.id = "username-login"
+              fragment.appendChild(p);
+              loginLink.replaceWith(fragment);
+            })()
+          }else{
+            Swal.fire({
+                title: 'Inicio de Sesion',
+                text: `Nombre de Usuario y/o contraseña incorrectos`,
+                icon: 'error',
+                timer: 10000,
+                background: '#161719',
+                backdrop: true,
+                allowOutsideClick: true,
+                allowEscapeKey: true,
+                stopKeydownPropagation: false,
+                confirmButtonColor: '#972745',
+                showCloseButton: true
+            })
           }
         })
       }
     },
     mostrarLogin(){
-      axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 3})
-                .then(res => {
-                  this.datas = res.data;
-                  this.datas.forEach(data =>{
-                    this.user = data.username,
-                    this.clave = data.clave
-                  })
+      axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+        opcion: 9,
+        username: this.username
+      }).then(res => {
+            this.datas = res.data;
+            this.datas.forEach(data =>{
+              this.user = data.username,
+              this.clave = data.clave
+            })
       })
+    },
+    close(){
+      const loginForm = document.getElementById('login-form');
+      loginForm.classList.remove('login--show');
     }
-  },
-  created(){
-    return this.mostrarLogin()
   }
 }
 </script>

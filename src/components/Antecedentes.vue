@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        <div class="entrevista" v-scroll-reveal="{delay: 500}" id="antecedentes">
+        <div class="entrevista" v-scroll-reveal="{delay: 500}" id="antecedentes" v-if="isLogin">
             <h2>Entrevista al paciente</h2>
             <div class="entrevista-nav" id="entrevista-nav">
                 <span class="entrevista-nav--active" id="one">1</span>
@@ -80,17 +80,17 @@
                     </div>
                     <div class="datos-personales">
                         <label for="expediente">Expediente</label>
-                        <input type="text" name="expediente" id="idpaciente">
+                        <input type="text" name="expediente" id="idpaciente" class="default">
                     </div>
                     <div class="datos-personales">
                         <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" placeholder="Escriba su nombre..." required id="name">
+                        <input class="default" type="text" name="nombre" placeholder="Escriba su nombre..." required id="name">
                         <label for="surname" class="datos-personales__surname">Apellido:</label>
-                        <input type="text" name="surname" required placeholder="Escriba su apellido..." id="surname">
+                        <input class="default" type="text" name="surname" required placeholder="Escriba su apellido..." id="surname">
                     </div>
                     <div class="datos-personales">
                         <label for="fecha">Fecha:</label>
-                        <input type="text" name="fecha" id="fecha-antecedente">
+                        <input class="default" type="text" name="fecha" id="fecha-antecedente">
                     </div>
                     <div class="datos-personales">
                         <p>Genero:</p>
@@ -220,6 +220,11 @@
 
         </div>
 
+        <div v-else class="not-login">
+            <h2>Vaya! Parece que no has iniciado sesion.</h2>
+            <router-link to="/login" class="not-login__router">Login</router-link>
+        </div>
+
         <div class="diagnostico-previo" id="diagnostico-previo">
             <h2>IV. Diagnostico Previo.</h2>
             <div class="diagnostico-previo__text" v-for="item in pacientes" :key="item.id">
@@ -246,9 +251,28 @@
 </template>
 
 <style scoped>
+.default{
+    background-color: transparent;
+    text-align: center;
+    color: #fff;
+    outline: none;
+    border-bottom: 1px solid var(--danger-color);
+}
+
 .antecedentes{
     position: relative;
 }
+
+.not-login__router{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: .8em 1.5em;
+    margin-top: .5em;
+    border-radius: .2em;
+    background-color: var(--danger-color);
+}
+
 .diagnostico-previo{
     position: absolute;
     width: 80%;
@@ -426,11 +450,25 @@
     opacity: 1;
     z-index: 100;
 }
+
+.not-login{
+    width: 80%;
+    background-color: var(--primary-color);
+    padding: 2em 0;
+    margin: 5em auto;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.not-login h2{
+    font-size: 22px;
+    text-align: center;
+    color: var(--danger-color);
+}
 </style>
 
 <script>
-
-import axios from 'axios';
+import axios from 'axios'
 import Footer from '../components/Footer.vue'
 import Autoevaluacion from '../components/subcomponents/TestA.vue'
 
@@ -441,31 +479,16 @@ export default {
   },
   data(){
       return{
+          isLogin: false,
+          user: '',
           trastorno: [],
           pacientes: [],
-          paciente: {
-              idpaciente: null,
-              nombre: '',
-              apellido: '',
-              sexo: '',
-              fecha_admision: '',
-              motivo: ''
-          }
+          nombre: '',
+          surname: '',
+          idpaciente: ''
       }
   },
   methods:{
-      defaultValue(){
-      
-      const fecha = document.getElementById('fecha-antecedente')
-
-      const date = new Date();
-
-      if(fecha){
-        fecha.setAttribute('readonly',true)
-        fecha.setAttribute('maxlength',9)
-        fecha.value = date.toLocaleDateString()
-      }
-    }, 
     navigation(){
         const one = document.getElementById('one')
         const two = document.getElementById('two')
@@ -512,8 +535,8 @@ export default {
 
         if(three){
             three.addEventListener('click',()=>{
-                datos.parentElement.parentElement.style.height = '500px'
-                entrevista.style.height = '340px'
+                datos.parentElement.parentElement.style.height = '1000px'
+                entrevista.style.height = '880px'
                 datos.classList.remove('antecedentes-input--active')
                 test.classList.remove('antecedentes-input--active')
                 one.classList.remove('entrevista-nav--active')
@@ -526,52 +549,58 @@ export default {
                 btnEntrevista.style.opacity = 0
             })
         }
-
     },
-    insertData(){
-        const idpaciente = document.getElementById('idpaciente')
+    getData(){
+        const username = document.getElementById('username-login')
+        if(username){
+            if(username.innerHTML !== ''){
+                this.isLogin = true;
+                this.user = username.innerHTML;
+            }
+        }
+    },
+    defaultValue(){
         const name = document.getElementById('name')
         const surname = document.getElementById('surname')
-        const masculino = document.getElementById('masculino')
-        const femenino = document.getElementById('femenino')
-        const motivo = document.getElementById('motivo')
-        let genero = null
-
-
-        if(masculino.checked) genero = 0
-            
-        if(femenino.checked) genero = 1
-
-        if(!isNaN(idpaciente.value) && name.value.trim() !== '' && surname.value.trim() !== ''
-        && motivo.value.trim() !== ''){
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                opcion: 8,
-                idpaciente: idpaciente.value,
-                nombre: name.value.trim(),
-                surname: surname.value.trim(),
-                genero: genero,
-                motivo: motivo.value.trim()
-            }).then(function(){
-                alert('Datos ingresados correctamente')
-                idpaciente.value = ''
-                name.value = ''
-                surname.value = ''
-                motivo.value = ''
-                masculino.checked = false
-                femenino.checked = false
-            }).catch(err => console.log(err))
-
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 9})
-            .then(res => {
-                this.pacientes = res.data;            
-            })  
-        }else{
-            alert('Hubo un error al ingresar los datos, verifique que esten bien.')
-        }
+        const idpaciente = document.getElementById('idpaciente')
+        const fecha = document.getElementById('fecha-antecedente')
+        axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            opcion: 10,
+            username: this.user
+        }).then(res => {
+                res.data.forEach(item =>{
+                    if(name){
+                        name.value = item.nombre
+                        name.setAttribute('readonly',true)
+                        name.setAttribute('maxlength',item.nombre.length)
+                    }
+                    if(surname){
+                        surname.value = item.apellido
+                        surname.setAttribute('readonly',true)
+                    }
+                    if(idpaciente){
+                        idpaciente.value = item.iduser
+                        idpaciente.setAttribute('readonly',true)
+                    }
+                    if(fecha){
+                        const date = new Date()
+                        fecha.value = date.toLocaleDateString()
+                        fecha.setAttribute('readonly',true)
+                    }
+                })
+        }).catch(err => console.log(err))
     }
   },
   mounted(){
-      return this.defaultValue(),this.navigation();
+      this.$nextTick(function(){
+          return this.navigation(),this.defaultValue()
+      })
+  },
+//   updated(){
+//       return this.getData()
+//   }
+  beforeMount(){
+      return this.getData()
   }
 }
 </script>

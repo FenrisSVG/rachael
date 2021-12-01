@@ -1,0 +1,15 @@
+<template>
+    <Registro/>
+</template>
+
+<script>
+// @ is an alias to /src
+import Registro from '../components/Signup.vue';
+
+export default {
+  name: 'Signup',
+  components: {
+    Registro
+  }
+}
+</script>

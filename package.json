@@ -48,6 +48,7 @@
     "pusher-js": "^7.0.3",
     "rimraf": "^2.7.1",
     "sass": "^1.38.1",
+    "sweetalert2": "^11.2.1",
     "vue-scroll-reveal": "^1.0.11",
     "vue-template-compiler": "^2.6.14",
     "webpack": "^4.46.0",

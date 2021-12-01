@@ -333,10 +333,6 @@ a.router-link-exact-active{
     }
 }
 
-::placeholder{
-    color: aliceblue;
-}
-
 .icon-red{
     color: $danger-color;
 }
@@ -529,4 +525,110 @@ input[type=password]:focus{
 
 .p{
     top: 18px;
+}
+
+
+// SEGUNDO LOGIN
+
+.login-2{
+    @include laptop{
+        margin: 4em auto 3em;
+        padding: 1em;
+        width: 50%;
+        border-radius: 10px;
+        background-color: var(--primary-color);
+    }
+
+    &-form{
+        margin-top: 3em;
+        padding: 0 2em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title{
+        @include laptop{
+            color: var(--title-color);
+            font-size: 1.2em;
+            margin: 1em auto 0;
+            position: relative;
+            text-align: center;
+        }
+
+        &::after{
+            @include laptop{
+                content: "";
+                display: block;
+                position: absolute;
+                width: 400px;
+                height: 2px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #ccc;
+                margin-top: 1em;
+            }
+        }
+    }
+
+    &-form input{
+        @include laptop{
+            width: 95%;
+            height: 35px;
+            background: none;
+            outline: none;
+            color: #fff;
+            border: 1px solid #b70e21;
+        }
+    }
+
+    &-form label{
+        display: block;
+        width: 95%;
+        color: #fff;
+        margin: 1em 0;
+    }
+}
+
+.login-2-form button{
+    text-decoration: none;
+    margin-top: 25px;
+    background-color: var(--danger-color);
+    border: 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    display: block;
+    width: 95%;
+    height: 35px;
+    border-radius: 5px;
+    cursor:pointer;
+    z-index:100;
+}
+
+.login-text-2{
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5em 2em;
+    justify-content: space-between;
+}
+
+.login-text-2 a{
+    text-decoration: none;
+    color: steelblue;
+    font-size: .75em;
+}
+
+.login-2-form input[type=text],
+.login-2-form input[type=password]{
+    padding-left: 20px;
+    font-size: 1em;
+}
+
+.login-text__link-2{
+    margin-right: 2.2em;
+    margin-bottom: 0;
+}
+
+label[for="password-login"]{
+    margin-top: 1.5em;
 }

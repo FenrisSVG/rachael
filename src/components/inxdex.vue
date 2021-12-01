@@ -86,6 +86,7 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2'
 import Footer from './Footer.vue'
 import axios from 'axios'
 //var _ = require('lodash');
@@ -173,7 +174,22 @@ export default {
                     speechSynthesis.speak(new SpeechSynthesisUtterance(res.data));
                 })
             })
-            .catch(err => console.log(err))
+            .catch(() => {
+                Swal.fire({
+                    title: 'Rachael',
+                    text: `Rachael no esta disponible en este momento`,
+                    icon: 'error',
+                    backdrop: true,
+                    timer: 10000,
+                    background: '#161719',
+                    allowOutsideClick: true,
+                    allowEscapeKey: true,
+                    stopKeydownPropagation: false,
+                    confirmButtonColor: '#972745',
+                    showCloseButton: true
+                })
+                message.classList.remove('chat__message--show');
+            })
 
             this.query = '';
       },
