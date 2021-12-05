@@ -25,7 +25,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="nerviosismo">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="nerviosismoNo">  
               </div>
             </div>
           </div>
@@ -42,7 +44,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="insomnio"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="insomnioNo"> 
               </div>
             </div>
           </div>
@@ -59,7 +63,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="agitacion"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="agitacionNo"> 
               </div>
             </div>
           </div>
@@ -76,7 +82,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="temblores"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="tembloresNo"> 
               </div>
             </div>
           </div>
@@ -89,11 +97,13 @@
                 <p>¿{{sintoma.descripcion}}?</p>
               </div>
               <div class="detalle-autoevaluacion__img">
-                <img src="../../assets/sintomas/cansancio.jpg" alt="temblores img">
+                <img src="../../assets/sintomas/cansancio.jpg" alt="cansancio img">
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="cansancio"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="cansancioNo"> 
               </div>
             </div>
           </div>
@@ -106,11 +116,13 @@
                 <p>¿{{sintoma.descripcion}}?</p>
               </div>
                             <div class="detalle-autoevaluacion__img">
-                <img src="../../assets/sintomas/malestar.jpg" alt="temblores img">
+                <img src="../../assets/sintomas/malestar.jpg" alt="malestar img">
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="malestar"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="malestarNo"> 
               </div>
             </div>
           </div>
@@ -127,7 +139,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="nauseas">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="nauseasNo">  
               </div>
             </div>
           </div>
@@ -144,7 +158,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="torax">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="toraxNo">  
               </div>
             </div>
           </div>
@@ -161,7 +177,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="pesimismo"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="pesimismoNo"> 
               </div>
             </div>
           </div>
@@ -174,11 +192,13 @@
                 <p>¿{{sintoma.descripcion}}?</p>
               </div>
               <div class="detalle-autoevaluacion__img">
-                <img src="../../assets/sintomas/concentracion.jpg" alcon="temblores img">
+                <img src="../../assets/sintomas/concentracion.jpg" alcon="concentracion img">
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="concentracion"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="concentracionNo"> 
               </div>
             </div>
           </div>
@@ -195,7 +215,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="taquicardia"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="taquicardiaNo"> 
               </div>
             </div>
           </div>
@@ -212,7 +234,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="gastrointestinales"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="gastrointestinalesNo"> 
               </div>
             </div>
           </div>
@@ -229,7 +253,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="timidez"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="timidezNo"> 
               </div>
             </div>
           </div>
@@ -242,11 +268,13 @@
                 <p>¿{{sintoma.descripcion}}?</p>
               </div>
               <div class="detalle-autoevaluacion__img">
-                <img src="../../assets/sintomas/nerviosismo.jpg" alt="nerviosismo img">
+                <img src="../../assets/sintomas/mania.jpg" alt="nerviosismo img">
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="mania">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="maniaNo">  
               </div>
             </div>
           </div>
@@ -263,7 +291,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="baja">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="bajaNo">  
               </div>
             </div>
           </div>
@@ -280,7 +310,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="alta"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="altaNo"> 
               </div>
             </div>
           </div>
@@ -297,7 +329,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="inquietud">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="inquietudNo">  
               </div>
             </div>
           </div>
@@ -314,7 +348,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="pesadillas"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="pesadillasNo"> 
               </div>
             </div>
           </div>
@@ -327,11 +363,13 @@
                 <p>¿{{sintoma.descripcion}}?</p>
               </div>
               <div class="detalle-autoevaluacion__img">
-                <img src="../../assets/sintomas/temblores.jpg" alt="temblores img">
+                <img src="../../assets/sintomas/posesiones.jpg" alt="temblores img">
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="posesiones"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="posesionesNo"> 
               </div>
             </div>
           </div>
@@ -348,7 +386,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="morir"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="morirNo"> 
               </div>
             </div>
           </div>
@@ -365,7 +405,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="admiracion">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="admiracionNo">  
               </div>
             </div>
           </div>
@@ -378,11 +420,13 @@
                 <p>¿{{sintoma.descripcion}}?</p>
               </div>
               <div class="detalle-autoevaluacion__img">
-                <img src="../../assets/sintomas/miedo.jpg" alt="miedo img">
+                <img src="../../assets/sintomas/control.jpg" alt="miedo img">
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="control">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="controlNo">  
               </div>
             </div>
           </div>
@@ -399,7 +443,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="miedo"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="miedoNo"> 
               </div>
             </div>
           </div>
@@ -416,7 +462,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="fracaso">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="fracasoNo">  
               </div>
             </div>
           </div>
@@ -429,11 +477,13 @@
                 <p>¿{{sintoma.descripcion}}?</p>
               </div>
               <div class="detalle-autoevaluacion__img">
-                <img src="../../assets/sintomas/admiracion.jpg" alt="admiracion img">
+                <img src="../../assets/sintomas/reglas.jpg" alt="admiracion img">
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="reglas">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="reglasNo">  
               </div>
             </div>
           </div>
@@ -446,11 +496,13 @@
                 <p>¿{{sintoma.descripcion}}?</p>
               </div>
               <div class="detalle-autoevaluacion__img">
-                <img src="../../assets/sintomas/cansancio.jpg" alt="cansancio img">
+                <img src="../../assets/sintomas/error.jpg" alt="cansancio img">
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="error">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="errorNo">  
               </div>
             </div>
           </div>
@@ -467,7 +519,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="impulsivo"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="impulsivoNo"> 
               </div>
             </div>
           </div>
@@ -484,7 +538,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="negativismo"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="negativismoNo"> 
               </div>
             </div>
           </div>
@@ -497,11 +553,13 @@
                 <p>¿{{sintoma.descripcion}}?</p>
               </div>
               <div class="detalle-autoevaluacion__img">
-                <img src="../../assets/sintomas/fracaso.jpg" alt="vulnerabilidad img">
+                <img src="../../assets/sintomas/animo.jpg" alt="vulnerabilidad img">
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="animo">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="animoNo">  
               </div>
             </div>
           </div>
@@ -518,7 +576,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="depresion"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="depresionNo"> 
               </div>
             </div>
           </div>
@@ -531,11 +591,13 @@
                 <p>¿{{sintoma.descripcion}}?</p>
               </div>
               <div class="detalle-autoevaluacion__img">
-                <img src="../../assets/sintomas/vulnerabilidad.jpg" alt="vulnerabilidad img">
+                <img src="../../assets/sintomas/pensamiento.jpg" alt="vulnerabilidad img">
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="pensamiento"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="pensamientoNo"> 
               </div>
             </div>
           </div>
@@ -548,11 +610,13 @@
                 <p>¿{{sintoma.descripcion}}?</p>
               </div>
               <div class="detalle-autoevaluacion__img">
-                <img src="../../assets/sintomas/admiracion.jpg" alt="admiracion img">
+                <img src="../../assets/sintomas/atencion.jpg" alt="admiracion img">
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="atencion">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="atencionNo">  
               </div>
             </div>
           </div>
@@ -569,7 +633,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="rencor">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="rencorNo">  
               </div>
             </div>
           </div>
@@ -586,7 +652,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="paranoia">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="paranoiaNo">  
               </div>
             </div>
           </div>
@@ -603,7 +671,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="vulnerabilidad"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="vulnerabilidadNo"> 
               </div>
             </div>
           </div>
@@ -620,7 +690,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="vacio">
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="vacioNo">  
               </div>
             </div>
           </div>
@@ -633,11 +705,11 @@
                 <p>¿{{sintoma.descripcion}}?</p>
               </div>
               <div class="detalle-autoevaluacion__img">
-                <img src="../../assets/sintomas/negativismo.jpg" alt="negativismo img">
+                <img src="../../assets/sintomas/disociativo.jpg" alt="negativismo img">
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="disociativo"> 
               </div>
             </div>
           </div>
@@ -654,7 +726,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="sustancia"> 
+                <label for="no">No</label>
+                <input type="checkbox" name="sintomas" v-model="sustanciaNo"> 
               </div>
             </div>
           </div>
@@ -665,20 +739,44 @@
 
           <div class="controls-test">
             <i class="fas fa-chevron-circle-left" id="prev-test"></i>
-            <i class="fas fa-chevron-circle-right" id="next-test"></i>
+            <i class="fas fa-chevron-circle-right" id="next-test" @click="showOpacity"></i>
           </div>
       </form>
+
+      <div class="cont-temporizador" id="contador">
+        <h2>El test de autoevaluacion se reactivara en:</h2>
+          <div class="sky">
+            <div class="bloque">
+              <div class="dias" id="dias">00</div>
+              <p>Dias</p>
+            </div>
+            <div class="bloque">
+                <div class="horas" id="horas">--</div>
+                <p>Horas</p>
+            </div>
+            <div class="bloque">
+                <div class="minutos" id="minutos">--</div>
+                <p>Minutos</p>
+            </div>
+            <div class="bloque">
+                <div class="segundos" id="segundos">--</div>
+                <p>Segundos</p>
+            </div>
+          </div>
+        </div>
 
       <div class="modal" id="modal" v-scroll-reveal="{delay: 100}">
         <h2>Se llego a la prediccion de que tenga el/los siguente(s) trastorno(s)</h2>
         <div class="modal__content" v-for="trastorno in trastornos" :key="trastorno.idtrastorno">
-          <h3>{{trastorno.nombre}}</h3>
+          <h3 id="trastorno-diagnosticado">{{trastorno.nombre}}</h3>
           <p>{{trastorno.descripcion}}
           </p>
           <h3>Causas</h3>
           <p>{{trastorno.causas}}</p>
           <h3>Recomendaciones</h3>
           <p>{{trastorno.recomendaciones}}</p>
+          <hr class="linea">
+          <p class="important"><strong>Importante</strong>, esto solo es un diagnostico previo, no es oficial el diagnostico y le recomendamos ir donde un experto a validar nuestra informacion</p>
         </div>
       </div>
     </div>
@@ -697,12 +795,71 @@
   border-radius: .3em;
 }
 
+.detalle-autoevaluacion__footer label:nth-child(3){
+  margin-left: 1em;
+}
+
 .test-paciente__autoevaluacion{
     background-color: var(--background-color);
     font-size: 21px;
     margin-top: 0;
     width: 100%;
     padding: 1em 0;
+}
+
+.sky{
+  display: flex;
+  justify-content: center;
+}
+
+.cont-temporizador{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    transform: translate(-50%);
+    background-color: var(--primary-color);
+    width: 70%;
+    border-radius: 5px;
+    opacity: 0;
+    padding: 1em 0;
+    transition: opacity .5s ease-in-out;
+}
+
+.cont-temporizador h2{
+  margin-top: 10px;
+  color: var(--title-color)
+}
+
+.bloque{
+    margin: 0 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bloque div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 6px 2px #727272 inset;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    width: 100px;
+    height: 70px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.bloque p{
+    font-size: 11px;
+    color: #dedede;
+    font-weight: bold;
 }
 </style>
 
@@ -759,19 +916,99 @@ export default {
           label: 'Tipo de Test:',
           id2: 'tipo'
         }
-          ]
+      ],
+      iduser: null,
+      username: null,
+      nerviosismo: false,
+      nerviosismoNo: false,
+      insomnio: false,
+      insomnioNo: false,
+      agitacion: false,
+      agitacionNo: false,
+      temblores: false,
+      tembloresNo: false,
+      cansancio: false,
+      cansancioNo: false,
+      malestar: false,
+      malestarNo: false,
+      nauseas: false,
+      nauseasNo: false,
+      torax: false,
+      toraxNo: false,
+      pesimismo: false,
+      pesimismoNo: false,
+      concentracion: false,
+      concentracionNo: false,
+      taquicardia: false,
+      taquicardiaNo: false,
+      gastrointestinales: false,
+      gastrointestinalesNo: false,
+      timidez: false,
+      timidezNo: false,
+      mania: false,
+      maniaNo: false,
+      baja: false,
+      bajaNo: false,
+      alta: false,
+      altaNo: false,
+      inquietud: false,
+      inquietudNo: false,
+      pesadillas: false,
+      pesadillasNo: false,
+      posesiones: false,
+      posesionesNo: false,
+      morir: false,
+      morirNo: false,
+      admiracion: false,
+      admiracionNo: false,
+      control: false,
+      controlNo: false,
+      miedo: false,
+      miedoNo: false,
+      fracaso: false,
+      fracasoNo: false,
+      reglas: false,
+      reglasNo: false,
+      error: false,
+      errorNo: false,
+      impulsivo: false,
+      impulsivoNo: false,
+      negativismo: false,
+      negativismoNo: false,
+      animo: false,
+      animoNo: false,
+      depresion: false,
+      depresionNo: false,
+      pensamiento: false,
+      pensamientoNo: false,
+      atencion: false,
+      atencionNo: false,
+      rencor: false,
+      rencorNo: false,
+      paranoia: false,
+      paranoiaNo: false,
+      vulnerabilidad: false,
+      vulnerabilidadNo: false,
+      vacio: false,
+      vacioNo: false,
+      disociativo: false,
+      disociativoNo: false,
+      sustancia: false,
+      sustanciaNo: false
     }
   },
   methods:{
    mostrar(){
-      axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 1})
-                .then(res => {
-                  this.sintomas = res.data;
-                })
-      axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 4})
-                .then(res => {
-                    this.copyTrastornos = res.data;                
-                  })          
+      const sintomas = async()=>{
+        const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 1})
+        this.sintomas = res.data
+     
+        await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 4})
+        .then(res => {
+          this.copyTrastornos = res.data
+          })
+      }
+      sintomas()
     },
     modalShow(){
       //const btnTest = document.getElementById('btn-test')
@@ -814,212 +1051,231 @@ export default {
       const vacio = document.getElementById('Sensacion Cronica De Vacio')
       const disociativo = document.getElementById('Sintomas disociativos grave')
       const sustancia = document.getElementById('Sustancia Especifica')
-     
-      // axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-      //           opcion: 5,
-      //           user: 2
-      // }).catch(err => console.log(err))
-       
-          if(paranoia){
-              if(paranoia.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 22);
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                    opcion: 6,
-                    idtrastorno: 22
-                }).catch(err => console.log(err))
-              }else if(nerviosismo.checked && agitacion.checked && temblores.checked && concentracion.checked
-              && taquicardia.checked && gastrointestinales.checked && pensamiento.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 2)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 2
-                }).catch(err => console.log(err))
-              }else if(agitacion.checked && nauseas.checked && concentracion.checked && taquicardia.checked
-              && inquietud.checked && pesadillas.checked && miedo.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 3)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 3
-                }).catch(err => console.log(err))
-              }else if(nerviosismo.checked && agitacion.checked && temblores.checked && nauseas.checked
-              && gastrointestinales.checked && inquietud.checked && pesadillas.checked && miedo.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 4)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 4
-                }).catch(err => console.log(err))
-              }else if(nerviosismo.checked && agitacion.checked && nauseas.checked && concentracion.checked
-              && taquicardia.checked && timidez.checked && inquietud.checked && miedo.checked){
-                  this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 5)
-                  axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 5
-                }).catch(err => console.log(err))
-              }else if(agitacion.checked && temblores.checked && cansancio.checked && malestar.checked
-              && nauseas.checked && torax.checked && concentracion.checked && taquicardia.checked && gastrointestinales.checked
-              && inquietud.checked && morir.checked && control.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 6)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 6
-                }).catch(err => console.log(err))
-              }else if(nerviosismo.checked && timidez.checked && baja.checked || miedo.checked
-              && fracaso.checked && negativismo.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 7)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 7
-                }).catch(err => console.log(err))
-              }else if(nerviosismo.checked && nauseas.checked && gastrointestinales.checked && miedo.checked
-              && pensamiento.checked && vulnerabilidad.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 8)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 8
-                }).error(err => console.log(err))
-              }else if(nerviosismo.checked && agitacion.checked && taquicardia.checked && inquietud.checked
-              && fracaso.checked && reglas.checked && error.checked ){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 9)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 9
-                }).catch(err => console.log(err))
-              }else if(agitacion.checked && nauseas.checked && baja.checked && inquietud.checked
-              && reglas.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 10)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 10
-                }).catch(err => console.log(err))
-              }else if(pesimismo.checked || posesiones.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 11)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 11
-                }).error(err => console.log(err))
-              }else if(nerviosismo.checked && malestar.checked && nauseas.checked && pesimismo.checked
-              && baja.checked && inquietud.checked && reglas.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 12)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 12
-                }).catch(err => console.log(err))
-              }else if(pesimismo.checked && baja.checked && inquietud.checked && miedo.checked 
-              || depresion.checked && vacio.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 13)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 13
-                }).catch(err => console.log(err))
-              }else if(pesimismo.checked && concentracion.checked && baja.checked && morir.checked
-              && control.checked && vacio.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 14)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 14
-                }).catch(err => console.log(err))
-              }else if(nerviosismo.checked && insomnio.checked && agitacion.checked && pensamiento.checked
-              || sustancia.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 15)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 15
-                }).catch(err => console.log(err))
-              }else if(nerviosismo.checked && temblores.checked && cansancio.checked && nauseas.checked
-              && torax.checked && concentracion.checked && inquietud.checked && morir.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 16)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 16
-                }).error(err => console.log(err))
-              }else if(nerviosismo.checked && agitacion.checked && temblores.checked && cansancio.checked
-              && malestar.checked && nauseas.checked || torax.checked && concentracion.checked && gastrointestinales.checked
-              && morir.checked && control.checked ){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 17)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 17
-                }).catch(err => console.log(err))
-              }else if(atencion.checked && vulnerabilidad.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 23)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 23
-                }).catch(err => console.log(err))
-              }else if(paranoia.checked && vacio.checked || disociativo.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 24)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 24
-                }).error(err => console.log(err))
-              }else if(admiracion.checked && miedo.checked && fracaso.checked && atencion.checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 26)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 26
-                }).catch(err => console.log(err))
-              }else if(control.checked && miedo .checked){
-                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 27)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 27
-                }).catch(err => console.log(err))
-              }else if(mania.checked && animo.checked){
-                if(alta.checked && impulsividad.checked && depresion.checked
-                 && pensamiento.checked && vacio.checked){
-                  this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 28)
-                  axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 28
-                }).catch(err => console.log(err))
-                }else if(nerviosismo.checked && agitacion.checked && alta.checked && impulsividad.checked
-                && depresion.checked && sustancia.checked){
-                  this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 29)
-                  axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                  opcion: 6,
-                  idtrastorno: 29
-                }).catch(err => console.log(err))
-                }
-              }   
-          }else{
-            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 1)
-          }
 
-          this.$emit('trastornos', this.trastornos)
+      const getId = async()=>{
+        try{
+          const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 10,
+              username: this.username
+          })
+          res.data.forEach(item => this.iduser = item.iduser)
 
-          const datos = document.getElementById('datos')
+          await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 5,
+              user: this.iduser
+          })
+        }catch(err){
+          console.log(err)
+        }
+      }
+      getId()
 
-          datos.parentElement.parentElement.style.height = '900px'
-          modal.classList.add('modal--show');
+      if(paranoia){
+          if(paranoia.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 22);
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+                opcion: 6,
+                idtrastorno: 22
+            }).catch(err => console.log(err))
+          }else if(nerviosismo.checked && agitacion.checked && temblores.checked && concentracion.checked
+          && taquicardia.checked && gastrointestinales.checked && pensamiento.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 2)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 2
+            }).catch(err => console.log(err))
+          }else if(agitacion.checked && nauseas.checked && concentracion.checked && taquicardia.checked
+          && inquietud.checked && pesadillas.checked && miedo.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 3)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 3
+            }).catch(err => console.log(err))
+          }else if(nerviosismo.checked && agitacion.checked && temblores.checked && nauseas.checked
+          && gastrointestinales.checked && inquietud.checked && pesadillas.checked && miedo.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 4)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 4
+            }).catch(err => console.log(err))
+          }else if(nerviosismo.checked && agitacion.checked && nauseas.checked && concentracion.checked
+          && taquicardia.checked && timidez.checked && inquietud.checked && miedo.checked){
+              this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 5)
+              axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 5
+            }).catch(err => console.log(err))
+          }else if(agitacion.checked && temblores.checked && cansancio.checked && malestar.checked
+          && nauseas.checked && torax.checked && concentracion.checked && taquicardia.checked && gastrointestinales.checked
+          && inquietud.checked && morir.checked && control.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 6)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 6
+            }).catch(err => console.log(err))
+          }else if(nerviosismo.checked && timidez.checked && baja.checked && miedo.checked
+          && fracaso.checked && negativismo.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 7)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 7
+            }).catch(err => console.log(err))
+          }else if(nerviosismo.checked && nauseas.checked && gastrointestinales.checked && miedo.checked
+          && pensamiento.checked && vulnerabilidad.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 8)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 8
+            }).error(err => console.log(err))
+          }else if(nerviosismo.checked && agitacion.checked && taquicardia.checked && inquietud.checked
+          && fracaso.checked && reglas.checked && error.checked ){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 9)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 9
+            }).catch(err => console.log(err))
+          }else if(agitacion.checked && nauseas.checked && baja.checked && inquietud.checked
+          && reglas.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 10)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 10
+            }).catch(err => console.log(err))
+          }else if(pesimismo.checked && posesiones.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 11)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 11
+            }).error(err => console.log(err))
+          }else if(nerviosismo.checked && malestar.checked && nauseas.checked && pesimismo.checked
+          && baja.checked && inquietud.checked && reglas.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 12)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 12
+            }).catch(err => console.log(err))
+          }else if(pesimismo.checked && baja.checked && inquietud.checked && miedo.checked 
+          || depresion.checked && vacio.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 13)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 13
+            }).catch(err => console.log(err))
+          }else if(pesimismo.checked && concentracion.checked && baja.checked && morir.checked
+          && control.checked && vacio.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 14)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 14
+            }).catch(err => console.log(err))
+          }else if(nerviosismo.checked && insomnio.checked && agitacion.checked && pensamiento.checked
+          || sustancia.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 15)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 15
+            }).catch(err => console.log(err))
+          }else if(nerviosismo.checked && temblores.checked && cansancio.checked && nauseas.checked
+          && torax.checked && concentracion.checked && inquietud.checked && morir.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 16)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 16
+            }).error(err => console.log(err))
+          }else if(nerviosismo.checked && agitacion.checked && temblores.checked && cansancio.checked
+          && malestar.checked && nauseas.checked && torax.checked && concentracion.checked && gastrointestinales.checked
+          && morir.checked && control.checked ){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 17)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 17
+            }).catch(err => console.log(err))
+          }else if(atencion.checked && vulnerabilidad.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 23)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 23
+            }).catch(err => console.log(err))
+          }else if(paranoia.checked && vacio.checked && disociativo.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 24)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 24
+            }).error(err => console.log(err))
+          }else if(admiracion.checked && miedo.checked && fracaso.checked && atencion.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 26)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 26
+            }).catch(err => console.log(err))
+          }else if(control.checked && miedo .checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 27)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 27
+            }).catch(err => console.log(err))
+          }else if(mania.checked && animo.checked){
+            if(alta.checked && impulsividad.checked && depresion.checked
+              && pensamiento.checked && vacio.checked){
+              this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 28)
+              axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 28
+            }).catch(err => console.log(err))
+            }else if(nerviosismo.checked && agitacion.checked && alta.checked && impulsividad.checked
+            && depresion.checked && sustancia.checked){
+              this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 29)
+              axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 29
+            }).catch(err => console.log(err))
+            }
+          }   
+      }else{
+        this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 1)
+      }
+      this.$emit('trastornos', this.trastornos)
+      const datos = document.getElementById('datos')
+      const one = document.getElementById('one')
+      const test = document.getElementById('test-autoevaluacion')
+      const entrevista = document.getElementById('entrevista')
+      const two = document.getElementById('two')
+      const three = document.getElementById('three')
+      const four = document.getElementById('four')
+      const btnEntrevista = document.getElementById('btn-entrevista')
+      const consultar = document.getElementById('consultar')
+      const antecedentes = document.getElementById('antecedentes-form')
+      const diagnostico = document.getElementById('diagnostico-previo')
+      const contador = document.getElementById('contador')
+      datos.parentElement.parentElement.style.height = '900px'
+      modal.classList.add('modal--show');
 
       if(modal){
         modal.addEventListener('click',(e)=>{
           if(e.target.classList.contains('modal')){
             modal.classList.remove('modal--show')
+            consultar.style.opacity = 0
             datos.parentElement.parentElement.style.height = '500px'
-            const one = document.getElementById('one')
-            const two = document.getElementById('two')
-            const three = document.getElementById('three')
-            const four = document.getElementById('four')
-            const test = document.getElementById('test-autoevaluacion')
-            const entrevista = document.getElementById('entrevista')
-            const btnEntrevista = document.getElementById('btn-entrevista')
-            const antecedentes = document.getElementById('antecedentes-form')
-            const diagnostico = document.getElementById('diagnostico-previo')
+            contador.style.opacity = 1
+            datos.classList.remove('antecedentes-input--active')
+            this.temporizador()
 
             if(four){
-              datos.parentElement.parentElement.style.height = '700px'
-              entrevista.style.height = '550px'
-              datos.classList.remove('antecedentes-input--active')
-              test.classList.remove('antecedentes-input--active')
-              one.classList.remove('entrevista-nav--active')
-              antecedentes.classList.remove('antecedentes-input--active')
-              two.classList.remove('entrevista-nav--active')
-              test.classList.remove('antecedentes-input--active')
-              three.classList.remove('entrevista-nav--active')
-              four.classList.add('entrevista-nav--active')
-              diagnostico.classList.add('antecedentes-input--active')
-              btnEntrevista.style.opacity = 0
+                four.addEventListener('click',()=>{
+                  datos.parentElement.parentElement.style.height = '700px'
+                  entrevista.style.height = '550px'
+                  contador.classList.remove('antecedentes-input--active')
+                  datos.classList.remove('antecedentes-input--active')
+                  test.classList.remove('antecedentes-input--active')
+                  one.classList.remove('entrevista-nav--active')
+                  antecedentes.classList.remove('antecedentes-input--active')
+                  two.classList.remove('entrevista-nav--active')
+                  test.classList.remove('antecedentes-input--active')
+                  three.classList.remove('entrevista-nav--active')
+                  four.classList.add('entrevista-nav--active')
+                  diagnostico.classList.add('antecedentes-input--active')
+                  btnEntrevista.style.opacity = 0
+                })
             }
       
             paranoia.checked = false
@@ -1065,41 +1321,512 @@ export default {
       }
     },
     showOpacity(){
-          const prev = document.getElementById('prev-test')
+          //const paranoia = document.getElementById('Paranoia')
           const next = document.getElementById('next-test')
           const images = Array.from(document.querySelectorAll('.form-container__body'))
           
           let cont = 0;
 
-          if(prev){
-            prev.addEventListener('click',()=> setClass('prev'))
-          }
+          // if(prev){
+          //   prev.addEventListener('click',()=> setClass('prev'))
+          // }
 
           if(next){
             next.addEventListener('click',()=> setClass('next'))
           }
 
           const setClass = (direction)=>{
-              images.map(image => image.classList.remove('show-opacity'))
-              setCont(direction);
-              images[cont].classList.add('show-opacity')
+              try{
+                images.map(image => image.classList.remove('show-opacity'))
+                setCont(direction);
+                images[cont].classList.add('show-opacity')
+              }catch(err){
+                console.log(err)
+              }
           }
 
           const setCont = (direction) =>{
             if(direction =='next'){
               if(cont == images.length - 1) cont = 0
-              else cont ++
-          }else{
-            if(cont == 0) cont = images.length - 1
-            else cont --
+              
+              if(this.nerviosismo){
+                cont = cont + 1
+                if(this.insomnio){
+                  cont = cont + 1
+                  if(this.agitacion){
+                    cont = cont + 28
+                    if(this.pensamiento){
+                      cont = cont + 7
+                    }
+                  }
+                }else if(this.insomnioNo){
+                  cont = cont + 1
+                  if(this.agitacion){
+                    cont = cont + 1
+                    if(this.temblores){
+                      cont = cont + 1
+                      if(this.cansancio){
+                        cont = cont + 1
+                        if(this.malestar){
+                          cont = cont + 1
+                          if(this.nauseas){
+                            cont = cont + 1
+                            if(this.torax){
+                              cont = cont + 2
+                              if(this.concentracion){
+                                cont = cont + 2
+                                if(this.gastrointestinales){
+                                  cont = cont + 8
+                                  if(this.morir){
+                                    cont = cont + 2
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }else if(this.cansancioNo){
+                        cont = cont + 2
+                          if(this.nauseas){
+                            cont = cont + 5
+                            if(this.gastrointestinales){
+                              cont = cont + 5
+                              if(this.inquietud){
+                                cont = cont + 1
+                                if(this.pesadillas){
+                                  cont = cont + 5
+                                }
+                              }
+                            }
+                          }else if(this.nauseasNo){
+                            cont = cont + 3
+                            if(this.concentracion){
+                              cont = cont + 1
+                              if(this.taquicardia){
+                                cont = cont + 1
+                                if(this.gastrointestinales){
+                                  cont = cont + 19
+                                }
+                              }
+                            }
+                          }
+                      }
+                    }else if(this.tembloresNo){
+                      cont = cont + 3
+                      if(this.nauseas){
+                        cont = cont + 3
+                        if(this.concentracion){
+                          cont = cont + 1
+                          if(this.taquicardia){
+                            cont = cont + 2
+                            if(this.timidez){
+                              cont = cont + 4
+                              if(this.inquietud){
+                                cont = cont + 5
+                              }
+                            }
+                          }
+                        }
+                      }else if(this.nauseasNo){
+                        cont = cont + 7
+                        if(this.mania){
+                          cont = cont + 2
+                          if(this.alta){
+                            cont = cont + 11
+                            if(this.impulsivo){
+                              cont = cont + 2
+                              if(this.animo){
+                                cont = cont + 4
+                                if(this.rencor){
+                                  cont = cont + 5
+                                }
+                              }
+                            }
+                          }else if(this.altaNo){
+                            cont = cont + 13
+                            if(this.animo){
+                               cont = cont + 4
+                               if(this.rencor){
+                                 cont = cont + 5
+                               }
+                            }
+                          }
+                        }else if(this.maniaNo){
+                          cont = cont + 3
+                          if(this.inquietud){
+                            cont = cont + 6
+                            if(this.miedo){
+                              cont = cont + 8
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }else if(this.agitacionNo){
+                    cont = cont + 1
+                    if(this.temblores){
+                      cont = cont + 1
+                      if(this.cansancio){
+                        cont = cont + 2
+                        if(this.nauseas){
+                          cont = cont + 1
+                          if(this.torax){
+                            cont = cont + 2
+                            if(this.concentracion){
+                              cont = cont + 7
+                              if(this.inquietud){
+                                cont = cont + 3
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }else if(this.tembloresNo){
+                      cont = cont + 2
+                      if(this.malestar){
+                        cont = cont + 1
+                        if(this.nauseas){
+                          cont = cont + 2
+                          if(this.pesimismo){
+                            cont = cont + 6
+                            if(this.baja){
+                              cont = cont + 2
+                              if(this.inquietud){
+                                cont = cont + 8
+                              }
+                            }
+                          }
+                        }
+                      }else if(this.malestarNo){
+                        cont = cont + 1
+                        if(this.nauseas){
+                          cont = cont + 5
+                          if(this.gastrointestinales){
+                            cont = cont + 11
+                            if(this.miedo){
+                              cont = cont + 8
+                              if(this.pensamiento){
+                                cont = cont + 4
+                              }
+                            }
+                          }
+                        }if(this.nauseasNo){
+                          cont = cont + 6
+                          if(this.timidez){
+                            cont = cont + 2
+                            if(this.baja){
+                              cont = cont + 8
+                              if(this.miedo){
+                                cont = cont + 1
+                                if(this.fracaso){
+                                  cont = cont + 4
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }else if(this.nerviosismoNo){
+                cont = cont + 2
+                if(this.agitacion){
+                  cont = cont + 1
+                  if(this.temblores){
+                    cont = cont + 1
+                    if(this.cansancio){
+                      cont = cont + 1
+                      if(this.malestar){
+                        cont = cont + 1
+                        if(this.nauseas){
+                          cont = cont + 1
+                          if(this.torax){
+                            cont = cont + 2
+                            if(this.concentracion){
+                              cont = cont + 1
+                              if(this.taquicardia){
+                                cont = cont + 1
+                                if(this.gastrointestinales){
+                                  cont = cont + 5
+                                  if(this.inquietud){
+                                    cont = cont + 3
+                                    if(this.morir){
+                                      cont = cont + 2
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }else if(this.malestarNo){
+                        cont = cont + 1
+                        if(this.nauseas){
+                          cont = cont + 1
+                            if(this.torax){
+                              cont = cont + 2
+                              if(this.concentracion){
+                                cont = cont + 1
+                                if(this.taquicardia){
+                                  cont = cont + 1
+                                if(this.gastrointestinales){
+                                  cont = cont + 5
+                                  if(this.inquietud){
+                                    cont = cont + 3
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }else if(this.tembloresNo){
+                    cont = cont + 3
+                    if(this.nauseas){
+                      cont = cont + 3
+                      if(this.concentracion){
+                        cont = cont + 1
+                        if(this.taquicardia){
+                          cont = cont + 6
+                          if(this.inquietud){
+                            cont = cont + 1
+                            if(this.pesadillas){
+                              cont = cont + 5                             
+                            }
+                          }
+                        }
+                      }else if(this.concentracionNo){
+                        cont = cont + 5
+                        if(this.baja){
+                          cont = cont + 2
+                          if(this.inquietud){
+                            cont = cont + 8
+                          }
+                        }
+                      }
+                    }else if(this.nauseasNo){
+                      cont = cont + 3
+                      if(this.concentracion){
+                        cont = cont + 1
+                        if(this.taquicardia){
+                          cont = cont + 1
+                          if(this.gastrointestinales){
+                            cont = cont + 5
+                            if(this.inquietud){
+                              cont = cont + 3
+                              if(this.morir){
+                                cont = cont + 2
+                                if(this.control){
+                                  cont = cont + 1
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              if(this.nerviosismoNo && this.agitacionNo){
+                cont = cont + 4
+                if(this.nauseasNo){
+                  cont = cont + 2
+                  if(this.pesimismo){
+                    cont = cont + 1
+                    if(this.concentracion){
+                      cont = cont + 5
+                      if(this.baja){
+                        cont = cont + 5
+                        if(this.morir){
+                          cont = cont + 2
+                          if(this.control){
+                            cont = cont + 14
+                          }
+                        }
+                      }
+                    }else if(this.concentracionNo){
+                      cont = cont + 5
+                      if(this.baja){
+                        cont = cont + 2
+                        if(this.inquietud){
+                          cont = cont + 6
+                          if(this.miedo){
+                            cont = cont + 7
+                            if(this.depresion){
+                              cont = cont + 6
+                            }
+                          }
+                        }
+                      }else if(this.bajaNo){
+                        cont = cont + 4
+                      }
+                    }
+                  }else if(this.pesimismoNo){
+                    cont = cont + 5
+                    if(this.mania){
+                      cont = cont + 2
+                      if(this.alta){
+                        cont = cont + 11
+                        if(this.impulsivo){
+                          cont = cont + 2
+                          if(this.animo){
+                            cont = cont + 4
+                            if(this.rencor){
+                              cont = cont + 1
+                              if(this.paranoia){
+                                cont = cont + 2
+                              }
+                            }
+                          }
+                        }
+                      }else if(this.altaNo){
+                        cont = cont + 13
+                        if(this.animo){
+                          cont = cont + 2
+                          if(this.pensamiento){
+                            cont = cont + 2  
+                          }
+                        }
+                      }
+                    }else if(this.maniaNo){
+                      cont = cont + 7
+                      if(this.admiracion){
+                        cont = cont + 2
+                        if(this.miedo){
+                          cont = cont + 1
+                          if(this.fracaso){
+                            cont = cont + 8
+                          }
+                        }
+                      }else if(this.admiracionNo){
+                        cont = cont + 1
+                        if(this.control){
+                          cont = cont + 1
+                        }else if(this.controlNo){
+                          cont = cont + 10
+                          if(this.atencion){
+                            cont = cont + 3
+                          }else if(this.atencionNo){
+                            cont = cont + 1
+                            if(this.rencorNo){
+                              cont = cont + 1
+                              if(this.paranoia){
+                                cont = cont + 2
+                                if(this.vacio){
+                                  cont = cont + 1
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }  
           }
+    },
+    getData(){
+      const username = document.getElementById('username-login')
+      if(username){
+        if(username.innerHTML !== ''){
+            this.username = username.innerHTML;
         }
+      }
+    },
+    temporizador(){
+        const segundo = document.getElementById('segundos')
+        const minuto = document.getElementById('minutos')
+        const hora = document.getElementById('horas')
+        const consultar = document.getElementById('consultar')
+        const contador = document.getElementById('contador')
+        const datos = document.getElementById('datos')
+        let horas = 0
+        let minutos = 0
+        let segundos = 30
+        const cargarSegundo = ()=>{
+            let txtSegundos
+            if(segundos < 0){
+                segundos = 59
+            }
+            if(segundos < 10){
+                txtSegundos = `0${segundos}`
+            }else{
+                txtSegundos = segundos
+            }
+
+            if(segundo){
+              segundo.innerHTML = txtSegundos;
+            }
+            segundos--
+
+            cargarMinutos(segundos);
+        }
+
+        const cargarMinutos = (segundos)=>{
+            let txtMinutos
+
+            if(segundos == -1 && minutos !== 0){
+                setTimeout(() =>{
+                    minutos--
+                },500)
+            }else if(segundos == -1 && minutos == 0){
+                setTimeout(() =>{
+                    minutos = 59
+                },500)
+            }
+            //Mostrar Minutos en pantalla
+            if(minutos < 10){
+                txtMinutos = `0${minutos}`
+            }else{
+                txtMinutos = minutos;
+            }
+            if(minuto){
+              minuto.innerHTML = txtMinutos
+            }
+            cargarHoras(segundos,minutos)
+      }
+
+      const cargarHoras = (segundos,minutos)=>{
+          let txtHoras;
+
+        if(segundos == -1 && minutos == 0 && horas !== 0){
+            setTimeout(() =>{
+                horas--;
+            },500)
+        }else if(segundos == -1 && minutos == 0 && horas == 0){
+            setTimeout(() =>{
+                contador.style.opacity = 0
+                datos.parentElement.parentElement.style.height = '1000px'
+                consultar.style.opacity = 1
+                setInterval(cargarSegundo,1000)
+            },500)
+        }
+        //Mostrar Horas en pantalla
+        if(horas < 10){
+            txtHoras = `0${horas}`;
+        }else{
+            txtHoras = horas;
+        }
+        if(hora){
+          hora.innerHTML = txtHoras
+        }
+      }
+      setInterval(cargarSegundo,1000)
     }
   },
   mounted(){
-    this.$nextTick(function(){
-      return this.mostrar(),this.showOpacity()
+    this.$nextTick(()=>{
+      return this.mostrar()
     })
+  },
+  beforeMount(){
+    return this.getData()
   }
 }
 </script>

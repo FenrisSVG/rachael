@@ -117,38 +117,38 @@
                     </div>
                     <div class="antecedentes-input">
                         <h6>2. ¿Ha recibido un tratamiento psico-terapeutico con anterioridad?</h6>
-                        <input type="checkbox" name="si">
+                        <input type="checkbox" name="si" id="tratamiento">
                         <label for="si">Si</label>
-                        <input type="checkbox" name="no">
+                        <input type="checkbox" name="no" id="tratamiento-no">
                         <label for="no">No</label>
                     </div>
                     <div class="antecedentes-input">
                         <h6>3. Habitos toxicos</h6>
                         <div class="habitos">
                             <h6>a. Alimenticios</h6>
-                            <input type="checkbox" name="sigue-dieta">
+                            <input type="checkbox" name="sigue-dieta" id="dieta">
                             <label for="sigue-dieta">Sigue Dieta</label>
-                            <input type="checkbox" name="Moderada">
+                            <input type="checkbox" name="Moderada" id="moderada">
                             <label for="moderada">Moderada</label>
-                            <input type="checkbox" name="estricta">
+                            <input type="checkbox" name="estricta" id="estricta">
                             <label for="estricta">Estricta</label>
-                            <input type="checkbox" name="vegano">
+                            <input type="checkbox" name="vegano" id="vegano">
                             <label for="Vegano">Vegano</label>
                         </div>
                         <div class="consumo">
                             <h6>b. Consumo</h6>
-                            <input type="checkbox" name="Alcohol">
+                            <input type="checkbox" name="Alcohol" id="alcohol">
                             <label for="Alcohol">Alcohol</label>
-                            <input type="checkbox" name="te">
+                            <input type="checkbox" name="te" id="te">
                             <label for="te">Te</label>
-                            <input type="checkbox" name="Cafe">
+                            <input type="checkbox" name="Cafe" id="cafe">
                             <label for="Cafe">Cafe</label>
                         </div>
                         <div class="medicamente">
                             <h6>c. Medicamentos</h6>
-                            <input type="checkbox" name="drogas">
+                            <input type="checkbox" name="drogas" id="drogas">
                             <label for="drogas">Rechazo a Drogas</label>
-                            <input type="checkbox" name="hipersensibilidad">
+                            <input type="checkbox" name="hipersensibilidad" id="hipersensibilidad">
                             <label for="hipersensibilidad">Hipersensibilidad</label>
                         </div>
                     </div>
@@ -156,34 +156,34 @@
                         <h6>4. Familiares</h6>
                         <div class="familiares">
                             <h6>a. Adolescencia</h6>
-                            <input type="checkbox" name="bullying">
+                            <input type="checkbox" name="bullying" id="bullying">
                             <label for="bullying">Sufria Bullying</label>
-                            <input type="checkbox" name="muerte">
+                            <input type="checkbox" name="muerte" id="muerte">
                             <label for="muerte">Muerte de Familiar</label>
-                            <input type="checkbox" name="padres-separados">
+                            <input type="checkbox" name="padres-separados" id="padres">
                             <label for="padres-separados">Padres Separados</label>
-                            <input type="checkbox" name="ciudad">
+                            <input type="checkbox" name="ciudad" id="ciudad">
                             <label for="ciudad">Cambio de ciudad constante</label>
 
                         </div>
                         <div class="sexo">
                             <h6>b. Sexooooooooooooooo</h6>
-                            <input type="checkbox" name="activo">
+                            <input type="checkbox" name="activo" id="activo">
                             <label for="activo">Activo</label>
-                            <input type="checkbox" name="virgen">
+                            <input type="checkbox" name="virgen" id="virgen">
                             <label for="virgen">Virgen</label>
-                            <input type="checkbox" name="ocasional">
+                            <input type="checkbox" name="ocasional" id="ocasional">
                             <label for="ocasional">Ocasional</label>
                         </div>
                         <div class="familia">
                             <h6>c. Clasificas la relacion con tu familia como</h6>
-                            <input type="checkbox" name="disfuncional">
+                            <input type="checkbox" name="disfuncional" id="disfuncional">
                             <label for="disfuncional">Disfuncional</label>
-                            <input type="checkbox" name="tranquila">
+                            <input type="checkbox" name="tranquila" id="tranquila">
                             <label for="tranquila">Tranquila</label>
-                            <input type="checkbox" name="confianza">
+                            <input type="checkbox" name="confianza" id="confianza">
                             <label for="confianza">De confianza</label>
-                            <input type="checkbox" name="separados">
+                            <input type="checkbox" name="separados" id="separados">
                             <label for="separados">Padres Separados</label>
                         </div>
                     </div>
@@ -192,9 +192,9 @@
                         <div class="traumas">
                             <h6>a. ¿Consideras un acontecimiento de tu vida como traumatico?</h6>
                             <label for="si">Si</label>
-                            <input type="checkbox" name="si">
+                            <input type="checkbox" name="si" id="traumas">
                             <label for="no">No</label>
-                            <input type="checkbox" name="no">
+                            <input type="checkbox" name="no" id="traumas-no">
                         </div>
                         <div class="traumas-familia">
                             <h6>b. ¿El suceso traumatico le ha ocurrido a un familiar?</h6>
@@ -213,11 +213,20 @@
                     </div>
                 </div>
                     <div class="entrevista__submit" id="btn-entrevista">
-                        <input type="submit" value="Enviar Datos">
+                        <input type="submit" value="Enviar Datos" @click="insertData">
                     </div>
             </form>
-            <Autoevaluacion id="test-autoevaluacion" class="test-autoevaluacion" @trastornos="trastorno = $event"/>
+            
+            <div class="antecedentes-yes" id="not-login">
+                <h2>Querido usuario parece ser que usted ya completo los pasos de ingresar sus
+                    datos generales y ya nos envio previamente los antecedentes, por favor eliga la opcion
+                    que quiere realizar.
+                </h2>
+                <router-link to="/diagnostico/historial" class="antecedentes__link">Ver Historial.</router-link>
+                <button href="" class="antecedentes__link" id="nextStep">Ir al Test de Autoevaluacion</button>
+            </div>
 
+            <Autoevaluacion id="test-autoevaluacion" class="test-autoevaluacion" @trastornos="trastorno = $event"/>  
         </div>
 
         <div v-else class="not-login">
@@ -227,17 +236,15 @@
 
         <div class="diagnostico-previo" id="diagnostico-previo">
             <h2>IV. Diagnostico Previo.</h2>
-            <div class="diagnostico-previo__text" v-for="item in pacientes" :key="item.id">
+            <div class="diagnostico-previo__text">
                 <p class="datos-paciente">Datos del paciente</p>
                 <p>Paciente: </p>
-                <p class="datos-pacientes">{{item.nombre}}  {{item.apellido}}</p>
+                <p class="datos-pacientes">{{nombrepaciente}}  {{apellido}}</p>
                 <p>Genero: </p>
-                <p class="datos-pacientes" v-if="item.sexo == 1">Femenino</p>
+                <p class="datos-pacientes" v-if="sexo == 1">Femenino</p>
                 <p class="datos-pacientes" v-else>Masculino</p>
-                <p>Fecha de Registro: </p>
-                <p class="datos-pacientes">{{item.fecha_admision}}</p>
                 <p>El motivo de su consulta es:</p>
-                <p>{{item.motivo}}}</p>
+                <p>{{motivo}}</p>
             </div>
             <div class="for-trastorno" v-for="item in trastorno" :key="item.id">
                 <p>Segun los datos que nos ha proporcionado y la realizacion con anterioridad
@@ -245,12 +252,41 @@
                 <p>{{item.descripcion}}</p>
             </div>
         </div>
-
         <Footer/>
     </div>
 </template>
 
 <style scoped>
+.antecedentes-yes{
+    position: absolute;
+    width: 80%;
+    background-color: #000;
+    text-align: center;
+    top: 45%;
+    left: 50%;
+    border-radius: .3em;
+    padding: 2em;
+    z-index: 300;
+    opacity: 0;
+    transform: translate(-50%);
+}
+
+.antecedentes-yes h2{
+    font-size: 20px;
+    margin-top: 0em;
+    margin-bottom: 1.5em;
+}
+
+.antecedentes__link{
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--danger-color);
+    padding: .6em 1em;
+    margin: 0 .5em;
+    border-radius: .2em;
+    cursor: pointer;
+}
+
 .default{
     background-color: transparent;
     text-align: center;
@@ -448,7 +484,7 @@
 
 .antecedentes-input--active{
     opacity: 1;
-    z-index: 100;
+    z-index: 310;
 }
 
 .not-login{
@@ -465,10 +501,23 @@
     text-align: center;
     color: var(--danger-color);
 }
+
+.cancel-event{
+    pointer-events: none
+}
+
+.antecedentes-ajustado{
+    height: 400px;
+}
+
+#nextStep{
+    bordeR: none;
+}
 </style>
 
 <script>
 import axios from 'axios'
+import Swal from 'sweetalert2'
 import Footer from '../components/Footer.vue'
 import Autoevaluacion from '../components/subcomponents/TestA.vue'
 
@@ -480,12 +529,18 @@ export default {
   data(){
       return{
           isLogin: false,
+          antecedentes: true,
           user: '',
+          iduser: '',
           trastorno: [],
-          pacientes: [],
+          sexo: 0,
+          fechaAdmision: null,
           nombre: '',
+          nombrepaciente: '',
+          apellido: '',
           surname: '',
-          idpaciente: ''
+          idpaciente: '',
+          motivo: ''
       }
   },
   methods:{
@@ -497,57 +552,73 @@ export default {
         const datos = document.getElementById('datos')
         const test = document.getElementById('test-autoevaluacion')
         const diagnostico = document.getElementById('diagnostico-previo')
+        const notLogin = document.getElementById('not-login')
         const entrevista = document.getElementById('entrevista')
+        //const consultar = document.getElementById('consultar')
         const btnEntrevista = document.getElementById('btn-entrevista')
         const antecedentes = document.getElementById('antecedentes-form')
 
-        if(one){
-            one.addEventListener('click',()=>{
-                datos.parentElement.parentElement.style.height = '620px'
-                entrevista.style.height = '450px'
-                datos.classList.add('antecedentes-input--active')
-                one.classList.add('entrevista-nav--active')
-                antecedentes.classList.remove('antecedentes-input--active')
-                test.classList.remove('antecedentes-input--active')
-                diagnostico.classList.remove('antecedentes-input--active')
-                two.classList.remove('entrevista-nav--active')
-                three.classList.remove('entrevista-nav--active')
-                four.classList.remove('entrevista-nav--active')
-                btnEntrevista.style.opacity = 0
-            })
-        }
+        if(this.antecedentes == true){
+            if(entrevista){
+                if(one){
+                    one.addEventListener('click',()=>{
+                        datos.parentElement.parentElement.style.height = '620px'
+                        entrevista.style.height = '450px'
+                        datos.classList.add('antecedentes-input--active')
+                        one.classList.add('entrevista-nav--active')
+                        antecedentes.classList.remove('antecedentes-input--active')
+                        test.classList.remove('antecedentes-input--active')
+                        diagnostico.classList.remove('antecedentes-input--active')
+                        two.classList.remove('entrevista-nav--active')
+                        three.classList.remove('entrevista-nav--active')
+                        four.classList.remove('entrevista-nav--active')
+                        btnEntrevista.style.opacity = 0                       
+                    })
+                }
 
-        if(two){
-            two.addEventListener('click',()=>{
-                datos.parentElement.parentElement.style.height = '1350px'
-                entrevista.style.height = '1180px'
-                datos.classList.remove('antecedentes-input--active')
-                test.classList.remove('antecedentes-input--active')
-                diagnostico.classList.remove('antecedentes-input--active')
-                one.classList.remove('entrevista-nav--active')
-                four.classList.remove('entrevista-nav--active')
-                antecedentes.classList.add('antecedentes-input--active')
-                two.classList.add('entrevista-nav--active')
-                three.classList.remove('entrevista-nav--active')
-                btnEntrevista.style.opacity = 1
-            })
-        }
+                if(two){
+                    two.addEventListener('click',()=>{
+                        datos.parentElement.parentElement.style.height = '1350px'
+                        entrevista.style.height = '1180px'
+                        datos.classList.remove('antecedentes-input--active')
+                        test.classList.remove('antecedentes-input--active')
+                        diagnostico.classList.remove('antecedentes-input--active')
+                        one.classList.remove('entrevista-nav--active')
+                        four.classList.remove('entrevista-nav--active')
+                        antecedentes.classList.add('antecedentes-input--active')
+                        two.classList.add('entrevista-nav--active')
+                        three.classList.remove('entrevista-nav--active')
+                        btnEntrevista.style.opacity = 1
+                    })
+                }
 
-        if(three){
-            three.addEventListener('click',()=>{
-                datos.parentElement.parentElement.style.height = '1000px'
-                entrevista.style.height = '880px'
-                datos.classList.remove('antecedentes-input--active')
-                test.classList.remove('antecedentes-input--active')
-                one.classList.remove('entrevista-nav--active')
-                antecedentes.classList.remove('antecedentes-input--active')
-                diagnostico.classList.remove('antecedentes-input--active')
-                two.classList.remove('entrevista-nav--active')
-                test.classList.add('antecedentes-input--active')
-                three.classList.add('entrevista-nav--active')
-                four.classList.remove('entrevista-nav--active')
-                btnEntrevista.style.opacity = 0
-            })
+                if(three){
+                    three.addEventListener('click',()=>{
+                        datos.parentElement.parentElement.style.height = '1000px'
+                        entrevista.style.height = '880px'
+                        //consultar.style.opacity = 1
+                        datos.classList.remove('antecedentes-input--active')
+                        one.classList.remove('entrevista-nav--active')
+                        antecedentes.classList.remove('antecedentes-input--active')
+                        diagnostico.classList.remove('antecedentes-input--active')
+                        two.classList.remove('entrevista-nav--active')
+                        test.classList.add('antecedentes-input--active')
+                        notLogin.classList.remove('antecedentes-input--active')
+                        three.classList.add('entrevista-nav--active')
+                        four.classList.remove('entrevista-nav--active')
+                        btnEntrevista.style.opacity = 0
+                        axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+                            opcion: 10,
+                            username: this.user
+                        }).then(res => {
+                            res.data.forEach(item => {
+                                this.nombrepaciente = item.nombre
+                                this.apellido = item.apellido
+                            })
+                        })
+                    })
+                }
+            }
         }
     },
     getData(){
@@ -564,10 +635,83 @@ export default {
         const surname = document.getElementById('surname')
         const idpaciente = document.getElementById('idpaciente')
         const fecha = document.getElementById('fecha-antecedente')
-        axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-            opcion: 10,
-            username: this.user
-        }).then(res => {
+
+        const getEstado = async() => {
+            try{
+                const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+                    opcion: 12,
+                    username: this.user
+                })
+                if(res.data){
+                    res.data.forEach(item => {
+                        if(item.estado == 1 ) this.antecedentes = false
+                        else this.antecedentes = true
+                    })
+
+                    if(!this.antecedentes){
+                        const one = document.getElementById('one')
+                        const two = document.getElementById('two')
+                        const three = document.getElementById('three')
+                        const four = document.getElementById('four')
+                        const test = document.getElementById('test-autoevaluacion')
+                        const entrevista = document.getElementById('entrevista')
+                        //const consultar = document.getElementById('consultar')
+                        const antecedentes = document.getElementById('antecedentes')
+                        const notLogin = document.getElementById('not-login')
+                        const nextStep = document.getElementById('nextStep')
+                        const datos = document.getElementById('datos')
+
+                        one.classList.add('cancel-event')        
+                        //two.classList.add('cancel-event')     
+                        
+                        if(nextStep){
+                            nextStep.addEventListener('click',()=>{
+                                datos.parentElement.parentElement.style.height = '1000px'
+                                entrevista.style.height = '880px'
+                                datos.classList.remove('antecedentes-input--active')
+                                one.classList.remove('entrevista-nav--active')
+                                antecedentes.classList.remove('antecedentes-input--active')
+                                two.classList.remove('entrevista-nav--active')
+                                test.classList.add('antecedentes-input--active')
+                                notLogin.classList.remove('antecedentes-input--active')
+                                three.classList.add('entrevista-nav--active')
+                                four.classList.remove('entrevista-nav--active')
+                                notLogin.style.zIndex = -1                         
+                            })
+                        }
+
+                        if(two){
+                            antecedentes.classList.add('antecedentes-ajustado')
+                            entrevista.style.display = 'none'
+                            notLogin.classList.add('antecedentes-input--active')
+                            one.classList.remove('entrevista-nav--active')
+                            two.classList.add('entrevista-nav--active')
+                            //test.classList.add('antecedentes-input--active')
+                            two.addEventListener('click',()=>{
+                                antecedentes.style.height = '400px'
+                                entrevista.style.display = 'none'
+                                notLogin.style.zIndex = 1
+                                test.classList.remove('antecedentes-input--active')
+                                two.classList.add('entrevista-nav--active')
+                                notLogin.classList.add('antecedentes-input--active')
+                                three.classList.remove('entrevista-nav--active')
+                                four.classList.remove('entrevista-nav--active')
+                            })
+                        }
+                    }
+                }
+            }catch(err){
+                console.log(err)
+            }
+        }
+        getEstado()
+
+        const getInput = async() =>{
+            try{
+                const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+                    opcion: 10,
+                    username: this.user
+                })
                 res.data.forEach(item =>{
                     if(name){
                         name.value = item.nombre
@@ -579,6 +723,7 @@ export default {
                         surname.setAttribute('readonly',true)
                     }
                     if(idpaciente){
+                        this.iduser = item.iduser
                         idpaciente.value = item.iduser
                         idpaciente.setAttribute('readonly',true)
                     }
@@ -588,17 +733,204 @@ export default {
                         fecha.setAttribute('readonly',true)
                     }
                 })
-        }).catch(err => console.log(err))
+                this.pacientes = res.data
+            }catch(err){
+                console.log(err)
+            }
+        }
+        getInput()
+    },
+    insertData(){
+        const notLogin = document.getElementById('not-login')
+        const entrevista = document.getElementById('entrevista')
+        const tratamiento = document.getElementById('tratamiento')
+        const tratamientoNo = document.getElementById('tratamiento-no')
+        const dieta = document.getElementById('dieta')
+        const moderada = document.getElementById('moderada')
+        const estricta = document.getElementById('estricta')
+        const vegano = document.getElementById('vegano')
+        const alcohol = document.getElementById('alcohol')
+        const te = document.getElementById('te')
+        const cafe = document.getElementById('cafe')
+        const drogas = document.getElementById('drogas')
+        const hipersensibilidad = document.getElementById('hipersensibilidad')
+        const bullying = document.getElementById('bullying')
+        const muerte = document.getElementById('muerte')
+        const padres = document.getElementById('padres')
+        const ciudad = document.getElementById('ciudad')
+        const activo = document.getElementById('activo')
+        const virgen = document.getElementById('virgen')
+        const ocasional = document.getElementById('ocasional')
+        const disfuncional = document.getElementById('disfuncional')
+        const tranquila = document.getElementById('tranquila')
+        const confianza = document.getElementById('confianza')
+        const separados = document.getElementById('separados')
+        const traumas = document.getElementById('traumas')
+        const traumasNo = document.getElementById('traumas-no')
+        const motivo = document.getElementById('motivo')
+        const masculino = document.getElementById('masculino')
+        const femenino = document.getElementById('femenino')
+
+        const one = document.getElementById('one')
+        const antecedentes = document.getElementById('antecedentes-form')
+
+        let tratamientos = null
+        let habitoAlimenticio = ''
+        let consumoSustancias = ''
+        let medicamento = ''
+        let vidaAdolescencia = ''
+        let vidaSexual = ''
+        let relacionFamiliar = ''
+        let trauma = null
+        let motivoVisita = ''
+
+        if(tratamiento && tratamientoNo){
+            if(tratamiento.checked){
+                tratamientos = 1
+            }else if(tratamientoNo.checked){
+                tratamientos = 0
+            }
+        }
+
+        if(dieta && moderada && estricta && vegano){
+            if(dieta.checked){
+                habitoAlimenticio = 'dieta'
+            }else if(moderada.checked){
+                habitoAlimenticio = 'moderada'
+            }else if(estricta.checked){
+                habitoAlimenticio = 'estricta'
+            }else if(vegano.checked){
+                habitoAlimenticio = 'vegano'
+            }
+        }
+
+        if(alcohol && te && cafe){
+            if(alcohol.checked){
+                consumoSustancias ='alcohol'
+            }else if(te.checked){
+                consumoSustancias = 'te'
+            }else if(cafe.checked){
+                consumoSustancias = 'cafe'
+            }
+        }
+
+        if(drogas && hipersensibilidad){
+            if(drogas.checked){
+                medicamento = 'no consumo drogas'
+            }else if(hipersensibilidad.checked){
+                medicamento = 'hipersensibilidad'
+            }
+        }
+
+        if(bullying && muerte && padres && ciudad){
+            if(bullying.checked){
+                vidaAdolescencia = 'bullying'
+            }else if(muerte.checked){
+                vidaAdolescencia = 'muerte familiar'
+            }else if(padres.checked){
+                vidaAdolescencia = 'padres separados'
+            }else if(ciudad.checked){
+                vidaAdolescencia = 'cambio de ciudad'
+            }
+        }
+
+        if(activo && virgen && ocasional){
+            if(activo.checked){
+                vidaSexual = 'activo'
+            }else if(virgen.checked){
+                vidaSexual = 'virgen'
+            }else if(ocasional.checked){
+                vidaSexual = 'ocasional'
+            }
+        }
+
+        if(disfuncional && tranquila && confianza && separados){
+            if(disfuncional.checked){
+                relacionFamiliar = 'disfuncional' 
+            }else if(tranquila.checked){
+                relacionFamiliar = 'tranquila'
+            }else if(confianza.checked){
+                relacionFamiliar = 'confianza'
+            }else if(separados.checked){
+                relacionFamiliar = 'padres separados'
+            }
+        }
+
+        if(traumas && traumasNo){
+            if(traumas.checked){
+                trauma = 1
+            }else if(traumasNo.checked){
+                trauma = 0
+            }
+        }
+
+        if(motivo){
+            if(motivo.value == '') motivoVisita = null
+            else motivoVisita = motivo.value
+
+            this.motivo = motivo.value
+        }
+
+        if(masculino){
+            masculino.checked && this.sexo == 0
+        }
+
+        if(femenino){
+            femenino.checked && this.sexo == 1
+        }
+
+        axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            opcion: 11,
+            tratamiento: tratamientos,
+            motivo: motivoVisita,
+            alimenticios: habitoAlimenticio,
+            sustancias: consumoSustancias,
+            medicamentos: medicamento,
+            adolescencia: vidaAdolescencia,
+            sexo: vidaSexual,
+            relacion: relacionFamiliar,
+            traumas: trauma,
+            username: this.iduser
+        }).then(() => {
+            Swal.fire({
+                title: 'Antecedentes',
+                text: `Registro de los antecedentes completados exitosamente`,
+                icon: 'success',
+                timer: 10000,
+                background: '#161719',
+                backdrop: true,
+                allowOutsideClick: true,
+                allowEscapeKey: true,
+                stopKeydownPropagation: false,
+                confirmButtonColor: '#972745',
+                showCloseButton: true
+            })
+            one.classList.add('cancel-event')
+            entrevista.style.display = 'none'
+            antecedentes.classList.remove('antecedentes-input--active')
+            notLogin.classList.add('antecedentes-input--active')
+        }).catch(() => {
+            Swal.fire({
+                title: 'Antecedentes',
+                text: `Error al momento de ingresar los datos, verifiquelos de nuevo.`,
+                icon: 'error',
+                timer: 10000,
+                background: '#161719',
+                backdrop: true,
+                allowOutsideClick: true,
+                allowEscapeKey: true,
+                stopKeydownPropagation: false,
+                confirmButtonColor: '#972745',
+            })
+            
+        })
     }
   },
   mounted(){
       this.$nextTick(function(){
-          return this.navigation(),this.defaultValue()
+          return this.defaultValue(),this.navigation()
       })
   },
-//   updated(){
-//       return this.getData()
-//   }
   beforeMount(){
       return this.getData()
   }

@@ -162,6 +162,7 @@ export default{
               p.id = "username-login"
               fragment.appendChild(p);
               loginLink.replaceWith(fragment);
+              this.$router.push('/')
             })()
           }else{
             Swal.fire({

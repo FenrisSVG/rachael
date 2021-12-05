@@ -90,7 +90,7 @@ const routes = [
     component: TestA
   },
   {
-    path: '/test/autoevaluacion/historial-autoevaluacion',
+    path: '/diagnostico/historial',
     name: 'Historial',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
