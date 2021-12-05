@@ -181,52 +181,49 @@ export default {
         if(name.value.trim() !== '' && surname.value.trim() !== ''
         && username.value.trim() !== '' && password.value.trim() !== ''){
             if(password.value.trim() == repeatPassword.value.trim()){
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                    opcion: 8,
-                    nombre: name.value.trim(),
-                    surname: surname.value.trim(),
-                    username: username.value.trim(),
-                    clave: password.value.trim()
-                }).then(async function(){
-                        await Swal.fire({
+                const insertUser = async()=>{
+                    await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+                        opcion: 8,
+                        nombre: name.value.trim(),
+                        surname: surname.value.trim(),
+                        username: username.value.trim(),
+                        clave: password.value.trim()
+                    }).then(async function(){
+                            await Swal.fire({
+                                title: 'Registro de Usuario',
+                                text: `Usuario registrado exitosamente`,
+                                icon: 'success',
+                                timer: 10000,
+                                background: '#161719',
+                                backdrop: true,
+                                allowOutsideClick: true,
+                                allowEscapeKey: true,
+                                stopKeydownPropagation: false,
+                                confirmButtonColor: '#972745',
+                                showCloseButton: true
+                            })
+                        name.value = ''
+                        surname.value = ''
+                        password.value = ''
+                        repeatPassword.value = ''
+                    }).catch(()=>{
+                        Swal.fire({
                             title: 'Registro de Usuario',
-                            text: `Usuario registrado exitosamente`,
-                            icon: 'success',
+                            text: `Hubo un error en el registro de usuario, por favor vuelva a intentarlo`,
+                            icon: 'error',
                             timer: 10000,
                             background: '#161719',
-                            backdrop: true,
                             allowOutsideClick: true,
                             allowEscapeKey: true,
                             stopKeydownPropagation: false,
                             confirmButtonColor: '#972745',
                             showCloseButton: true
                         })
-                    name.value = ''
-                    surname.value = ''
-                    password.value = ''
-                    repeatPassword.value = ''
-                }).catch(()=>{
-                    Swal.fire({
-                        title: 'Registro de Usuario',
-                        text: `Hubo un error en el registro de usuario, por favor vuelva a intentarlo`,
-                        icon: 'error',
-                        timer: 10000,
-                        background: '#161719',
-                        allowOutsideClick: true,
-                        allowEscapeKey: true,
-                        stopKeydownPropagation: false,
-                        confirmButtonColor: '#972745',
-                        showCloseButton: true
                     })
-                })
-
-                this.usernameBuscar = username.value.trim()
-                console.log(this.usernameBuscar)
-
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                    opcion: 3
+                    this.usernameBuscar = username.value.trim()
+                    const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+                        opcion: 3
                     })
-                    .then(res => {
                     this.datas = res.data;
                     this.datas.forEach(data =>{
                         loginForm.classList.remove('login--show');
@@ -235,11 +232,10 @@ export default {
                         p.className = 'username-login'
                         p.id = 'username-login'
                         fragment.appendChild(p)
-                        loginLink.replaceWith(fragment)
-                        
+                        loginLink.replaceWith(fragment)     
                     })
-                })
-
+                }
+                insertUser()
                 setTimeout(()=>{
                     this.$router.push('/')
                 },2000)

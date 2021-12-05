@@ -741,8 +741,6 @@ export default {
         getInput()
     },
     insertData(){
-        const notLogin = document.getElementById('not-login')
-        const entrevista = document.getElementById('entrevista')
         const tratamiento = document.getElementById('tratamiento')
         const tratamientoNo = document.getElementById('tratamiento-no')
         const dieta = document.getElementById('dieta')
@@ -770,9 +768,6 @@ export default {
         const motivo = document.getElementById('motivo')
         const masculino = document.getElementById('masculino')
         const femenino = document.getElementById('femenino')
-
-        const one = document.getElementById('one')
-        const antecedentes = document.getElementById('antecedentes-form')
 
         let tratamientos = null
         let habitoAlimenticio = ''
@@ -905,10 +900,10 @@ export default {
                 confirmButtonColor: '#972745',
                 showCloseButton: true
             })
-            one.classList.add('cancel-event')
-            entrevista.style.display = 'none'
-            antecedentes.classList.remove('antecedentes-input--active')
-            notLogin.classList.add('antecedentes-input--active')
+            setTimeout(()=>{
+                this.$router.push('/')
+                window.scrollTo(0,0)
+            },2000)
         }).catch(() => {
             Swal.fire({
                 title: 'Antecedentes',
@@ -922,7 +917,7 @@ export default {
                 stopKeydownPropagation: false,
                 confirmButtonColor: '#972745',
             })
-            
+            this.antecedentes = true
         })
     }
   },

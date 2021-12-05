@@ -1126,7 +1126,7 @@ export default {
             axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 8
-            }).error(err => console.log(err))
+            }).catch(err => console.log(err))
           }else if(nerviosismo.checked && agitacion.checked && taquicardia.checked && inquietud.checked
           && fracaso.checked && reglas.checked && error.checked ){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 9)
@@ -1146,7 +1146,7 @@ export default {
             axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 11
-            }).error(err => console.log(err))
+            }).catch(err => console.log(err))
           }else if(nerviosismo.checked && malestar.checked && nauseas.checked && pesimismo.checked
           && baja.checked && inquietud.checked && reglas.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 12)
@@ -1181,7 +1181,7 @@ export default {
             axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 16
-            }).error(err => console.log(err))
+            }).catch(err => console.log(err))
           }else if(nerviosismo.checked && agitacion.checked && temblores.checked && cansancio.checked
           && malestar.checked && nauseas.checked && torax.checked && concentracion.checked && gastrointestinales.checked
           && morir.checked && control.checked ){
@@ -1201,7 +1201,7 @@ export default {
             axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 24
-            }).error(err => console.log(err))
+            }).catch(err => console.log(err))
           }else if(admiracion.checked && miedo.checked && fracaso.checked && atencion.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 26)
             axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
@@ -1230,9 +1230,9 @@ export default {
               idtrastorno: 29
             }).catch(err => console.log(err))
             }
-          }   
-      }else{
-        this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 1)
+          }else{
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 1)
+          }
       }
       this.$emit('trastornos', this.trastornos)
       const datos = document.getElementById('datos')
@@ -1338,7 +1338,7 @@ export default {
           const setClass = (direction)=>{
               try{
                 images.map(image => image.classList.remove('show-opacity'))
-                setCont(direction);
+                setCont(direction)
                 images[cont].classList.add('show-opacity')
               }catch(err){
                 console.log(err)
@@ -1422,7 +1422,7 @@ export default {
                             if(this.timidez){
                               cont = cont + 4
                               if(this.inquietud){
-                                cont = cont + 5
+                                cont = cont + 6
                               }
                             }
                           }

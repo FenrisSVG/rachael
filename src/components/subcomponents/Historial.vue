@@ -183,19 +183,18 @@ export default {
                 username: this.username
             })
             res.data.forEach(item => this.iduser = item.iduser)
-    
-            const response = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                        opcion: 7,
-                        user: this.iduser
-            })
-            this.historial = response.data
 
             const antecedente = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
                 opcion: 13,
                 user: this.iduser
             })
-
             this.antecedentes = antecedente.data
+
+            const response = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+                opcion: 7,
+                user: this.iduser
+            })
+            this.historial = response.data
         }
 
         getId()
