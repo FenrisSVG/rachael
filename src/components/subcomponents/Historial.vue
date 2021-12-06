@@ -57,6 +57,8 @@
                     <h3>La prediccion previa del usuario: <span>{{item.username}}</span> tiene diagnosticado el siguiente trastorno</h3>
                     <h3>Trastorno Diagnosticado: </h3>
                     <p>{{item.nombre}}</p>
+                    <h3>Sintomas del Trastorno:</h3>
+                    <pre>{{item.sintoma + '\n'}}</pre>
                     <h3>¿Que quiere decir este trastorno?</h3>
                     <p>{{item.descripccion}}</p>
                 </div>
@@ -66,7 +68,6 @@
                     previamente
                 </h2>
             </div>
-
         </article>
         <Footer/>
     </section>
@@ -81,6 +82,11 @@
     color: var(--title-color);
     margin: .5em 0;
     font-size: 16px;
+}
+
+pre{
+    color: var(--danger-color);
+    font-size: 18px;
 }
 
 .diagnosticos{
@@ -170,13 +176,14 @@ export default {
       return{
         historial: [],
         antecedentes: [],
+        sintomas: [],
+        trastorno: '',
         username: '',
         iduser: null
       }
   },
   methods: {
       getData(){
-
         const getId = async()=>{
             const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
                 opcion: 10,
@@ -195,9 +202,20 @@ export default {
                 user: this.iduser
             })
             this.historial = response.data
+
+            this.historial.forEach(item => {
+                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+                opcion: 14,
+                trastorno: item.nombre
+                }).then(res => {
+                    this.sintomas = res.data
+                    console.log(this.sintomas)
+                })
+            })
         }
 
         getId()
+
       },
       getUsername(){
         const username = document.getElementById('username-login')
@@ -206,15 +224,18 @@ export default {
                 this.username = username.innerHTML;
             }
         }
-    }
+    },
   },
   created(){
-    return window.scrollTo(0,0),this.getUsername()
+    return window.scrollTo(0,0)
   },
   mounted(){
-      this.$nextTick(()=>{
-          return this.getData()
-      })
+    this.$nextTick(()=>{
+        return this.getData()
+    })
+  },
+  beforeMount(){
+      return this.getUsername()
   }
 }
 </script>

@@ -210,6 +210,8 @@
 
     &__content{
         background-color: var(--primary-color);
+        display: flex;
+        flex-direction: column;
         width: 50vw;
         height: 60vh;
         padding: 3em;

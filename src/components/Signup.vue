@@ -235,10 +235,11 @@ export default {
                         loginLink.replaceWith(fragment)     
                     })
                 }
+
                 insertUser()
                 setTimeout(()=>{
                     this.$router.push('/')
-                },2000)
+                },3000)
 
             }else{
                 Swal.fire({

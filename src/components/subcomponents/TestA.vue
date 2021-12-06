@@ -769,20 +769,29 @@
         <h2>Se llego a la prediccion de que tenga el/los siguente(s) trastorno(s)</h2>
         <div class="modal__content" v-for="trastorno in trastornos" :key="trastorno.idtrastorno">
           <h3 id="trastorno-diagnosticado">{{trastorno.nombre}}</h3>
-          <p>{{trastorno.descripcion}}
-          </p>
-          <h3>Causas</h3>
-          <p>{{trastorno.causas}}</p>
-          <h3>Recomendaciones</h3>
-          <p>{{trastorno.recomendaciones}}</p>
-          <hr class="linea">
-          <p class="important"><strong>Importante</strong>, esto solo es un diagnostico previo, no es oficial el diagnostico y le recomendamos ir donde un experto a validar nuestra informacion</p>
+          <div v-if="trastorno.idtrastorno != '1'">
+            <p>{{trastorno.descripcion}}</p>
+            <h3>Causas</h3>
+            <p>{{trastorno.causas}}</p>
+            <h3>Recomendaciones</h3>
+            <p>{{trastorno.recomendaciones}}</p>
+            <hr class="linea">
+            <p class="important"><strong>Importante</strong>, esto solo es un diagnostico previo, no es oficial el diagnostico y le recomendamos ir donde un experto a validar nuestra informacion</p>
+          </div>
+          <div v-else class="modal__notEnoughInformation">
+            <hr class="linea">
+            <p class="important"><strong>Importante</strong>, esto solo es un diagnostico previo, no es oficial el diagnostico y le recomendamos ir donde un experto a validar nuestra informacion</p>
+          </div>
         </div>
       </div>
     </div>
 </template>
 
 <style scoped>
+.modal__notEnoughInformation{
+  margin-top: auto;
+}
+
 .detalle-autoevaluacion__img{
   overflow: hidden;
   margin: 1.5em 0 1.5em;
@@ -1190,6 +1199,35 @@ export default {
               opcion: 6,
               idtrastorno: 17
             }).catch(err => console.log(err))
+          }else if(nerviosismo.checked && agitacion.checked && inquietud.checked && miedo.checked
+          && pensamiento.checked){
+            this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 18)
+            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 6,
+              idtrastorno: 18
+            }).catch(err => console.log(err))
+          }else if(nauseas.checked && torax.checked && concentracion.checked && inquietud.checked
+          && pesadillas.checked && reglas.checked && error.checked && impulsividad.checked){
+              this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 19)
+              axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+                opcion: 6,
+                idtrastorno: 19
+              }).catch(err => console.log(err))
+          }else if(agitacion.checked && temblores.checked && cansancio.checked && nauseas.checked
+          && torax.checked && concentracion.checked && taquicardia.checked && gastrointestinales.checked 
+          && inquietud.checked && morir.checked){
+             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 20)
+              axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+                opcion: 6,
+                idtrastorno: 20
+              }).catch(err => console.log(err))
+          }else if(agitacion.checked && concentracion.checked && taquicardia.checked && gastrointestinales.checked
+          && inquietud.checked && morir.checked && control.checked && miedo.checked){
+              this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 21)
+              axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+                opcion: 6,
+                idtrastorno: 21
+              }).catch(err => console.log(err))
           }else if(atencion.checked && vulnerabilidad.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 23)
             axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
@@ -1228,8 +1266,14 @@ export default {
               axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 29
-            }).catch(err => console.log(err))
+              }).catch(err => console.log(err))
             }
+          }else if(mania.checked && animo.checked && pensamiento.checked && rencor.checked){
+                this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 30)
+                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+                  opcion: 6,
+                  idtrastorno: 30
+                }).catch(err => console.log(err))
           }else{
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 1)
           }
@@ -1726,6 +1770,26 @@ export default {
                       }
                     }
                   }
+                }else if(this.nauseas){
+                  cont = cont + 1
+                  if(this.torax){
+                    cont = cont + 2
+                    if(this.concentracion){
+                      cont = cont + 7
+                      if(this.inquietud){
+                        cont = cont + 1
+                        if(this.pesadillas){
+                          cont = cont + 7
+                          if(this.reglas){
+                            cont = cont + 1
+                            if(this.error){
+                              cont = cont + 1
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }  
@@ -1746,6 +1810,7 @@ export default {
         const consultar = document.getElementById('consultar')
         const contador = document.getElementById('contador')
         const datos = document.getElementById('datos')
+        const entrevista = document.getElementById('entrevista')
         let horas = 0
         let minutos = 0
         let segundos = 30
@@ -1803,8 +1868,8 @@ export default {
             setTimeout(() =>{
                 contador.style.opacity = 0
                 datos.parentElement.parentElement.style.height = '1000px'
+                entrevista.style.height = '880px'
                 consultar.style.opacity = 1
-                setInterval(cargarSegundo,1000)
             },500)
         }
         //Mostrar Horas en pantalla

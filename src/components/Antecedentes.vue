@@ -903,7 +903,7 @@ export default {
             setTimeout(()=>{
                 this.$router.push('/')
                 window.scrollTo(0,0)
-            },2000)
+            },4000)
         }).catch(() => {
             Swal.fire({
                 title: 'Antecedentes',
