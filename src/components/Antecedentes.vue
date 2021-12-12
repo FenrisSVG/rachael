@@ -13,6 +13,9 @@
         <div class="antecedentes-card" id="work" v-scroll-reveal="{delay: 500}">
             <h2 v-scroll-reveal="{delay: 500, scale: 2}">Categorizacion de las preguntas del Diagnostico.</h2>
             <div class="services" v-scroll-reveal="{delay: 500}">
+                <svg>
+                    <rect></rect>
+                </svg>
                 <header class="antecedentes-card__header">
                     <img src="../assets/desktop/Sexo.jpg" alt="">
                 </header>
@@ -22,6 +25,9 @@
                 </footer>
             </div>
             <div class="services" v-scroll-reveal="{delay: 600}">
+                <svg>
+                    <rect></rect>
+                </svg>
                 <header class="antecedentes-card__header">
                     <img src="../assets/desktop/autoestima.jpg" alt="">
                 </header>
@@ -31,6 +37,9 @@
                 </footer>
             </div>
             <div class="services" v-scroll-reveal="{delay: 700}">
+                <svg>
+                    <rect></rect>
+                </svg>
                 <header class="antecedentes-card__header">
                     <img src="../assets/desktop/estres.jpg" alt="">
                 </header>
@@ -40,6 +49,9 @@
                 </footer>
             </div>
             <div class="services" v-scroll-reveal="{delay: 800}">
+                <svg>
+                    <rect></rect>
+                </svg>
                 <header class="antecedentes-card__header">
                     <img src="../assets/desktop/desarollo.jpg" alt="">
                 </header>
@@ -49,6 +61,9 @@
                 </footer>
             </div>
             <div class="services" v-scroll-reveal="{delay: 900}">
+                <svg>
+                    <rect></rect>
+                </svg>  
                 <header class="antecedentes-card__header">
                     <img src="../assets/desktop/desarollo.jpg" alt="">
                 </header>
@@ -64,7 +79,6 @@
             <div class="entrevista-nav" id="entrevista-nav">
                 <span class="entrevista-nav--active" id="one">1</span>
                 <span id="two">2</span>
-                <span id="three">3</span>
                 <span id="four">4</span>
                 <span id="five">5</span>
             </div>
@@ -192,23 +206,25 @@
                         <div class="traumas">
                             <h6>a. ¿Consideras un acontecimiento de tu vida como traumatico?</h6>
                             <label for="si">Si</label>
-                            <input type="checkbox" name="si" id="traumas">
+                            <input type="checkbox" name="si" id="traumas" v-on:change="showTraumas">
                             <label for="no">No</label>
-                            <input type="checkbox" name="no" id="traumas-no">
+                            <input type="checkbox" name="no" id="traumas-no" v-on:change="traumasChecked">
                         </div>
-                        <div class="traumas-familia">
-                            <h6>b. ¿El suceso traumatico le ha ocurrido a un familiar?</h6>
-                            <label for="si">Si</label>
-                            <input type="checkbox" name="si">
-                            <label for="no">No</label>
-                            <input type="checkbox" name="no">
-                        </div>
-                        <div class="traumas-exposicion">
-                            <h6>c. ¿Se siente expuesto en repetidas ocasiones al trauma?</h6>
-                            <label for="si">Si</label>
-                            <input type="checkbox" name="si">
-                            <label for="no">No</label>
-                            <input type="checkbox" name="no">
+                        <div id="traumas-show" class="traumas-show">
+                            <div class="traumas-familia">
+                                <h6>b. ¿El suceso traumatico le ha ocurrido a un familiar?</h6>
+                                <label for="si">Si</label>
+                                <input type="checkbox" name="si">
+                                <label for="no">No</label>
+                                <input type="checkbox" name="no">
+                            </div>
+                            <div class="traumas-exposicion">
+                                <h6>c. ¿Se siente expuesto en repetidas ocasiones al trauma?</h6>
+                                <label for="si">Si</label>
+                                <input type="checkbox" name="si">
+                                <label for="no">No</label>
+                                <input type="checkbox" name="no">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -223,10 +239,10 @@
                     que quiere realizar.
                 </h2>
                 <router-link to="/diagnostico/historial" class="antecedentes__link">Ver Historial.</router-link>
-                <button href="" class="antecedentes__link" id="nextStep">Ir al Test de Autoevaluacion</button>
+                <router-link to="/test/autoevaluacion/test-autoevaluacion" class="antecedentes__link">Ir al Test de Autoevaluacion</router-link>
             </div>
 
-            <Autoevaluacion id="test-autoevaluacion" class="test-autoevaluacion" @trastornos="trastorno = $event"/>  
+            <!-- <Autoevaluacion id="test-autoevaluacion" class="test-autoevaluacion" @trastornos="trastorno = $event"/>   -->
         </div>
 
         <div v-else class="not-login">
@@ -257,6 +273,14 @@
 </template>
 
 <style scoped>
+.traumas-show{
+    display: none;
+}
+
+.traumas--show{
+    display: block;
+}
+
 .antecedentes-yes{
     position: absolute;
     width: 80%;
@@ -379,11 +403,6 @@
     content: '';
     display: block;
     position: absolute;
-    /* left: -80px;
-    top: -20px;
-    width: 420px;
-    height: 400px;
-    transform: rotate(35deg); */
     right: 0;
     border-right: 800px solid var(--danger-color);
     border-top: 500px solid transparent;
@@ -415,8 +434,8 @@
 }
 
 .antecedentes-header__button a:nth-child(2){
-    background-color: lightblue;
-    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    color: #eee;
 }
 
 .antecedentes-card{
@@ -426,7 +445,7 @@
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(5,200px);
-    gap: 20px;
+    gap: 25px;
 }
 
 .antecedentes-card h2{
@@ -454,7 +473,7 @@
 }
 
 .services{
-    bordeR: 1px solid #ccc;
+    position: relative;
     background-color: var(--primary-color);
 }
 
@@ -510,21 +529,42 @@
     height: 400px;
 }
 
-#nextStep{
-    bordeR: none;
+svg,rect{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    fill: transparent;
 }
+
+rect{
+    stroke: var(--secondary-color);
+    stroke-width: 4;
+    stroke-dasharray: 400;
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    0%{
+        stroke-dashoffset: 800;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
 </style>
 
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import Footer from '../components/Footer.vue'
-import Autoevaluacion from '../components/subcomponents/TestA.vue'
+// import Autoevaluacion from '../components/subcomponents/TestA.vue'
 
 export default {
   name: 'Antecedentes',
   components: {
-    Footer, Autoevaluacion
+    Footer
   },
   data(){
       return{
@@ -547,12 +587,9 @@ export default {
     navigation(){
         const one = document.getElementById('one')
         const two = document.getElementById('two')
-        const three = document.getElementById('three')
         const four = document.getElementById('four')
         const datos = document.getElementById('datos')
-        const test = document.getElementById('test-autoevaluacion')
         const diagnostico = document.getElementById('diagnostico-previo')
-        const notLogin = document.getElementById('not-login')
         const entrevista = document.getElementById('entrevista')
         //const consultar = document.getElementById('consultar')
         const btnEntrevista = document.getElementById('btn-entrevista')
@@ -566,11 +603,9 @@ export default {
                         entrevista.style.height = '450px'
                         datos.classList.add('antecedentes-input--active')
                         one.classList.add('entrevista-nav--active')
-                        antecedentes.classList.remove('antecedentes-input--active')
-                        test.classList.remove('antecedentes-input--active')
+                        antecedentes.classList.remove('antecedentes-input--active')   
                         diagnostico.classList.remove('antecedentes-input--active')
                         two.classList.remove('entrevista-nav--active')
-                        three.classList.remove('entrevista-nav--active')
                         four.classList.remove('entrevista-nav--active')
                         btnEntrevista.style.opacity = 0                       
                     })
@@ -581,41 +616,12 @@ export default {
                         datos.parentElement.parentElement.style.height = '1350px'
                         entrevista.style.height = '1180px'
                         datos.classList.remove('antecedentes-input--active')
-                        test.classList.remove('antecedentes-input--active')
                         diagnostico.classList.remove('antecedentes-input--active')
                         one.classList.remove('entrevista-nav--active')
                         four.classList.remove('entrevista-nav--active')
                         antecedentes.classList.add('antecedentes-input--active')
                         two.classList.add('entrevista-nav--active')
-                        three.classList.remove('entrevista-nav--active')
                         btnEntrevista.style.opacity = 1
-                    })
-                }
-
-                if(three){
-                    three.addEventListener('click',()=>{
-                        datos.parentElement.parentElement.style.height = '1000px'
-                        entrevista.style.height = '880px'
-                        //consultar.style.opacity = 1
-                        datos.classList.remove('antecedentes-input--active')
-                        one.classList.remove('entrevista-nav--active')
-                        antecedentes.classList.remove('antecedentes-input--active')
-                        diagnostico.classList.remove('antecedentes-input--active')
-                        two.classList.remove('entrevista-nav--active')
-                        test.classList.add('antecedentes-input--active')
-                        notLogin.classList.remove('antecedentes-input--active')
-                        three.classList.add('entrevista-nav--active')
-                        four.classList.remove('entrevista-nav--active')
-                        btnEntrevista.style.opacity = 0
-                        axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
-                            opcion: 10,
-                            username: this.user
-                        }).then(res => {
-                            res.data.forEach(item => {
-                                this.nombrepaciente = item.nombre
-                                this.apellido = item.apellido
-                            })
-                        })
                     })
                 }
             }
@@ -651,34 +657,13 @@ export default {
                     if(!this.antecedentes){
                         const one = document.getElementById('one')
                         const two = document.getElementById('two')
-                        const three = document.getElementById('three')
                         const four = document.getElementById('four')
-                        const test = document.getElementById('test-autoevaluacion')
                         const entrevista = document.getElementById('entrevista')
-                        //const consultar = document.getElementById('consultar')
                         const antecedentes = document.getElementById('antecedentes')
                         const notLogin = document.getElementById('not-login')
-                        const nextStep = document.getElementById('nextStep')
-                        const datos = document.getElementById('datos')
 
                         one.classList.add('cancel-event')        
                         //two.classList.add('cancel-event')     
-                        
-                        if(nextStep){
-                            nextStep.addEventListener('click',()=>{
-                                datos.parentElement.parentElement.style.height = '1000px'
-                                entrevista.style.height = '880px'
-                                datos.classList.remove('antecedentes-input--active')
-                                one.classList.remove('entrevista-nav--active')
-                                antecedentes.classList.remove('antecedentes-input--active')
-                                two.classList.remove('entrevista-nav--active')
-                                test.classList.add('antecedentes-input--active')
-                                notLogin.classList.remove('antecedentes-input--active')
-                                three.classList.add('entrevista-nav--active')
-                                four.classList.remove('entrevista-nav--active')
-                                notLogin.style.zIndex = -1                         
-                            })
-                        }
 
                         if(two){
                             antecedentes.classList.add('antecedentes-ajustado')
@@ -691,10 +676,8 @@ export default {
                                 antecedentes.style.height = '400px'
                                 entrevista.style.display = 'none'
                                 notLogin.style.zIndex = 1
-                                test.classList.remove('antecedentes-input--active')
                                 two.classList.add('entrevista-nav--active')
                                 notLogin.classList.add('antecedentes-input--active')
-                                three.classList.remove('entrevista-nav--active')
                                 four.classList.remove('entrevista-nav--active')
                             })
                         }
@@ -919,6 +902,27 @@ export default {
             })
             this.antecedentes = true
         })
+    },
+    showTraumas(){
+        const traumasShow = document.getElementById('traumas-show')
+        const traumas = document.getElementById('traumas')
+        const traumasNo = document.getElementById('traumas-no')
+
+        if(traumas.checked) {
+            traumasNo.checked = false
+            traumasShow.classList.add('traumas--show')
+        }
+        else traumasShow.classList.remove('traumas--show')
+    },
+    traumasChecked(){
+        const traumasNo = document.getElementById('traumas-no')
+        const traumas = document.getElementById('traumas')
+        const traumasShow = document.getElementById('traumas-show')
+
+        if(traumasNo.checked){
+            traumasShow.classList.remove('traumas--show')
+            traumas.checked = false
+        } 
     }
   },
   mounted(){

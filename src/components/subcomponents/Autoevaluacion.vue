@@ -31,7 +31,7 @@
               en base a la respuesta.</p>
             <h3 id="clic">Haga click en el siguiente boton para realizar su test o para ver su historial clinico.</h3>
             <router-link to="/test/autoevaluacion/test-autoevaluacion" class="diagnosticar">Diagnosticar</router-link>
-            <router-link to="/test/autoevaluacion/historial-autoevaluacion" class="historial">Ver Historial.</router-link>
+            <router-link to="/diagnostico/historial" class="historial">Ver Historial.</router-link>
           </footer>
         </article>
       </section>

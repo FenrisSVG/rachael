@@ -4,6 +4,9 @@
     <main class="container" v-scroll-reveal="{delay: 400}">
       <img alt="Rachael IA image" srcset="../assets/desktop/trastorno2.jpg, ../assets/desktop/trastorno2.jpg 2x">
       <div class="container-text">
+        <svg>
+          <rect></rect>
+        </svg>
         <h1 class="title" v-scroll-reveal="{delay: 300,scale:2}">{{title}}</h1>
       </div>
     </main>
@@ -88,6 +91,32 @@
 
  </div>
 </template>
+
+<style scoped>
+svg,rect{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 95%;
+    fill: transparent;
+}
+
+rect{
+    stroke: var(--secondary-color);
+    stroke-width: 4;
+    stroke-dasharray: 400;
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    0%{
+        stroke-dashoffset: 800;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+</style>
 
 <script>
 

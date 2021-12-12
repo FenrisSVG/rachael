@@ -1,4 +1,5 @@
 <template>
+
     <div class="bot" v-scroll-reveal.reset="{delay: 600}">
         <div class="container">
             <div class="chatbox">
@@ -85,6 +86,7 @@
     </div>
 </template>
 
+
 <script>
 import Swal from 'sweetalert2'
 import Footer from './Footer.vue'
@@ -146,6 +148,10 @@ export default {
                     message.classList.remove('chat__message--show');
                 }, 800)
                 p.innerHTML = res.data;
+                if(p.innerText == 'Hemos detectado una serie de mensajes de sentimientos negativos.'){
+                    p.innerHTML += ` Le recomendamos ir a realizar nuestro <a href="/antecedentes" style="color: var(--danger-color)">test de autoevaluacion</a>`
+                    fragment.append(p);
+                }
                 p.id = "speak"
                 fragment.append(p);
                 divCpu.append(fragment);

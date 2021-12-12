@@ -9,7 +9,9 @@
                     con los demas. En la actualidad se disponen de estrategias eficaces para prevenir algunos
                     trastornos mentales y medidas para aliviar el sufrimiento que causan. Existen muchos de ellos y
                     en esta pagina te vamos a explicar y mas informacion acerca de ellos. Haga clic en el siguiente enlace
-                    para saber los <a href="#peligrosos">trastornos mas peligrosos</a> que te pueden diagnosticar.
+                    para saber los 
+                    <a href="#peligrosos" data="trastornos mas peligrosos">
+                      trastornos mas peligrosos</a> que te pueden diagnosticar.
                 </p>
             </header>
             <footer class="trastorno-information__footer">
@@ -35,6 +37,16 @@
         <Footer/>
     </div>
 </template>
+
+<style scoped>
+.trastorno-information__header p a:hover::before{
+  width: 100%;
+}
+
+.trastorno-information__header p a:hover{
+  text-decoration-color: var(--danger-color);
+}
+</style>
 
 <script>
 

@@ -1,16 +1,31 @@
 <template>
-    <div class="contact" >
+    <div class="contact">
+      <section class="contact-test">
+        <h2><strong>Paso 3:</strong><span> Test de autoevaluacion</span></h2>
+        <article class="contact-test__text">
+          <p>El test de autoevaluacion es un test con un seriado de preguntas acerca de sintomas,
+            desarrollo de personalidades y/o consecuencias que una persona puede tener por una experiencia pasada
+          </p>
+          <p>Nombre del Usuario: <br>
+          <span>Benito Juarez</span>
+          </p>
+          <p>Apellido del Usuario: <br>
+          <span>Benito Juarez</span>
+          </p>
+          <p>Fecha a realizar el test: <br>
+          <span>Hoy</span>
+          </p>
+        </article>
+      </section>
+
+
+      <div class="entrevista-nav">
+        <span>3</span>
+      </div>
       <!-- <h2 v-scroll-reveal="{delay: 300}" class="form-title"><span>Test de Autoevaluacion</span> para el Diagnostico de Trastorno.</h2> -->
       <form v-scroll-reveal="{delay: 300}" class="form-container" v-if="inputs !== []" autocomplete="off" @submit.prevent="modalShow" id="consultar">  
-          <!-- <div class="form-container__input">
-            <div class="form-container__header" v-for="(input,id) in inputs" :key="id">
-              <label :for="input.for">{{input.label}}</label>
-              <input type="text" class="input" :placeholder="input.placeholder" :id="input.id2">
-              <span class="form-container__icon"><i class="fas fa-user"></i></span>
-            </div>
-          </div> -->
 
-          <!-- CATEGORIZACION DE LA ANSIEDAD -->
+          <!-- CATEGORIZACION DE LA ANSIEDAD --> 
           <div class="form-container__body show-opacity">
             <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
             <h2>A continuacion se le presentan diversas preguntas, por favor seleccione el cual
@@ -763,6 +778,7 @@
                 <p>Segundos</p>
             </div>
           </div>
+          <router-link to="/antecedentes">Ver Mi Diagnostico.</router-link>
         </div>
 
       <div class="modal" id="modal" v-scroll-reveal="{delay: 100}">
@@ -784,6 +800,7 @@
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
 </template>
 
@@ -813,6 +830,7 @@
     font-size: 21px;
     margin-top: 0;
     width: 100%;
+    text-align:center;
     padding: 1em 0;
 }
 
@@ -823,7 +841,7 @@
 
 .cont-temporizador{
     position: absolute;
-    top: 0px;
+    top: 75%;
     left: 50%;
     display: flex;
     flex-direction: column;
@@ -833,13 +851,14 @@
     background-color: var(--primary-color);
     width: 70%;
     border-radius: 5px;
-    opacity: 0;
     padding: 1em 0;
+    opacity: 0;
     transition: opacity .5s ease-in-out;
 }
 
 .cont-temporizador h2{
   margin-top: 10px;
+  text-align: center;
   color: var(--title-color)
 }
 
@@ -870,16 +889,92 @@
     color: #dedede;
     font-weight: bold;
 }
+
+.entrevista-nav{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: .5em auto;
+}
+
+.entrevista-nav span{
+    height: 70px;
+    width: 70px;
+    margin: 0 1em;
+    padding-top: 1.6em;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    border: 1px solid var(--danger-color);
+    cursor: pointer;
+    transition: transform 1s ease;
+}
+
+.contact-test{
+  width: 70%;
+  padding: 1em 2em;
+  margin: 1.5em auto;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+}
+
+.contact-test h2{
+  color: var(--title-color);
+}
+
+.contact-test h2 strong{
+  font-weight: bold;
+}
+
+.contact-test h2 span{
+  color: var(--danger-color)
+}
+
+.contact-test__text{
+  color: var(--text-color);
+}
+
+.contact-test__text p span{
+    color: var(--danger-color);
+    padding-top: .5em;
+}
+
+.cont-temporizador a{
+  color: #222;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--secondary-color);
+  border-radius: .2em;
+  padding: 1em 0;
+  margin: 1em auto;
+  width: 20%;
+}
 </style>
 
 <script>
     
 import axios from 'axios';
+import Footer from '../Footer.vue'
+import {mapState} from 'vuex'
 
 export default {
   name: 'TestA',
+  components:{
+    Footer
+  },
   created(){
     return window.scrollTo(0,0)
+  },
+  computed:{
+    ...mapState({nameFromStore: 'testStatus'}),
+    testStatus:{
+      get(){
+        return this.nameFromStore
+      },
+      set(newName){
+        return newName
+      }
+    }
   },
   data(){
     return{
@@ -1279,49 +1374,23 @@ export default {
           }
       }
       this.$emit('trastornos', this.trastornos)
-      const datos = document.getElementById('datos')
-      const one = document.getElementById('one')
-      const test = document.getElementById('test-autoevaluacion')
-      const entrevista = document.getElementById('entrevista')
-      const two = document.getElementById('two')
-      const three = document.getElementById('three')
-      const four = document.getElementById('four')
-      const btnEntrevista = document.getElementById('btn-entrevista')
-      const consultar = document.getElementById('consultar')
-      const antecedentes = document.getElementById('antecedentes-form')
-      const diagnostico = document.getElementById('diagnostico-previo')
+
       const contador = document.getElementById('contador')
-      datos.parentElement.parentElement.style.height = '900px'
+      const consultar = document.getElementById('consultar')
+
       modal.classList.add('modal--show');
+      console.log(this.testStatus)
+      this.$store.state('testStatus') == true
+      console.log(this.testStatus)
 
       if(modal){
         modal.addEventListener('click',(e)=>{
           if(e.target.classList.contains('modal')){
-            modal.classList.remove('modal--show')
+            modal.classList.remove('modal--show')    
             consultar.style.opacity = 0
-            datos.parentElement.parentElement.style.height = '500px'
-            contador.style.opacity = 1
-            datos.classList.remove('antecedentes-input--active')
+            contador.style.opacity = 1        
             this.temporizador()
-
-            if(four){
-                four.addEventListener('click',()=>{
-                  datos.parentElement.parentElement.style.height = '700px'
-                  entrevista.style.height = '550px'
-                  contador.classList.remove('antecedentes-input--active')
-                  datos.classList.remove('antecedentes-input--active')
-                  test.classList.remove('antecedentes-input--active')
-                  one.classList.remove('entrevista-nav--active')
-                  antecedentes.classList.remove('antecedentes-input--active')
-                  two.classList.remove('entrevista-nav--active')
-                  test.classList.remove('antecedentes-input--active')
-                  three.classList.remove('entrevista-nav--active')
-                  four.classList.add('entrevista-nav--active')
-                  diagnostico.classList.add('antecedentes-input--active')
-                  btnEntrevista.style.opacity = 0
-                })
-            }
-      
+               
             paranoia.checked = false
             nerviosismo.checked = false
             insomnio.checked = false
@@ -1809,8 +1878,6 @@ export default {
         const hora = document.getElementById('horas')
         const consultar = document.getElementById('consultar')
         const contador = document.getElementById('contador')
-        const datos = document.getElementById('datos')
-        const entrevista = document.getElementById('entrevista')
         let horas = 0
         let minutos = 0
         let segundos = 30
@@ -1865,12 +1932,9 @@ export default {
                 horas--;
             },500)
         }else if(segundos == -1 && minutos == 0 && horas == 0){
-            setTimeout(() =>{
-                contador.style.opacity = 0
-                datos.parentElement.parentElement.style.height = '1000px'
-                entrevista.style.height = '880px'
-                consultar.style.opacity = 1
-            },500)
+            contador.style.opacity = 0
+            consultar.style.opacity = 1
+            setInterval(cargarSegundo,1000)
         }
         //Mostrar Horas en pantalla
         if(horas < 10){

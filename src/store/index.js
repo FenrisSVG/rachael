@@ -54,21 +54,21 @@ export default new Vuex.Store({
       {
         id: 7,
         image: require('../assets/desktop/ansiedad-generalizada.jpg'),
-        name: 'trastorno Argofobico',
+        name: 'trastorno argofobico',
         link: 'argofobico',
         router: 'Argofobico'
       },
       {
         id: 8,
         image: require("../assets/desktop/ansiedad-generalizada.jpg"),
-        name: 'trastorno Obsesivo-compulsivo',
+        name: 'trastorno obsesivo-compulsivo',
         link: 'obsesivo-compulsivo',
         router: 'Obsesivo'
       },
       {
         id: 9,
         image: require("../assets/desktop/ansiedad-generalizada.jpg"),
-        name: 'Transtorno Dismotfico Corporal',
+        name: 'Transtorno dismotfico corporal',
         link: 'dismotfico-corporal',
         router: "Dismotfico"
       },
@@ -165,20 +165,11 @@ export default new Vuex.Store({
       pareja: false,
       minutos50: false,
       minutos100: false
-    }
+    },
+    getTrastorno: '',
+    testStatus: false
   },
   mutations: {
-    // querySearch(state){
-    //   console.log(state.query)
-    //   if(state.query === ''){
-    //     state.copyTrastornos = [...state.trastornos]
-    //   }else{
-    //     const temp = state.trastornos.filter(todo=>{
-    //       return todo.name.includes(state.query)
-    //     })
-    //     state.copyTrastornos= [...temp]
-    //   }
-    // }
     SET_QUERY(state,query){
       state.filter.query = query
     },
@@ -199,6 +190,9 @@ export default new Vuex.Store({
     },
     SET_100(state,check){
       state.filter.minutos100 = check
+    },
+    updateTestStatus(state,payload){
+      state.testStatus = payload.testStatus
     }
   },
   getters:{

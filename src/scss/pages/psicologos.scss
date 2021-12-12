@@ -159,11 +159,31 @@
                     }
 
                     & a{
-                        padding: .6em 1.2em;
+                        display: inline-block;
+                        position: relative;
+                        padding: .6em 1.3em;
                         text-decoration: none;
                         border-radius: 5px;
                         color: #fff;
-                        background-color: var(--danger-color);
+                        border: 1px solid var(--danger-color);
+                        background-color: transparent;
+                        overflow: hidden;
+                        z-index: 100;
+                        
+                        &::after{
+                            content: '';
+                            display:block;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 5px;
+                            background-color: var(--danger-color);
+                            transform: translateX(-100%);
+                            transition: transform .4s ease-in-out;
+                            z-index: -1;
+                        }
                     }
                 }
             }

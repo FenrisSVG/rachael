@@ -27,11 +27,36 @@
     
 
         & a{
-            padding: 1em 2em;
+            position: relative;
+            display: inline-block;
+            width: 150px;
+            height: 50px;
+            line-height: 60px;
+            text-align: center;
             border-radius: 10px;
             text-decoration: none;
             color: #fff;
-            background-color: $danger-color;
+            font-weight: 900;
+            letter-spacing: .1rem;
+            background-color: transparent;
+
+            & svg{
+                position:absolute;top:0;left:0;
+
+                & rect{
+                    stroke-width:2;
+                    stroke-dasharray: 250,0;
+                    stroke-dashoffset: 0;
+                    transition: all 600ms ease;
+                }
+            }
+
+            &:hover svg rect{
+                stroke: #52d3aa;
+                stroke-width: 2;
+                stroke-dasharray: 100,250;
+                stroke-dashoffset: 140;
+            }
         }
     }
 
@@ -61,7 +86,27 @@
                 line-height: 1.5;  
 
                 & a{
+                    position: relative;
+                    display: inline-block;
+                    font-size: 16px;
+                    transition: all .4s ease-in;
                     color: var(--title-color);
+
+                    &::before{
+                        content: attr(data);
+                        position: absolute;
+                        display: block;
+                        top: 0;
+                        left: 0;
+                        width: 0;
+                        height: 100%;
+                        z-index: 1;
+                        font-weight: bold;
+                        overflow: hidden;
+                        color: var(--danger-color);
+                        text-shadow: 0 0 2px var(--danger-color);
+                        transition: width .4s ease-in-out;
+                    }
                 }
             }
         }
@@ -156,4 +201,5 @@ html{
 
 .historial{
     margin-left: .8em;
+    background-color: var(--secondary-color);
 }

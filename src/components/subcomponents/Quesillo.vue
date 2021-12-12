@@ -11,6 +11,8 @@
                 <p><span>Idiomas:</span> Español, Ingles, Alienigena, Mukulkun, Chino, Ruso, Aleman, Arabe, Latin, Hebreo Antiguo, Lenguaje de Señas.</p>
                 <p><span>Nacionalidad: </span> Enviado de Dios.</p>
                 <p><span>Modelo de Trabajo Terapeutico:</span> Modo Sexo.</p>
+                <p><span>Email:</span> quesillo@gmail.com</p>
+                <p><span>Celular:</span> +505-88888888</p>
                 <aside class="aside-quesillo">
                   <span>Diversidad</span>
                   <span>Equilibrio e Inteligencia Emocional</span>
@@ -61,10 +63,7 @@
 </template>
 
 <script>
-    
 import Footer from '../Footer.vue';
-
-
 export default {
   name: 'Quesillo',
   components:{
