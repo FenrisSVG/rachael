@@ -330,6 +330,10 @@ a.router-link-exact-active{
         color: #fff;
         border: none;
         border-bottom: 1px solid var(--danger-color);
+
+        &:hover{
+            background-color: #a92745;
+        }
     }
 }
 
@@ -449,18 +453,22 @@ a.router-link-exact-active{
     margin-top: 1em;
 }
 
-.login-form button{
+.login-form input[type=submit]{
     text-decoration: none;
     margin-top: 15px;
     background-color: var(--danger-color);
     border: 0;
+    height: 35px;
     color: #fff;
     text-transform: uppercase;
     font-size: 12px;
-    padding: 10px 95px;
-    border-radius: 10px;
+    border-radius: 7px;
     cursor:pointer;
     z-index:100;
+
+    &:hover{
+        background-color: rgb(200, 40, 70);
+    }
 }
 
 .login-text{
@@ -475,6 +483,10 @@ a.router-link-exact-active{
     color: steelblue;
     margin-bottom: -3em;
     font-size: .75em;
+
+    &:hover{
+        color: rgb(120, 155, 255);
+    }
 }
 
 .login-text__link{
@@ -482,7 +494,7 @@ a.router-link-exact-active{
 }
 
 
-input[type=email]:focus,
+input[type=text]:focus,
 input[type=password]:focus{
     border-color: var(--danger-color);
     box-shadow: 0 0 8px 0 var(--danger-color);
@@ -603,6 +615,11 @@ input[type=password]:focus{
     border-radius: 5px;
     cursor:pointer;
     z-index:100;
+
+    &:hover{
+        background-color: #65e3bb;
+        color: #333;
+    }
 }
 
 .login-text-2{
@@ -616,6 +633,10 @@ input[type=password]:focus{
     text-decoration: none;
     color: steelblue;
     font-size: .75em;
+
+    &:hover{
+        color: rgb(120, 155, 255);
+    }
 }
 
 .login-2-form input[type=text],

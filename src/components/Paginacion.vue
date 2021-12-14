@@ -26,6 +26,10 @@ export default {
           {
             name: 'Trastornos4',
             link: '4'
+          },
+          {
+            name: 'Trastornos5',
+            link: '5'
           }]
       }
   }

@@ -34,9 +34,9 @@
           <div class="login" id="login-form">
             <p class="login__title">Log-In</p>  
             <form method="POST" class="login-form" id="form-login" action="/">
-                <input type="text" name="text" class="mail" placeholder="Username" autofocus required v-model="username" v-on:change="mostrarLogin">
+                <input type="text" name="text" class="mail" placeholder="Username" autofocus autocomplete="off" required v-model="username" v-on:change="mostrarLogin">
                 <input type="password" v-model="password" name="password" class="pass" placeholder="Contraseña" required>
-                <button type="submit" @click="login()">Login</button>
+                <input type="submit" @click="login()" value="Login">
             </form>
             <div class="login-text">
                 <router-link to="/signup" @click="close()">Sign-up</router-link>

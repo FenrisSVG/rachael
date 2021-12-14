@@ -40,9 +40,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="nerviosismo">
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="nerviosismo" @change="nerviosismoNo = false">
                 <label for="no">No</label>
-                <input type="checkbox" name="sintomas" v-model="nerviosismoNo">  
+                <input type="checkbox" name="sintomas" v-model="nerviosismoNo" @change="nerviosismo = false">  
               </div>
             </div>
           </div>
@@ -59,9 +59,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="insomnio"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="insomnio" @change="insomnioNo = false"> 
                 <label for="no">No</label>
-                <input type="checkbox" name="sintomas" v-model="insomnioNo"> 
+                <input type="checkbox" name="sintomas" v-model="insomnioNo" @change="insomno = false"> 
               </div>
             </div>
           </div>
@@ -78,9 +78,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="agitacion"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="agitacion" @change="agitacionNo = false"> 
                 <label for="no">No</label>
-                <input type="checkbox" name="sintomas" v-model="agitacionNo"> 
+                <input type="checkbox" name="sintomas" v-model="agitacionNo" @change="agitacion = false"> 
               </div>
             </div>
           </div>
@@ -97,9 +97,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="temblores"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="temblores" @change="tembloresNo = false"> 
                 <label for="no">No</label>
-                <input type="checkbox" name="sintomas" v-model="tembloresNo"> 
+                <input type="checkbox" name="sintomas" v-model="tembloresNo" @change="temblores = false"> 
               </div>
             </div>
           </div>
@@ -116,9 +116,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="cansancio"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="cansancio" @change="cansancioNo = false"> 
                 <label for="no">No</label>
-                <input type="checkbox" name="sintomas" v-model="cansancioNo"> 
+                <input type="checkbox" name="sintomas" v-model="cansancioNo" @change="cansancio = false"> 
               </div>
             </div>
           </div>
@@ -135,9 +135,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="malestar"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="malestar" @change="malestarNo = false"> 
                 <label for="no">No</label>
-                <input type="checkbox" name="sintomas" v-model="malestarNo"> 
+                <input type="checkbox" name="sintomas" v-model="malestarNo" @change="malestar = false"> 
               </div>
             </div>
           </div>
@@ -154,9 +154,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="nauseas">
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="nauseas" @change="nauseasNo = false">
                 <label for="no">No</label>
-                <input type="checkbox" name="sintomas" v-model="nauseasNo">  
+                <input type="checkbox" name="sintomas" v-model="nauseasNo" @change="nauseas = false">  
               </div>
             </div>
           </div>
@@ -173,9 +173,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="torax">
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="torax" @change="toraxNo = false">
                 <label for="no">No</label>
-                <input type="checkbox" name="sintomas" v-model="toraxNo">  
+                <input type="checkbox" name="sintomas" v-model="toraxNo" @change="torax = false">  
               </div>
             </div>
           </div>
@@ -192,9 +192,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="pesimismo"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="pesimismo" @change="pesimismoNo = false"> 
                 <label for="no">No</label>
-                <input type="checkbox" name="sintomas" v-model="pesimismoNo"> 
+                <input type="checkbox" name="sintomas" v-model="pesimismoNo" @change="pesimismo = false"> 
               </div>
             </div>
           </div>
@@ -211,9 +211,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="concentracion"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="concentracion" @change="concentracionNo = false"> 
                 <label for="no">No</label>
-                <input type="checkbox" name="sintomas" v-model="concentracionNo"> 
+                <input type="checkbox" name="sintomas" v-model="concentracionNo" @change="concentracion = false"> 
               </div>
             </div>
           </div>
@@ -230,9 +230,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="taquicardia"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="taquicardia" @change="taquicardiaNo = false"> 
                 <label for="no">No</label>
-                <input type="checkbox" name="sintomas" v-model="taquicardiaNo"> 
+                <input type="checkbox" name="sintomas" v-model="taquicardiaNo" @change="taquicardia = false"> 
               </div>
             </div>
           </div>
@@ -249,9 +249,9 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="gastrointestinales"> 
+                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="gastrointestinales" @change="gastrointestinalesNo = false"> 
                 <label for="no">No</label>
-                <input type="checkbox" name="sintomas" v-model="gastrointestinalesNo"> 
+                <input type="checkbox" name="sintomas" v-model="gastrointestinalesNo" @change="gastrointestinales = false"> 
               </div>
             </div>
           </div>

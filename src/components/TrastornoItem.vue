@@ -1,7 +1,9 @@
 <template>
         <section class="trastorno">
           <header class="trastorno-header" v-scroll-reveal.reset="{delay: 500}">
-            <img :src="trastorno.image" alt="">
+            <div class="trastorno-header__img">
+              <img :src="trastorno.image" alt="">
+            </div>
             <h2>{{trastorno.name}}</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum sequi est 
               modi quis aut. Molestias officia quaerat accusantium minima placeat!...</p>

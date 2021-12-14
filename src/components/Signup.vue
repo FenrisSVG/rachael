@@ -158,8 +158,8 @@
 }
 
 .form-login__submit input:hover{
-    background-color: #40e3aa;
-    color: #222;
+    background-color: #55e3bb;
+    color: #333;
 }
 
 .form-login__input input:focus{

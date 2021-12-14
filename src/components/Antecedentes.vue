@@ -247,6 +247,7 @@
 
         <div v-else class="not-login">
             <h2>Vaya! Parece que no has iniciado sesion.</h2>
+            <span>Login</span>
             <router-link to="/login" class="not-login__router">Login</router-link>
         </div>
 
@@ -268,6 +269,7 @@
                 <p>{{item.descripcion}}</p>
             </div>
         </div>
+        <Important/>
         <Footer/>
     </div>
 </template>
@@ -325,13 +327,28 @@
 
 .not-login__router{
     display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    padding: .8em 1.5em;
     margin-top: .5em;
+    padding: .8em 1.5em;
+    text-decoration: none;
+    letter-spacing: 1px;
     border-radius: .2em;
+    mask:url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png);
+    mask-size:2300% 100%;
+    color: #fff;
     background-color: var(--danger-color);
+    animation:ani2 .7s steps(22) forwards;
+    z-index: 10;
 }
+
+.not-login__router:hover{
+    animation:ani .7s steps(22) forwards
+}
+
+@keyframes ani{from{mask-position:0 0}
+to{mask-position:100% 0}}
+
+@keyframes ani2{from{mask-position:100% 0}
+to{mask-position:0 0}}
 
 .diagnostico-previo{
     position: absolute;
@@ -467,7 +484,7 @@
 }
 
 .antecedentes-card__text p{
-    color: var(--text-color);
+    color: #fff;
     padding: .5em;
     font-size: 13px;
 }
@@ -506,13 +523,27 @@
     z-index: 310;
 }
 
+.not-login span{
+    bordeR: 1px solid var(--danger-color);
+    position: absolute;
+    top: 58%;
+    left: 46%;
+    padding: .5em 1em;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    color: #fff;
+}
+
 .not-login{
+    position: relative;
     width: 80%;
     background-color: var(--primary-color);
     padding: 2em 0;
     margin: 5em auto;
     text-align: center;
     border-radius: 6px;
+    overflow: hidden;
 }
 
 .not-login h2{
@@ -559,12 +590,13 @@ rect{
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import Footer from '../components/Footer.vue'
+import Important from '../components/Important.vue'
 // import Autoevaluacion from '../components/subcomponents/TestA.vue'
 
 export default {
   name: 'Antecedentes',
   components: {
-    Footer
+    Important,Footer
   },
   data(){
       return{

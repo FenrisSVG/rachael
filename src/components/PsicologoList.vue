@@ -5,11 +5,11 @@
             <p class="psiconame"><strong>{{psicologo.name}}</strong></p>
             <p class="nacionalidad">{{psicologo.country}}</p>
             <p class="psiquiatras-telefono"><span>Telefono</span> +505-21321313</p>
-        </header>
-        <footer class="psiquiatras-footer">
-            <p>{{psicologo.descripcion}}</p>
-            <router-link :to="{name: psicologo.router, params:{query: psicologo.link}}">{{psicologo.button}}</router-link>
-        </footer>
+          </header>
+          <footer class="psiquiatras-footer">
+              <p>{{psicologo.descripcion}}</p>
+              <router-link :to="{name: psicologo.router, params:{query: psicologo.link}}">{{psicologo.button}}</router-link>
+          </footer>
         </div>
 </template>
 

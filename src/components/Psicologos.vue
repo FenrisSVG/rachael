@@ -3,6 +3,29 @@
         <p v-scroll-reveal="{delay: 500,scale:2}">¿Buscas un psicologo Online?</p>
         <div class="psicologos">
             <SearchPsicologos v-scroll-reveal="{delay: 500,scale:2}" />
+            <div class="modal-terapeutico" id="modal-terapeutico">
+                <article class="article-terapeutico">
+                    <h2>Modelos Terapeuticos</h2>
+                    <p>Es el enfoque que el terapeuta le suele dar al caso. Este afecta en cómo se percibe a la persona, las herramientas que se utiliza y la duración del proceso.</p>
+                    <div class="modal-terapeutico--close" id="terapeutico-close"></div>
+                    <section class="article-terapeutico__text">
+                        <h5>Cognitivo conductual:</h5>
+                        <p>Se enfoca en conductas y pensamientos que generan dificultades. Las sesiones son orientadas a objetivos y usualmente se dejan tareas a realizar fuera de sesión.</p>
+                    </section>
+                    <section class="article-terapeutico__text">
+                        <h5>Psicoanalisis:</h5>
+                        <p>Se enfoca en conductas y pensamientos que generan dificultades. Las sesiones son orientadas a objetivos y usualmente se dejan tareas a realizar fuera de sesión.</p>
+                    </section>
+                    <section class="article-terapeutico__text">
+                        <h5>Cognitivo:</h5>
+                        <p>Se enfoca en conductas y pensamientos que generan dificultades. Las sesiones son orientadas a objetivos y usualmente se dejan tareas a realizar fuera de sesión.</p>
+                    </section>
+                    <section class="article-terapeutico__text">
+                        <h5>Psicoanalisis cognitivo:</h5>
+                        <p>Se enfoca en conductas y pensamientos que generan dificultades. Las sesiones son orientadas a objetivos y usualmente se dejan tareas a realizar fuera de sesión.</p>
+                    </section>
+                </article>
+            </div>
             <div class="psicologos-card" v-scroll-reveal="{delay: 500,scale:2}">
                 <div class="filter">
                     <label for="consulta">¿Cual es tu motivo de la consulta?</label>
@@ -17,17 +40,18 @@
                     <div class="psicologos-card__aside-text">
                         <h2>Encuentra a tu psicologo ideal</h2>
                         <p>Te ayudamos a encontrar tu psicologo ideal</p>
-                        <a href="/">Comenzar Ahora</a>
+                        <router-link to="/">Comenzar Ahora</router-link>
                     </div>
                 </aside>
                 <div class="psicologos-card__card">
-                    <PsicologoList :psicologo="psicologo" v-for="psicologo in psicologos" :key="psicologo.id"/>
+                    <PsicologoList id="psicologo-list" :psicologo="psicologo" v-for="psicologo in psicologos" :key="psicologo.id"/>
                 </div>
             </div>
         </div>
         <Footer/>
     </div>
 </template>
+
 
 <script>
 import {mapGetters} from 'vuex'
@@ -44,14 +68,6 @@ export default {
       return{
           motivo: ["Ansiedad","Miedo","Ansiedad por Separacion","Terapia"]
       }
-  },
-  methods: {
-        // filter(person){
-        //     console.log(person.name + '' + person.gender + '' + this.gender)
-        //     if(person.gender == true && this.gender == true){
-        //         return person
-        //     }
-        // }
   },
   computed:{
       ...mapGetters({

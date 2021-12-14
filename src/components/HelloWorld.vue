@@ -86,6 +86,7 @@
       <span><i :class="icon"></i></span>
     </div>
   </div>
+  <Important/>
 
   <Footer/>
 
@@ -121,11 +122,12 @@ rect{
 <script>
 
 import Footer from './Footer.vue';
+import Important from './Important.vue';
 
 export default {
   name: 'HelloWorld',
   components:{
-    Footer
+    Important,Footer
   },
   data(){
     return {

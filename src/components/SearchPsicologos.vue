@@ -33,7 +33,7 @@
         <hr>
         <div class="side-bar__input help">
             <p for="modelos">Modelos terapeuticos</p>
-            <i class="fab fa-facebook icon-help"></i>
+            <i class="fas fa-question-circle icon-help" id="question" @click="modalTerapeutico"></i>
             <input type="checkbox" name="cognitivoconductual" id="cognitivoconductual"> 
             <label for="cognitivoconductual">Cognitivo-Conductual</label>
             <input type="checkbox" name="psicoanalisis" id="psicoanalisis"> 
@@ -98,7 +98,31 @@ export default {
             this.$store.commit('SET_100',val)
         }
     }
-   }
+  },
+  methods:{
+      modalTerapeutico(){
+        const modal = document.getElementById('modal-terapeutico')
+        const close = document.getElementById('terapeutico-close')
+        const question = document.getElementById('question')
 
+        if(question) modal.classList.add('modal-terapeutico--show');
+
+        if(modal){
+            modal.addEventListener('click',(e)=>{
+                if(e.target.classList.contains('modal-terapeutico')){
+                    modal.classList.remove('modal-terapeutico--show') 
+                }
+            })
+        }
+
+        if(close){
+            close.addEventListener('click',(e)=>{
+                if(e.target.classList.contains('modal-terapeutico--close')){
+                    modal.classList.remove('modal-terapeutico--show') 
+                }
+            })
+        }
+    }
+  }
 }
 </script>

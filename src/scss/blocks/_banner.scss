@@ -1,11 +1,12 @@
 .banner{
     display: grid;
     height: auto;
+
     @include laptop{
         gap: 15px;
         justify-content: center;
         align-items: center;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: minmax(auto,max-content);
         grid-template-rows: 70px repeat(2,1fr);
         padding: 2em 0;
     }
@@ -17,7 +18,7 @@
         color: $text-color;
 
         & h2{
-            font-size: 28px;
+            font-size: 22px;
         }
     }
 
@@ -27,13 +28,16 @@
         align-items: center;
         justify-content: center;
         padding: 1em;
+
         & img{
-            max-width: 50%;
+            max-width: 60%;
+            margin: 0 auto;
             border-radius: 50%;
         }
 
         & p{
-            color: $text-color;
+            color:#fff;
+            font-size: 0.9rem;
         }
 
         &:nth-child(2),

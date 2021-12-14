@@ -1,22 +1,20 @@
 <template>
     <div class="trastorno-container" v-scroll-reveal.reset="{delay: 300}" v-if="trastornos.length > 0">
       <h2 class="test-container__text">Tipos de Trastornos Mentales.</h2>
-        <Trastorno :trastorno="trastorno" v-for="trastorno in trastornos.slice(11,15)" :key="trastorno.id"/>
+        <Trastorno :trastorno="trastorno" v-for="trastorno in trastornos.slice(21,25)" :key="trastorno.id"/>
         <Paginacion/>
         <Footer/>
     </div>
 </template>
 
 <script>
-    
 import {mapGetters} from 'vuex'
 import Trastorno from './TrastornoItem.vue';
 import Footer from './Footer.vue';
 import Paginacion from './Paginacion.vue';
 
-
 export default {
-  name: 'Trastornos3',
+  name: 'Trastornos5',
   components:{
     Trastorno,Footer,Paginacion
   },
