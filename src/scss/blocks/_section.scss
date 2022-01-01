@@ -44,10 +44,6 @@ hr{
         @include laptop{
             font-size: 28px;
         }
-
-        @include desktop{
-            font-size: 30px;
-        }
     }
 }
 
@@ -81,7 +77,7 @@ hr{
         }
 
         @include desktop{
-            font-size: 18px;
+            font-size: 17px;
         }
 
     }
@@ -91,12 +87,12 @@ hr{
     float: left;
     margin-right: .2rem;
     margin-top: -15px;
-    font-size: 40px;
+    font-size: 38px;
     height: auto;
     color: $danger-color;
 
     @include tablet{
         margin-top: -15px;
-        font-size: 50px;
+        font-size: 46px;
     }
 }

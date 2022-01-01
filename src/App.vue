@@ -3,7 +3,7 @@
    <header class="header">
     <div class="logo-container">
       <img src="./assets/logo.png" alt="Rachael Logo" class="logo">
-      <h6>Rachael</h6>
+      <h6 @click="home">Rachael</h6>
       <Search />
     </div> 
     <div class="menu" id="menu" v-on:click="iconClose()"></div>
@@ -25,12 +25,11 @@
           <router-link to="/test" class="main-menu__link">Test</router-link> 
         </li>
         <li class="main-menu__item">
-          <router-link to="/rachael" class="main-menu__link">Rachael</router-link> 
+          <router-link to="/ver-mas" class="main-menu__link">Ver mas</router-link> 
         </li>
-        <li class="main-menu__item" id="login" @click="show()">
+        <li class="main-menu__item" id="login" @click="show">
           <span><i class="fas fa-user icon-red"></i></span>
           <p class="main-menu__link p" data-set="login" id="login-link">Login</p> 
-
           <div class="login" id="login-form">
             <p class="login__title">Log-In</p>  
             <form method="POST" class="login-form" id="form-login" action="/">
@@ -82,7 +81,6 @@ export default{
       const nav = document.getElementById('nav');
 
       if(menu){
-          console.log('Hola')
           menu.addEventListener('click',(e)=>{
               if(e.target.classList.contains('menu')){
                   nav.classList.toggle('active');
@@ -91,44 +89,34 @@ export default{
           })
       }
     },
-    rotateIcon(){
-      const icon = document.getElementById('icon');
+    rotateIcon(e){
+
       const submenu = document.getElementById('submenu');
 
-      if(icon){
-        icon.addEventListener('click',(e)=>{
-            if(e.target.style.transform === "rotate(180deg)"){
-                e.target.style.transform = "rotate(0)";
-                submenu.classList.add('show');
-            }else{
-              e.target.style.transform = "rotate(180deg)";
-              submenu.classList.remove('show');
-            }
-        })
+      if(e.target.style.transform === "rotate(180deg)"){
+          e.target.style.transform = "rotate(0)";
+          submenu.classList.add('show');
+      }else{
+        e.target.style.transform = "rotate(180deg)";
+        submenu.classList.remove('show');
       }
     },
-    show(){
-          const login = document.getElementById('login');
-          const loginForm = document.getElementById('login-form');
-          // const body = document.getElementsByTagName('BODY');
-          
-          if(login){
-              login.addEventListener('click',(e)=>{
-                   if(e.target.dataset.set == 'login') {
-                     loginForm.classList.toggle('login--show');
-                   }else if(e.target.className !== 'main-menu__link'){
-                     //loginForm.classList.remove('login--show');
-                   }
-              });
+    show(e){
+      const loginForm = document.getElementById('login-form');
+      // // const body = document.getElementsByTagName('BODY');
+      
+      if(e.target.dataset.set == 'login') {
+        loginForm.classList.toggle('login--show');
+      }else if(e.target.className !== 'main-menu__link'){
+        //loginForm.classList.remove('login--show');
+      }
 
-              // login.addEventListener('mousedown',(e)=>{
-              //   console.log(e.target)
-              //   if(e.target.classList.contains('login')){
-              //       loginForm.classList.remove('login--show');
-              //   }
-              // });
-          }
-
+      // login.addEventListener('mousedown',(e)=>{
+      //   console.log(e.target)
+      //   if(e.target.classList.contains('login')){
+      //       loginForm.classList.remove('login--show');
+      //   }
+      // });
     },
     login(){
       const formLogin = document.getElementById('form-login');
@@ -197,6 +185,9 @@ export default{
     close(){
       const loginForm = document.getElementById('login-form');
       loginForm.classList.remove('login--show');
+    },
+    home(){
+      this.$router.push('/')
     }
   }
 }

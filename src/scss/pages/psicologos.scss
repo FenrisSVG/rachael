@@ -95,6 +95,7 @@
                 border-radius: 6px;
                 background-color: var(--primary-color);
                 width: 300px;
+                z-index: 2000;
 
                 &::after{
                     content:'';

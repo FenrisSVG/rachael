@@ -1,7 +1,7 @@
 <template>
     <div class="trastorno-container" v-scroll-reveal.reset="{delay: 300}" v-if="trastornos.length > 0">
       <h2 class="test-container__text">Tipos de Trastornos Mentales.</h2>
-        <Trastorno :trastorno="trastorno" v-for="trastorno in trastornos.slice(21,25)" :key="trastorno.id"/>
+        <Trastorno :trastorno="trastorno" v-for="trastorno in trastornos.slice(20,24)" :key="trastorno.id"/>
         <Paginacion/>
         <Footer/>
     </div>

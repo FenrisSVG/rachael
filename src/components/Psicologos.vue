@@ -48,6 +48,7 @@
                 </div>
             </div>
         </div>
+        <Bot />
         <Footer/>
     </div>
 </template>
@@ -57,12 +58,13 @@
 import {mapGetters} from 'vuex'
 import SearchPsicologos from './SearchPsicologos.vue';
 import PsicologoList from './PsicologoList.vue';
+import Bot from './inxdex.vue';
 import Footer from './Footer.vue';
 
 export default {
   name: 'Psicologos',
   components:{
-    SearchPsicologos,PsicologoList,Footer
+    Bot,SearchPsicologos,PsicologoList,Footer
   },
   data(){
       return{

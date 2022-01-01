@@ -87,7 +87,7 @@
     </div>
   </div>
   <Important/>
-
+  <Bot />
   <Footer/>
 
  </div>
@@ -122,12 +122,13 @@ rect{
 <script>
 
 import Footer from './Footer.vue';
+import Bot from './inxdex.vue';
 import Important from './Important.vue';
 
 export default {
   name: 'HelloWorld',
   components:{
-    Important,Footer
+    Bot,Important,Footer
   },
   data(){
     return {

@@ -20,10 +20,17 @@ import Fobia from '../views/Fobia.vue'
 import Social from '../views/Social.vue'
 import Panico from '../views/Panico.vue'
 import Mutismo from '../views/Mutismo.vue'
+import Messi from '../views/Messi.vue'
+import Bicho from '../views/Bicho.vue'
 import Quesillo from '../views/Quesillo.vue'
 import Argofobico from '../views/Argofobico.vue'
 import Obsesivo from '../views/Obsesivo.vue'
 import Dismotfico from '../views/Dismotfico.vue'
+import Excoriacion from '../views/Excoriacion.vue'
+import Depresion from '../views/Depresion.vue'
+import Persistente from '../views/Persistente.vue'
+import Medicamentos from '../views/Medicamentos.vue'
+import Afeccion from '../views/Afeccion.vue'
 import Psicologos from '../views/Psicologos.vue'
 
 Vue.use(VueRouter)
@@ -220,12 +227,68 @@ const routes = [
     component: Dismotfico
   },
   {
+    path: '/trastornos/3/:query',
+    name: 'Excoriacion',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: Excoriacion
+  },
+  {
+    path: '/trastornos/3/:query',
+    name: 'Depresion',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: Depresion
+  },
+  {
+    path: '/trastornos/3/:query',
+    name: 'Persistente',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: Persistente
+  },
+  {
+    path: '/trastornos/3/:query',
+    name: 'Medicamentos',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: Medicamentos
+  },
+  {
+    path: '/trastornos/3/:query',
+    name: 'Afeccion',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: Afeccion
+  },
+  {
     path: '/psicologos/:query',
     name: 'Quesillo',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: Quesillo
+  },
+  {
+    path: '/psicologos/:query',
+    name: 'Messi',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: Messi
+  },
+  {
+    path: '/psicologos/:query',
+    name: 'Bicho',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: Bicho
   }
 ]
 

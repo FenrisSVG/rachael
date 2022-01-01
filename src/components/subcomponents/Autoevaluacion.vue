@@ -30,14 +30,56 @@
               donde un psicologo a concluir si nuestra prediccion fue correcta o no y hacer una retroalimentacion
               en base a la respuesta.</p>
             <h3 id="clic">Haga click en el siguiente boton para realizar su test o para ver su historial clinico.</h3>
-            <router-link to="/test/autoevaluacion/test-autoevaluacion" class="diagnosticar">Diagnosticar</router-link>
-            <router-link to="/diagnostico/historial" class="historial">Ver Historial.</router-link>
+            <div class="trastornos-container__link">
+              <router-link to="/test/autoevaluacion/test-autoevaluacion" class="diagnosticar">
+                <div class="test-footer--icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                  </svg>
+                </div>
+                <span>Diagnosticar</span>
+              </router-link>
+              <router-link to="/diagnostico/historial" class="historial">
+                <div class="test-footer--icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                  </svg>
+                </div>
+                <span>Ver Historial.</span>
+              </router-link>
+            </div>
           </footer>
         </article>
       </section>
         <Footer/>
     </div>
 </template>
+
+<style scoped>
+.trastornos-container__link{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.trastornos-container__link a span{
+  transition: transform .5s ease-in-out;
+}
+
+.trastornos-container__link a{
+  position: relative;
+  display: flex;
+    overflow: hidden;
+}
+
+.trastornos-container__link a:hover span{
+  transform: translate(-20px);
+}
+
+.trastornos-container__link a:hover .test-footer--icon{
+  transform: translate(165px)
+}
+</style>
 
 <script>
     

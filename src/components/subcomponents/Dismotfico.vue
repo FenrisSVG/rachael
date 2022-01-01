@@ -24,7 +24,7 @@
             </div>
             <h3>Desarollo y curso</h3>
             <p>La edad media de inicio de este trastorno esta entre los 15-17 años. Dos terceras parte de los individuos inicia
-                a los 18 años. Los simtomas subclinicos por lo general empiezan a lo 12 o 13 años. En general el trastorno parece ser
+                a los 18 años. Los sintomas subclinicos por lo general empiezan a lo 12 o 13 años. En general el trastorno parece ser
                 cronico, aunque es frecuente la mejoria cuando se recibe tratamiento. Las caracteristicas clinicas parecen ser muy similares
                 tanto en niños como en los adultos.
             </p>

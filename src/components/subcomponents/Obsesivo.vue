@@ -8,11 +8,11 @@
             <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="">
           </header>
           <footer class="trastornos-container__text">
-            <p><strong>El Trastornos Obsesivo-Compulsivo.</strong> es la presencia de obsesion, que significa tener pensamientos,
-            impulsos  impulsos o imagenes persistentes que se experimentan en algun momento del trastorno, que en la mayoria
+            <p><strong>El Trastornos Obsesivo-Compulsivo.</strong> es la presencia de obsesion, que significa tener pensamientos desorganizados,
+            impulsos o imagenes persistentes que se experimentan en algun momento del trastorno, que en la mayoria
             de las veces causa ansiedad.</p>
             <p>El individuo intenta ignorar o suprimir estas obsesiones con otro pensamiento o accion. Las compulsiones son conductas o actos
-                mentales de caracter repetitivo que el individuo se siente impulsado a realizar en respuesta a una obsesion
+                mentales de caracter repetitivo que el individuo se siente impulsado a realizar en respuesta a una obsesion.
             </p>
             <h3><strong>Sintomas clinicos del Trastorno Obsesivo-Compulsivo.</strong></h3>
             <p>Algunos sintomas del Trastorno Obsesivo-Compulsivo son,</p>

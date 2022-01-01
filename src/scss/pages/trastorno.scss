@@ -19,29 +19,27 @@
                 border-radius: 4px;
                 object-fit: cover;
                 object-position: left;
-                transition: object-position .5s ease-in;
+                filter: blur(4px);
+                transition: all .5s ease-in;
 
                 &:hover{
                     object-position: center;
+                    filter: blur(0) brightness(100%);
                 }
             }
         }
 
-        & h2,
-        & p{
-            color: $text-color;
-        }
-
         & h2{
             text-transform: capitalize;
+            color: var(--title-color);
         }
 
         & p{
             line-height: 1.5;
             margin-bottom: 25px;
             width: 50%;
+            color: $text-color;
         }
-    
 
         & a{
             position: relative;
@@ -142,7 +140,7 @@
     padding-top: 1.8em;
 
     &__text{
-        color: var(--text-color);
+        color: var(--title-color);
         font-size: 26px;
         padding-left: 2em;
     }
@@ -161,6 +159,10 @@
         transform: translateY(0);
     }
 
+    &:hover &__img img{
+        filter: blur(0)
+    }
+
     &-trastorno{
         display: grid;
         grid-template-columns: repeat(5,1fr);
@@ -175,11 +177,16 @@
     }
 
     &__img{
+        display: flex;
+        flex-direction: row;
         height: 500px;
-
+        
         & img{
+            display: block;
             max-width: 100%;
             height: 100%;
+            filter: blur(6px);
+            transition: filter .4s ease-in-out;
         }
     }
 

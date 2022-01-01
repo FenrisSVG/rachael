@@ -5,8 +5,8 @@
                 <h2>Antecedentes - Entrevista</h2>
             </div>
             <div class="antecedentes-header__button">
-                <a href="#work">¿Que puede hacer?</a>
-                <a href="#antecedentes">Realizar Entrevista.</a>
+                <a href="#work"><span>¿Que puede hacer?</span></a>
+                <a href="#antecedentes"><span>Realizar Entrevista.</span></a>
             </div>
         </header>
 
@@ -270,6 +270,7 @@
             </div>
         </div>
         <Important/>
+        <Bot />
         <Footer/>
     </div>
 </template>
@@ -438,21 +439,66 @@ to{mask-position:0 0}}
 }
 
 .antecedentes-header__button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     z-index: 10;
 }
 
 .antecedentes-header__button a{
-    margin: 0 1em;
+    position: relative;
+    margin: 0 1em;  
+    padding: .8em 2em;
     text-decoration: none;
+    border-radius: 6px;
     color: #fff;
     background-color: var(--danger-color);
-    padding: .8em 2em;
-    border-radius: 6px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.antecedentes-header__button a span{
+    position: relative;
+    z-index: 2;
+}
+
+.antecedentes-header__button a::after{
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translate(calc(-100% - 44px));
+    transition: all .5s ease-in-out;
+}
+
+.antecedentes-header__button a:hover::after{
+    transform: translate(0);
+}
+
+.antecedentes-header__button a:nth-of-type(1):hover{
+    color: #000;
+}
+
+.antecedentes-header__button a:nth-of-type(2):hover{
+    color: var(--text-color);
+}
+
+.antecedentes-header__button a:nth-of-type(1)::after{
+    border-bottom: 44px solid var(--secondary-color);
+    border-right: 44px solid transparent;
+}
+
+.antecedentes-header__button a:nth-of-type(2)::after{
+    border-bottom: 44px solid var(--danger-color);
+    border-right: 44px solid transparent;
 }
 
 .antecedentes-header__button a:nth-child(2){
     background-color: var(--secondary-color);
-    color: #eee;
+    color: #000;
 }
 
 .antecedentes-card{
@@ -589,6 +635,7 @@ rect{
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import Bot from '../components/inxdex.vue'
 import Footer from '../components/Footer.vue'
 import Important from '../components/Important.vue'
 // import Autoevaluacion from '../components/subcomponents/TestA.vue'
@@ -596,7 +643,7 @@ import Important from '../components/Important.vue'
 export default {
   name: 'Antecedentes',
   components: {
-    Important,Footer
+    Bot,Important,Footer
   },
   data(){
       return{

@@ -22,7 +22,7 @@
         &__text{
             flex-basis: 1900px;
             padding: 0 1.8em;
-            color: var(--text-color);
+            color: var(--title-color);
 
             & p{
                 line-height: 1.2;
@@ -45,11 +45,12 @@
 
         & h2,
         & p{
-            color: $text-color;
+            color: $title-color;
         }
 
         & p{
             line-height: 1.5;
+            color: $text-color;
         }
 
         & h2 span{
@@ -58,12 +59,49 @@
     }
 
     &-footer{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+
         & a{
-            padding: 1em 2em;
-            border-radius: 10px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 1.55em 4em;
+            border-radius: 8px;
             text-decoration: none;
             color: #fff;
             background-color: $danger-color;
+            
+            & span,
+            .trastornos-container__link a span{
+                position: absolute;
+                left: 50%;
+                font-size: 1rem;
+                transform: translate(-50%);
+                transition: transform .5s ease-in-out;
+            }
+
+            &:hover span{
+                transform: translate(-50px);
+            }
+
+            &:hover .test-footer--icon{
+                transform: translate(140px);
+            }
+        }
+
+        &--icon{
+            position: absolute;
+            left: -40px;
+            display: flex;
+            transition: transform .3s ease-in-out;
+
+            & svg{
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 }
@@ -72,7 +110,7 @@
     padding-top: 1.3em;
 
     &__text{
-        color: var(--text-color);
+        color: var(--title-color);
         padding-left: 2.5em;
     }
 }

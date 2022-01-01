@@ -97,7 +97,7 @@ export default new Vuex.Store({
         id: 13,
         image: require("../assets/desktop/ansiedad-generalizada.jpg"),
         name: 'trastorno depresivo persistente',
-        link: 'presistente',
+        link: 'persistente',
         router: 'Persistente'
       },
       {
@@ -176,6 +176,34 @@ export default new Vuex.Store({
         name: 'trastorno de personalidad limite',
         link: 'limite',
         router: 'Limite'
+      },
+      {
+        id: 25,
+        image: require("../assets/desktop/limite.jpg"),
+        name: 'trastorno de personalidad histrionica',
+        link: 'histrionica',
+        router: 'Histrionica' 
+      },
+      {
+        id: 26,
+        image: require("../assets/desktop/limite.jpg"),
+        name: 'trastorno de personalidad dependiente',
+        link: 'dependiente',
+        router: 'Dependiente'
+      },
+      {
+        id: 27,
+        image: require("../assets/desktop/limite.jpg"),
+        name: 'trastorno de bipolaridad tipo I',
+        link: 'bipolar-1',
+        router: 'BipolarI'
+      },
+      {
+        id: 28,
+        image: require("../assets/desktop/limite.jpg"),
+        name: 'trastorno de bipolaridad tipo II',
+        link: 'bipolar-2',
+        router: 'BipolarII'
       }
     ],
     psicologos: [{
@@ -203,6 +231,8 @@ export default new Vuex.Store({
         sesion: 1,
         duracion: 1,
         modelo: 'Cognitivo-conductual',
+        router: 'Bicho',
+        link: 'el-bicho'
     },
     {
         id: 3,

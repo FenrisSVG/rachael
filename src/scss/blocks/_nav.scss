@@ -296,6 +296,7 @@ a.router-link-exact-active{
         margin-left: 7px;
         font-size: 1.125rem;
         color: #fff;
+        cursor: pointer;
 
         @include laptop{
             font-size: 22px;
@@ -330,10 +331,6 @@ a.router-link-exact-active{
         color: #fff;
         border: none;
         border-bottom: 1px solid var(--danger-color);
-
-        &:hover{
-            background-color: #a92745;
-        }
     }
 }
 

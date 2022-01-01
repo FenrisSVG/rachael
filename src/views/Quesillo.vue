@@ -1,15 +1,15 @@
 <template>
-    <LeonelMessi/>
+    <JoseRamon/>
 </template>
 
 <script>
 // @ is an alias to /src
-import LeonelMessi from '../components/subcomponents/Quesillo.vue'
+import JoseRamon from '../components/subcomponents/Quesillo.vue'
 
 export default {
   name: 'Quesillo',
   components: {
-    LeonelMessi
+    JoseRamon
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
-
-    <div class="bot" v-scroll-reveal.reset="{delay: 600}">
-        <div class="container">
+    <div class="bot" v-scroll-reveal.reset="{delay: 600}" id="bot">
+        <div class="icon-fixed" id="icon-fixed" @click="showBot"></div>
+        <div class="bot-container" id="container">
             <div class="chatbox">
                     <div class="chatbox-header">
                         <img src='../assets/desktop/perfil2.jpg' class='imgRedonda' alt="bot image"/> 
@@ -26,7 +26,7 @@
                     </form>
             </div>
         </div>
-        <div class="whatIDo" v-scroll-reveal="{delay: 500}">
+        <!-- <div class="whatIDo" v-scroll-reveal="{delay: 500}">
             <h2 class="whatIDo-title" v-scroll-reveal="{delay: 500, scale: 1.5}">Chatbot Rachael</h2>
             <div class="whatIDo-container" v-scroll-reveal="{delay: 600}">
                 <div class="whatIDo-container__img show-opacity">
@@ -78,26 +78,77 @@
         </div>
 
         <div class="controls-rachael">
-             <i class="fas fa-chevron-circle-left" id="prev-rachael"></i>
-             <i class="fas fa-chevron-circle-right" id="next-rachael"></i>
+            <i class="fas fa-chevron-circle-left" id="prev-rachael"></i>
+            <i class="fas fa-chevron-circle-right" id="next-rachael"></i>
         </div>
         
-    <Footer/>
+    <Footer/> -->
     </div>
 </template>
+
+<style scoped>
+.icon-fixed{
+    position: fixed;
+    bottom: 22px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-image: url('../assets/desktop/perfil2.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+
+.icon-fixed--close{
+    position: fixed;
+    bottom: 22px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: steelblue;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.icon-fixed--close::after,
+.icon-fixed--close::before{
+    content: '';
+    position: absolute;
+    display: block;
+    top: 28px;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: var(--text-color);
+}
+
+.icon-fixed--close::after{
+    transform: rotate(310deg)
+}
+
+.icon-fixed--close::before{
+    transform: rotate(45deg)
+}
+
+</style>
 
 
 <script>
 import Swal from 'sweetalert2'
-import Footer from './Footer.vue'
+//import Footer from './Footer.vue'
 import axios from 'axios'
 //var _ = require('lodash');
 
 export default {
   name: 'Bot',
-  components: {
-     Footer
-  },
+//   components: {
+//      Footer
+//   },
   data(){
       return{
          query: '',
@@ -232,6 +283,23 @@ export default {
                   else cont--
               }
           }
+      },
+      showBot(e){
+          const icon = document.getElementById('icon-fixed')
+          const bot = document.getElementById('bot')
+          const container = document.getElementById('container')
+
+        if(e.target.classList.contains('icon-fixed')){
+            container.classList.add('bot-container--show')
+            icon.classList.remove('icon-fixed')
+            icon.classList.add('icon-fixed--close')
+            bot.style.zIndex = 1000;
+        }else{
+            container.classList.remove('bot-container--show')
+            icon.classList.add('icon-fixed')
+            icon.classList.remove('icon-fixed--close')
+            bot.style.zIndex = 1;
+        }               
       }
   },
   mounted(){

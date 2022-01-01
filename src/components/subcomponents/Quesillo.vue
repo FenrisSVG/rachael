@@ -54,19 +54,21 @@
           <footer class="article-quesillo__footer">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.0198525071537!2d-86.23101438898574!3d12.110793371496474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f73ff8a63e3d4d7%3A0x48444cf29f782c1d!2sNacatamales%20Rizo!5e0!3m2!1ses-419!2sni!4v1637131739963!5m2!1ses-419!2sni" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </footer>
-          <Important/>
       </article>
+        <Bot />
+        <Important/>
         <Footer/>
     </section>
 </template>
 
 <script>
+import Bot from '../inxdex.vue';
 import Footer from '../Footer.vue';
 import Important from '../Important.vue';
 export default {
   name: 'Quesillo',
   components:{
-    Important, Footer
+    Bot,Important, Footer
   },
   data(){
     return{

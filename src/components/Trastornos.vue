@@ -22,18 +22,8 @@
       <h2 class="test-container__text" v-scroll-reveal="{delay: 300}">Tipos de Trastornos Mentales.</h2>
         <Trastorno :trastorno="trastorno" v-for="trastorno in trastornos.slice(0,5)" :key="trastorno.id"/>
         <Paginacion/>
-        
-        <section class="danger-trastorno" v-if="danger !== []" id="peligrosos">
-          <h2>Trastornos mas peligrosos que te pueden diagnosticar</h2>
-          <div class="danger" v-for="item in danger" :key="item.id">
-              <div class="danger__img">
-                <img :src="item.src" :alt="item.alt">
-              </div>
-              <div class="danger__text">
-                <p>{{item.name}}</p>
-              </div>
-          </div>
-        </section>
+        <Peligrosos/>
+        <Bot />
         <Footer/>
     </div>
 </template>
@@ -52,13 +42,15 @@
 
 import {mapGetters,mapState} from 'vuex'
 import Trastorno from './TrastornoItem.vue';
+import Bot from './inxdex.vue';
 import Footer from './Footer.vue';
 import Paginacion from './Paginacion.vue';
+import Peligrosos from './TPeligrosos.vue';
 
 export default {
   name: 'Trastornos',
   components:{
-    Trastorno,Footer,Paginacion
+    Peligrosos,Bot,Trastorno,Footer,Paginacion
   },
   computed: {
     ...mapGetters({
@@ -66,39 +58,11 @@ export default {
     }),
     ...mapState(['isFilter'])
   },
-  data(){
-    return{
-      danger:[{
-        id: 1,
-        src: require('../assets/desktop/trastorno.jpg'),
-        name: 'Trastorno Obsesivo Compulsivo',
-        alt: 'trastonro mas peligrosos trastorno obsesivo compulsivo image'
-      },
-      {
-        id: 2,
-        src: require('../assets/desktop/trastorno2.jpg'),
-        name: 'Trastorno Depresivos.',
-        alt: 'trastonro mas peligrosos trastorno depresivos image'
-      },
-      {
-        id: 3,
-        src: require('../assets/desktop/trastorno3.jpg'),
-        name: 'Trastornos de Ansiedad.',
-        alt: 'trastonro mas peligrosos trastorno ansiedad image'
-      },
-      {
-        id: 4,
-        src: require('../assets/desktop/trastorno4.jpg'),
-        name: 'Trastorno Azperger',
-        alt: 'trastonro mas peligrosos trastorno azperger image'
-      },
-      {
-        id: 5,
-        src: require('../assets/desktop/trastorno5.jpg'),
-        name: 'Trastorno Alzheimer',
-        alt: 'trastonro mas peligrosos trastorno ezquizofrenia image'
-      }]
-    }
+  created(){
+    return window.scrollTo(0,0)
+  },
+  mounted(){
+    return window.scrollTo(0,0)
   }
 }
 </script>

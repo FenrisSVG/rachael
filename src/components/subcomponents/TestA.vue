@@ -1,5 +1,6 @@
 <template>
     <div class="contact">
+
       <section class="contact-test">
         <h2><strong>Paso 3:</strong><span> Test de autoevaluacion</span></h2>
         <article class="contact-test__text">
@@ -17,7 +18,6 @@
           </p>
         </article>
       </section>
-
 
       <div class="entrevista-nav">
         <span>3</span>
@@ -955,7 +955,6 @@
     
 import axios from 'axios';
 import Footer from '../Footer.vue'
-import {mapState} from 'vuex'
 
 export default {
   name: 'TestA',
@@ -964,17 +963,6 @@ export default {
   },
   created(){
     return window.scrollTo(0,0)
-  },
-  computed:{
-    ...mapState({nameFromStore: 'testStatus'}),
-    testStatus:{
-      get(){
-        return this.nameFromStore
-      },
-      set(newName){
-        return newName
-      }
-    }
   },
   data(){
     return{
@@ -1379,9 +1367,6 @@ export default {
       const consultar = document.getElementById('consultar')
 
       modal.classList.add('modal--show');
-      console.log(this.testStatus)
-      this.$store.state('testStatus') == true
-      console.log(this.testStatus)
 
       if(modal){
         modal.addEventListener('click',(e)=>{
