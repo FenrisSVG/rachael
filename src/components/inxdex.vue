@@ -4,7 +4,7 @@
         <div class="bot-container" id="container">
             <div class="chatbox">
                     <div class="chatbox-header">
-                        <img src='../assets/desktop/perfil2.jpg' class='imgRedonda' alt="bot image"/> 
+                        <img src='../assets/desktop/perfil2.jpg' class='imgRedonda' alt="bot image" loading="lazy"/> 
                         <h4>Rachael IA </h4>              
                     </div>
                     <div class="body" id="chatbody">

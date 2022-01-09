@@ -4,14 +4,14 @@
       <article class="article-quesillo">
           <header class="article-quesillo__header">
               <div class="quesillo-img">
-                <img src="../../assets/desktop/quesillo.jpg" alt="">
+                <img src="../../assets/desktop/quesillo.jpg" alt="" loading="lazy">
               </div>
               <div class="quesillo-text">
                 <h6>Quesillo el Apuñalador</h6>
                 <p><span>Idiomas:</span> Español, Ingles, Alienigena, Mukulkun, Chino, Ruso, Aleman, Arabe, Latin, Hebreo Antiguo, Lenguaje de Señas.</p>
                 <p><span>Nacionalidad: </span> Enviado de Dios.</p>
                 <p><span>Modelo de Trabajo Terapeutico:</span> Modo Sexo.</p>
-                <p><span>Email:</span> quesillo@gmail.com</p>
+                <p><span>Email:</span> <a href="mailto:correo@correo.com">quesillo@gmail.com</a></p>
                 <p><span>Celular:</span> +505-88888888</p>
                 <aside class="aside-quesillo">
                   <span>Diversidad</span>

@@ -97,10 +97,18 @@
 
         & p{
             color: var(--title-color);
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            align-items: center;
 
             & span{
                 color: var(--danger-color);
                 font-weight: bold;
+            }
+
+            & img {
+                max-width: 120px;
             }
         }
     }
@@ -123,8 +131,8 @@ iframe{
 }
 
 .advertencia{
-    padding: 2em 6.3em;
-    line-height: 1.4;
+    padding: 1.8em 6.3em;
+    line-height: 1.5;
     background-color: #000;
-    color: #fff;
+    color: $text-color;
 }

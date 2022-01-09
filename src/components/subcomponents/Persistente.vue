@@ -4,9 +4,9 @@
         <h2>Trastorno Depresion Persistente</h2>
         <article class="trastornos-container">
           <header class="trastornos-container__img">
-            <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="">
+            <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="" loading="lazy">
           </header>
-          <footer class="trastornos-container__text">
+          <div class="trastornos-container__text">
             <p><strong>El <span>Trastorno Depresion Persistente</span></strong> es un animo deprimido que aparece la mayor parte del dia, durante
             la mayor parte de los dais, durante al menos dos años o al menos durante un año en los adolescentes. En este trastorno</p>
             <p>Para que un sintoma cuente como parte de este trastorno ha de ser nuevo o debe haber empeorado claramente parte del dia a dia, casi a diario, durante
@@ -49,7 +49,7 @@
             <p>Sabemos que la ansiedad puede ser un problema dificil pero <strong>no estas solo</strong>
             Recuerda que buscar ayuda siempre está bien, no hay nada mejor que contar con un especialista que te pueda enseñar qué hacer para superar la depresión. No lo dudes,  
             realmente te sorprenderás con los resultados si buscas ayuda contra la ansiedad hoy</p>
-          </footer>
+          </div>
         </article>
       </section>
         <Footer/>

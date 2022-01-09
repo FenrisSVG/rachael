@@ -2,12 +2,12 @@
         <section class="trastorno">
           <header class="trastorno-header" v-scroll-reveal.reset="{delay: 500}">
             <div class="trastorno-header__img">
-              <img :src="trastorno.image" alt="">
+              <img :src="trastorno.image" alt="" loading="lazy">
             </div>
             <h2>{{trastorno.name}}</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum sequi est 
               modi quis aut. Molestias officia quaerat accusantium minima placeat!...</p>
-            <router-link :to="{name: trastorno.router, params:{query: trastorno.link}}">
+            <router-link :to="{name: trastorno.router, params:{query: trastorno.link}}" rel="nofollow">
               <svg width="155" height="55">
                 <defs>
                 <linearGradient id="grad1">

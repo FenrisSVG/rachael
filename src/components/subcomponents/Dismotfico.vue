@@ -7,7 +7,7 @@
           <header class="trastornos-container__img">
             <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="">
           </header>
-          <footer class="trastornos-container__text">
+          <div class="trastornos-container__text">
             <p><strong>El <span>Trastornos Dismotfico</span></strong> es la preocupacion por uno o mas defectos 
             o imperfecciones percibidas en el aspecto fisico que son observables. El algun momento del transcurso
             el sujero realiza comportamientos como mirarse en el espejo, asearse en exceso, rascarse la piel, por consiguiente
@@ -45,7 +45,7 @@
             <p>Sabemos que la ansiedad puede ser un problema dificil pero <strong>no estas solo</strong>
             Recuerda que buscar ayuda siempre está bien, no hay nada mejor que contar con un especialista que te pueda enseñar qué hacer para superar la depresión. No lo dudes,  
             realmente te sorprenderás con los resultados si buscas ayuda contra la ansiedad hoy</p>
-          </footer>
+          </div>
         </article>
       </section>
         <Footer/>

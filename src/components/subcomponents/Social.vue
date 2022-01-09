@@ -4,9 +4,9 @@
         <h2>Trastorno de Ansiedad Social (Fobia Social).</h2>
         <article class="trastornos-container">
           <header class="trastornos-container__img">
-            <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="">
+            <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="" loading="lazy">
           </header>
-          <footer class="trastornos-container__text">
+          <div class="trastornos-container__text">
             <p><strong>Los <span>Trastornos de Ansiedad Social</span></strong> tienen un criterio diagnostico de
             miedo o ansiedad intensa en una o mas situaciones sociales en las que el individuo esta expuesto
             al posible examen por parte de otras personas (p. ej., mantener una conversacion, reunirse con personas extrañas).
@@ -72,7 +72,7 @@
             <p>Sabemos que la ansiedad puede ser un problema dificil pero <strong>no estas solo</strong>
             Recuerda que buscar ayuda siempre está bien, no hay nada mejor que contar con un especialista que te pueda enseñar qué hacer para superar la depresión. No lo dudes,  
             realmente te sorprenderás con los resultados si buscas ayuda contra la ansiedad hoy</p>
-          </footer>
+          </div>
         </article>
       </section>
         <Footer/>

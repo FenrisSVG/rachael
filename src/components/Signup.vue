@@ -2,7 +2,7 @@
     <div class="registrarse">
         <div class="registrarse-img">
             <p>RACHAEL</p>
-            <img src="../assets/desktop/login.svg" alt="login image">
+            <img src="../assets/desktop/login.svg" alt="login image" loading="lazy">
             <p>RACHAEL Y ASOCIADOS.</p>
         </div>
         <div class="login-data">

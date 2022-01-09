@@ -5,9 +5,9 @@
 
         <article class="trastornos-container">
           <header class="trastornos-container__img">
-            <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="">
+            <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="" loading="lazy">
           </header>
-          <footer class="trastornos-container__text">
+          <div class="trastornos-container__text">
             <p><strong>Los trastornos de Panico</strong> son ataques de panico imprevistos y recurrentes. Un ataque de panico
             es la aparicion subita de miedo intenso o malestar intenso que alcanza su maxima expresion en minutos. El termino
             recurrente significa literalmente mas de una crisis de panico inesperada, es decir el ataque parece ocurrir
@@ -61,7 +61,7 @@
             <p>Sabemos que la ansiedad puede ser un problema dificil pero <strong>no estas solo</strong>
             Recuerda que buscar ayuda siempre está bien, no hay nada mejor que contar con un especialista que te pueda enseñar qué hacer para superar la depresión. No lo dudes,  
             realmente te sorprenderás con los resultados si buscas ayuda contra la ansiedad hoy</p>
-          </footer>
+          </div>
         </article>
       </section>
         <Footer/>

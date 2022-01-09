@@ -4,22 +4,24 @@
         <h2>Trastorno Depresion Mayor</h2>
         <article class="trastornos-container">
           <header class="trastornos-container__img">
-            <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="">
+            <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="" loading="lazy">
           </header>
-          <footer class="trastornos-container__text">
-            <p><strong>El <span>Trastorno Depresion Mayor</span></strong> sus sintomas deben aparecer casi todos los
-            dias para poderlo considerar este trastorno. Debera haber animo deprimido la mayor parte del dia, ademas de casi dia a dia.
-            A menudo los sintomas de presentacion son el insomnio y la fatiga. Su rasgo principal es un periodo de tiempo de al menos 
-            dos semanas durante el cual existe animo depresivo o perdida del interes o del placer en casi todas las actividades
-            . En los adolescentes, el animo suele ser irritable mas que triste. El paciente debe experimentar ademas al menos cuatro Sintomas
-            adicionales de una lista que incluye cambios en el apetito o peso y en la actividad psicomotora, energia disminuida, sentimientos de inutilidad,
-            dificultades para pensar, y pensamientos recurrentes de muerte o intentos de suicidio.</p>
-            <p>Para que un sintoma cuente como parte de este trastorno ha de ser nuevo o debe haber empeorado claramente parte del dia a dia, casi a diario, durante
-                al menos dos semanas consecutivas. El animo en este trastoro lo describen los pacientes como "deprimido, triste, desesperanzador, desanimado o por los suelos"
-            </p>
-            <p>El trastorno depresivo mayor se asocia con una alta mortalidad y la mayor parte de esta se debe al suicidio; sin embargo, no es la unica
-                causa.
-            </p>
+          <div class="trastornos-container__text">
+            <div class="trastornos-mean">
+              <p><strong>El <span>Trastorno Depresion Mayor</span></strong> sus sintomas deben aparecer casi todos los
+              dias para poderlo considerar este trastorno. Debera haber animo deprimido la mayor parte del dia, ademas de casi dia a dia.
+              A menudo los sintomas de presentacion son el insomnio y la fatiga. Su rasgo principal es un periodo de tiempo de al menos 
+              dos semanas durante el cual existe animo depresivo o perdida del interes o del placer en casi todas las actividades
+              . En los adolescentes, el animo suele ser irritable mas que triste. El paciente debe experimentar ademas al menos cuatro Sintomas
+              adicionales de una lista que incluye cambios en el apetito o peso y en la actividad psicomotora, energia disminuida, sentimientos de inutilidad,
+              dificultades para pensar, y pensamientos recurrentes de muerte o intentos de suicidio.</p>
+              <p>Para que un sintoma cuente como parte de este trastorno ha de ser nuevo o debe haber empeorado claramente parte del dia a dia, casi a diario, durante
+                  al menos dos semanas consecutivas. El animo en este trastoro lo describen los pacientes como "deprimido, triste, desesperanzador, desanimado o por los suelos"
+              </p>
+              <p>El trastorno depresivo mayor se asocia con una alta mortalidad y la mayor parte de esta se debe al suicidio; sin embargo, no es la unica
+                  causa.
+              </p>
+            </div>
             <h3><strong>Sintomas clinicos del Trastorno de Depresion Mayor.</strong></h3>
             <p>Algunos sintomas del Trastorno Depresion Mayor son,</p>
             <div class="sintomas">
@@ -61,7 +63,7 @@
             <p>Sabemos que la ansiedad puede ser un problema dificil pero <strong>no estas solo</strong>
             Recuerda que buscar ayuda siempre está bien, no hay nada mejor que contar con un especialista que te pueda enseñar qué hacer para superar la depresión. No lo dudes,  
             realmente te sorprenderás con los resultados si buscas ayuda contra la ansiedad hoy</p>
-          </footer>
+          </div>
         </article>
       </section>
         <Footer/>

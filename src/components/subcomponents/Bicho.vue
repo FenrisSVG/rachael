@@ -4,14 +4,14 @@
       <article class="article-quesillo">
           <header class="article-quesillo__header">
               <div class="quesillo-img">
-                <img src="../../assets/desktop/bicho.jpg" alt="El bicho siuuuu">
+                <img src="../../assets/desktop/bicho.jpg" alt="El bicho siuuuu" loading="lazy">
               </div>
               <div class="quesillo-text">
                 <h6>El bicho</h6>
                 <p><span>Idiomas:</span> Español, Ingles, Aleman, bicho, Lenguaje de Señas, Mr.Champions, Arabe, Musulman</p>
                 <p><span>Nacionalidad: </span> Bicholandia.</p>
                 <p><span>Modelo de Trabajo Terapeutico:</span> Siuuuuuuuuuuuu.</p>
-                <p><span>Email:</span> elbicho@gmail.com</p>
+                <p><span>Email:</span> <img src="../../assets/desktop/elbichocom.png" alt=""> </p>
                 <p><span>Celular:</span> +505-88888888</p>
                 <aside class="aside-quesillo">
                   <span>Ansiedad.</span>

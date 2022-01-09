@@ -17,7 +17,7 @@
                     <rect></rect>
                 </svg>
                 <header class="antecedentes-card__header">
-                    <img src="../assets/desktop/Sexo.jpg" alt="">
+                    <img src="../assets/desktop/Sexo.jpg" alt="" loading="lazy">
                 </header>
                 <footer class="antecedentes-card__text">
                     <h6><span>1. Datos Personales</span></h6>
@@ -29,7 +29,7 @@
                     <rect></rect>
                 </svg>
                 <header class="antecedentes-card__header">
-                    <img src="../assets/desktop/autoestima.jpg" alt="">
+                    <img src="../assets/desktop/autoestima.jpg" alt="" loading="lazy">
                 </header>
                 <footer class="antecedentes-card__text">
                     <h6><span>2. Antecedentes</span></h6>
@@ -41,7 +41,7 @@
                     <rect></rect>
                 </svg>
                 <header class="antecedentes-card__header">
-                    <img src="../assets/desktop/estres.jpg" alt="">
+                    <img src="../assets/desktop/estres.jpg" alt="" loading="lazy">
                 </header>
                 <footer class="antecedentes-card__text">
                     <h6><span>3. Diagnostico Previo</span></h6>
@@ -53,7 +53,7 @@
                     <rect></rect>
                 </svg>
                 <header class="antecedentes-card__header">
-                    <img src="../assets/desktop/desarollo.jpg" alt="">
+                    <img src="../assets/desktop/desarollo.jpg" alt="" loading="lazy">
                 </header>
                 <footer class="antecedentes-card__text">
                     <h6><span>4. Test de Autoevaluacion</span></h6>
@@ -65,7 +65,7 @@
                     <rect></rect>
                 </svg>  
                 <header class="antecedentes-card__header">
-                    <img src="../assets/desktop/desarollo.jpg" alt="">
+                    <img src="../assets/desktop/desarollo.jpg" alt="" loading="lazy">
                 </header>
                 <footer class="antecedentes-card__text">
                     <h6><span>5. Papel Completo</span></h6>

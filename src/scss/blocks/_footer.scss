@@ -12,11 +12,15 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        padding: 1.25em;
-        color: $title-color;
 
         @include tablet-4{
             justify-content: center;
+        }
+
+        &__copyright{
+            @include tablet-4{
+                font-size: 20px;
+            }
         }
     }
     
@@ -28,19 +32,7 @@
         }
     }
 
-    & p{
-        @include tablet{
-            margin-right: 25px;
-        }
-        
-        @include tablet-4{
-            margin-left: 30px;
-            font-size: 20px;
-        }
-    }
-
     &-about{
-
         text-align: center;
 
         @include laptop{
@@ -51,26 +43,23 @@
 
         &__nav{
             color: $text-color;
+        }
 
-            & h6{
-                font-size: 16px;
-                margin: .9375em;
-                color: $title-color;
-            }
+        &__title{
+            font-size: 1rem;
         }
 
         &__menu{
             @include reset-list;
-
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-bottom: 2em;
+            margin-bottom: 1em;
         }
 
         &__item{
-            padding: 12px;
+            padding: 10px 0;
             border-bottom: 1px solid #ccc;
         }
 
@@ -78,5 +67,10 @@
             text-decoration: none;
             color: inherit;
         }
+    }
+
+    &-image,
+    &-about__title{
+        color: $title-color;
     }
 }

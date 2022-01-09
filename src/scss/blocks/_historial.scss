@@ -1,35 +1,41 @@
 .historial-article{
+
     &__header{
         text-align: center;
-        & h2{
-            color: #fff;
-            font-size: 30px;
+        padding-bottom: 1em;
+    }
 
-            & span{
-                color: var(--danger-color);
-            }
+    &__title{
+        font-size: 1.7rem;
+
+        & span{
+            color: $danger-color;
         }
-        
-        & p{
-            letter-spacing: 2px;
-            font-size: 20px;
-            color: #fff;
-        }
+    }
+
+    &__title,
+    &__text,
+    &__link{
+        color: $text-color;
+    }
+
+    &__text{
+        letter-spacing: 1px;
+        font-size: 20px;
     }
 
     &__footer{
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 1.5em;
+        // margin-top: 1.5em;
+        gap: 15px;
+    }
 
-        & a{
-            padding: .8em 2em;
-            margin: 0 1em;
-            text-decoration: none;
-            border-radius: 6px;
-            color: #fff;
-            background-color: var(--danger-color);
-        }
+    &__link{
+        padding: .8em 2em;
+        text-decoration: none;
+        border-radius: 6px;
+        background-color: var(--danger-color);
     }
 }

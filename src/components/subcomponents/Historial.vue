@@ -2,14 +2,15 @@
     <section class="historial-container">
         <article class="historial-article">
             <div class="historial-article__header">
-                <h2>Historial del <span>Test de Autoevaluacion</span></h2>
-                <p>Aqui podras encontrar todo lo referente al historial
+                <h2 class="historial-article__title">
+                Historial del <span>Test de Autoevaluacion</span></h2>
+                <p class="historial-article__text">Aqui podras encontrar todo lo referente al historial
                 psicologico del paciente
                 </p>
             </div>
             <div class="historial-article__footer">
-                <a href="#funciona">¿Como Funciona?</a>
-                <a href="#historial">Ver Historial</a>
+                <a class="historial-article__link" href="#funciona" rel="nofollow">¿Como Funciona?</a>
+                <a class="historial-article__link" href="#historial" rel="nofollow">Ver Historial</a>
             </div>
         </article>
 
@@ -28,12 +29,24 @@
                 <h3>Antecedentes del Paciente</h3>
                 <div class="diagnosticos" v-for="(item,index) in antecedentes" :key="index">
                     <header class="antecedentes-info__data">
-                        <h5>Nombre del Paciente:</h5>
+                        <div class="antecedentes-info__name">
+                            <h5>Nombre del Paciente:</h5>
+                            <p>{{item.nombre}}</p>
+                        </div>
+                        <div class="antecedentes-info__surname">
+                            <h5>Apellido del Paciente:</h5>
+                            <p>{{item.apellido}}</p>
+                        </div>
+                        <div class="antecedentes-info__date">
+                            <h5>Fecha del registro:</h5>
+                            <p>{{item.fecha_registro}}</p>
+                        </div>
+                        <!-- <h5>Nombre del Paciente:</h5>
                         <p>{{item.nombre}}</p>
                         <h5>Apellido del Paciente:</h5>
                         <p>{{item.apellido}}</p>
                         <h5>Fecha del registro:</h5>
-                        <p>{{item.fecha_registro}}</p>
+                        <p>{{item.fecha_registro}}</p> -->
                     </header>
                     <div class="antecedentes-info__text">
                         <p>Segun los datos proporcionados nos podemos dar cuenta que usted como
@@ -55,12 +68,18 @@
                 <h3>Tus diagnosticos anteriores de los trastornos:</h3>
                 <div class="diagnosticos" v-for="(item,index) in historial" :key="index">
                     <h3>La prediccion previa del usuario: <span>{{item.username}}</span> tiene diagnosticado el siguiente trastorno</h3>
-                    <h3>Trastorno Diagnosticado: </h3>
-                    <p>{{item.nombre}}</p>
-                    <h3>Sintomas del Trastorno:</h3>
-                    <pre>{{item.sintoma + '\n'}}</pre>
-                    <h3>¿Que quiere decir este trastorno?</h3>
-                    <p>{{item.descripccion}}</p>
+                    <div class="diagnosticos__trastorno">
+                        <h3>Trastorno Diagnosticado: </h3>
+                        <p>{{item.nombre}}</p>
+                    </div>
+                    <div class="diagnosticos__sintomas">
+                        <h3>Sintomas del Trastorno:</h3>
+                        <pre class="sintomas__item">{{item.sintoma + '\n'}}</pre>
+                    </div>
+                    <div class="diagnosticos__description">
+                        <h3>¿Que quiere decir este trastorno?</h3>
+                        <p>{{item.descripccion}}</p>
+                    </div>
                 </div>
             </div>
             <div class="historial-trastorno__footer" v-else>
@@ -84,7 +103,7 @@
     font-size: 16px;
 }
 
-pre{
+.sintomas__item{
     color: var(--danger-color);
     font-size: 18px;
 }

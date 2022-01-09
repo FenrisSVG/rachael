@@ -15,7 +15,7 @@
                 </p>
             </header>
             <footer class="trastorno-information__footer">
-              <img src="../assets/desktop/trastorno.jpg" alt="trastorno image">         
+              <img src="../assets/desktop/trastorno.jpg" alt="trastorno image" loading="lazy">         
             </footer>
         </main>
       

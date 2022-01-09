@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Rachael from '../views/Rachael.vue'
+// import Rachael from '../views/Rachael.vue'
 import Test from '../views/Test.vue'
 import Signup from '../views/Signup.vue'
 import Login from '../views/Login.vue'
@@ -32,6 +32,8 @@ import Persistente from '../views/Persistente.vue'
 import Medicamentos from '../views/Medicamentos.vue'
 import Afeccion from '../views/Afeccion.vue'
 import Psicologos from '../views/Psicologos.vue'
+import PageNotFound from '../views/PageNotFound.vue'
+import store from '../store'
 
 Vue.use(VueRouter)
 
@@ -41,21 +43,22 @@ const routes = [
     name: 'Home',
     component: Home
   },
-  {
-    path: '/rachael',
-    name: 'Rachael',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: Rachael
-  },
+  // {
+  //   path: '/rachael',
+  //   name: 'Rachael',
+  //   // route level code-splitting
+  //   // this generates a separate chunk (about.[hash].js) for this route
+  //   // which is lazy-loaded when the route is visited.
+  //   component: Rachael
+  // },
   {
     path: '/test',
     name: 'Test',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: Test
+    component: Test,
+    // meta: {requiresAuth: true}
   },
   {
     path: '/signup',
@@ -120,7 +123,8 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: Psicologos
+    component: Psicologos,
+    // meta: {requiresAuth: true}
   },
   {
     path: '/trastornos/:page',
@@ -289,6 +293,14 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: Bicho
+  },
+  {
+    path: '*',
+    name: 'PageNotFound',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: PageNotFound
   }
 ]
 
@@ -296,6 +308,18 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to,from,next)=>{
+  if(to.matched.some(route => route.meta.requiresAuth)){
+    if(!store.state.loggedIn){
+      next('/login')
+    }else{
+      next()
+    }
+  }else{
+    next()
+  }
 })
 
 export default router

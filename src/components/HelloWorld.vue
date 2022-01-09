@@ -2,7 +2,7 @@
  <div class="main">
    <!-- Contenido central -->
     <main class="container" v-scroll-reveal="{delay: 400}">
-      <img alt="Rachael IA image" srcset="../assets/desktop/trastorno2.jpg, ../assets/desktop/trastorno2.jpg 2x">
+      <img loading="lazy" alt="Rachael IA image" srcset="../assets/desktop/trastorno2.jpg, ../assets/desktop/trastorno2.jpg 2x">
       <div class="container-text">
         <svg>
           <rect></rect>
@@ -57,25 +57,25 @@
 
   <div class="banner" v-scroll-reveal="{delay: 500}">
     <div class="banner-text">
-      <h2>Servicios de Psicologia</h2>
+      <h2 class="banner-text__title">Servicios de Psicologia</h2>
     </div>
     <div class="banner-content" v-for="(item,index) in banner" :key=(index)>
-      <img :src="item.src" alt="">
+      <img class="banner-content__img" :src="item.src" alt="" loading="lazy">
       <p class="banner-content__text"><span>{{item.name}}</span></p>
     </div>
   </div>
 
-  <div class="psicologos-card__card-2" v-if="psicologos !== ''" v-scroll-reveal="{delay: 500}">
+  <div class="psicologos-card__card psicologos-card__card--index" v-if="psicologos !== ''" v-scroll-reveal="{delay: 500}">
     <h2 v-scroll-reveal="{delay: 500,scale: 2}">Nuestros Mejores Psicologos</h2>
-    <div class="psiquiatras-2" v-for="psicologo in psicologos" :key="psicologo.id" v-scroll-reveal="{delay: 600}">
-      <header>
-        <img :src="psicologo.src">
+    <div class="psiquiatras--index" v-for="psicologo in psicologos" :key="psicologo.id" v-scroll-reveal="{delay: 600}">
+      <header class="psiquiatras-header--index">
+        <img :src="psicologo.src" loading="lazy">
       </header>
       <div class="psiquiatras-body">
-        <p class="psiconame"><strong>{{psicologo.name}}</strong></p>
-        <p class="profesion">{{psicologo.profesion}}</p>
+        <p class="psiquiatras-name"><strong>{{psicologo.name}}</strong></p>
+        <p class="psiquiatras-profesion">{{psicologo.profesion}}</p>
       </div>
-      <footer>
+      <footer class="psiquiatras-footer--index">
         <p>{{psicologo.descripcion}}</p>
       </footer>
     </div>

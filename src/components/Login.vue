@@ -1,12 +1,18 @@
 <template>
     <div class="login-2" id="form-login-2">
         <p class="login-2__title">Log-In</p>  
-        <form method="POST" class="login-2-form"  id="form-login-2">
-            <label for="text">Username: </label>
-            <input type="text" name="text" class="mail-2" placeholder="Username" autofocus required v-model="username" v-on:change="mostrarLogin">
-            <label for="password-login">Password:</label>
-            <input type="password" v-model="password" name="password-login" class="pass-2" placeholder="Contraseña" required>
-            <button type="submit" @click="login">Login</button>
+        <form method="POST" class="login-2-form" id="form-login-2">
+            <div class="login-2-form__input">
+              <label for="text">Username: </label>
+              <input type="text" name="text" class="mail-2" placeholder="Username" autofocus required v-model="username" v-on:change="mostrarLogin">
+            </div>
+            <div class="login-2-form__input">
+              <label for="password-login">Password:</label>
+              <input type="password" v-model="password" name="password-login" class="pass-2" placeholder="Contraseña" required>
+            </div>
+            <div class="login-2-form__button">
+              <input type="submit" @click="login" value="Log-in">
+            </div>
         </form>
         <div class="login-text-2">
             <router-link to="/signup">Sign-up</router-link>
@@ -17,6 +23,7 @@
 
 <script>
 import axios from 'axios'
+import {mapActions} from 'vuex'
 import Swal from 'sweetalert2'
 
 export default {
@@ -29,6 +36,7 @@ export default {
       }
   },
   methods:{
+    ...mapActions(['mocklogin']),
     mostrarLogin(){
       axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
         opcion: 9,
@@ -48,6 +56,7 @@ export default {
       //const name = document.getElementById('name');
 
       if(formLogin){
+
         formLogin.addEventListener('submit',(e)=>{
           e.preventDefault();
           if(this.username == this.user && this.password == this.clave){
@@ -71,6 +80,7 @@ export default {
                     confirmButtonColor: '#972745',
                     showCloseButton: true
                 })
+                this.mockLogin()
                 this.$router.push('/')
             })()
           }else{

@@ -1,14 +1,18 @@
 <template>
     <div class="psiquiatras">
-        <header>
-          <img :src="psicologo.src">
-          <p class="psiconame"><strong>{{psicologo.name}}</strong></p>
-          <p class="nacionalidad">{{psicologo.country}}</p>
-          <p class="psiquiatras-telefono"><span>Telefono</span> +505-21321313</p>
+        <header class="psiquiatras-header">
+          <div class="psiquiatras-header__img">
+            <img :src="psicologo.src" loading="lazy">
+          </div>
+          <div class="psiquiatras-header__info">
+            <p class="psiconame"><strong>{{psicologo.name}}</strong></p>
+            <p class="nacionalidad">{{psicologo.country}}</p>
+            <p class="psiquiatras-telefono"><span>Telefono</span> +505-21321313</p>
+          </div>
         </header>
         <footer class="psiquiatras-footer">
             <p>{{psicologo.descripcion}}</p>
-            <router-link :to="{name: psicologo.router, params:{query: psicologo.link}}">{{psicologo.button}}</router-link>
+            <router-link :to="{name: psicologo.router, params:{query: psicologo.link}}" rel="nofollow">{{psicologo.button}}</router-link>
         </footer>
       </div>
 </template>

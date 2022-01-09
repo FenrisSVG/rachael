@@ -5,7 +5,7 @@
 
         <article class="trastornos-container">
           <header class="trastornos-container__img">
-            <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="">
+            <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="" loading="lazy">
           </header>
           <footer class="trastornos-container__text">
             <p><strong>El Trastornos Obsesivo-Compulsivo.</strong> es la presencia de obsesion, que significa tener pensamientos desorganizados,

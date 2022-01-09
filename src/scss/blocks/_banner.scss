@@ -13,13 +13,17 @@
 
     &-text{
         grid-column: 1/4;
-        grid-row:1/1;
+        grid-row: 1/1;
         text-align: center;
-        color: $text-color;
 
-        & h2{
+        &__title{
             font-size: 22px;
         }
+    }
+
+    &-text,
+    &-content__text{
+        color: $text-color;
     }
 
     &-content{
@@ -29,33 +33,15 @@
         justify-content: center;
         padding: 1em;
 
-        & img{
-            max-width: 60%;
-            margin: 0 auto;
+        &__img{
+            max-width: 65%;
+            margin-left: auto;
+            margin-right: auto;
             border-radius: 50%;
         }
 
-        & p{
-            color:#fff;
+        &__text{
             font-size: 0.9rem;
-        }
-
-        &:nth-child(2),
-        &:nth-child(5){
-            align-items: end;
-
-            & p{
-                margin-right: 2.5em;
-            }
-        }
-
-        &:nth-child(4),
-        &:nth-child(7){
-            align-items: start;
-
-            & p{
-                margin-left: 2.5em;
-            }
         }
     }
 }

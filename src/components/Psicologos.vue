@@ -40,7 +40,7 @@
                     <div class="psicologos-card__aside-text">
                         <h2>Encuentra a tu psicologo ideal</h2>
                         <p>Te ayudamos a encontrar tu psicologo ideal</p>
-                        <router-link to="/">Comenzar Ahora</router-link>
+                        <router-link to="/" rel="nofollow">Comenzar Ahora</router-link>
                     </div>
                 </aside>
                 <div class="psicologos-card__card">

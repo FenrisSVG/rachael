@@ -7,6 +7,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    loggedIn: false,
     isFilter: false,
     trastornos: [
       {
@@ -327,6 +328,9 @@ export default new Vuex.Store({
     },
     updateTestStatus(state,payload){
       state.testStatus = payload.testStatus
+    },
+    loggedIn(state){
+      state.loggedIn = true
     }
   },
   getters:{
@@ -361,6 +365,11 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    mockLogin(context){
+      setTimeout(function(){
+        context.commit('loggedIn')
+      },1000)
+    }
   },
   modules: {
   }

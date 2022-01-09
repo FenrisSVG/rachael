@@ -1,0 +1,93 @@
+//  ERROR 404 STYLES
+.error-view{
+    display: grid;
+    place-items: center;
+    padding: 4em 0;
+} 
+
+.error-404{
+    display: flex;
+    align-items: center;
+    width: 25%;
+    align-items: flex-start;
+    justify-content: center;
+    height: 255px;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 10px 30px rgb(0,200,0);
+    //  margin-top: 5em;
+
+    & img{
+       max-width: 83%;
+    }
+
+    &__text{
+       background-color: var(--secondary-color);
+       color: var(--primary-color);
+       width: 25%;
+       height: 170px;
+       display: flex;
+       flex-direction: column;
+       // gap: 5px;
+       border-radius: 0 0 50% 50%;
+       align-items: center;
+
+       & h3{
+           margin-top: 1.4em;
+           margin-bottom: .4em;
+       }
+
+       & h3,
+       & p{
+           font-weight: 600;
+           font-size: 15px;
+       }
+
+       & p{
+           margin-top: .5em;
+       }
+    }
+ }
+ 
+ .btn{
+     position: relative;
+     display: block;
+     padding: .8em;
+     text-decoration: none;
+     border-radius: 6px;
+     color: var(--text-color);
+     background-color: var(--danger-color);
+     overflow: hidden;
+
+     & span{
+         position: relative;
+         z-index: 2;
+     }
+ }
+
+ .btn::before{
+     content: '';
+     display: block;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     border-right: 44px solid transparent;
+     border-bottom: 44px solid rgb(0, 190, 0);
+     transform: translate(calc(-100% - 44px));
+     transition: transform .5s ease-in-out;
+ }
+
+ .btn:hover::before{
+     transform: translate(0);
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+   
+
+   

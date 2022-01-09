@@ -5,9 +5,9 @@
 
         <article class="trastornos-container">
           <header class="trastornos-container__img">
-            <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="">
+            <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="" loading="lazy">
           </header>
-          <footer class="trastornos-container__text">
+          <div class="trastornos-container__text">
             <p><strong>Los Trastornos por Separacion</strong> se dan ya sea por <strong>preocupaciones excesita y
             persistente</strong> por la posible perdida de las figuras de <strong>mayor apego</strong> o de que puedan sufrir un posible daño, como una 
             enfermedad o incluso peor <strong>la muerte</strong> o tambien por <strong>social, apatia, tristeza o dificultad para concentrarse en el trabajo o juego</strong> vinculado. 
@@ -65,7 +65,7 @@
             <p>Sabemos que la ansiedad puede ser un problema dificil pero <strong>no estas solo</strong>
             Recuerda que buscar ayuda siempre está bien, no hay nada mejor que contar con un especialista que te pueda enseñar qué hacer para superar la depresión. No lo dudes,  
             realmente te sorprenderás con los resultados si buscas ayuda contra la ansiedad hoy</p>
-          </footer>
+          </div>
         </article>
       </section>
         <Footer/>

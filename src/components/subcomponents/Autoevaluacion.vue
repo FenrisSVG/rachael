@@ -5,7 +5,7 @@
 
         <article class="trastornos-container" v-scroll-reveal="{delay: 300}">
           <header class="trastornos-container__img">
-            <img src="../../assets/desktop/test.jpg" alt="">
+            <img src="../../assets/desktop/test.jpg" alt="" loading="lazy">
           </header>
           <footer class="trastornos-container__text">
             <p><strong>El <span>Test de Autoevaluacion</span></strong> es un examen dedicado a evaluar

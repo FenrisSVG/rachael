@@ -2,44 +2,47 @@
   <div id="app">
    <header class="header">
     <div class="logo-container">
-      <img src="./assets/logo.png" alt="Rachael Logo" class="logo">
-      <h6 @click="home">Rachael</h6>
+      <img src="./assets/logo.png" alt="Rachael Logo" class="logo" loading="lazy">
+      <h6 @click="home" class="logo-title">Rachael</h6>
       <Search />
     </div> 
+    <!-- CLOSE MENU ICON -->
     <div class="menu" id="menu" v-on:click="iconClose()"></div>
+    <!-- NAV HTML -->
     <nav id="nav" class="nav">
       <ul class="main-menu">
         <li class="main-menu__item">
-          <router-link to="/" class="main-menu__link">Home</router-link>
+          <router-link to="/" class="main-menu__link" rel="nofollow">Home</router-link>
         </li>
         <li class="main-menu__item">
-          <router-link to="/psicologos" class="main-menu__link">Psicologos</router-link>
+          <router-link to="/psicologos" class="main-menu__link" rel="nofollow">Psicologos</router-link>
         </li>
         <li class="main-menu__item main-menu__item--icon"  id="resources">
-          <router-link to="/trastornos" class="main-menu__link">Trastorno</router-link> 
+          <router-link to="/trastornos" class="main-menu__link" rel="nofollow">Trastorno</router-link> 
         </li>
         <li class="main-menu__item">
-          <router-link to="/antecedentes" class="main-menu__link">Diagnostico</router-link> 
+          <router-link to="/antecedentes" class="main-menu__link" rel="nofollow">Diagnostico</router-link> 
         </li>
         <li class="main-menu__item">
-          <router-link to="/test" class="main-menu__link">Test</router-link> 
+          <router-link to="/test" class="main-menu__link" rel="nofollow">Test</router-link> 
         </li>
         <li class="main-menu__item">
-          <router-link to="/ver-mas" class="main-menu__link">Ver mas</router-link> 
+          <router-link to="/ver-mas" class="main-menu__link" rel="nofollow">Ver mas</router-link> 
         </li>
-        <li class="main-menu__item" id="login" @click="show">
-          <span><i class="fas fa-user icon-red"></i></span>
-          <p class="main-menu__link p" data-set="login" id="login-link">Login</p> 
+        <li class="main-menu__item main-menu__item--perfil" id="login" @click="show">
+          <span><i class="fas fa-user"></i></span>
+          <p class="main-menu__link" data-set="login" id="login-link" rel="nofollow">Login</p> 
+          <!-- SUBMENU DEL LOGIN -->
           <div class="login" id="login-form">
             <p class="login__title">Log-In</p>  
             <form method="POST" class="login-form" id="form-login" action="/">
-                <input type="text" name="text" class="mail" placeholder="Username" autofocus autocomplete="off" required v-model="username" v-on:change="mostrarLogin">
-                <input type="password" v-model="password" name="password" class="pass" placeholder="Contraseña" required>
-                <input type="submit" @click="login()" value="Login">
+                <input class="login-form__input" type="text" name="text" placeholder="Username" autofocus autocomplete="off" required v-model="username" v-on:change="mostrarLogin">
+                <input class="login-form__input" type="password" v-model="password" name="password"  placeholder="Contraseña" required>
+                <input class="login-form__input" type="submit" @click="login()" value="Login">
             </form>
             <div class="login-text">
-                <router-link to="/signup" @click="close()">Sign-up</router-link>
-                <a href="#" class="login-text__link">¿Forgot ur password?</a>
+                <router-link to="/signup" @click="close()" rel="nofollow" class="login-text__link">Sign-up</router-link>
+                <a href="#" class="login-text__link" rel="nofollow">¿Forgot ur password?</a>
             </div>
           </div>
         </li>
@@ -87,18 +90,6 @@ export default{
                   menu.classList.toggle('menu--close');
               }
           })
-      }
-    },
-    rotateIcon(e){
-
-      const submenu = document.getElementById('submenu');
-
-      if(e.target.style.transform === "rotate(180deg)"){
-          e.target.style.transform = "rotate(0)";
-          submenu.classList.add('show');
-      }else{
-        e.target.style.transform = "rotate(180deg)";
-        submenu.classList.remove('show');
       }
     },
     show(e){

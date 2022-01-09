@@ -2,7 +2,7 @@
     <div class="search">
         <i class="fas fa-search"></i>
         <input type="text" id="search" placeholder="Search..."
-            v-model="search">
+            v-model="search" class="search__input">
     </div>
 </template>
 
