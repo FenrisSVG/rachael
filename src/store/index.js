@@ -331,7 +331,7 @@ export default new Vuex.Store({
     },
     loggedIn(state){
       state.loggedIn = true
-    }
+    },
   },
   getters:{
     filteredTrastornos(state){
@@ -365,11 +365,6 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    mockLogin(context){
-      setTimeout(function(){
-        context.commit('loggedIn')
-      },1000)
-    }
   },
   modules: {
   }

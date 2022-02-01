@@ -1,0 +1,91 @@
+.personalidad{
+    display: grid;
+    place-items: center;
+    padding-top: 2em;
+    
+    &-header,
+    &-body{
+        width: 60%;
+        background-color: $primary-color;
+    }
+
+    &-header{
+        text-align: center;
+        padding: 0 2em;
+        border-radius: 10px 10px 0 0;
+        //border: 1px solid reD;
+        
+    }
+
+    &__title{
+        margin-bottom: 0;
+        font-size: 1.9rem;
+        color: $text-color;
+        
+        & span{
+            color: $danger-color;
+        }
+    }
+
+    &__text{
+        margin-bottom: .1em;
+        font-size: 1.1rem;
+        color: $text-color;
+    }
+
+    &-body{
+        border-radius:  0 0 10px 10px;
+        padding: 1.5em 3em;
+    }
+
+    &-form{
+        border-top: 1px dashed $danger-color;
+        padding-bottom: 1em;
+    }
+
+    &-container__text{
+        font-size: 1.1rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: $title-color;
+    }
+
+    &-input{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        margin: .4em 0;
+
+        & label{
+            color: $text-color
+        }
+    }
+
+    &__input{
+        cursor: pointer;
+    }
+
+    &-button{
+        margin-top: 1.7em;
+    }
+
+    &-submit{
+        width: 150px;
+        height: 45px;
+        font-size: 1.1rem;
+        outline: none;
+        border: none;
+        border-radius: 7px;
+        color: $text-color;
+        background-color: $danger-color;
+        cursor: pointer;
+    }
+}
+
+.personalidad-diagnosticada{
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+}

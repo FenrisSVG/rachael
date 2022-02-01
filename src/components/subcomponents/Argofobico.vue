@@ -1,8 +1,7 @@
 <template>
     <div>
       <section class="trastornos">
-        <h2>Trastorno Agorafobia.</h2>
-
+        <h2 class="trastornos-title">Trastorno Agorafobia.</h2>
         <article class="trastornos-container">
           <header class="trastornos-container__img">
             <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="" loading="lazy">
@@ -23,7 +22,7 @@
                   variar con la proximidad a la situacion temida y puede ocurrir en anticipacion.
               </p>
             </div>
-            <h3><strong>Sintomas clinicos del Trastorno Agorafobico.</strong></h3>
+            <h3 class="trastornos-container__title"><strong>Sintomas clinicos del Trastorno Agorafobico.</strong></h3>
             <p>Algunos sintomas del Trastorno Agorafobico son,</p>
             <div class="sintomas">
               <ol class="sintomas-menu" v-if="sintomas != ''">
@@ -36,7 +35,7 @@
               tardia y en la vida adulta temprana.
             </p>
             <div class="trastornos-desarrollo">
-              <h3>Desarollo y curso</h3>
+              <h3 class="trastornos-container__title">Desarollo y curso</h3>
               <p>La mayoria de los individuos con trastorno de panico muestan signos de ansiedad y agorafobia. Aparece 
                   antes de los 35 años. Hay un riesgo importante de incidencia en la adolescencia tardia y en la vida adulta temprana, con una segunda fase
                   de alto riesgo despues de los 40 años. Las caracteristicas clinicas de la agorafobia son relativamente constantes durante
@@ -46,7 +45,7 @@
               </p>
             </div>
             <div class="trastornos-factores">
-              <h3>Factores de riesgo y pronostico.</h3>
+              <h3 class="trastornos-container__title">Factores de riesgo y pronostico.</h3>
               <p><span>Temperamentales,</span> la inhibicion de la conducta y la disposicion neurotica (p. ej., la afectividad negativa)
               esta estrechamente relacionada con la agorafobia, pero son relevantes para la mayoria de los trastornos de ansiedad (
               <router-link :to="{name: 'Fobia', params: {query:'fobia-especifica'}}" rel="nofollow">fobia especifica</router-link>, <router-link :to="{name: 'Panico', params: {query:'panico'}}">trastorno de panico</router-link> y el <router-link :to="{name: 'Ansiedad', params: {query:'ansiedad-generalizada'}}">trastorno ansiedad generalizada</router-link>)</p>
@@ -59,7 +58,7 @@
               </p>
             </div>
             <div class="trastornos-consecuencias">
-              <h3><strong>Consecuencias que tiene este Trastorno Agorafobico.</strong></h3>
+              <h3 class="trastornos-container__title"><strong>Consecuencias que tiene este Trastorno Agorafobico.</strong></h3>
               <p>Tiene una consecuencia de una considerable deficiencia y discapacidad en lo que se refiere a funcionalidad,
                   productividad laboral y dias de incapacidad. Su gravedad es un fuerte determinante del grado de discapacidad, independientemente
                   de la presencia comorbida de un trastorno de panico, ataques de panico y otros trastornos. Mas de un tercio de los individuos con este trastorno permanecen
@@ -67,19 +66,19 @@
               </p>
             </div>
             <div class="trastornos-comorbilidad">
-              <h3>Comorbilidad</h3>
+              <h3 class="trastornos-container__title">Comorbilidad</h3>
               <p>La mayoria que padecen este trastorno tambien tienen otros trastornos mentales. Los mas frecuentes son
                   <span>Trastorno de ansiedad</span>, <span>trastornos depresivos</span>, trastornos de estres postraumatico y <span>trastornos por consumos de alcohol.</span>
               </p>
             </div>
             <div class="trastornos-tratamiento">
-              <h3><strong>¿Como se trata el Trastorno Agorafobico.?</strong></h3>
+              <h3 class="trastornos-container__title"><strong>¿Como se trata el Trastorno Agorafobico.?</strong></h3>
               <p>La manera de tratar este problema es con medicamentos psicofarmaceuticos, pero lo mejor
                 es que <strong>consulte con un experto de verdad no con unos pendejos como nosotros.</strong>
               </p>
             </div>
             <div class="trastornos-solo">
-              <h3><strong>Recuerda que no estas solo.</strong></h3>
+              <h3 class="trastornos-container__title"><strong>Recuerda que no estas solo.</strong></h3>
               <p>Sabemos que la ansiedad puede ser un problema dificil pero <strong>no estas solo</strong>
               Recuerda que buscar ayuda siempre está bien, no hay nada mejor que contar con un especialista que te pueda enseñar qué hacer para superar la depresión. No lo dudes,  
               realmente te sorprenderás con los resultados si buscas ayuda contra la ansiedad hoy</p>

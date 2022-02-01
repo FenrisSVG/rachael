@@ -3,10 +3,14 @@ body {
     overflow-x: hidden;
 }
 
-  html{
-    background-color: $background-color;
-  }
+html{
+  background-color: $background-color;
+  scroll-behavior: smooth;
+}
 
+html.lightmode{
+  background-color: #F0EAE3;
+}
 
 :is(h1,h2,h3,h4,h5,h6){
   font-family: 'Roboto', sans-serif;

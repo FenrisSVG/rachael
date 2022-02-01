@@ -1,14 +1,14 @@
 <template>
     <div class="side-bar">
-        <p>Filtrar por</p>
+        <p class="side-bar__text">Filtrar por</p>
         <hr>
-        <div class="side-bar__input">
+        <div class="side-bar__input side-bar__input--center">
             <label for="date">¿Que dia te gustaria tomar tu sesión?</label>
             <input type="date" name="date" id="date" placeholder="Elegir Fecha">
         </div>
         <hr>
         <div class="side-bar__input">
-            <p for="gender">Género</p>
+            <p class="side-bar__input-text" for="gender">Género</p>
             <div class="sidebar-bar__input">
                 <input type="checkbox" name="man" id="man" v-model="men">
                 <label for="man">Hombre</label>
@@ -20,7 +20,7 @@
         </div>
         <hr>
         <div class="side-bar__input">
-            <p for="sesion">Tipo de Sesion</p>
+            <p class="side-bar__input-text" for="sesion">Tipo de Sesion</p>
             <div class="sidebar-bar__input">
                 <input type="checkbox" name="individual" id="individual" v-model="individual"> 
                 <label for="individual">Individual</label>
@@ -32,7 +32,7 @@
         </div>
         <hr>
         <div class="side-bar__input">
-            <p for="duracion">Duracion</p>
+            <p class="side-bar__input-text" for="duracion">Duracion</p>
             <div class="sidebar-bar__input">
                 <input type="checkbox" name="duracion50" id="50" v-model="minutos50"> 
                 <label for="duracion50">50 minutos</label>
@@ -43,8 +43,8 @@
             </div>
         </div>
         <hr>
-        <div class="side-bar__input help">
-            <p for="modelos">Modelos terapeuticos</p>
+        <div class="side-bar__input side-bar__input--help">
+            <p class="side-bar__input-text" for="modelos">Modelos terapeuticos</p>
             <i class="fas fa-question-circle icon-help" id="question" @click="modalTerapeutico"></i>
             <div class="sidebar-bar__input">
                 <input type="checkbox" name="cognitivoconductual" id="cognitivoconductual"> 
@@ -125,12 +125,12 @@ export default {
         const close = document.getElementById('terapeutico-close')
         const question = document.getElementById('question')
 
-        if(question) modal.classList.add('modal-terapeutico--show');
+        if(question) modal.classList.add('modal--show');
 
         if(modal){
             modal.addEventListener('click',(e)=>{
                 if(e.target.classList.contains('modal-terapeutico')){
-                    modal.classList.remove('modal-terapeutico--show') 
+                    modal.classList.remove('modal--show') 
                 }
             })
         }
@@ -138,7 +138,7 @@ export default {
         if(close){
             close.addEventListener('click',(e)=>{
                 if(e.target.classList.contains('modal-terapeutico--close')){
-                    modal.classList.remove('modal-terapeutico--show') 
+                    modal.classList.remove('modal--show') 
                 }
             })
         }

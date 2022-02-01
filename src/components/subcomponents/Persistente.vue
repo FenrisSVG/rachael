@@ -1,26 +1,30 @@
 <template>
     <div>
       <section class="trastornos">
-        <h2>Trastorno Depresion Persistente</h2>
+        <h2 class="trastornos-title">Trastorno Depresion Persistente</h2>
         <article class="trastornos-container">
           <header class="trastornos-container__img">
             <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="" loading="lazy">
           </header>
           <div class="trastornos-container__text">
-            <p><strong>El <span>Trastorno Depresion Persistente</span></strong> es un animo deprimido que aparece la mayor parte del dia, durante
-            la mayor parte de los dais, durante al menos dos años o al menos durante un año en los adolescentes. En este trastorno</p>
-            <p>Para que un sintoma cuente como parte de este trastorno ha de ser nuevo o debe haber empeorado claramente parte del dia a dia, casi a diario, durante
-                al menos dos semanas consecutivas. El animo en este trastoro lo describen los pacientes como "deprimido, triste, desesperanzador, desanimado o por los suelos"
-            </p>
-            <p>El trastorno depresivo mayor se asocia con una alta mortalidad y la mayor parte de esta se debe al suicidio; sin embargo, no es la unica
-                causa.
-            </p>
-            <h3><strong>Sintomas clinicos del Trastorno de Depresion Persistente.</strong></h3>
-            <p>Algunos sintomas del Trastorno Depresion Persistente son,</p>
-            <div class="sintomas">
-              <ol class="sintomas-menu" v-if="sintomas != ''">
-                <li v-for="(item,index) in sintomas" :key="index" class="sintomas-menu__item">{{item}}</li>
-              </ol>
+            <div class="trastornos-mean">
+              <p><strong>El <span>Trastorno Depresion Persistente</span></strong> es un animo deprimido que aparece la mayor parte del dia, durante
+              la mayor parte de los dais, durante al menos dos años o al menos durante un año en los adolescentes. En este trastorno</p>
+              <p>Para que un sintoma cuente como parte de este trastorno ha de ser nuevo o debe haber empeorado claramente parte del dia a dia, casi a diario, durante
+                  al menos dos semanas consecutivas. El animo en este trastoro lo describen los pacientes como "deprimido, triste, desesperanzador, desanimado o por los suelos"
+              </p>
+              <p>El trastorno depresivo mayor se asocia con una alta mortalidad y la mayor parte de esta se debe al suicidio; sin embargo, no es la unica
+                  causa.
+              </p>
+            </div>
+            <div class="trastornos-sintomas">
+              <h3><strong>Sintomas clinicos del Trastorno de Depresion Persistente.</strong></h3>
+              <p>Algunos sintomas del Trastorno Depresion Persistente son,</p>
+              <div class="sintomas">
+                <ol class="sintomas-menu" v-if="sintomas != ''">
+                  <li v-for="(item,index) in sintomas" :key="index" class="sintomas-menu__item">{{item}}</li>
+                </ol>
+              </div>
             </div>
             <h3>Desarollo y curso</h3>
             <p>Tiene a menudo un inicio temprano e insidioso (p. ej., en la adolescencia o la juventud) y, por definicion, tiene un curso

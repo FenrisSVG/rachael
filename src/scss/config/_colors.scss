@@ -5,7 +5,8 @@
     --background-color: #111213;
     --text-color: #eff;
     --title-color: hsl(40, 2%, 63%);
-     --menu-color: #6A5E5F;
+    --menu-color: #6A5E5F;
+    --link-color: rgb(57, 107, 160);
   }
   
   $primary-color: var(--primary-color);
@@ -15,3 +16,4 @@
   $text-color: var(--text-color);
   $title-color: var(--title-color);
   $menu-color: var(--menu-color);
+  $link-color: var(--link-color);

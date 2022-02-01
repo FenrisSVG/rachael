@@ -1,34 +1,43 @@
 .article-quesillo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 1em 5em;
 
     &__header{
-        width: 60%;
+        width: 58%;
         display: flex;
         align-items: start;
-
-        & > *{
-            margin: 0 .8em;
-        }
+        gap: 20px;
     }
 
     &__body{
-        width: 59%;
+        width: 58%;
         margin-top: 1em;
-        padding-left: 12em;
+        padding-left: 12.5em;
         padding-bottom: 2em;
+    }
+
+    &__footer{
+        width: 100%;
     }
 }
 
+.maps{
+    width: 100%;
+}
+
 .atencion{
-    padding: 1em;
     margin: 1em 0;
-    background-color: var(--primary-color);
+    padding: 1em 1.5em;
     border-radius: 7px;
     border: 1px solid #ccc;
+    background-color: var(--primary-color);
 
-    & h6{
-        font-size: 18px;
-        margin: .8em 0;
+    &-title{
+        margin: .3em 0 .8em;
+        font-size: 20px;
+        font-weight: bold;
         color: var(--danger-color);
     }
 
@@ -47,24 +56,17 @@
 }
 
 .main-menu__quesillo{
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+    @include reset-list;
 }
 
 .main-list__quesillo{
-    margin: .2em 0;
-    list-style: none;
+    margin: .1em 0;
     color: var(--text-color);
-}
-
-.main-menu__quesillo--grid > *{
-    margin: 0 .5em;
 }
 
 .quesillo{
 
-    & h2{
+    &-title{
         color: var(--title-color);
         padding: 1em 4em;
     }
@@ -89,26 +91,27 @@
         border: 1px solid #ccc;
         border-radius: 7px;
 
-        & h6{
+        &__title{
             color: var(--danger-color);
-            font-size: 24px;
+            font-size: 30px;
             margin: .8em 0;
         }
 
-        & p{
-            color: var(--title-color);
+        &__info{
             display: flex;
             flex-direction: row;
             gap: 8px;
             align-items: center;
+            color: var(--title-color);
 
             & span{
                 color: var(--danger-color);
                 font-weight: bold;
-            }
 
+            }
+            
             & img {
-                max-width: 120px;
+                max-width: 140px;
             }
         }
     }
@@ -118,16 +121,12 @@
     display: flex;
     justify-content: space-around;
 
-    & span{
+    &__item{
         color: var(--danger-color);
         padding: .3em .5em;
         border-radius: 20px;
         background-color: #ccc;
     }
-}
-
-iframe{
-    width: 100%;
 }
 
 .advertencia{

@@ -12,13 +12,13 @@
     }
 
     @include laptop{
-        height: 550px;
-        margin-top: 1em;
+        margin-top: 0;
+        height: 630px;
     }
 
-    @include desktop{
-        height: 565px;
-    }
+    // @include desktop{
+    //     height: 565px;
+    // }
 }
 
 .container{
@@ -28,7 +28,7 @@
     justify-content: flex-end;
     align-items: flex-end;
     padding: 0 1.875em;
-    height: 565px;
+    height: 100%;
 
     @include tablet{
         padding: 0 30px;
@@ -38,12 +38,13 @@
         justify-content: start;
     }
 
-    @include desktop{
+    @include laptop{
+        width: 100%;
         padding: 0;
     }
 
     & img{
-        height: 564px;
+        height: 100%;
         flex-basis: 1700px; 
 
         @include tablet{
@@ -75,9 +76,10 @@
 
         @include laptop{
             padding: 0 1em;
-            top: 20%;
-            left: 10%;
-            width: 25%;
+            top: 40%;
+            left: 20%;
+            width: auto;
+            border: 1px solid $danger-color;
         }     
     }
 }
@@ -101,11 +103,23 @@
     }
 
     @include laptop{
+        width: 39ch;
         font-size: 2.6rem;
-        width: auto;
-        border: 3px solid var(--danger-color);
         padding: 0 .5em;
+        white-space: nowrap;
+        border-right: 4px solid;
+        animation: typing 3s steps(39),
+        blink 1s infinite step-end alternate;
+        overflow: hidden;
     }
+}
+
+@keyframes typing{
+    from{ width: 0}
+}
+
+@keyframes blink{
+    50%{ border-color: transparent}
 }
 
 .psicologos-card__card--index{

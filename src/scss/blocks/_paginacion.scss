@@ -1,16 +1,16 @@
-.paginacion-container{
+.paginacion{
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-.paginacion{
-    padding: 1.5em;
-    border: 1px solid var(--danger-color);
-    
-    & a{
-        font-size: 16px;
-        text-decoration: none;
-        color: var(--title-color);
+    &-container{
+        padding: 1.5em;
+        border: 1px solid var(--danger-color);
+        
+        &__link{
+            font-size: 1rem;
+            text-decoration: none;
+            color: var(--title-color);
+        }
     }
 }

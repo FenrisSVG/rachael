@@ -1,18 +1,19 @@
-
 .test{
-    padding: 1.8em 4em;
+    padding: .5em 3em;
+    margin: .5em 0;
 
     &-information{
         display: flex;
         flex-direction: row-reverse;
-        align-items: start;
-        justify-content: start;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 20px;
         padding-bottom: 1em;
 
         &__img{
-            padding-left: 4em;
             height: 100%;
             width: 100%;
+            padding-left: 3em;
 
             & img{
                 max-width: 100%;
@@ -21,39 +22,35 @@
 
         &__text{
             flex-basis: 1900px;
-            padding: 0 1.8em;
+            padding-right: .8em;
             color: var(--title-color);
 
-            & p{
+            &-info{
                 line-height: 1.2;
+                font-size: 1.1rem;
             }
         }
     }
 
     &-header{
-        height: 435px;
         width: 55%;
-
-        & img{
-            max-width: 100%;
-        }
     }
 
     &-body{
         padding: 1em 0;
         width: 57%;
 
-        & h2,
-        & p{
+        &__title,
+        &__text{
             color: $title-color;
         }
 
-        & p{
+        &__text{
             line-height: 1.5;
             color: $text-color;
         }
 
-        & h2 span{
+        & span{
             color: var(--danger-color);
         }
     }
@@ -64,14 +61,14 @@
         align-items: center;
         overflow: hidden;
 
-        & a{
+        &__link{
             position: relative;
             display: flex;
             align-items: center;
             padding: 1.55em 4em;
             border-radius: 8px;
             text-decoration: none;
-            color: #fff;
+            color: $text-color;
             background-color: $danger-color;
             
             & span,
@@ -109,13 +106,9 @@
 .test-container{
     padding-top: 1.3em;
 
-    &__text{
+    &__title{
+        padding-left: 2em;
+        margin-top: .5em;
         color: var(--title-color);
-        padding-left: 2.5em;
     }
-}
-
-#clic{
-    font-size: 16px;
-    margin-bottom: 2em;
 }

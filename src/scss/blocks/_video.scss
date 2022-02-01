@@ -1,11 +1,12 @@
 .video-container{
     position: relative;
-    overflow: hidden;
     display: flex;
     align-items: flex-end;
+    overflow: hidden;
 
     @include laptop{
         align-items: center;
+        height: 800px;
     }
 
     @include desktop{
@@ -20,7 +21,8 @@
         }
 
         @include laptop{
-            max-height: 750px;
+            width: 100%;
+            max-height: 100%;
         }
     }
 }
@@ -38,30 +40,31 @@
     }
 
     @include laptop{
-        height: 800px;
+        height: 100%;
     }
 }
 
 .video-content{
-    position:absolute;
-    color: $text-color;
+    position: absolute;
     padding: 0 1.25em;
+    color: $text-color;
     
-    @include desktop{
+    @include laptop{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 100%;
     }
 
     & hr{
-        @include desktop{
+        @include laptop{
             display: none;
         }
     }
 
 
-    & p {
+    &__text{
         font-size: 14px;
         line-height: 1.5;
 
@@ -74,7 +77,7 @@
             width: 85%;
         }
 
-        @include desktop{
+        @include laptop{
             width: 60%;
             margin-top: .5em
         }

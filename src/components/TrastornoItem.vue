@@ -4,11 +4,11 @@
             <div class="trastorno-header__img">
               <img :src="trastorno.image" alt="" loading="lazy">
             </div>
-            <h2>{{trastorno.name}}</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum sequi est 
+            <h2 class="trastorno-header__title">{{trastorno.name}}</h2>
+            <p class="trastorno-header__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum sequi est 
               modi quis aut. Molestias officia quaerat accusantium minima placeat!...</p>
-            <router-link :to="{name: trastorno.router, params:{query: trastorno.link}}" rel="nofollow">
-              <svg width="155" height="55">
+            <router-link class="trastorno-header__link" :to="{name: trastorno.router, params:{query: trastorno.link}}" rel="nofollow">
+              <svg class="trastorno-header__link-svg" width="155" height="55">
                 <defs>
                 <linearGradient id="grad1">
                 <stop offset="0%" stop-color="#972745"/> 

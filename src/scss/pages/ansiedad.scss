@@ -1,8 +1,12 @@
 .trastornos{
     padding-bottom: 2em;
 
-    & h2{
+    &-title,
+    &-container__title{
         color: var(--title-color);
+    }
+
+    &-title{
         padding: 10px 2em;
     }
 
@@ -18,14 +22,13 @@
             }
         }
 
+        &__title{
+            font-size: 26px;
+            margin: .5em 0;
+        }
+        
         &__text{
             padding: 1em 5em 1em 2.8em;
-
-            & h3{
-                color: var(--title-color);
-                font-size: 26px;
-                margin: .5em 0;
-            }
 
             & p{
                 color: var(--text-color);
@@ -37,7 +40,7 @@
 
                 & a{
                     text-decoration: none;
-                    color: rgb(57, 107, 160);
+                    color: $link-color;
                 }
 
                 & span, & a{
@@ -47,10 +50,6 @@
                 & a:hover{
                     color: rgb(60, 120, 180);
                 }
-            }
-
-            & strong span{
-                color: var(--danger-color);
             }
         }
     }

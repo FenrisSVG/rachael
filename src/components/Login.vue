@@ -1,22 +1,22 @@
 <template>
     <div class="login-2" id="form-login-2">
-        <p class="login-2__title">Log-In</p>  
-        <form method="POST" class="login-2-form" id="form-login-2">
-            <div class="login-2-form__input">
+        <p class="login__title login__title--secondary">Log-In</p>  
+        <form method="POST" class="login-form login-form--secondary" id="form-login-2">
+            <div class="login-form__container">
               <label for="text">Username: </label>
-              <input type="text" name="text" class="mail-2" placeholder="Username" autofocus required v-model="username" v-on:change="mostrarLogin">
+              <input class="login-form__input" type="text" name="text" placeholder="Username" autofocus required v-model="username" v-on:change="mostrarLogin">
             </div>
-            <div class="login-2-form__input">
+            <div class="login-form__container">
               <label for="password-login">Password:</label>
-              <input type="password" v-model="password" name="password-login" class="pass-2" placeholder="Contraseña" required>
+              <input class="login-form__input" type="password" v-model="password" name="password-login" placeholder="Contraseña" required>
             </div>
-            <div class="login-2-form__button">
-              <input type="submit" @click="login" value="Log-in">
+            <div class="login-form__button">
+              <input class="login-form__submit login-form__submit--secondary" type="submit" @click="login" value="Log-in">
             </div>
         </form>
-        <div class="login-text-2">
-            <router-link to="/signup">Sign-up</router-link>
-            <a href="#" class="login-text__link-2">¿Forgot ur password?</a>
+        <div class="login-text login-text--secondary">
+            <router-link class="login-text__link login-text__link--secondary" to="/signup">Sign-up</router-link>
+            <a href="#" class="login-text__link login-text__link--secondary login-text__link--padding">¿Forgot ur password?</a>
         </div>
     </div>
 </template>

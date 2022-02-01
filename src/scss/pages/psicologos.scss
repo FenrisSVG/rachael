@@ -1,233 +1,218 @@
-.psicologos-container{
-    padding: 1em 4em;
-    overflow: hidden;
-    
-    & p{
-        color: var(--title-color);
-        font-size: 20px;
-    }
-}
-
 .psicologos{
     display: grid;
     grid-template-columns: 300px 1fr;
 
+    &-container{
+        padding: 1em 4em;
+        overflow: hidden;
+        
+        & p{
+            color: var(--title-color);
+            font-size: 20px;
+        }
+    }
+
     &-card{
         padding: 1em 1.5em;
         grid-column: 2/3;
-
-        & .filter{
-            
-            & label{
-                color: var(--title-color);
-                font-size: 1.1rem;
-            }
-            & select{
-                display: block;
-                margin-top: 12px;
-                width: 50%;
-                height: 35px;
-                color: white;
-                border: .5px solid var(--danger-color);
-                background-color: var(--primary-color);
-                border-radius: 5px;
-            }
-        }
-
-        &__aside{
-            display: flex;
-            margin-top: 17px;
-            padding-bottom: .4em;
-            background-color: var(--primary-color);
-            border-radius: 6px;
-            box-shadow: 5px 5px 5px rgba(255,255,255,0.1);
-
-            &-img{
-                width: 35%;
-                text-align: right;
-                & img{
-                    padding: 1.5em .2em;
-                    max-width: 100%;
-                    height: 170px;
-                }
-            }
-
-            &-text{
-                padding-left: .7em;
-
-                & h2{
-                    font-size: 28px;
-                    margin-bottom: .5em;
-                    color: var(--danger-color);
-                }
-
-                & p{
-                    color: var(--text-color);
-                    font-size: 1rem;
-                    margin-top: 0;
-                    margin-bottom: 1em;
-                }
-
-                & a{
-                    display: inline-block;
-                    padding: .7em 1.4em;
-                    text-decoration: none;
-                    color: #fff;
-                    border-radius: 6px;
-                    background-color: var(--danger-color);
-                    box-shadow: 0 5px 3px rgba(255,255,255,0.2);
-                    transition: all .3s ease-in;
-                    
-                    &:hover{
-                        transform: translateY(-12%);
-                        background-color: transparent;
-                        border: 1px solid var(--danger-color);
-                        box-shadow: 0 9px 3px rgba(255,255,255,0.2);
-                    }
-                }
-            }
-        }
 
         &__card{
             display: grid;
             grid-template-columns: repeat(3,1fr);
             gap: 15px;
             padding-top: 1.5em;
+        }
 
-            & .psiquiatras{
-                position: relative;
-                padding: 1em 1em 0;
-                border-radius: 6px;
-                background-color: var(--primary-color);
-                width: 300px;
-                z-index: 2000;
-
-                &::after{
-                    content:'';
-                    position: absolute;
-                    display: block;
-                    top: 12px; 
-                    right: 12px;
-                    width: 40px;
-                    height: 40px;
-                    background-image: url('../../src/assets/desktop/nicaragua.jpg');
-                    background-position: center;
-                    border-radius: 50%;
-                }                
-
-                &-header{
-
-                    &__img{
-                        width: 50%;
-                        margin-left: auto;
-                        margin-right: auto;
-                        border-radius: .2em;
-                        overflow: hidden;
-
-                        & img{
-                            display: block;
-                            max-width: 100%;
-                            height: 140px;
-                        }
-                    }
-
-                    &__info{
-                        text-align: center;
-
-                        & p{
-                            margin: .5em 0;
-                            font-size: 1.2rem;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                        }
-
-                        & p:nth-of-type(2),
-                        & p:nth-of-type(3){
-                            font-size: 14px
-                        }
-                    }
-                    
-                }
-
-                & footer{
-                    text-align: center;
-                    padding-bottom: 1em;
-
-                    & p{
-                        position: relative;
-                        overflow: hidden;
-                        font-size: 14px;
-                        line-height: 1.2em;
-                        padding-right: 1em;
-                        margin-right: -1em;
-                        text-overflow: ellipsis;
-                        height: 50px;
-                        margin-bottom: 1em;
-                    }
-
-                    & p::before{
-                        content: '...';
-                        position: absolute;
-                        right: 22px;
-                        bottom: 3px;
-                        font-size: 20px;
-                    }
-
-                    & p::after{
-                        content: '';
-                        position:absolute;
-                        right: 0;
-                        width: 1em;
-                        height: 1em;
-                        margin-top: 0.2em;
-                        background-color: white;
-                    }
-
-                    & a{
-                        display: inline-block;
-                        position: relative;
-                        padding: .6em 1.3em;
-                        text-decoration: none;
-                        border-radius: 5px;
-                        color: #fff;
-                        border: 1px solid var(--danger-color);
-                        background-color: transparent;
-                        overflow: hidden;
-                        z-index: 100;
-                        
-                        &::after{
-                            content: '';
-                            display:block;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            border-radius: 5px;
-                            background-color: var(--danger-color);
-                            transform: translateX(-100%);
-                            transition: transform .4s ease-in-out;
-                            z-index: -1;
-                        }
-                    }
+        &__aside{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: .4em;
+            background-color: var(--primary-color);
+            border-radius: 6px;
+            box-shadow: 5px 5px 5px rgba(255,255,255,0.1);
+        
+            &-img{
+                & img{
+                    padding: 1.5em .2em;
+                    height: 170px;
                 }
             }
-            
+        
+            &-title{
+                font-size: 28px;
+                margin-bottom: .5em;
+                color: var(--danger-color);
+            }
+        
+            &-link{      
+                padding: .7em 1.4em;
+                background-color: var(--danger-color);
+                box-shadow: 0 5px 3px #ffffff33;
+                transition: all .3s ease-in;
+        
+                &:hover{
+                    transform: translateY(-12%);
+                    background-color: transparent;
+                    border: 1px solid var(--danger-color);
+                    box-shadow: 0 9px 3px rgba(255,255,255,0.2);
+                }
+            }
+        
+            &-text{
+        
+                & p{
+                    color: var(--text-color);
+                    font-size: 1rem;
+                    margin-top: 0;
+                    margin-bottom: 1em;
+                }
+            }
         }
     }
 }
 
-.side-bar{
-    border-radius: 5px;
-    box-shadow: 0 1px 1px rgba(255,255,255,0.5);
+// FILTER LEFT SIDE STYLES ON PSICOLOGOS.VUE
+.filter{
+    padding-bottom: .7em;
+
+    &-consulta{
+        display: block;
+        margin-top: 12px;
+        width: 50%;
+        height: 35px;
+        padding-left: .7em;
+        border: .5px solid var(--danger-color);
+        border-radius: 5px;
+        color: $text-color;
+        background-color: var(--primary-color);
+    }
+    
+    & label{
+        color: var(--title-color);
+        font-size: 1.1rem;
+    }
+}
+
+
+// PSIQUIATRAS STYLES ON PSICOLOGOSLIST.VUE
+.psiquiatras{
+    position: relative;
+    width: 335px;
+    padding: 1em 1em 0;
+    border-radius: 6px;
     background-color: var(--primary-color);
-    padding: 1em 1.6em;
+    z-index: 2000;
+
+    &-header{
+
+        &__img{
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: .2em;
+            overflow: hidden;
+
+            & img{
+                display: block;
+                max-width: 100%;
+                height: 140px;
+            }
+        }
+
+        &__info{
+            text-align: center;
+
+            & p{
+                margin: .7em 0 .4em;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+
+    &-footer{
+        text-align: center;
+        padding-bottom: 1em;
+
+        & p{
+            position: relative;
+            height: 60px;
+            margin-right: -1em;
+            margin-bottom: 1em;
+            padding-right: 1em;
+            font-size: 1rem;
+            line-height: 1.2em;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            &::before{
+                content: '...';
+                position: absolute;
+                right: 22px;
+                bottom: 3px;
+                font-size: 20px;
+            }
+
+            &::after{
+                content: '';
+                position:absolute;
+                right: 0;
+                width: 1em;
+                height: 1em;
+                margin-top: 0.2em;
+                background-color: $text-color;
+            }
+        }
+
+        &__link{
+            padding: .6em 1.3em;
+            border: 1px solid var(--danger-color);
+            background-color: transparent;
+            overflow: hidden;
+            z-index: 100;
+            
+            &::after{
+                content: '';
+                display:block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+                background-color: var(--danger-color);
+                transform: translateX(-100%);
+                transition: transform .4s ease-in-out;
+                z-index: -1;
+            }
+
+            &:hover::after{
+                transform: translateX(0);
+            }
+
+            &:hover{
+                box-shadow: 0 1px 10px #cccccc40;
+                border: 1px solid var(--primary-color)
+            }
+        }
+    }
+}
+
+//  LEFT FOR FILTER ON SearchPsicologos.vue
+.side-bar{
     grid-row: 1/1;
     height: 650px;
+    padding: 1em 1.6em;
+    box-shadow: 0 1px 1px rgba(255,255,255,0.5);
+    border-radius: 5px;
+    background-color: var(--primary-color);
 
-    & p{
+    &__text{
         color: var(--title-color);
+        margin-top: .3em;
     }
 
     & hr{
@@ -239,11 +224,10 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        gap: 12px;
+        gap: 10px;
         width: 100%;
-        margin-top: -1em;
 
-        &:nth-of-type(1){
+        &--center{
             gap: 0px;
             align-items: center;
 
@@ -251,85 +235,56 @@
                 margin-top: 0;
                 margin-bottom: 1em;
             }
+            
+            & input{
+                cursor: pointer;
+
+                &:focus{
+                    outline: 2px solid $danger-color;
+                }
+            }
         }
         
-        & p{
-            color: var(--title-color);
+        &-text{
             margin-top: 0;
             margin-bottom: 0;
-            font-size: 16px;
+            font-size: 1.2rem;
+            color: $title-color;
         }
 
         & label{
-            color: var(--text-color);
             margin: .8em 0 .8em .6em;
-            font-size: 14px;
+            font-size: 1.1rem;
+            color: var(--text-color);
             
             &:first-child{
                 margin-left: 0;
             }
         }
 
-        & input[type="date"]{
-            cursor: pointer;
-
-            &:focus{
-                outline: 2px solid $danger-color;
-            }
+        &--help{
+            position: relative;
         }
     }
 }
 
-.help{
-    position:relative
-}
-
+// ICON STYLES FOR TERAPEUTIC MODELS IN SIDE-BAR BOTTOM
 .icon-help{
     position: absolute;
-    top: 0;
+    top: 5px;
     right: 0;
-    color: var(--danger-color);
     font-size: 25px;
+    color: var(--danger-color);
     cursor: pointer;
 }
 
-.consulta{
-    padding-left: .7em;
-}
+// MODAL STYLES FOR TERAPEUTIC MODELS
 
 .modal-terapeutico{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(17,18,19,.7);
-    transform: scale(0);
-    transition: transform .5s ease-in;
-    z-index: 400;
-
-    & h2{
-        color: var(--danger-color);
-        text-align: center;
-    }
-
-    & p{
-        color: var(--text-color);
-        text-align: center;
-        font-size: 14px;
-    }
-
-    &--show{
-        transform: scale(1);
-    }
 
     &--close{
         position: absolute;
-        top: 70px;
+        top: 80px;
         width: 50px;
         height: 50px;
         right: 22%;
@@ -342,7 +297,7 @@
             position: absolute;
             width: 35px;
             height: 3px;
-            top: 23px;
+            top: 60px;
             right: 0;
             border-radius: 5px;
             background-color: rgb(253, 253, 253);
@@ -359,31 +314,52 @@
 }
 
 .article-terapeutico{
-        background-color: var(--primary-color);
-        display: flex;
-        flex-direction: column;
-        width: 60vw;
-        padding: 0 2.5em 1em;
-        border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 60vw;
+    padding: 0 2.5em 1em;
+    border-radius: 6px;
+    background-color: var(--primary-color);
 
-        &__text{
-            margin-top: 1.5em;
-        }
-
-        &__text h5{
+        &__title{
+            margin-top: 1em;
+            margin-bottom: 0;
+            text-align: center;
             color: var(--danger-color);
-            font-size: 1.2rem;
-            margin: 0;
         }
 
-        &__text p{
-            text-align: left;
-            margin: .3em 0;
-            line-height: 1.5;
-            font-size: 1rem;
+        & p{
+            color: var(--text-color);
+            font-size: 15px;
+        }
+
+        &__section{
+
+            &-title{
+                color: var(--danger-color);
+                font-size: 1.2rem;
+                margin: 0;
+            }
+
+            &-text{
+                margin: .3em 0;
+                font-size: 1rem;
+                line-height: 1.5;
+            }
         }
 }
 
-input[type="checkbox"]{
+.psicologos-card__aside-link,
+.psiquiatras-footer__link{
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    border-radius: 5px;
+    color: $text-color;
+}
+
+.detalle-autoevaluacion__footer input,
+.sidebar-bar__input input{
     cursor: pointer;
 }

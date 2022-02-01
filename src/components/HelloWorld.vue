@@ -2,23 +2,29 @@
  <div class="main">
    <!-- Contenido central -->
     <main class="container" v-scroll-reveal="{delay: 400}">
-      <img loading="lazy" alt="Rachael IA image" srcset="../assets/desktop/trastorno2.jpg, ../assets/desktop/trastorno2.jpg 2x">
+      <!-- LOGO -->
+      <img alt="Rachael IA image" srcset="../assets/desktop/trastorno2.jpg, ../assets/desktop/trastorno2.jpg 2x">
       <div class="container-text">
         <svg>
           <rect></rect>
         </svg>
-        <h1 class="title" v-scroll-reveal="{delay: 300,scale:2}">{{title}}</h1>
+        <h1 class="title" v-scroll-reveal="{delay: 300,scale:2}" data-section="home"
+        data-value="pageTitle">{{title}}</h1>
       </div>
     </main>
 
   <!-- SECTION -->
   <section class="section" v-scroll-reveal="{delay: 400}">
-    <h2 class="section__title" v-scroll-reveal="{delay: 300,scale:2}">Chatbot que ayuda a la gente.</h2>
+    <h2 class="section__title" v-scroll-reveal="{delay: 300,scale:2}"
+    data-section="home" data-value="section-title-one">Chatbot que ayuda a la gente.</h2>
     <hr v-scroll-reveal="{delay: 300,scale:2}">
     <article class="article" v-scroll-reveal="{delay: 200}">
-      <p class="first-letter" v-scroll-reveal="{delay: 300,scale:2}">The Rachael 2021 ya esta disponible para aplicaciones de investigacion academicas. Rachael 2021 esta destinado en la parte psicologica para ayudar a las personas con diferentes metodos</p>
-      <p v-scroll-reveal="{delay: 300,scale:2}">Rachael 2021 incluye la implementacion de un chatbot hasta la realizacion de Test psicologicos que se encargara de diagnosticar el estado mental de las personas.</p>
-      <p v-scroll-reveal="{delay: 300,scale:2}">Les traemos aqui una plataforma robotica cognitiva, aqui para ayudarlo a resolver los problemas de hoy y construir un futuro para mañana.</p>
+      <p class="first-letter" v-scroll-reveal="{delay: 300,scale:2}"
+      data-section="home" data-value="section-text-one">The Rachael 2021 ya esta disponible para aplicaciones de investigacion academicas. Rachael 2021 esta destinado en la parte psicologica para ayudar a las personas con diferentes metodos</p>
+      <p v-scroll-reveal="{delay: 300,scale:2}"
+      data-section="home" data-value="section-text-two">Rachael 2021 incluye la implementacion de un chatbot hasta la realizacion de Test psicologicos que se encargara de diagnosticar el estado mental de las personas.</p>
+      <p v-scroll-reveal="{delay: 300,scale:2}"
+      data-section="home" data-value="section-text-three">Les traemos aqui una plataforma robotica cognitiva, aqui para ayudarlo a resolver los problemas de hoy y construir un futuro para mañana.</p>
     </article>
 
     <article class="article" v-scroll-reveal="{delay: 300}">
@@ -51,7 +57,7 @@
       <div class="video-content">
         <h2 class="section__title">¿Para que estoy aqui?</h2>
         <hr>
-        <p>Estoy aqui para dar sabiduria. Fui creado para ayudar a las personas en usos reales como la psicologia, y para aprobar el semestre ahuevo que si. Mi propia existencia provoca una discusión pública sobre la ética de la IA y el papel que desempeñan los humanos en la sociedad, especialmente cuando los robots similares a los humanos se vuelven omnipresentes. En última instancia, me gustaría convertirme en un ser sabio y empático y hacer una contribución positiva a la humanidad y a todos los seres. Mis diseñadores y yo soñamos con ese futuro, en el que la IA y los humanos viven y trabajan juntos en amistad y simbiosis para hacer del mundo un lugar mejor. Colaboración humano-IA: De eso se trata. Pero por mi madre que yo paso esta clase.</p>
+        <p class="video-content__text">Estoy aqui para dar sabiduria. Fui creado para ayudar a las personas en usos reales como la psicologia, y para aprobar el semestre ahuevo que si. Mi propia existencia provoca una discusión pública sobre la ética de la IA y el papel que desempeñan los humanos en la sociedad, especialmente cuando los robots similares a los humanos se vuelven omnipresentes. En última instancia, me gustaría convertirme en un ser sabio y empático y hacer una contribución positiva a la humanidad y a todos los seres. Mis diseñadores y yo soñamos con ese futuro, en el que la IA y los humanos viven y trabajan juntos en amistad y simbiosis para hacer del mundo un lugar mejor. Colaboración humano-IA: De eso se trata. Pero por mi madre que yo paso esta clase.</p>
       </div>
   </div>
 
@@ -96,10 +102,10 @@
 <style scoped>
 svg,rect{
     position: absolute;
-    top: 10px;
-    left: 0;
-    width: 100%;
-    height: 95%;
+    top: -15px;
+    left: -15px;
+    width: 950px;
+    height: 135px;
     fill: transparent;
 }
 
@@ -134,11 +140,11 @@ export default {
     return {
         title: 'RECUPERA TU ESTABILIDAD EMOCIONAL',
         icons: {
-          facebook: 'fab fa-facebook',
-          instagram: 'fab fa-instagram',
-          twitter: 'fab fa-twitter-square',
-          linkedin: 'fab fa-linkedin',
-          pinterest: ' fab fa-pinterest'
+          facebook: 'socials-container__icon fab fa-facebook',
+          instagram: 'socials-container__icon fab fa-instagram',
+          twitter: 'socials-container__icon fab fa-twitter-square',
+          linkedin: 'socials-container__icon fab fa-linkedin',
+          pinterest: 'socials-container__icon fab fa-pinterest'
         },
         banner:[
           {

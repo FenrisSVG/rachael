@@ -1,7 +1,7 @@
 <template>
     <div>
       <section class="trastornos">
-        <h2>Trastorno de Ansiedad Social (Fobia Social).</h2>
+        <h2 class="trastornos-title">Trastorno de Ansiedad Social (Fobia Social).</h2>
         <article class="trastornos-container">
           <header class="trastornos-container__img">
             <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="" loading="lazy">

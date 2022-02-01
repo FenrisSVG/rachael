@@ -2,7 +2,7 @@
   <div id="app">
    <header class="header">
     <div class="logo-container">
-      <img src="./assets/logo.png" alt="Rachael Logo" class="logo" loading="lazy">
+      <img src="./assets/logo.png" alt="Rachael Logo" class="logo">
       <h6 @click="home" class="logo-title">Rachael</h6>
       <Search />
     </div> 
@@ -15,19 +15,20 @@
           <router-link to="/" class="main-menu__link" rel="nofollow">Home</router-link>
         </li>
         <li class="main-menu__item">
-          <router-link to="/psicologos" class="main-menu__link" rel="nofollow">Psicologos</router-link>
-        </li>
-        <li class="main-menu__item main-menu__item--icon"  id="resources">
-          <router-link to="/trastornos" class="main-menu__link" rel="nofollow">Trastorno</router-link> 
+          <router-link to="/personalidad" class="main-menu__link" rel="nofollow"
+          >Personalidad</router-link>
         </li>
         <li class="main-menu__item">
-          <router-link to="/antecedentes" class="main-menu__link" rel="nofollow">Diagnostico</router-link> 
+          <router-link to="/psicologos" class="main-menu__link" rel="nofollow"
+          data-section="home" data-value="psicologos">Psicologos</router-link>
         </li>
         <li class="main-menu__item">
-          <router-link to="/test" class="main-menu__link" rel="nofollow">Test</router-link> 
+          <router-link to="/antecedentes" class="main-menu__link" rel="nofollow"
+          data-section="home" data-value="diagnostico">Diagnostico</router-link> 
         </li>
         <li class="main-menu__item">
-          <router-link to="/ver-mas" class="main-menu__link" rel="nofollow">Ver mas</router-link> 
+          <router-link to="/test" class="main-menu__link" rel="nofollow"
+          data-section="home" data-value="autoevaluacion">Autoevaluacion</router-link> 
         </li>
         <li class="main-menu__item main-menu__item--perfil" id="login" @click="show">
           <span><i class="fas fa-user"></i></span>
@@ -38,11 +39,19 @@
             <form method="POST" class="login-form" id="form-login" action="/">
                 <input class="login-form__input" type="text" name="text" placeholder="Username" autofocus autocomplete="off" required v-model="username" v-on:change="mostrarLogin">
                 <input class="login-form__input" type="password" v-model="password" name="password"  placeholder="Contraseña" required>
-                <input class="login-form__input" type="submit" @click="login()" value="Login">
+                <input class="login-form__submit" type="submit" @click="login()" value="Login">
             </form>
             <div class="login-text">
                 <router-link to="/signup" @click="close()" rel="nofollow" class="login-text__link">Sign-up</router-link>
                 <a href="#" class="login-text__link" rel="nofollow">¿Forgot ur password?</a>
+            </div>
+          </div>
+          <div class="flags" id="flags">
+            <div class="flags__item" data-language="es">
+              <img src="./assets/desktop/es.svg" class="flags__image" alt="spanish flags language">
+            </div>
+            <div class="flags__item" data-language="en">
+              <img src="./assets/desktop/en.svg" class="flags__image" alt="english flags language">
             </div>
           </div>
         </li>

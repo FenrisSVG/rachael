@@ -1,7 +1,7 @@
 <template>
     <div>
       <section class="trastornos">
-        <h2>Trastorno Depresivo por Afeccion Medica</h2>
+        <h2 class="trastornos-title">Trastorno Depresivo por Afeccion Medica</h2>
         <article class="trastornos-container">
           <header class="trastornos-container__img">
             <img src="../../assets/desktop/ansiedad-generalizada.jpg" alt="" loading="lazy">
@@ -17,7 +17,7 @@
               </p>
             </div>
             <div class="trastornos-sintomas">
-              <h3><strong>Sintomas clinicos del Trastorno de Depresivo por Afeccion Medica.</strong></h3>
+              <h3 class="trastornos-container__title"><strong>Sintomas clinicos del Trastorno de Depresivo por Afeccion Medica.</strong></h3>
               <p>Algunos sintomas del Trastorno Depresivo por Afeccion Medica son,</p>
               <div class="sintomas">
                 <ol class="sintomas-menu" v-if="sintomas != ''">
@@ -26,7 +26,7 @@
               </div>
             </div>
             <div class="trastornos-desarrollo">
-              <h3>Desarollo y curso</h3>
+              <h3 class="trastornos-container__title">Desarollo y curso</h3>
               <p>Tras un infarto cerebral, el inicio de una depresion parece ser muy agudo, teniendo lugar al dia o a los pocos
                   dias del accidente cerebrovascular en la mayor serie de casos. Sin embargo, en algunos casos, el comienzo
                   de la depresion se produce tras semanas o meses del <abbr title="Accidente Cerebrovascular">ACV</abbr>. En la mayor serie
@@ -35,28 +35,28 @@
               </p>
             </div>
             <div class="trastornos-factores">
-              <h3>Factores de riesgo y pronosticos</h3>
+              <h3 class="trastornos-container__title">Factores de riesgo y pronosticos</h3>
               <p>El riesgo de que se inicie de forma aguda un trastorno mayor tras un <abbr title="Accidente Cerebrovascular">ACV</abbr>
               parece correlacionarse estrechamente con la localizacion de la lesion, siendo mayor el riesgo asociado a los infartos
               frontales inferiores y aparentemente menor el asociado a las lesiones frontales derechas en los pacientes que presentan
               a los pocos dias del infarto.</p>
             </div>
             <div class="trastornos-genero">
-              <h3>Aspectos diagnosticos relacionados con el genero.</h3>
+              <h3 class="trastornos-container__title">Aspectos diagnosticos relacionados con el genero.</h3>
               <p>La diferencia de genero se corresponden con las asociadas a la afeccion medica general (p. ej, 
                   el lupus eritematoso sistemico es mas frecuente en las mujeres, y el infarto cerebral es mas frecuente en los hombres
                   de mediana edad que las mujeres).
               </p>
             </div>
             <div class="trastornos-consecuencias">
-              <h3><strong>Consecuencias que tiene este Trastorno Depresivo por Afeccion Medica.</strong></h3>
+              <h3 class="trastornos-container__title"><strong>Consecuencias que tiene este Trastorno Depresivo por Afeccion Medica.</strong></h3>
               <p>Se relacionan con aquellas que se asocian a la afeccion medica. En general se cree, aunque no se ha demostrado, que
                   un episodio <router-link :to="{name: 'Depresion', params: {query:'depresion'}}" rel="nofollow">depresivo mayor</router-link> inducido por una  enfermedad de Cushing no va a ocurrir si se detiene o se cura
                   la enfermedad de Cushing.
               </p>
             </div>
             <div class="trastornos-suicidio">
-              <h3>Riesgo de suicidio.</h3>
+              <h3 class="trastornos-container__title">Riesgo de suicidio.</h3>
               <p>No hay estudios epidemiologos que aporten datos que permitan diferenciar el riesgo de suicidio de un
                   episodio mayor debido a otra afeccion medica del riesgo de un episodio depresivo mayor en general.
                   Hay informes de casos que relacionan los suicidios con los episodios de
@@ -65,7 +65,7 @@
               </p>
             </div>
             <div class="trastornos-comorbilidad">
-              <h3>Comorbilidad</h3>
+              <h3 class="trastornos-container__title">Comorbilidad</h3>
               <p>Las afecciones comorbidas con el trastorno depresivo debido a otra afeccion medica son aquellas
                   que se asocian a las afecciones medicas de relevancia etiologica. Se ha señalado que el delirium puede 
                   aparecer antes o durante los sintomas depresivos en los pacientes con varias afecciones medicas, como la
@@ -74,13 +74,13 @@
               </p>
             </div>
             <div class="trastornos-tratamiento">
-              <h3><strong>¿Como se trata el Trastorno Depresivo por Afeccion Medica.?</strong></h3>
+              <h3 class="trastornos-container__title"><strong>¿Como se trata el Trastorno Depresivo por Afeccion Medica.?</strong></h3>
               <p>La manera de tratar este problema es con medicamentos psicofarmaceuticos, pero lo mejor
                 es que <strong>consulte con un experto de verdad no con unos pendejos como nosotros.</strong>
               </p>
             </div>
             <div class="trastornos-solo">
-              <h3><strong>Recuerda que no estas solo.</strong></h3>
+              <h3 class="trastornos-container__title"><strong>Recuerda que no estas solo.</strong></h3>
               <p>Sabemos que la ansiedad puede ser un problema dificil pero <strong>no estas solo</strong>
               Recuerda que buscar ayuda siempre está bien, no hay nada mejor que contar con un especialista que te pueda enseñar qué hacer para superar la depresión. No lo dudes,  
               realmente te sorprenderás con los resultados si buscas ayuda contra la ansiedad hoy</p>

@@ -1,7 +1,7 @@
 <template>
-    <div class="paginacion-container" v-if="paginacion !== ''">
-          <div class="paginacion" v-for="(item,index) in paginacion" :key="index">
-            <router-link :to="{name : item.name, params: {page: item.link}}">{{index+1}}</router-link>
+    <div class="paginacion" v-if="paginacion !== ''">
+          <div class="paginacion-container" v-for="(item,index) in paginacion" :key="index">
+            <router-link class="paginacion-container__link" :to="{name : item.name, params: {page: item.link}}">{{index+1}}</router-link>
           </div>
         </div>
 </template>

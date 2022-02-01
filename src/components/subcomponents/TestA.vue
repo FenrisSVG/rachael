@@ -1,21 +1,27 @@
 <template>
     <div class="contact">
-
+      <!-- INFO DEL PACIENTE DEL TEST (ANTECEDENTES DATA) -->
       <section class="contact-test">
-        <h2><strong>Paso 3:</strong><span> Test de autoevaluacion</span></h2>
+        <h2 class="contact-test__title"><strong>Paso 3:</strong><span> Test de autoevaluacion</span></h2>
         <article class="contact-test__text">
           <p>El test de autoevaluacion es un test con un seriado de preguntas acerca de sintomas,
             desarrollo de personalidades y/o consecuencias que una persona puede tener por una experiencia pasada
           </p>
-          <p>Nombre del Usuario: <br>
-          <span>Benito Juarez</span>
-          </p>
-          <p>Apellido del Usuario: <br>
-          <span>Benito Juarez</span>
-          </p>
-          <p>Fecha a realizar el test: <br>
-          <span>Hoy</span>
-          </p>
+          <div class="contact-test__name">
+            <p>Nombre del Usuario: <br>
+            <span>Benito Juarez</span>
+            </p>
+          </div>
+          <div class="contact-test__surname">
+            <p>Apellido del Usuario: <br>
+            <span>Benito Juarez</span>
+            </p>
+          </div>
+          <div class="contact-test__date">
+            <p>Fecha a realizar el test: <br>
+            <span>Hoy</span>
+            </p>
+          </div>
         </article>
       </section>
 
@@ -27,10 +33,10 @@
 
           <!-- CATEGORIZACION DE LA ANSIEDAD --> 
           <div class="form-container__body show-opacity">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>A continuacion se le presentan diversas preguntas, por favor seleccione el cual
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>A continuacion se le presentan diversas preguntas, por favor seleccione el cual
               considere la opcion correcta.
-            </h2>
+            </p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(0,1)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -48,8 +54,8 @@
           </div>
           <!-- CATEGORIZACION OBSESIVOS-COMPULSIVOS -->
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Pregunta relacionada con el insomnio</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Pregunta relacionada con el insomnio</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(1,2)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -67,8 +73,8 @@
           </div>
           <!-- CATEGORIZACION DEPRESIVOS -->
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Pregunta relacionada a la agitacion.</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Pregunta relacionada a la agitacion.</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(2,3)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -86,8 +92,8 @@
           </div>
           <!-- CATEGORIZACION RELACIONADA AL TRAUMA Y ESTRES -->
           <div class="form-container__body">   
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Pregunta relacionada a los temblores.</h2>      
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Pregunta relacionada a los temblores.</p>      
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(3,4)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -97,7 +103,7 @@
               </div>
               <div class="detalle-autoevaluacion__footer">
                 <label for="si">Si</label>
-                <input type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="temblores" @change="tembloresNo = false"> 
+                <input class="detalle_autoevaluacion__input" type="checkbox" name="sintomas" :id="sintoma.nombre" v-model="temblores" @change="tembloresNo = false"> 
                 <label for="no">No</label>
                 <input type="checkbox" name="sintomas" v-model="tembloresNo" @change="temblores = false"> 
               </div>
@@ -105,8 +111,8 @@
           </div>
           <!-- CATEGORIZACION PERSONALIDAD -->
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Pregunta relacionada al cansancio</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Pregunta relacionada al cansancio</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(4,5)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -124,8 +130,8 @@
           </div>
           <!-- CATEGORIZACION BIPOLARIDAD -->
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Pregunta relacionada a un malestar abdominal</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Pregunta relacionada a un malestar abdominal</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(5,6)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -143,8 +149,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Pregunta relacionada a tener nauseas</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Pregunta relacionada a tener nauseas</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(6,7)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -162,8 +168,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Pregunta relacionada a un malestar en el torax.</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Pregunta relacionada a un malestar en el torax.</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(7,8)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -181,8 +187,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Pregunta relacionada al sintoma del Pesimismo</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Pregunta relacionada al sintoma del Pesimismo</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(8,9)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -200,8 +206,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Sintoma de incapacidad para concentrarte</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Sintoma de incapacidad para concentrarte</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(9,10)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -219,8 +225,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Sintoma de la taquicardia</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Sintoma de la taquicardia</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(10,11)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -238,8 +244,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Sintoma de los problemas gastrointestinales</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Sintoma de los problemas gastrointestinales</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(11,12)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -257,8 +263,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Pregunta relacionada a la timidez</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Pregunta relacionada a la timidez</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(12,13)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -276,8 +282,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Sintoma de la Mania</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Sintoma de la Mania</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(13,14)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -295,8 +301,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Personalidad de una baja autoestima</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Personalidad de una baja autoestima</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(14,15)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -314,8 +320,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Personalidad de una Alta Autoestima.</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Personalidad de una Alta Autoestima.</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(15,16)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -333,8 +339,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Personalidad inquieta</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Personalidad inquieta</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(16,17)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -352,8 +358,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Personalidad de tener pesadillas</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Personalidad de tener pesadillas</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(17,18)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -371,8 +377,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Personalidad de renunciar dificilmente a las posesiones</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Personalidad de renunciar dificilmente a las posesiones</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(18,19)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -390,8 +396,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Personalidad de tener miedo a morir</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Personalidad de tener miedo a morir</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(19,20)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -409,8 +415,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Personalidad de una necesidad de admiracion</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Personalidad de una necesidad de admiracion</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(20,21)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -428,8 +434,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Personalidad a un miedo de perder el control</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Personalidad a un miedo de perder el control</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(21,22)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -447,8 +453,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Personalidad de un miedo excesivo</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Personalidad de un miedo excesivo</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(22,23)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -466,8 +472,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Personalidad de creer que fallas en todo.</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Personalidad de creer que fallas en todo.</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(23,24)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -485,8 +491,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Personalidad de imponerse Reglas Estrictas</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Personalidad de imponerse Reglas Estrictas</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(24,25)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -504,8 +510,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Personalidad e una baja tolerancia al error</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Personalidad e una baja tolerancia al error</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(25,26)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -523,8 +529,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Personalidad impulsiva.</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Personalidad impulsiva.</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(26,27)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -542,8 +548,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Personalidad de negativismo.</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Personalidad de negativismo.</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(27,28)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -561,8 +567,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Personalidad de cambio continuo del estado de animo.</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Personalidad de cambio continuo del estado de animo.</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(28,29)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -580,8 +586,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Consecuencias de una depresion mayor</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Consecuencias de una depresion mayor</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(29,30)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -599,8 +605,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Consecuencias de un pensamiento desorganizado.</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Consecuencias de un pensamiento desorganizado.</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(30,31)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -618,8 +624,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Consecuencias de tener una falta de atencion</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Consecuencias de tener una falta de atencion</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(31,32)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -637,8 +643,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Consecuencia de un rencor persistente.</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Consecuencia de un rencor persistente.</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(32,33)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -656,8 +662,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Consecuencia de una mentalidad paranoica</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Consecuencia de una mentalidad paranoica</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(33,34)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -675,8 +681,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Consecuencias de adoptar una personalidad vulnerable.</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Consecuencias de adoptar una personalidad vulnerable.</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(34,35)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -694,8 +700,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Consecuencias de una sensacion cronica de vacio.</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Consecuencias de una sensacion cronica de vacio.</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(35,36)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -713,8 +719,8 @@
           </div>
           
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Consecuencia de un sistema disociativo grave</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Consecuencia de un sistema disociativo grave</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(36,37)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -730,8 +736,8 @@
           </div>
 
           <div class="form-container__body">
-            <h2 class="test-paciente__autoevaluacion">III. Test de Autoevaluacion</h2>
-            <h2>Consecuencias del consumo de una sustancia especifica.</h2>
+            <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
+            <p>Consecuencias del consumo de una sustancia especifica.</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(37,38)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -782,20 +788,24 @@
         </div>
 
       <div class="modal" id="modal" v-scroll-reveal="{delay: 100}">
-        <h2>Se llego a la prediccion de que tenga el/los siguente(s) trastorno(s)</h2>
-        <div class="modal__content" v-for="trastorno in trastornos" :key="trastorno.idtrastorno">
-          <h3 id="trastorno-diagnosticado">{{trastorno.nombre}}</h3>
+        <h2 class="modal__title">Se llego a la prediccion de que tenga el/los siguente(s) trastorno(s)</h2>
+        <div class="modal-content" v-for="trastorno in trastornos" :key="trastorno.idtrastorno">
+          <h3 class="trastorno-diagnosticado">{{trastorno.nombre}}</h3>
           <div v-if="trastorno.idtrastorno != '1'">
-            <p>{{trastorno.descripcion}}</p>
-            <h3>Causas</h3>
-            <p>{{trastorno.causas}}</p>
-            <h3>Recomendaciones</h3>
-            <p>{{trastorno.recomendaciones}}</p>
-            <hr class="linea">
+            <p class="modal-content__text">{{trastorno.descripcion}}</p>
+            <div class="trastorno-diagnosticado__causas">
+              <h3 class="modal-content__title">Causas</h3>
+              <p class="modal-content__text">{{trastorno.causas}}</p>
+            </div>
+            <div class="trastorno-diagnosticado__recomendaciones">
+              <h3 class="modal-content__title">Recomendaciones</h3>
+              <p class="modal-content__text">{{trastorno.recomendaciones}}</p>
+            </div>
+            <hr>
             <p class="important"><strong>Importante</strong>, esto solo es un diagnostico previo, no es oficial el diagnostico y le recomendamos ir donde un experto a validar nuestra informacion</p>
           </div>
           <div v-else class="modal__notEnoughInformation">
-            <hr class="linea">
+            <hr>
             <p class="important"><strong>Importante</strong>, esto solo es un diagnostico previo, no es oficial el diagnostico y le recomendamos ir donde un experto a validar nuestra informacion</p>
           </div>
         </div>
@@ -807,6 +817,11 @@
 <style scoped>
 .modal__notEnoughInformation{
   margin-top: auto;
+}
+
+.modal_notEnoughInformation hr{
+  width: 100%;
+  background-color: var(--secondary-color)
 }
 
 .detalle-autoevaluacion__img{
@@ -823,15 +838,6 @@
 
 .detalle-autoevaluacion__footer label:nth-child(3){
   margin-left: 1em;
-}
-
-.test-paciente__autoevaluacion{
-    background-color: var(--background-color);
-    font-size: 21px;
-    margin-top: 0;
-    width: 100%;
-    text-align:center;
-    padding: 1em 0;
 }
 
 .sky{
@@ -910,35 +916,6 @@
     transition: transform 1s ease;
 }
 
-.contact-test{
-  width: 70%;
-  padding: 1em 2em;
-  margin: 1.5em auto;
-  border-radius: 6px;
-  background-color: var(--primary-color);
-}
-
-.contact-test h2{
-  color: var(--title-color);
-}
-
-.contact-test h2 strong{
-  font-weight: bold;
-}
-
-.contact-test h2 span{
-  color: var(--danger-color)
-}
-
-.contact-test__text{
-  color: var(--text-color);
-}
-
-.contact-test__text p span{
-    color: var(--danger-color);
-    padding-top: .5em;
-}
-
 .cont-temporizador a{
   color: #222;
   text-align: center;
@@ -952,7 +929,6 @@
 </style>
 
 <script>
-    
 import axios from 'axios';
 import Footer from '../Footer.vue'
 

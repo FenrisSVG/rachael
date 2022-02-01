@@ -79,14 +79,13 @@
 
     @include laptop{
         position: relative;
-        height: auto;
+        height: 100%;
         transform: translateX(0);
         width: 100%;
         background-color: $background-color;
     }
 
     @include desktop{
-        height: 100%;
         justify-self: flex-start;
     }
 }
@@ -99,7 +98,7 @@
         grid-template-rows: 80px;
         gap: 50px;
         align-items: center;
-        border-bottom: 1px solid var(--danger-color);
+        border-bottom: 1px solid $danger-color;
     }
 }
 
@@ -128,7 +127,8 @@
     @include laptop{
         flex-direction: row;
         justify-content: space-around;
-        height: auto;
+        align-items: center;
+        height: 80px;
         width: 90%;
         margin-top: 0;
         margin-left: auto;
@@ -143,8 +143,8 @@
 
     &__item{
         padding: 1.2em;
-        border-bottom: 2px solid $primary-color;
         width: 85%;
+        border-bottom: 2px solid $primary-color;
 
         @include tablet-4{
             margin: 1em 0;
@@ -155,21 +155,27 @@
             border-bottom: none;
             margin: 0;
             overflow: hidden;
+            text-align: center;
         }
 
         @include desktop{
-            text-align: center;
+            border-bottom: transparent;
+            width: 100%;
         }
 
         &--perfil{
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
             height: 100%;
             border-bottom: none;
 
             & i{
                 color: $danger-color;
+            }
+
+            & p{
+                margin-right: 1.5em;
             }
         }
     }   
@@ -180,6 +186,7 @@
 
         @include laptop{
             cursor: pointer;
+            font-size: 1.1rem;
         }
 
         @include desktop{
@@ -208,14 +215,14 @@
         &::before{
             @include laptop{
                 top: -10px;
-                transform: translateX(-230%);
+                transform: translateX(-260%);
             }
         }
 
         &::after{
             @include laptop{
                 bottom: -10px;
-                transform: translateX(280%);
+                transform: translateX(330%);
             }
         }
 
@@ -225,16 +232,16 @@
                transform: translateX(0);
             }
         }
+
+        &.router-link-exact-active{
+            @include laptop{
+                color: var(--danger-color);
+                font-weight: 600;
+            }
+        }
     }
 }
 
-
-a.router-link-exact-active{
-    @include laptop{
-        color: var(--danger-color);
-        font-weight: 600;
-    }
-}
 
 .active{
     transform: translateX(0);
@@ -252,11 +259,11 @@ a.router-link-exact-active{
     }
 
     @include laptop{
-        max-width: 50%;
+        max-width: 11%;
     }
 
     @include desktop{
-        max-width: 11%;
+        max-width: 12%;
     }
 
     &-title{
@@ -266,7 +273,7 @@ a.router-link-exact-active{
         cursor: pointer;
 
         @include laptop{
-            font-size: 22px;
+            font-size: 20px;
         }
 
         @include desktop{
@@ -298,7 +305,7 @@ a.router-link-exact-active{
         padding: 2.7em 2.1em;
     }
 
-    @include desktop{
+    @include laptop{
         gap: 5px;
         padding: 2em 1em 2em 3em;
     }
@@ -360,12 +367,13 @@ a.router-link-exact-active{
         flex-direction: column;
         align-items: center;
         gap: 15px;
-        margin-top: 1.5em;
+        margin-top: 2em;
     }
 
     &__title{
         @include laptop{
             position: relative;
+            margin-top: 0;
             margin-left: auto;
             margin-right: auto;
             font-size: 1rem;
@@ -386,14 +394,37 @@ a.router-link-exact-active{
         }
     }
 
+    &-form__input,
+    &-form__submit{
+        width: 95%;
+        height: 35px;
+        background: none;
+        outline: none;
+        color: $text-color;
+        border: 1px solid #b70e21;
+    }
+
     &-form__input{
-        @include laptop{
-            width: 95%;
-            height: 35px;
-            background: none;
-            outline: none;
-            color: $text-color;
-            border: 1px solid #b70e21;
+        padding-left: 20px;
+        font-size: .9rem;
+
+        &:focus{
+            border-color: var(--danger-color);
+            box-shadow: 0 0 8px 0 var(--danger-color);
+        }
+    }
+
+    &-form__submit{
+        font-size: 12px;
+        text-decoration: none;
+        text-transform: uppercase;
+        border: 0;
+        border-radius: 7px;
+        cursor:pointer;
+        background-color: var(--danger-color);
+
+        &:hover{
+            background-color: rgb(200, 40, 70);
         }
     }
 
@@ -401,12 +432,12 @@ a.router-link-exact-active{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-top: .6em;
+        margin-top: 1rem;
         padding: 0 .7em;
 
         &__link{
             text-decoration: none;
-            color: steelblue;
+            color: $link-color;
             font-size: .75em;
         
             &:hover{
@@ -414,37 +445,6 @@ a.router-link-exact-active{
             }
         }
     }
-}
-
-.login-form input[type=submit]{
-    height: 35px;
-    font-size: 12px;
-    text-decoration: none;
-    text-transform: uppercase;
-    border: 0;
-    border-radius: 7px;
-    cursor:pointer;
-    color: $text-color;
-    background-color: var(--danger-color);
-
-    &:hover{
-        background-color: rgb(200, 40, 70);
-    }
-}
-
-
-input[type=text]:focus,
-input[type=password]:focus{
-    border-color: var(--danger-color);
-    box-shadow: 0 0 8px 0 var(--danger-color);
-}
-
-
-
-.login-form input[type=text],
-.login-form input[type=password]{
-    padding-left: 20px;
-    font-size: 1em;
 }
 
 .login--show{
@@ -469,28 +469,25 @@ input[type=password]:focus{
 // SEGUNDO LOGIN
 
 .login-2{
-    @include laptop{
-        margin: 4em auto 3em;
-        padding: 1em;
-        width: 50%;
-        border-radius: 10px;
-        background-color: var(--primary-color);
+    margin: 4em auto 3em;
+    padding: 1em;
+    width: 50%;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+}
+
+.login{
+
+    &-form--secondary{
+        margin-top: 2.5em;
+        padding: 0 2em .9em;
     }
 
-    &-form{
-        margin-top: 3em;
-        padding: 0 2em;
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__title{
+    &__title--secondary{
         @include laptop{
-            color: var(--title-color);
-            font-size: 1.2em;
             margin: 1em auto 0;
-            position: relative;
-            text-align: center;
+            font-size: 1.2em;
+            color: var(--title-color);
         }
 
         &::after{
@@ -508,39 +505,38 @@ input[type=password]:focus{
         }
     }
 
-    &-form input{
-        @include laptop{
-            width: 95%;
-            height: 35px;
-            background: none;
-            outline: none;
-            color: #fff;
-            border: 1px solid #b70e21;
+    &-form__container{
+        width: 90%;
+        margin: .3em 0;
+        
+        & label{
+            display: block;
+            color: $text-color;
+            margin-bottom: .6em;
         }
     }
 
-    &-form label{
-        display: block;
-        width: 95%;
-        color: #fff;
-        margin: 1em 0;
+    &-form__button{
+        width: 90%;
+    }
+
+    &-text--secondary{
+        width: 90%;
+        margin-top: .5em;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: flex-end;
+        padding: 0 1.7em .5em;
     }
 }
 
-.login-2-form__button input{
-    text-decoration: none;
-    margin-top: 25px;
-    background-color: var(--secondary-color);
-    border: 0;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 12px;
+.login-form__submit--secondary{
     display: block;
-    width: 95%;
+    margin-top: 0;
     height: 35px;
     border-radius: 5px;
-    cursor:pointer;
     z-index:100;
+    background-color: var(--secondary-color);
 
     &:hover{
         background-color: #65e3bb;
@@ -548,34 +544,27 @@ input[type=password]:focus{
     }
 }
 
-.login-text-2{
+.login-text__link--secondary{
+    font-size: .9rem;
+}
+
+.login-text__link--padding{
+    padding-right: 2em;
+}
+
+.flags{
     display: flex;
-    align-items: flex-end;
-    padding: 1.5em 2em;
-    justify-content: space-between;
-}
-
-.login-text-2 a{
-    text-decoration: none;
-    color: steelblue;
-    font-size: .75em;
-
-    &:hover{
-        color: rgb(120, 155, 255);
+    align-items: center;
+    gap: 5px;
+    width: 60px;
+    
+    &__item{
+        width: 100%;
     }
-}
 
-.login-2-form input[type=text],
-.login-2-form input[type=password]{
-    padding-left: 20px;
-    font-size: 1em;
-}
-
-.login-text__link-2{
-    margin-right: 2.2em;
-    margin-bottom: 0;
-}
-
-label[for="password-login"]{
-    margin-top: 1.5em;
+    &__image{
+        display: block;
+        max-width: 100%;
+        cursor: pointer;
+    }
 }

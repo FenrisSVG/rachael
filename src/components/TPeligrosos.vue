@@ -1,12 +1,12 @@
 <template>
     <section class="danger-trastorno" v-if="danger !== []" id="peligrosos">
-        <h2>Trastornos mas peligrosos que te pueden diagnosticar</h2>
+        <h2 class="danger-trastorno__title">Trastornos mas peligrosos que te pueden diagnosticar</h2>
         <div class="danger" v-for="item in danger" :key="item.id">
-            <div class="danger__img">
+            <div class="danger-img">
               <img :src="item.src" :alt="item.alt" loading="lazy">
             </div>
-            <div class="danger__text">
-              <p>{{item.name}}</p>
+            <div class="danger-text">
+              <p class="danger-text__trastorno">{{item.name}}</p>
             </div>
         </div>
     </section>
