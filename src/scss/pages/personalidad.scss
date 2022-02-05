@@ -81,6 +81,15 @@
         color: $text-color;
         background-color: $danger-color;
         cursor: pointer;
+        transition: transform .2s ease-in-out;
+
+        &:focus{
+            transform: translateY(3px);
+        }
+
+        &:hover{
+            box-shadow: 3px 3px 3px 0 #42b983aa;
+        }
     }
 }
 

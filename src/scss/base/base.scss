@@ -19,3 +19,9 @@ html.lightmode{
 :is(p,a){
   font-family: 'Open Sans', sans-serif;
 }
+
+form{
+  @include laptop{
+    accent-color: #42b983;
+  }
+}

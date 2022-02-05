@@ -60,6 +60,10 @@
         @include tablet-3{
             max-width: 100%;
         }
+
+        @include laptop{
+            aspect-ratio: 16/9;
+        }
     }
 
     &-text{

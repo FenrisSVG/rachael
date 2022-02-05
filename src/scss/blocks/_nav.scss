@@ -542,6 +542,10 @@
         background-color: #65e3bb;
         color: #333;
     }
+
+    &:focus{
+        transform: translateY(5px);
+    }
 }
 
 .login-text__link--secondary{

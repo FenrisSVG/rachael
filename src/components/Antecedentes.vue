@@ -247,7 +247,7 @@
         <div v-else class="not-login">
             <h2>Vaya! Parece que no has iniciado sesion.</h2>
             <span>Login</span>
-            <router-link to="/login" class="not-login__router">Login</router-link>
+            <button @click="redirectLogin" class="not-login__router">Login</button>
         </div>
 
         <div class="diagnostico-previo" id="diagnostico-previo">
@@ -324,20 +324,22 @@
 .not-login__router{
     display: inline-block;
     margin-top: .5em;
-    padding: .8em 1.5em;
+    padding: .8em 1.6em;
     text-decoration: none;
     letter-spacing: 1px;
     border-radius: .2em;
     mask:url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png);
-    mask-size:2300% 100%;
+    mask-size: 2400% 100%;
     color: #fff;
+    border: none;
     background-color: var(--danger-color);
-    animation:ani2 .7s steps(22) forwards;
+    animation: ani2 .7s steps(22) forwards;
     z-index: 10;
 }
 
 .not-login__router:hover{
-    animation:ani .7s steps(22) forwards
+    animation: ani .7s steps(22) forwards;
+    cursor: pointer;
 }
 
 @keyframes ani{from{mask-position:0 0}
@@ -987,6 +989,9 @@ export default {
             traumasShow.classList.add('traumas--show')
         }
         else traumasShow.classList.remove('traumas--show')
+    },
+    redirectLogin(){
+        setTimeout(()=>this.$router.push('/login'),500)
     },
     traumasChecked(){
         const traumasNo = document.getElementById('traumas-no')

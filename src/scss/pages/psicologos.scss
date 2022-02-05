@@ -103,21 +103,28 @@
     padding: 1em 1em 0;
     border-radius: 6px;
     background-color: var(--primary-color);
+    box-shadow: 2px 2px 3px 0px #cccccc99;
     z-index: 2000;
 
-    &-header{
+    &:hover{
+        box-shadow: 0 0 3px 2px #42b983bb;
+    }
 
+    &-header{
+        
         &__img{
             width: 50%;
             margin-left: auto;
             margin-right: auto;
             border-radius: .2em;
+            box-shadow: 3px 3px 1px 0 #42b983;
             overflow: hidden;
 
             & img{
                 display: block;
                 max-width: 100%;
                 height: 140px;
+                aspect-ratio: 16/9;
             }
         }
 
@@ -194,8 +201,12 @@
             }
 
             &:hover{
-                box-shadow: 0 1px 10px #cccccc40;
+                box-shadow: 3px 3px 2px #42b98388;
                 border: 1px solid var(--primary-color)
+            }
+
+            &:focus{
+                transform: translateY(5px)
             }
         }
     }
@@ -226,6 +237,7 @@
         justify-content: flex-start;
         gap: 10px;
         width: 100%;
+        accent-color: #42b983;
 
         &--center{
             gap: 0px;
@@ -272,10 +284,10 @@
 .icon-help{
     position: absolute;
     top: 5px;
-    right: 0;
-    font-size: 25px;
+    right: -8px;
+    font-size: 28px;
     color: var(--danger-color);
-    cursor: pointer;
+    transition: transform .4s ease-in;
 }
 
 // MODAL STYLES FOR TERAPEUTIC MODELS
@@ -326,6 +338,9 @@
             margin-top: 1em;
             margin-bottom: 0;
             text-align: center;
+            text-decoration: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: #42b983;
             color: var(--danger-color);
         }
 
@@ -362,4 +377,12 @@
 .detalle-autoevaluacion__footer input,
 .sidebar-bar__input input{
     cursor: pointer;
+}
+
+@media(Hover:hover){
+    .icon-help:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+        color: #42b983;
+    }
 }
