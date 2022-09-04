@@ -81,12 +81,12 @@
 .first-letter::first-letter{
     float: left;
     margin-top: -15px;
-    margin-right: .2rem;
+    margin-right: .1rem;
     height: auto;
     font-size: 38px;
     color: $danger-color;
 
     @include tablet{
-        font-size: 48px;
+        font-size: 3rem;
     }
 }

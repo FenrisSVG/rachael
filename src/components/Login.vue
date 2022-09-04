@@ -1,17 +1,17 @@
 <template>
     <div class="login-2" id="form-login-2">
-        <p class="login__title login__title--secondary">Log-In</p>  
+        <p class="login__title login__title--secondary">Inicio de Sesion</p>  
         <form method="POST" class="login-form login-form--secondary" id="form-login-2">
             <div class="login-form__container">
               <label for="text">Username: </label>
-              <input class="login-form__input" type="text" name="text" placeholder="Username" autofocus required v-model="username" v-on:change="mostrarLogin">
+              <input class="login-form__input login-form__input--secondary" type="text" name="text" placeholder="Username" autofocus required v-model="username" v-on:change="mostrarLogin">
             </div>
             <div class="login-form__container">
               <label for="password-login">Password:</label>
-              <input class="login-form__input" type="password" v-model="password" name="password-login" placeholder="Contraseña" required>
+              <input class="login-form__input login-form__input--secondary" type="password" v-model="password" name="password-login" placeholder="Contraseña" required>
             </div>
             <div class="login-form__button">
-              <input class="login-form__submit login-form__submit--secondary" type="submit" @click="login" value="Log-in">
+              <input class="login-form__submit login-form__submit--secondary" type="submit" @click="login" value="Log in">
             </div>
         </form>
         <div class="login-text login-text--secondary">

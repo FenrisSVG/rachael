@@ -2,7 +2,7 @@
   <div id="app">
    <header class="header">
     <div class="logo-container">
-      <img src="./assets/logo.png" alt="Rachael Logo" class="logo">
+      <img src="./assets/logo.webp" alt="Rachael Logo" class="logo">
       <h6 @click="home" class="logo-title">Rachael</h6>
       <Search />
     </div> 

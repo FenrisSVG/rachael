@@ -4,21 +4,21 @@
       <section class="contact-test">
         <h2 class="contact-test__title"><strong>Paso 3:</strong><span> Test de autoevaluacion</span></h2>
         <article class="contact-test__text">
-          <p>El test de autoevaluacion es un test con un seriado de preguntas acerca de sintomas,
+          <p class="contact-test__text-test">El test de autoevaluacion es un test con un seriado de preguntas acerca de sintomas,
             desarrollo de personalidades y/o consecuencias que una persona puede tener por una experiencia pasada
           </p>
           <div class="contact-test__name">
-            <p>Nombre del Usuario: <br>
+            <p class="contact-test__data">Nombre del Usuario: <br>
             <span>Benito Juarez</span>
             </p>
           </div>
           <div class="contact-test__surname">
-            <p>Apellido del Usuario: <br>
+            <p class="contact-test__data">Apellido del Usuario: <br>
             <span>Benito Juarez</span>
             </p>
           </div>
           <div class="contact-test__date">
-            <p>Fecha a realizar el test: <br>
+            <p class="contact-test__data">Fecha a realizar el test: <br>
             <span>Hoy</span>
             </p>
           </div>
@@ -30,7 +30,6 @@
       </div>
       <!-- <h2 v-scroll-reveal="{delay: 300}" class="form-title"><span>Test de Autoevaluacion</span> para el Diagnostico de Trastorno.</h2> -->
       <form v-scroll-reveal="{delay: 300}" class="form-container" v-if="inputs !== []" autocomplete="off" @submit.prevent="modalShow" id="consultar">  
-
           <!-- CATEGORIZACION DE LA ANSIEDAD --> 
           <div class="form-container__body show-opacity">
             <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
@@ -815,6 +814,38 @@
 </template>
 
 <style scoped>
+.form-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: center; 
+  height: 785px;
+  width: 800px;
+  padding: 1em 2.5em;
+  overflow: hidden;
+  border: 1px solid red;
+}
+
+.form-container__body{
+  position: absolute;
+  top: 0;
+  /* left: 0; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  border: 1px solid red;
+  padding: .2em 0 .7em;
+  border-radius: 0 0 7px 7px;
+  /* transform: translate(-50%); */
+  transition: opacity .5s ease-in;
+  background-color: var(--primary-color);
+  opacity: 1;
+}
+
 .modal__notEnoughInformation{
   margin-top: auto;
 }

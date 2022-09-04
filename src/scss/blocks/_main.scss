@@ -15,10 +15,6 @@
         margin-top: 0;
         height: 630px;
     }
-
-    // @include desktop{
-    //     height: 565px;
-    // }
 }
 
 .container{
@@ -62,7 +58,7 @@
         }
 
         @include laptop{
-            aspect-ratio: 16/9;
+            aspect-ratio: 1;
         }
     }
 

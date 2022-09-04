@@ -60,6 +60,7 @@
         justify-content: flex-start;
         align-items: center;
         overflow: hidden;
+        padding-bottom: 6px;
 
         &__link{
             position: relative;
@@ -87,6 +88,10 @@
             &:hover .test-footer--icon{
                 transform: translate(140px);
             }
+
+            &:focus{
+                transform: translateY(5px);
+            }
         }
 
         &--icon{
@@ -110,5 +115,11 @@
         padding-left: 2em;
         margin-top: .5em;
         color: var(--title-color);
+    }
+}
+
+@media(Hover:hover){
+    .test-footer__link:hover{
+        filter: contrast(120%);
     }
 }
