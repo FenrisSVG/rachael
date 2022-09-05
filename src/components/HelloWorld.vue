@@ -155,18 +155,21 @@
 					Entrevista - Test de Autoevaluacion.
 				</h2>
 				<hr v-scroll-reveal="{ delay: 300, scale: 2 }" />
-				<p class="first-letter" v-scroll-reveal="{ delay: 300, scale: 2 }">
+				<p class="first-letter" v-scroll-reveal="{ delay: 300, scale: 2 }"
+				data-section="home" data-value="section-text-eight">
 					Rachael puede simular lo que es una entrevista con un psicologo para
 					posteriormente dar un diagnostico segun las respuestas brindadas a la
 					inteligencia artificial
 				</p>
-				<p v-scroll-reveal="{ delay: 300, scale: 2 }">
+				<p v-scroll-reveal="{ delay: 300, scale: 2 }"
+				data-section="home" data-value="section-text-nine">
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
 					dignissimos voluptas commodi ad doloremque debitis tempora animi quae
 					non alias et accusantium ipsam itaque, atque exercitationem! Molestiae
 					consectetur eveniet saepe!
 				</p>
-				<p v-scroll-reveal="{ delay: 300, scale: 2 }">
+				<p v-scroll-reveal="{ delay: 300, scale: 2 }"
+				data-section="home" data-value="section-text-ten">
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt
 					minima nesciunt incidunt vitae neque voluptate iste facilis quaerat
 					perferendis ex?
@@ -208,7 +211,9 @@
 
 		<div class="banner" v-scroll-reveal="{ delay: 500 }">
 			<div class="banner-text">
-				<h2 class="banner-text__title">Servicios de Psicologia</h2>
+				<h2 class="banner-text__title"
+				data-section="home"
+				data value="section-servicios-title">Servicios de Psicologia</h2>
 			</div>
 			<div class="banner-content" v-for="(item, index) in banner" :key="index">
 				<img
@@ -218,7 +223,9 @@
 					loading="lazy"
 				/>
 				<p class="banner-content__text">
-					<span>{{ item.name }}</span>
+					<span
+					data-section="home"
+					:data-value="item.value">{{ item.name }}</span>
 				</p>
 			</div>
 		</div>
@@ -228,7 +235,9 @@
 			v-if="psicologos !== ''"
 			v-scroll-reveal="{ delay: 500 }"
 		>
-			<h2 v-scroll-reveal="{ delay: 500, scale: 2 }">
+			<h2 v-scroll-reveal="{ delay: 500, scale: 2 }"
+			data-value="home"
+			data-section="section-title-six">
 				Nuestros Mejores Psicologos
 			</h2>
 			<div
@@ -320,26 +329,32 @@ export default {
 			banner: [
 				{
 					name: "Ansiedad",
+					value: "section-services-one",
 					src: require("../assets/desktop/ansiedad.jpg"),
 				},
 				{
 					name: "Estres",
+					value: "section-services-two",
 					src: require("../assets/desktop/estres.jpg"),
 				},
 				{
 					name: "Pareja",
+					value: "section-services-three",
 					src: require("../assets/desktop/ansiedad.jpg"),
 				},
 				{
 					name: "Autoestima",
+					value: "section-services-four",
 					src: require("../assets/desktop/autoestima.jpg"),
 				},
 				{
 					name: "Desarollo Personal",
+					value: "section-services-five",
 					src: require("../assets/desktop/desarollo.jpg"),
 				},
 				{
 					name: "Sexooooo",
+					value:" section-services-six",
 					src: require("../assets/desktop/Sexo.jpg"),
 				},
 			],
