@@ -1,5 +1,6 @@
 <template>
 	<div class="main">
+		<Location/>
 		<!-- Contenido central -->
 		<main class="container" v-scroll-reveal="{ delay: 400 }">
 			<!-- LOGO -->
@@ -305,6 +306,7 @@ rect {
 
 <script>
 // import Atropos from 'atropos';
+import Location from "./Location.vue";
 import Footer from "./Footer.vue";
 import Bot from "./inxdex.vue";
 import Important from "./Important.vue";
@@ -312,6 +314,7 @@ import Important from "./Important.vue";
 export default {
 	name: "HelloWorld",
 	components: {
+		Location,
 		Bot,
 		Important,
 		Footer,

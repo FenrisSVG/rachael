@@ -1,18 +1,18 @@
 <template>
     <section class="quesillo">
-      <h2 class="quesillo-title">Sobre el Psicologo Quesillo El Apuñalador</h2>
+      <h2 class="quesillo-title">Sobre el Psicologo Alexander Espinoza.</h2>
       <article class="article-quesillo">
           <header class="article-quesillo__header">
               <div class="quesillo-img">
-                <img src="../../assets/desktop/quesillo.jpg" alt="" loading="lazy">
+                <img src="../../assets/desktop/quesillo.jpg" alt="picture of a psicologo quesillo" loading="lazy">
               </div>
-              <div class="quesillo-text">
-                <h6 class="quesillo-text__title">Quesillo el Apuñalador</h6>
-                <p class="quesillo-text__info"><span>Idiomas:</span> Español, Ingles, Alienigena, Mukulkun, Chino, Ruso, Aleman, Arabe, Latin, Hebreo Antiguo, Lenguaje de Señas.</p>
+              <div class="quesillo-text" v-for="(item,index) in psicologos" :key="index">
+                <h6 class="quesillo-text__title">Psicologo {{item.Nombre}}  {{item.Apellido}}</h6>
+                <p class="quesillo-text__info"><span>Dirección:</span> {{item.Direccion}}</p>
                 <p class="quesillo-text__info"><span>Nacionalidad: </span> Enviado de Dios.</p>
-                <p class="quesillo-text__info"><span>Modelo de Trabajo Terapeutico:</span> Modo Sexo.</p>
+                <p class="quesillo-text__info"><span>Modelo de Trabajo Terapeutico:</span> {{item.ModeloTerapeutico}}</p>
                 <p class="quesillo-text__info"><span>Email:</span> <img src="../../assets/desktop/quesillocom.png" loading="lazy" alt="messi mail"></p>
-                <p class="quesillo-text__info"><span>Celular:</span> +505-88888888</p>
+                <p class="quesillo-text__info"><span>Celular:</span> {{item.Celular}}</p>
                 <aside class="aside-quesillo">
                   <span class="aside-quesillo__item">Diversidad</span>
                   <span class="aside-quesillo__item">Equilibrio e Inteligencia Emocional</span>
@@ -52,7 +52,8 @@
             </div>
           </div>
           <footer class="article-quesillo__footer">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.0198525071537!2d-86.23101438898574!3d12.110793371496474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f73ff8a63e3d4d7%3A0x48444cf29f782c1d!2sNacatamales%20Rizo!5e0!3m2!1ses-419!2sni!4v1637131739963!5m2!1ses-419!2sni" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="maps"></iframe>
+            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.0198525071537!2d-86.23101438898574!3d12.110793371496474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f73ff8a63e3d4d7%3A0x48444cf29f782c1d!2sNacatamales%20Rizo!5e0!3m2!1ses-419!2sni!4v1637131739963!5m2!1ses-419!2sni" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="maps"></iframe> -->
+            <div id="map" class="maps" ref="mapElement"></div>
           </footer>
       </article>
         <Bot />
@@ -61,10 +62,21 @@
     </section>
 </template>
 
+<style scoped>
+    .maps{
+      /* width: 100%; */
+      height: 500px;
+      border: 1px solid red;
+    }
+</style>
+
 <script>
 import Bot from '../inxdex.vue';
 import Footer from '../Footer.vue';
 import Important from '../Important.vue';
+import L from 'leaflet'
+import axios from 'axios'
+
 export default {
   name: 'Quesillo',
   components:{
@@ -72,6 +84,10 @@ export default {
   },
   data(){
     return{
+      direccion: null,
+      lat: null,
+      long: null,
+      psicologos: [],
       atencion: [{
         name: 'Conflictos de Pareja'
       },
@@ -125,8 +141,61 @@ export default {
       ]
     }
   },
+  methods:{
+    mostrarPsicologo(){
+      const psicologo = async()=>{
+        try{
+          const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 14})
+          if(res.status !== 200) throw Error(res.statusText)
+          
+          this.psicologos = res.data
+          
+          this.psicologos.forEach(item => {
+            this.direccion = item.Direccion
+
+            return fetch(`https://nominatim.openstreetmap.org/?addressdetails=1&q=${this.direccion}&format=json&limit=1`)
+            .then(res => res.json())
+            .then(data => {
+              this.lat = data.lat
+              this.lon = data.lon
+            })
+          })
+        
+        }catch(e){
+          console.error(e)
+        }
+      }
+      psicologo()
+    },
+    geoCodificationAddressPsicologyToCoords(){
+      console.log(this.psicologos)
+      console.log(this.lat)
+      console.log(this.lon)
+    },
+    initMap(){
+      // const map = document.getElementById('map')
+
+      let map = L.map(this.$refs['mapElement']).setView([4.639386,-74.082412], 18)
+
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 18,
+          attribution: '© OpenStreetMap'
+      }).addTo(map);
+
+      L.marker([4.639386,-74.082412],
+          {alt: 'Colombia'}).
+      addTo(map)
+
+      // map.invalidateSize();
+    }
+  },
   created(){
     return window.scrollTo(0,0)
+  },
+  mounted(){
+    this.$nextTick(()=>{
+      return this.mostrarPsicologo(),this.initMap(),this.geoCodificationAddressPsicologyToCoords()
+    })
   }
 }
 </script>

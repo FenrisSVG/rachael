@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Rachael</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +16,18 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="path/to/atropos.css" />
     <!-- SCROLL REVEAL -->
-    <script src="https://kit.fontawesome.com/353727d00a.js" crossorigin="anonymous" defer></script>
+    <script src="https://kit.fontawesome.com/c681133288.js" crossorigin="anonymous" defer></script>
     <script src="https://unpkg.com/scrollreveal" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
     <script src="js/scripts-min.js" defer></script>
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- LEAFLET -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin="" defer></script>
   </head>
   <body>
     <noscript>
@@ -31,6 +38,5 @@
 
     <!-- <script src="{% static 'app.js' %}"></script>
     <script src="{% static 'scripts-min.js' %}"></script>  -->
-    
   </body>
 </html>
