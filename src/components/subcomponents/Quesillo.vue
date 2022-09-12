@@ -66,7 +66,6 @@
     .maps{
       /* width: 100%; */
       height: 500px;
-      border: 1px solid red;
     }
 </style>
 
@@ -76,6 +75,7 @@ import Footer from '../Footer.vue';
 import Important from '../Important.vue';
 import L from 'leaflet'
 import axios from 'axios'
+// import {mapGetters, mapMutatios} from 'vuex'
 
 export default {
   name: 'Quesillo',
@@ -85,8 +85,8 @@ export default {
   data(){
     return{
       direccion: null,
-      lat: null,
-      long: null,
+      latitude: null,
+      longitude: null,
       psicologos: [],
       atencion: [{
         name: 'Conflictos de Pareja'
@@ -153,48 +153,34 @@ export default {
           this.psicologos.forEach(item => {
             this.direccion = item.Direccion
 
-            return fetch(`https://nominatim.openstreetmap.org/?addressdetails=1&q=${this.direccion}&format=json&limit=1`)
+            fetch(`https://nominatim.openstreetmap.org/?addressdetails=1&q=${this.direccion}&format=json&limit=1`)
             .then(res => res.json())
             .then(data => {
-              this.lat = data.lat
-              this.lon = data.lon
+                let map = L.map(this.$refs['mapElement']).setView([data[0].lat,data[0].lon], 18)
+
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 18,
+                    attribution: '© OpenStreetMap'
+                }).addTo(map);
+
+                L.marker([data[0].lat,data[0].lon],
+                    {alt: 'Nicaragua'}).
+                addTo(map)
             })
           })
-        
         }catch(e){
           console.error(e)
         }
       }
       psicologo()
     },
-    geoCodificationAddressPsicologyToCoords(){
-      console.log(this.psicologos)
-      console.log(this.lat)
-      console.log(this.lon)
-    },
-    initMap(){
-      // const map = document.getElementById('map')
-
-      let map = L.map(this.$refs['mapElement']).setView([4.639386,-74.082412], 18)
-
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 18,
-          attribution: '© OpenStreetMap'
-      }).addTo(map);
-
-      L.marker([4.639386,-74.082412],
-          {alt: 'Colombia'}).
-      addTo(map)
-
-      // map.invalidateSize();
-    }
   },
   created(){
     return window.scrollTo(0,0)
   },
   mounted(){
     this.$nextTick(()=>{
-      return this.mostrarPsicologo(),this.initMap(),this.geoCodificationAddressPsicologyToCoords()
+      return this.mostrarPsicologo()
     })
   }
 }

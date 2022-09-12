@@ -8,6 +8,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     loggedIn: false,
+    lat: null,
+    lon: null,
     isFilter: false,
     trastornos: [
       {
@@ -299,6 +301,12 @@ export default new Vuex.Store({
     testStatus: false
   },
   mutations: {
+    SET_LAT(state,lat){
+      state.lat = lat
+    },
+    SET_LONG(state,lon){
+      state.lon = lon
+    },
     SET_QUERY(state,query){
       state.filter.query = query
     },
@@ -334,6 +342,12 @@ export default new Vuex.Store({
     },
   },
   getters:{
+    getLat(state){
+      return state.lat
+    },
+    getLon(state){
+      return state.lon
+    },
     filteredTrastornos(state){
       if(state.filter.query.length >= 1){
         state.isFilter = true
