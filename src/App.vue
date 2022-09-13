@@ -103,20 +103,10 @@ export default{
     },
     show(e){
       const loginForm = document.getElementById('login-form');
-      // // const body = document.getElementsByTagName('BODY');
       
       if(e.target.dataset.set == 'login') {
         loginForm.classList.toggle('login--show');
-      }else if(e.target.className !== 'main-menu__link'){
-        //loginForm.classList.remove('login--show');
       }
-
-      // login.addEventListener('mousedown',(e)=>{
-      //   console.log(e.target)
-      //   if(e.target.classList.contains('login')){
-      //       loginForm.classList.remove('login--show');
-      //   }
-      // });
     },
     login(){
       const formLogin = document.getElementById('form-login');

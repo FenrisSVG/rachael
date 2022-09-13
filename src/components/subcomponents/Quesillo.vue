@@ -149,6 +149,16 @@ export default {
           if(res.status !== 200) throw Error(res.statusText)
           
           this.psicologos = res.data
+
+          await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 16})
+              .then(res => {
+                if(res.data) {
+                  res.data.forEach(item => {
+                    this.latitude = item.latitude
+                    this.longitude = item.longitude
+                  })
+                }
+          }).catch(err => console.error(err))
           
           this.psicologos.forEach(item => {
             this.direccion = item.Direccion
@@ -156,7 +166,7 @@ export default {
             fetch(`https://nominatim.openstreetmap.org/?addressdetails=1&q=${this.direccion}&format=json&limit=1`)
             .then(res => res.json())
             .then(data => {
-                let map = L.map(this.$refs['mapElement']).setView([data[0].lat,data[0].lon], 18)
+                let map = L.map(this.$refs['mapElement']).setView([data[0].lat,data[0].lon], 14)
 
                 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     maxZoom: 18,
@@ -166,6 +176,20 @@ export default {
                 L.marker([data[0].lat,data[0].lon],
                     {alt: 'Nicaragua'}).
                 addTo(map)
+
+                L.marker([this.latitude,this.longitude],
+                    {alt: 'Nicaragua'}).
+                addTo(map)
+
+                let fromLatLng = L.latLng(data[0].lat,data[0].lon);
+                let toLatLng = L.latLng(this.latitude,this.longitude);
+
+                let distance = fromLatLng.distanceTo(toLatLng);
+                console.log(distance)
+
+                L.polyline([fromLatLng,toLatLng], {
+                    color: 'red'
+                }).addTo(map);
             })
           })
         }catch(e){

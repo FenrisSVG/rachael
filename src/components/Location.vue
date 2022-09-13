@@ -54,8 +54,13 @@
         text-align: center;
     }
     .location-footer__pais{
+        font-size: 1.5em;
         margin-top: 0;
         margin-bottom: 20px;
+    }
+
+    .location-footer__municipio{
+        font-size: 1.1em;
     }
     .close{
         width: 300px;
@@ -82,14 +87,15 @@
 </style>
 
 <script>
-// import axios from 'axios'
+import axios from 'axios'
+
 export default{
     name: 'Location',
     data(){
         return{
             longitude: null ?? 0,
             latitude: null ?? 0,
-            ubication: null
+            ubication: false
         }
     },
     methods:{
@@ -97,7 +103,8 @@ export default{
             const location = document.getElementById('location')
             const pais = document.getElementById('pais')
             const municipio = document.getElementById('municipio')
-            // console.log(location.firstElementChild.nextElementSibling.firstElementChild.firstElementChild.nextElementSibling)
+            const modal = document.getElementById('location-modal');
+            
             if(!navigator.geolocation) throw new Error('Tu navegador no es compatible.')
 
             if(navigator.geolocation){
@@ -109,33 +116,57 @@ export default{
                 MaximunAge: 0
             }
 
+            load()
+
             async function success(geoLocationPosition){
                 let coords = geoLocationPosition.coords;
                 
                 await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${coords.latitude}&lon=${coords.longitude}`)
                     .then(res => res.json())
                     .then(data => {
+                        store(!modal.classList.contains('location-close'))
                         location.innerHTML = 'Ubicación encontrada'
                         pais.innerHTML = data.address.state + ', ' + data.address.country
                         municipio.innerHTML = data.address.state + ', ' + data.address.region + ', ' + data.address.road
                 })
-                
+
+                await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+                    opcion: 15,
+                    latitude: coords.latitude,
+                    longitude: coords.longitude
+                }).catch(err => console.log(err))
+            }
+
+            function load(){
+                if('sessionStorage' in window && window['sessionStorage'] !== null){
+                    const coordenadas = sessionStorage.getItem('coordenadas');
+
+                    (coordenadas === 'true') && modal.classList.add('location-close')
+                }
+            }
+
+            function store(value){
+                if('sessionStorage' in window && window['sessionStorage'] !== null){
+                    sessionStorage.setItem('coordenadas',value)
+                }else{
+                    throw new Error('Your computer doesnt suppor session storage.')
+                }
             }
 
             function error(){
-                this.ubication = false;
+                
                 console.error('El usuario ha denegado el permiso de geolocalizacion')
             }
 
         },
         closeLocation(e){
             const modal = document.getElementById('location-modal');
-            
+
             (e.target.classList.contains('close')) && modal.classList.add('location-close')
         }
     },
     mounted(){
         return this.getLocation()
-    },
+    }
 }
 </script>

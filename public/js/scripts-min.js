@@ -13,8 +13,24 @@ const changeLanguage = async (language) =>{
     })
 }
 
+load()
+
 if(flags){
     flags.addEventListener('click',(e)=>{
+        store(e.target.parentElement.dataset.language)
         changeLanguage(e.target.parentElement.dataset.language)
     })
+}
+
+function load(){
+    const language = localStorage.getItem('language');
+
+    (language == 'es')
+        ? changeLanguage('es')
+        : changeLanguage('en')
+    
+}
+
+function store(value){
+    localStorage.setItem('language',value)
 }
