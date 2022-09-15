@@ -9,17 +9,17 @@
           </p>
           <div class="contact-test__name">
             <p class="contact-test__data">Nombre del Usuario: <br>
-            <span>Benito Juarez</span>
+            <span>{{nombre}}</span>
             </p>
           </div>
           <div class="contact-test__surname">
             <p class="contact-test__data">Apellido del Usuario: <br>
-            <span>Benito Juarez</span>
+            <span>{{apellido}}</span>
             </p>
           </div>
           <div class="contact-test__date">
             <p class="contact-test__data">Fecha a realizar el test: <br>
-            <span>Hoy</span>
+            <span>{{fecha}}</span>
             </p>
           </div>
         </article>
@@ -719,7 +719,7 @@
           
           <div class="form-container__body">
             <h2 class="form-container__title">III. Test de Autoevaluacion</h2>
-            <p>Consecuencia de un sistema disociativo grave</p>
+            <p class="form-container__sintoma">Consecuencia de un sistema disociativo grave</p>
             <div class="detalle-autoevaluacion" v-for="sintoma in sintomas.slice(36,37)" :key="sintoma.idsintoma">
               <div class="detalle-autoevaluacion__header">
                 <p>¿{{sintoma.descripcion}}?</p>
@@ -814,38 +814,6 @@
 </template>
 
 <style scoped>
-.form-container{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-content: center; 
-  height: 785px;
-  width: 800px;
-  padding: 1em 2.5em;
-  overflow: hidden;
-  border: 1px solid red;
-}
-
-.form-container__body{
-  position: absolute;
-  top: 0;
-  /* left: 0; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  height: auto;
-  border: 1px solid red;
-  padding: .2em 0 .7em;
-  border-radius: 0 0 7px 7px;
-  /* transform: translate(-50%); */
-  transition: opacity .5s ease-in;
-  background-color: var(--primary-color);
-  opacity: 1;
-}
-
 .modal__notEnoughInformation{
   margin-top: auto;
 }
@@ -871,62 +839,6 @@
   margin-left: 1em;
 }
 
-.sky{
-  display: flex;
-  justify-content: center;
-}
-
-.cont-temporizador{
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 50px;
-    transform: translate(-50%);
-    background-color: var(--primary-color);
-    width: 70%;
-    border-radius: 5px;
-    padding: 1em 0;
-    opacity: 0;
-    transition: opacity .5s ease-in-out;
-}
-
-.cont-temporizador h2{
-  margin-top: 10px;
-  text-align: center;
-  color: var(--title-color)
-}
-
-.bloque{
-    margin: 0 4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.bloque div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--primary-color);
-    box-shadow: 0 0 6px 2px #727272 inset;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    width: 100px;
-    height: 70px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-.bloque p{
-    font-size: 11px;
-    color: #dedede;
-    font-weight: bold;
-}
-
 .entrevista-nav{
     width: 50%;
     display: flex;
@@ -947,16 +859,6 @@
     transition: transform 1s ease;
 }
 
-.cont-temporizador a{
-  color: #222;
-  text-align: center;
-  text-decoration: none;
-  background-color: var(--secondary-color);
-  border-radius: .2em;
-  padding: 1em 0;
-  margin: 1em auto;
-  width: 20%;
-}
 </style>
 
 <script>
@@ -974,6 +876,9 @@ export default {
   data(){
     return{
       sintomas: [],
+      fecha: null,
+      nombre: 'Por favor, primero debe de iniciar sesion' ?? null,
+      apellido: 'Por favor, primero debe iniciar sesion de su cuenta' ?? null,
       sintoma: {
         idsintoma: null,
         nombre: '',
@@ -1432,10 +1337,6 @@ export default {
           
           let cont = 0;
 
-          // if(prev){
-          //   prev.addEventListener('click',()=> setClass('prev'))
-          // }
-
           if(next){
             next.addEventListener('click',()=> setClass('next'))
           }
@@ -1870,9 +1771,11 @@ export default {
         const hora = document.getElementById('horas')
         const consultar = document.getElementById('consultar')
         const contador = document.getElementById('contador')
+
         let horas = 0
         let minutos = 0
         let segundos = 30
+
         const cargarSegundo = ()=>{
             let txtSegundos
             if(segundos < 0){
@@ -1939,11 +1842,35 @@ export default {
         }
       }
       setInterval(cargarSegundo,1000)
-    }
+    },
+    obtenerFecha(){
+      this.fecha = new Date().toDateString()
+
+      const username = document.getElementById('username-login')
+      // const login = document.getElementById('login-link')
+
+      // if(login.innerHTML !== 'Login'){
+        const response = async () =>{
+          if(username){
+            const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 10,
+            username: username.innerHTML})
+
+            if(res.data){
+              console.log(res.data)
+              res.data.forEach(item =>{
+                this.nombre = item.nombre
+                this.apellido = item.apellido
+              })
+            }
+          }
+        }
+        response()
+      // }
+    },
   },
   mounted(){
     this.$nextTick(()=>{
-      return this.mostrar()
+      return this.mostrar(),this.obtenerFecha()
     })
   },
   beforeMount(){

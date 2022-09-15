@@ -1,0 +1,74 @@
+.location{
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    width: 650px;
+    height: 300px;
+    background-color: var(--background-color);
+    transform: translate(-50%);
+    z-index: 100;
+
+    &-header,
+    &-footer{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-header{
+        height: 25%;
+        padding: 10px;
+        background-color: #444;
+
+        &__text{
+            font-size: 1.1rem;
+        }
+
+        &__icon{
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+    }
+
+    &-footer{
+        height: 75%;
+        justify-content: flex-start;
+        flex-direction: column;
+        color: #fff;
+
+        &__coords{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 70%;
+            text-align: center;
+        }
+
+        &__pais{
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        &__municipio{
+            font-size: 1.1em;
+        }
+
+        &__select{
+            width: 200px;
+            height: 40px;
+            padding: 4px 10px;
+            outline: none;
+            color: #fff;
+            background-color: $primary-color;
+            border-color: var(--secondary-color);
+        }
+
+        &__buttons{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+

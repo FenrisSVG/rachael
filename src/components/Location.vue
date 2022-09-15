@@ -6,8 +6,17 @@
         </header>
         <footer class="location-footer">
             <div class="location-footer__coords">
-                <p class="location-footer__pais" id="pais">Buscando....</p>
-                <p class="location-footer__municipio" id="municipio">Buscando...</p>
+                <div class="location-footer__text" id="geolocation">
+                    <p class="location-footer__pais" id="pais">Buscando....</p>
+                    <p class="location-footer__municipio" id="municipio">Buscando...</p>
+                </div>
+                <div class="location-footer__municipios" id="select">
+                    <label for="municipios">Seleccione su Municipio</label>
+                    <select name="municipios" class="location-footer__select" required>
+                        <option v-for="(item,index) in municipios" :key="index" :value="item.Latitud + ',' + item.Longitud"
+                        class="location-footer__option">{{item.Municipio}}</option>
+                    </select>
+                </div>
             </div>
             <div class="location-footer__buttons">
                 <button class="close" @click="closeLocation">Cerrar</button>
@@ -17,50 +26,19 @@
 </template>
 
 <style scoped>
-    .location{
-        position: absolute;
-        top: 100px;
-        left: 50%;
-        width: 650px;
-        height: 300px;
-        background-color: var(--background-color);
-        transform: translate(-50%);
-        z-index: 100;
-    }
-    .location-header,
-    .location-footer{
-        display: flex;
-        gap: 15px;
-        align-items: center;
-        justify-content: center;
-    }
-    .location-header{
-        height: 25%;
-        padding: 10px;
-        background-color: #444;
-    }
-    .location-footer{
-        height: 75%;
-        flex-direction: column;
-    }
-    .location-header__text{
-        font-size: 1.1rem;
-    }
-    .location-header__icon{
-        font-size: 1.5rem;
-        color: var(--secondary-color);
-    }
-    .location-footer__coords{
-        text-align: center;
-    }
-    .location-footer__pais{
-        font-size: 1.5em;
-        margin-top: 0;
-        margin-bottom: 20px;
+    .location-footer__municipios{
+        display: none;
     }
 
-    .location-footer__municipio{
-        font-size: 1.1em;
+    .location--hide{
+        display: none;
+    }
+
+    .location--show{
+        display: block;
+        display: flex;
+        align-items: center;
+        gap: 10px;
     }
     .close{
         width: 300px;
@@ -71,6 +49,7 @@
         outline: none;
         letter-spacing: 1px;
         border-radius: 5px;
+        color: #fff;
         background-color: var(--secondary-color);
     }
 
@@ -95,15 +74,33 @@ export default{
         return{
             longitude: null ?? 0,
             latitude: null ?? 0,
-            ubication: false
+            ubication: false,
+            coordenadas: null,
+            municipios: []
         }
     },
     methods:{
+        getMunicipio(){
+           const getMunicipios = async()=>{
+                try{
+                    const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 17})
+                    if(res.status !== 200) throw new Error(res.statusText)
+
+                    this.municipios = res.data
+                }catch(e){
+                    console.error(e)
+                }
+           } 
+           getMunicipios();
+        },
         getLocation(){
             const location = document.getElementById('location')
             const pais = document.getElementById('pais')
             const municipio = document.getElementById('municipio')
             const modal = document.getElementById('location-modal');
+            const geolocation = document.getElementById('geolocation');
+            const select = document.getElementById('select');
+
             
             if(!navigator.geolocation) throw new Error('Tu navegador no es compatible.')
 
@@ -125,9 +122,11 @@ export default{
                     .then(res => res.json())
                     .then(data => {
                         store(!modal.classList.contains('location-close'))
-                        location.innerHTML = 'Ubicación encontrada'
-                        pais.innerHTML = data.address.state + ', ' + data.address.country
-                        municipio.innerHTML = data.address.state + ', ' + data.address.region + ', ' + data.address.road
+                        setTimeout(()=>{
+                            location.innerHTML = 'Ubicación encontrada.'
+                            pais.innerHTML = data.address.state + ', ' + data.address.country
+                            municipio.innerHTML = data.address.state + ', ' + data.address.region + ', ' + data.address.road
+                        },5000)
                 })
 
                 await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
@@ -154,7 +153,45 @@ export default{
             }
 
             function error(){
+                const options = document.querySelectorAll('.location-footer__select')
+                geolocation.classList.add('location--hide')
+                select.classList.add('location--show')
                 
+                options.forEach(item => {
+                    item.addEventListener('change',async (e)=>{
+                        if(e.target.classList.contains('location-footer__select')){
+                            let latitud = item.value.substring(0,7)
+                            let longitud = item.value.substring(8)
+
+                            await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitud}&lon=${longitud}`)
+                            .then(res => res.json())
+                            .then(data => {
+                                console.log(data)
+                                setTimeout(()=>{
+                                    geolocation.classList.remove('location--hide')
+                                    location.innerHTML = 'Ubicación encontrada.'
+                                    pais.innerHTML = data.address.state + ', ' + data.address.country
+                                    
+                                    if(data.address.road === undefined){
+                                        if(data.address.suburb !== undefined){
+                                            municipio.innerHTML = data.address.town + ', ' + data.address.suburb
+                                        }else{
+                                            municipio.innerHTML = data.address.town + ', ' + data.address.neighbourhood
+                                        }
+                                    }else{
+                                        municipio.innerHTML = data.address.town + ', ' + data.address.road
+                                    }
+                                },2000)
+                            })
+
+                            await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+                                opcion: 15,
+                                latitude: latitud,
+                                longitude: longitud
+                            }).catch(err => console.log(err))
+                        }
+                    })
+                })
                 console.error('El usuario ha denegado el permiso de geolocalizacion')
             }
 
@@ -166,7 +203,7 @@ export default{
         }
     },
     mounted(){
-        return this.getLocation()
+        return this.getLocation(),this.getMunicipio()
     }
 }
 </script>

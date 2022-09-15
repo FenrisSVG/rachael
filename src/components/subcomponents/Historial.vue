@@ -238,6 +238,7 @@ export default {
       },
       getUsername(){
         const username = document.getElementById('username-login')
+        
         if(username){
             if(username.innerHTML !== ''){
                 this.username = username.innerHTML;

@@ -10,12 +10,12 @@
                 <div class="personalidad-container">
                     <p class="personalidad-container__text">1. Que te gustaria...</p>
                     <div class="personalidad-input">
-                        <label for="amor">a. Encontrar el amor de pelicula</label>
+                        <label for="amor" class="personalidad-input__label">a. Encontrar el amor de pelicula</label>
                         <input type="checkbox" name="amor" class="personalidad__input" data-response="a"
                         v-model="oneYes" @change="oneNo = false">
                     </div>
                     <div class="personalidad-input">
-                        <label for="amor">b. Ganar 50 Millones de Dolares</label>
+                        <label for="amor" class="personalidad-input__label">b. Ganar 50 Millones de Dolares</label>
                         <input type="checkbox" name="amor" class="personalidad__input" data-response="b"
                         v-model="oneNo" @change="oneYes = false">
                     </div>
@@ -23,12 +23,12 @@
                 <div class="personalidad-container">
                     <p class="personalidad-container__text">2. Preferirias...</p>
                     <div class="personalidad-input">
-                        <label for="amor">a. Nunca poder tener acceso a internet.</label>
+                        <label for="amor" class="personalidad-input__label">a. Nunca poder tener acceso a internet.</label>
                         <input type="checkbox" name="amor" class="personalidad__input" data-response="a"
                         v-model="twoYes" @change="twoNo = false">
                     </div>
                     <div class="personalidad-input">
-                        <label for="amor">b. Nunca tener ningun amor.</label>
+                        <label for="amor" class="personalidad-input__label">b. Nunca tener ningun amor.</label>
                         <input type="checkbox" name="amor" class="personalidad__input" data-response="b"
                         v-model="twoNo" @change="twoYes = false">
                     </div>
@@ -36,78 +36,86 @@
                 <div class="personalidad-container">
                     <p class="personalidad-container__text">3. Cual eligirias...</p>
                     <div class="personalidad-input">
-                        <label for="amor">a. Legalmente cambiar tu nombre a Hitler.</label>
-                        <input type="checkbox" name="amor" class="personalidad__input" data-response="a">
+                        <label for="amor" class="personalidad-input__label">a. Legalmente cambiar tu nombre a Hitler.</label>
+                        <input type="checkbox" name="amor" class="personalidad__input" data-response="a"
+                        v-model="threeYes" @change="threeNo = false">
                     </div>
                     <div class="personalidad-input">
-                        <label for="amor">b. No poder comer comida chatarra.</label>
-                        <input type="checkbox" name="amor" class="personalidad__input" data-response="b">
+                        <label for="amor" class="personalidad-input__label">b. No poder comer comida chatarra.</label>
+                        <input type="checkbox" name="amor" class="personalidad__input" data-response="b"
+                        v-model="threeNo" @change="threeYes = false">
                     </div>
                 </div>
                 <div class="personalidad-container">
                     <p class="personalidad-container__text">4. Decide una</p>
                     <div class="personalidad-input">
-                        <label for="amor">a. Sacrificar tu vida para que se salve el resto.</label>
-                        <input type="checkbox" name="amor" class="personalidad__input" data-response="a">
+                        <label for="amor" class="personalidad-input__label">a. Sacrificar tu vida para que se salve el resto.</label>
+                        <input type="checkbox" name="amor" class="personalidad__input" data-response="a"
+                        v-model="fourYes" @change="fourNo = false">
                     </div>
                     <div class="personalidad-input">
-                        <label for="amor">b. Sacrificar a todos para TU poder salvarte</label>
-                        <input type="checkbox" name="amor" class="personalidad__input" data-response="b">
+                        <label for="amor" class="personalidad-input__label">b. Sacrificar a todos para TU poder salvarte</label>
+                        <input type="checkbox" name="amor" class="personalidad__input" data-response="b"
+                        v-model="fourNo" @change="fourYes = false">
                     </div>
                 </div>
                 <div class="personalidad-container">
                     <p class="personalidad-container__text">5. Escoge una</p>
                     <div class="personalidad-input">
-                        <label for="amor">a. Estar deprimido toda la vida</label>
+                        <label for="amor" class="personalidad-input__label">a. Estar deprimido toda la vida</label>
                         <input type="checkbox" name="amor" class="personalidad__input" data-response="a">
                     </div>
                     <div class="personalidad-input">
-                        <label for="amor">b. Sacrificar a 5 perritos</label>
+                        <label for="amor" class="personalidad-input__label">b. Sacrificar a 5 perritos</label>
                         <input type="checkbox" name="amor" class="personalidad__input" data-response="b">
                     </div>
                 </div>
                 <div class="personalidad-container">
                     <p class="personalidad-container__text">6. Que te gustaria...</p>
                     <div class="personalidad-input">
-                        <label for="amor">a. Un año sin ver Netflix ni ningun otro servicio de streaming</label>
+                        <label for="amor" class="personalidad-input__label">a. Un año sin ver Netflix ni ningun otro servicio de streaming</label>
                         <input type="checkbox" name="amor" class="personalidad__input" data-response="a">
                     </div>
                     <div class="personalidad-input">
-                        <label for="amor">b. Alimentarte con mayonesa todo el año.</label>
+                        <label for="amor" class="personalidad-input__label">b. Alimentarte con mayonesa todo el año.</label>
                         <input type="checkbox" name="amor" class="personalidad__input" data-response="b">
                     </div>
                 </div>
                 <div class="personalidad-container">
                     <p class="personalidad-container__text">7. Que preferirias...</p>
                     <div class="personalidad-input">
-                        <label for="amor">a. Saber cuando te vas a morir.</label>
-                        <input type="checkbox" name="amor" class="personalidad__input" data-response="a">
+                        <label for="amor" class="personalidad-input__label">a. Saber cuando te vas a morir.</label>
+                        <input type="checkbox" name="amor" class="personalidad__input" data-response="a"
+                        v-model="sevenYes" @change="sevenNo = false">
                     </div>
                     <div class="personalidad-input">
-                        <label for="amor">b. Saber como te vas a morir.</label>
-                        <input type="checkbox" name="amor" class="personalidad__input" data-response="b">
+                        <label for="amor" class="personalidad-input__label">b. Saber como te vas a morir.</label>
+                        <input type="checkbox" name="amor" class="personalidad__input" data-response="b"
+                        v-model="sevenNo" @change="sevenYes = false">
                     </div>
                 </div>
                 <div class="personalidad-container">
                     <p class="personalidad-container__text">8. Que escogerias...</p>
                     <div class="personalidad-input">
-                        <label for="amor">a. Poder predecir el futuro.</label>
+                        <label for="amor" class="personalidad-input__label">a. Poder predecir el futuro.</label>
                         <input type="checkbox" name="amor" class="personalidad__input" data-response="a">
                     </div>
                     <div class="personalidad-input">
-                        <label for="amor">b. Viajar en una capsula de tiempo.</label>
+                        <label for="amor" class="personalidad-input__label">b. Viajar en una capsula de tiempo.</label>
                         <input type="checkbox" name="amor" class="personalidad__input" data-response="b">
                     </div>
                 </div>
                 <div class="personalidad-container">
                     <p class="personalidad-container__text">9. Que te gustaria...</p>
                     <div class="personalidad-input">
-                        <label for="amor">a. Quedarte sin olfato</label>
-                        <input type="checkbox" name="amor" class="personalidad__input" data-response="a">
+                        <label for="amor" class="personalidad-input__label">a. Quedarte sin olfato</label>
+                        <input type="checkbox" name="amor" class="personalidad__input" data-response="a"
+                        v-model="nineYes" @change="nineNo = false">
                     </div>
                     <div class="personalidad-input">
-                        <label for="amor">b. Oler algo asqueroso constante toda la vida.</label>
-                        <input type="checkbox" name="amor" class="personalidad__input" data-response="b">
+                        <label for="amor" class="personalidad-input__label">b. Oler algo asqueroso constante toda la vida.</label>
+                        <input type="checkbox" name="amor" class="personalidad__input" data-response="b"
+                        v-model="nineNo" @change="nineYes = false">
                     </div>
                 </div>
                 <div class="personalidad-button">
@@ -115,20 +123,28 @@
                 </div>
             </form>
         </section>
-        <div class="modal" id="modal-personalidad" v-scroll-reveal="{delay: 100}">
+
+        <div class="modal modal--personality" id="modal-personalidad" v-scroll-reveal="{delay: 100}">
         <h2 class="modal__title">Test de Personalidad </h2>
         <div class="modal-content modal-content--personality">
           <h3 class="trastorno-diagnosticado personalidad-diagnosticada">Resultado:</h3>
           <div class="trastorno-diagnosticado__causas">
             <h3 class="modal-content__title">Personalidad <span>{{this.personalidad}}</span></h3>
-            <p class="modal-content__text">Eres una persona Lorem ipsum dolor sit amet.</p>
+            <p class="modal-content__text">Eres una persona {{this.personalidad}} lo que significa que te gusta
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dolore culpa ducimus officia itaque soluta nostrum rerum perspiciatis nesciunt corporis, excepturi fuga aspernatur sed ex porro sapiente consectetur velit laborum..</p>
           </div>
           <hr>
-          <p class="important"><strong>Importante</strong>, esto solo es un diagnostico previo, no es oficial el diagnostico y le recomendamos ir donde un experto a validar nuestra informacion</p>
+          <p class="important"><strong class="important--color">Importante</strong>, esto solo es un diagnostico previo, no es oficial el diagnostico y le recomendamos ir donde un experto a validar nuestra informacion</p>
         </div>
       </div>
     </div>
 </template>
+
+<style scoped>
+    .important--color{
+        color: var(--secondary-color);
+    }
+</style>
 
 <script>
 export default {
@@ -150,6 +166,8 @@ export default {
             sixNo: false,
             sevenYes: false,
             sevenNo: false,
+            nineYes: false,
+            nineNo: false
         }
     },
     methods:{

@@ -145,7 +145,7 @@ export default {
     mostrarPsicologo(){
       const psicologo = async()=>{
         try{
-          const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 14})
+          const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 14,ID:1})
           if(res.status !== 200) throw Error(res.statusText)
           
           this.psicologos = res.data

@@ -21,7 +21,7 @@ import Social from '../views/Social.vue'
 import Panico from '../views/Panico.vue'
 import Mutismo from '../views/Mutismo.vue'
 import Messi from '../views/Messi.vue'
-// import Personalidad from '../views/Personalidad.vue'
+import Personalidad from '../views/Personalidad.vue'
 import Bicho from '../views/Bicho.vue'
 import Quesillo from '../views/Quesillo.vue'
 import Argofobico from '../views/Argofobico.vue'
@@ -91,7 +91,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: TestA
+    component: Personalidad
   },
   {
     path: '/test/:query',

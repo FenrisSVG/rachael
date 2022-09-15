@@ -42,7 +42,7 @@
     }
 
     &-container__text{
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: bold;
         letter-spacing: 1px;
         color: $title-color;
@@ -56,13 +56,17 @@
         gap: 10px;
         margin: .4em 0;
 
-        & label{
-            color: $text-color
+        &__label{
+            color: $text-color;
+            font-size: 1.2em;
         }
     }
 
     &__input{
         cursor: pointer;
+        outline: none;
+        width: 18px;
+        height: 18px;
     }
 
     &-button{
