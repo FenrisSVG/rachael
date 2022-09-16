@@ -100,9 +100,7 @@
     width: 335px;
     padding: 1em 1em 0;
     border-radius: 6px;
-    background-color: var(--primary-color);
-    // box-shadow: 2px 2px 3px 0px #cccccc99;
-    
+    background-color: var(--primary-color);    
 
     &:hover{
         box-shadow: 0 0 3px 2px #42b983bb;
@@ -114,8 +112,6 @@
             width: 50%;
             margin-left: auto;
             margin-right: auto;
-            // border-radius: .2em;
-            // box-shadow: 3px 3px 1px 0 #42b983;
             overflow: hidden;
 
             & img{

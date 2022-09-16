@@ -7,8 +7,8 @@
 			<img
 				alt="Rachael IA image"
 				srcset="
-					../assets/desktop/trastorno2.jpg,
-					../assets/desktop/trastorno2.jpg 2x
+					../assets/desktop/main.webp,
+					../assets/desktop/main.webp 2x
 				"
 			/>
 			<div class="container-text">
@@ -373,18 +373,18 @@ export default {
 				},
 				{
 					id: 2,
-					name: "Cristiano Ronaldo",
-					profesion: "Siuuuuu",
-					src: require("../assets/desktop/bicho.jpg"),
+					name: "Cesar Chavez",
+					profesion: "Aqui va una descripcion del psicologo.",
+					src: require("../assets/desktop/bicho.webp"),
 					country: "Nicaragua",
 					descripcion:
 						"Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sed nesciunt quia voluptatibus! Placeat minima quos, eligendi iste quis neque. Natus qui voluptate deserunt vel ipsum mollitia quidem possimus praesentium?",
 				},
 				{
 					id: 3,
-					name: "Mohammed Salah",
-					profesion: "Que rico aprietas Man Utd.",
-					src: require("../assets/desktop/salah.jpg"),
+					name: "Miguel Angel",
+					profesion: "Aqui va una descripcion del psicologo.",
+					src: require("../assets/desktop/salah.webp"),
 					country: "Nicaragua",
 					descripcion:
 						"Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sed nesciunt quia voluptatibus! Placeat minima quos, eligendi iste quis neque. Natus qui voluptate deserunt vel ipsum mollitia quidem possimus praesentium?",

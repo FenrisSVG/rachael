@@ -95,7 +95,7 @@
     @include laptop{
         position: relative;
         display: grid;
-        grid-template-columns: 390px minmax(min-content,1fr);
+        grid-template-columns: max-content minmax(min-content,1fr);
         grid-template-rows: 80px;
         gap: 40px;
         align-items: center;
@@ -277,34 +277,35 @@
             font-size: 18px;
         }
     }
-}
 
-.logo-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 3.125em;
-    padding: 5px 1em;
+    &-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3.125em;
+        padding: 5px 1em;
 
-    @include tablet-2{
-        padding: 2em 1.8em;
-    }
+        @include tablet-2{
+            padding: 2em 1.8em;
+        }
 
-    @include tablet-3{
-        padding: 2.5em 1.8em;
-    }
+        @include tablet-3{
+            padding: 2.5em 1.8em;
+        }
 
-    @include tablet-4{
-        padding: 2.7em 1.9em;
-    }
+        @include tablet-4{
+            padding: 2.7em 1.9em;
+        }
 
-    @include tablet-5{
-        padding: 2.7em 2.1em;
-    }
+        @include tablet-5{
+            padding: 2.7em 2.1em;
+        }
 
-    @include laptop{
-        gap: 5px;
-        padding: 2em 1em 2em 3em;
+        @include laptop{
+            gap: 10px;
+            justify-content: flex-start;
+            padding: 2em 1em 2em 3em;
+        }
     }
 }
 

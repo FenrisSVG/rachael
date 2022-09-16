@@ -4,7 +4,7 @@
       <article class="article-quesillo">
           <header class="article-quesillo__header">
               <div class="quesillo-img">
-                <img src="../../assets/desktop/quesillo.jpg" alt="picture of a psicologo quesillo" loading="lazy">
+                <img src="../../assets/desktop/quesillo.webp" alt="picture of a psicologo quesillo" loading="lazy">
               </div>
               <div class="quesillo-text" v-for="(item,index) in psicologos" :key="index">
                 <h6 class="quesillo-text__title">Psicologo {{item.Nombre}}  {{item.Apellido}}</h6>

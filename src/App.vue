@@ -4,7 +4,7 @@
     <div class="logo-container">
       <img src="./assets/logo.webp" alt="Rachael Logo" class="logo">
       <h6 @click="home" class="logo-title">Rachael</h6>
-      <Search />
+      <!-- <Search /> -->
     </div> 
     <!-- CLOSE MENU ICON -->
     <div class="menu" id="menu" v-on:click="iconClose()"></div>
@@ -13,10 +13,6 @@
       <ul class="main-menu">
         <li class="main-menu__item">
           <router-link to="/" class="main-menu__link" rel="nofollow">Home</router-link>
-        </li>
-        <li class="main-menu__item">
-          <router-link to="/personalidad" class="main-menu__link" rel="nofollow"
-          >Personalidad</router-link>
         </li>
         <li class="main-menu__item">
           <router-link to="/psicologos" class="main-menu__link" rel="nofollow"
@@ -28,7 +24,11 @@
         </li>
         <li class="main-menu__item">
           <router-link to="/test" class="main-menu__link" rel="nofollow"
-          data-section="home" data-value="autoevaluacion">Autoevaluacion</router-link> 
+          data-section="home" data-value="autoevaluacion">Pruebas</router-link> 
+        </li>
+        <li class="main-menu__item">
+          <router-link to="/nosotros" class="main-menu__link" rel="nofollow"
+          >Nosotros</router-link>
         </li>
         <li class="main-menu__item main-menu__item--perfil" id="login" @click="show">
           <span><i class="fas fa-user"></i></span>
@@ -64,14 +64,14 @@
 
 <script>
 // import axios from 'axios'
-import Search from './components/Search.vue'
+// import Search from './components/Search.vue'
 import Swal from 'sweetalert2'
 import axios from 'axios'
 
 export default{
   name:'App',
   components:{
-    Search
+    
   },
   data(){
     return{

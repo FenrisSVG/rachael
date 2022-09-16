@@ -212,7 +212,7 @@ export default new Vuex.Store({
     psicologos: [{
         id: 1,
         name: 'Leonel Messi',
-        src: require('../assets/desktop/messirve.jpg'),
+        src: require('../assets/desktop/messirve.webp'),
         country: 'Nicaragua',
         descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sed nesciunt quia voluptatibus! Placeat minima quos, eligendi iste quis neque. Natus qui voluptate deserunt vel ipsum mollitia quidem possimus praesentium?',
         button: 'Ver perfil completo',
@@ -225,8 +225,8 @@ export default new Vuex.Store({
     },
     {
         id:2,
-        name: 'Cristiano Ronaldo',
-        src: require('../assets/desktop/bicho.jpg'),
+        name: 'Cesar Chavez',
+        src: require('../assets/desktop/bicho.webp'),
         country: 'Nicaragua',
         descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sed nesciunt quia voluptatibus! Placeat minima quos, eligendi iste quis neque. Natus qui voluptate deserunt vel ipsum mollitia quidem possimus praesentium?',
         button: 'Ver perfil completo',
@@ -235,12 +235,12 @@ export default new Vuex.Store({
         duracion: 1,
         modelo: 'Cognitivo-conductual',
         router: 'Bicho',
-        link: 'el-bicho'
+        link: 'cesar-chavez'
     },
     {
         id: 3,
-        name: 'Mohammed Salah',
-        src: require('../assets/desktop/salah.jpg'),
+        name: 'Miguel Angel',
+        src: require('../assets/desktop/salah.webp'),
         country: 'Nicaragua',
         descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sed nesciunt quia voluptatibus! Placeat minima quos, eligendi iste quis neque. Natus qui voluptate deserunt vel ipsum mollitia quidem possimus praesentium?',
         button: 'Ver perfil completo',
@@ -251,8 +251,8 @@ export default new Vuex.Store({
     },
     {
         id: 4,
-        name: 'Rosario Murillo',
-        src: require('../assets/desktop/chayo.jpg'),
+        name: 'Maryelly Nohemi',
+        src: require('../assets/desktop/chayo.webp'),
         country: 'Nicaragua',
         descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sed nesciunt quia voluptatibus! Placeat minima quos, eligendi iste quis neque. Natus qui voluptate deserunt vel ipsum mollitia quidem possimus praesentium?',
         button: 'Ver perfil completo',
@@ -264,7 +264,7 @@ export default new Vuex.Store({
     {
         id: 5,
         name: 'Andres Manuel Lobrez Obrador',
-        src: require('../assets/desktop/amlo.jpg'),
+        src: require('../assets/desktop/amlo.webp'),
         country: 'Nicaragua',
         descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sed nesciunt quia voluptatibus! Placeat minima quos, eligendi iste quis neque. Natus qui voluptate deserunt vel ipsum mollitia quidem possimus praesentium?',
         button: 'Ver perfil completo',
@@ -275,8 +275,8 @@ export default new Vuex.Store({
     },
     {
       id: 6,
-      name: 'Quesillo',
-      src: require('../assets/desktop/quesillo.jpg'),
+      name: 'ALEXANDER Espinoza',
+      src: require('../assets/desktop/quesillo.webp'),
       country: 'Nicaragua',
       descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sed nesciunt quia voluptatibus! Placeat minima quos, eligendi iste quis neque. Natus qui voluptate deserunt vel ipsum mollitia quidem possimus praesentium?',
       button: 'Ver perfil completo',
@@ -285,7 +285,7 @@ export default new Vuex.Store({
       duracion: 1,
       modelo: 'Psicoanalisis',
       router: 'Quesillo',
-      link: 'quesillo'
+      link: 'alexander-espinoza'
     }
     ],
     filter: {

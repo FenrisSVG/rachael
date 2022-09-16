@@ -1,0 +1,169 @@
+.nosotros-container{
+    // position: relative;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    background-color: #0084FF;
+    
+    &__img{
+        position: sticky;
+        bottom: 0;
+        display: flex;
+        border: 1px solid red;
+    }
+
+    &__header{
+        width: 100%;
+        height: 540px;
+        text-align: center;
+        aspect-ratio: 1;
+    }
+
+    &__image{
+        max-width: 100%;
+        height: 100%;
+    }
+
+    &__text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+        &::after,
+        &::before{
+            content: '';
+            position: absolute;
+            display: block;
+            left: 50%;
+            width: 40px;
+            height: 1px;
+            transform: translate(-50%) rotate(90deg);
+            background-color: black;
+            box-shadow: 150px 0 0 black;
+        }
+
+        &::after{
+            top: 0;
+        }
+    }
+
+    &__title{
+        font-size: 3em;
+        font-weight: bold;
+        color: $title-color;
+    }
+}
+
+// ESTA PARTE ES ACERCA DE LA OTRA SECCION
+.nosotros-information{
+    padding: 6em 12em;
+    background-color: #F8EEE6;
+
+    &__flex{
+        display: flex;
+        align-items: flex-start;
+        gap: 70px;
+    }
+
+    &__icon{
+        margin-top: .2em;
+        font-size: 6.4em;
+        color: $danger-color;
+    }
+
+    &__title{
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 3em;
+        letter-spacing: 1px;
+        color: $title-color;
+    }
+
+    &__description{
+        margin-top: 0;
+        font-size: 1.5em;
+        line-height: 1.5;
+        color: $text-color;
+
+        & span{
+            color: $danger-color;
+        }
+    }
+}
+
+.nosotros-valores{
+
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 420px;
+        background-color: #006ACC;
+    }
+
+    &__title{
+        width: 50%;
+        font-size: 3em;
+        margin: 0 auto;
+        text-align: center;
+        letter-spacing: 1px;
+        text-decoration: underline;
+        text-decoration-style: wavy;
+        text-decoration-color: #42b983;
+    }
+
+    &__transform{
+        text-align: center;
+        width: 50%;
+        height: 100%;
+    }
+
+    &__footer{
+        padding: 3em 1.5em;
+        display: flex;
+        // gap: 50px;
+        justify-content: space-around;
+        background-color: #0087FF;
+    }
+}
+
+.nosotros-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+    height: 430px;
+    text-align: center;
+    padding: 3em 2.8em;
+    border-radius: 5px;
+    background-color: $primary-color;
+
+    &__header{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__icon{
+        font-size: 2em;
+        color: $secondary-color;
+    }
+
+    &__title{
+        margin-top: 8px;
+        margin-bottom: 0;
+        font-size: 1.5em;
+        font-weight: bold;
+        line-height: 1.3;
+        letter-spacing: 1px;
+    }
+
+    &__description{
+        margin-top: 10px;
+        font-size: 1.1em;
+        line-height: 1.5;
+        color: $title-color;
+    }
+}
