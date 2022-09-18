@@ -214,7 +214,7 @@
 			<div class="banner-text">
 				<h2 class="banner-text__title"
 				data-section="home"
-				data value="section-servicios-title">Servicios de Psicologia</h2>
+				data-value="section-servicios-title">Servicios de Psicologia</h2>
 			</div>
 			<div class="banner-content" v-for="(item, index) in banner" :key="index">
 				<img
@@ -225,8 +225,7 @@
 				/>
 				<p class="banner-content__text">
 					<span
-					data-section="home"
-					:data-value="item.value">{{ item.name }}</span>
+					>{{item.name}}</span>
 				</p>
 			</div>
 		</div>

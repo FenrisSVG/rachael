@@ -111,8 +111,8 @@
 
         & .psiquiatras-header__img::after,
         & .psiquiatras-header__img::before{
-            transition: transform .4s ease-in;
             transform: translate(0);
+            transition: transform .4s ease-in;
         }
     }
 

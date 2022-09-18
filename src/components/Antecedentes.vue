@@ -1,27 +1,38 @@
 <template>
     <div class="antecedentes">
         <header class="antecedentes-header" v-scroll-reveal="{delay: 500}">
+            <div class="wave"></div>
             <div class="antecedentes-header__text">
-                <h2>Antecedentes - Entrevista</h2>
+                <h2 class="antecedentes-header__title">Realiza tu
+                    <span class="antecedentes-header__title-color">
+                        Entrevista
+                    </span>
+                </h2>
+                <div class="antecedentes-header__button">
+                    <!-- <a href="#work"><span>¿Que puede hacer?</span></a> -->
+                    <a href="#antecedentes"
+                    class="antecedentes-header__link"><span>Ir a la Entrevista</span></a>
+                </div>
             </div>
-            <div class="antecedentes-header__button">
-                <a href="#work"><span>¿Que puede hacer?</span></a>
-                <a href="#antecedentes"><span>Realizar Entrevista.</span></a>
+            <div class="antecedentes-header__illustration">
+                <img src="../assets/svg/interview.svg" alt="illustration two people in a interview psicology"
+                class="antecedentes-header__img">
             </div>
         </header>
 
-        <div class="antecedentes-card" id="work" v-scroll-reveal="{delay: 500}">
-            <h2 v-scroll-reveal="{delay: 500, scale: 2}">Categorizacion de las preguntas del Diagnostico.</h2>
+        <div class="antecedentes-card" v-scroll-reveal="{delay: 500}">
+            <h2 v-scroll-reveal="{delay: 500, scale: 2}"
+            class="antecedentes-card__title">Categorizacion de las preguntas del Diagnostico.</h2>
             <div class="services" v-scroll-reveal="{delay: 500}">
                 <svg>
                     <rect></rect>
                 </svg>
                 <header class="antecedentes-card__header">
-                    <img src="../assets/desktop/Sexo.jpg" alt="" loading="lazy">
+                    <img src="../assets/desktop/Sexo.jpg" alt="icons services psicology" loading="lazy">
                 </header>
                 <footer class="antecedentes-card__text">
-                    <h6><span>1. Datos Personales</span></h6>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, quidem.</p>
+                    <h6 class="antecedentes-card__text-title"><span>1. Datos Personales</span></h6>
+                    <p class="antecedentes-card-text-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, quidem.</p>
                 </footer>
             </div>
             <div class="services" v-scroll-reveal="{delay: 600}">
@@ -233,12 +244,12 @@
             </form>
             
             <div class="antecedentes-yes" id="not-login">
-                <h2>Querido usuario parece ser que usted ya completo los pasos de ingresar sus
+                <h2 class="antecedentes-yes__title">Querido usuario parece ser que usted ya completo los pasos de ingresar sus
                     datos generales y ya nos envio previamente los antecedentes, por favor eliga la opcion
                     que quiere realizar.
                 </h2>
-                <router-link to="/diagnostico/historial" class="antecedentes__link">Ver Historial.</router-link>
-                <router-link to="/test/autoevaluacion/test-autoevaluacion" class="antecedentes__link">Ir al Test de Autoevaluacion</router-link>
+                <router-link to="/diagnostico/historial" class="antecedentes-yes__link">Ver Historial.</router-link>
+                <router-link to="/test/autoevaluacion/test-autoevaluacion" class="antecedentes-yes__link">Ir al Test de Autoevaluacion</router-link>
             </div>
 
             <!-- <Autoevaluacion id="test-autoevaluacion" class="test-autoevaluacion" @trastornos="trastorno = $event"/>   -->
@@ -275,52 +286,6 @@
 </template>
 
 <style scoped>
-.traumas-show{
-    display: none;
-}
-
-.traumas--show{
-    display: block;
-}
-
-.antecedentes-yes{
-    position: absolute;
-    width: 80%;
-    background-color: #000;
-    text-align: center;
-    top: 45%;
-    left: 50%;
-    border-radius: .3em;
-    padding: 2em;
-    z-index: 300;
-    opacity: 0;
-    transform: translate(-50%);
-}
-
-.antecedentes-yes h2{
-    font-size: 20px;
-    margin-top: 0em;
-    margin-bottom: 1.5em;
-}
-
-.antecedentes__link{
-    text-decoration: none;
-    color: #fff;
-    background-color: var(--danger-color);
-    padding: .6em 1em;
-    margin: 0 .5em;
-    border-radius: .2em;
-    cursor: pointer;
-}
-
-.default{
-    padding: 0;
-    background-color: transparent;
-    text-align: center;
-    color: var(--text-color);
-    border-bottom: 1px solid var(--danger-color);
-}
-
 .not-login__router{
     display: inline-block;
     margin-top: .5em;
@@ -362,21 +327,10 @@ to{mask-position:0 0}}
     z-index: -1;
 }
 
-.diagnostico-previo__text,.for-trastorno{
+.diagnostico-previo__text,
+.for-trastorno{
     padding-left: 2em;
 }
-
-.datos-pacientes{
-    color: var(--text-color);
-}
-
-.datos-paciente{
-    text-align: center;
-    font-size: 20px;
-    padding: .3em 0 .7em;
-    border-bottom: 1px solid var(--danger-color)
-}
-
 .diagnostico-previo__text{
     color: var(--title-color);
 }
@@ -400,66 +354,30 @@ to{mask-position:0 0}}
     color: var(--danger-color);
 }
 
-.antecedentes-header{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 500px;
-    border-radius: 0 0 0 200px;
-    background-color: var(--primary-color);
-    overflow: hidden;
-    background-image: url('../assets/desktop/trastorno5.jpg');
-    background-repeat: no-repeat;
-}
-
-.antecedentes-header::after{
-    content: '';
-    display: block;
+.wave{
     position: absolute;
-    right: 0;
-    border-right: 800px solid var(--danger-color);
-    border-top: 500px solid transparent;
-    border-bottom: 0px solid transparent;
+    top: 325px;
+    width: 6000px;
+    height: 100%;
+    /* border: 1px solid red; */
+    background-image: url('../assets/svg/wd1.svg');
+    /* background-repeat: no-repeat; */
+    background-position: bottom;
+    animation: wave 7s linear infinite;
 }
 
-.antecedentes-header__text{
-    margin-bottom: 3em;
-    z-index: 10;
+@keyframes wave{
+    0%{
+        margin-left: 0;
+    }
+    100%{
+        margin-left: -1800px;
+    }
 }
-
-.antecedentes-header__text h2{
-    font-size: 28px;
-    letter-spacing: 1px;
-    color: #fff;
-}
-
-.antecedentes-header__button{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 10;
-}
-
-.antecedentes-header__button a{
-    position: relative;
-    margin: 0 1em;  
-    padding: .8em 2em;
-    text-decoration: none;
-    border-radius: 6px;
-    color: #fff;
-    background-color: var(--danger-color);
-    overflow: hidden;
-    z-index: 10;
-}
-
 .antecedentes-header__button a span{
     position: relative;
     z-index: 2;
 }
-
 .antecedentes-header__button a::after{
     content: '';
     position: absolute;
@@ -467,6 +385,9 @@ to{mask-position:0 0}}
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
+    border-bottom: 48px solid var(--secondary-color);
+    border-right: 48px solid transparent;
     transform: translate(calc(-100% - 44px));
     transition: all .5s ease-in-out;
 }
@@ -475,43 +396,8 @@ to{mask-position:0 0}}
     transform: translate(0);
 }
 
-.antecedentes-header__button a:nth-of-type(1):hover{
+.antecedentes-header__button a:hover{
     color: #000;
-}
-
-.antecedentes-header__button a:nth-of-type(2):hover{
-    color: var(--text-color);
-}
-
-.antecedentes-header__button a:nth-of-type(1)::after{
-    border-bottom: 44px solid var(--secondary-color);
-    border-right: 44px solid transparent;
-}
-
-.antecedentes-header__button a:nth-of-type(2)::after{
-    border-bottom: 44px solid var(--danger-color);
-    border-right: 44px solid transparent;
-}
-
-.antecedentes-header__button a:nth-child(2){
-    background-color: var(--secondary-color);
-    color: #000;
-}
-
-.antecedentes-card{
-    margin-top: 2em;
-    padding-bottom: 1em;
-    text-align: center;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(5,200px);
-    gap: 25px;
-}
-
-.antecedentes-card h2{
-    color: var(--title-color);
-    margin-bottom: 1.4em;
-    grid-column: 1/6;
 }
 
 .antecedentes-card__header img{
@@ -521,20 +407,15 @@ to{mask-position:0 0}}
 }
 
 .antecedentes-card__text h6{
-    color: var(--title-color);
     font-size: 14px;
-    margin-bottom: .7em;
+    margin-top: 14px;
+    margin-bottom: 0;
+    color: var(--title-color);
 }
-
 .antecedentes-card__text p{
-    color: #fff;
+    color: var(--text-color);
     padding: .5em;
     font-size: 13px;
-}
-
-.services{
-    position: relative;
-    background-color: var(--primary-color);
 }
 
 .entrevista-nav{

@@ -2,9 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 15px;
     height: 100px;
     width: 100%;
-    background-color: #111;
+    background-color: #B9E2F8;
 
     @include tablet-4{
         height: 150px;
@@ -15,14 +16,28 @@
     }
 
     &-container{
-        padding: 20px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: $background-color;
+        filter: brightness(70%);
+        transition: all .4s ease-in;
 
-        @include tablet-2{
-            margin: 5px 10px;
+        @include hover{
+            filter: brightness(100%);
+            border: 2px solid #F2C21F;
+
+            & .socials-container__icon{
+                color: $danger-color;
+            }
         }
 
         &__icon{
-            color: $danger-color;
+            color: $primary-color;
+            // color: $danger-color;
             font-size: 35px;
 
             @include tablet-4{
@@ -38,7 +53,6 @@
                 @include laptop{
                     animation: palpitar 1s infinite;
                     transform-origin: center;
-                    filter: contrast(110%);
                 }
             }
         }
@@ -55,6 +69,6 @@
 
 @media(prefers-reduced-motion){
     .socils-container__icon{
-        animation: palpitar 2s ease-in;
+        animation: palpitar 3s ease-in;
     }
 }

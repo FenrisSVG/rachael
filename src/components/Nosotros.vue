@@ -67,6 +67,15 @@
 					</section>
 				</footer>
 			</div>
+			<div class="nosotros-contacto">
+				<div class="nosotros-contacto__team">
+					<h3 class="nosotros-contacto__title">¿Te gustaría ser parte de Rachael?</h3>
+					<p class="nosotros-contacto__text">¡Únete a nuestro equipo!</p>
+				</div>
+				<div class="nosotros-contacto__vacante">
+					<button class="nosotros-contacto__button">Ver Vacantes Disponibles.</button>
+				</div>
+			</div>
 		</section>
 		<Footer />
 	</div>
