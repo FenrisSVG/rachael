@@ -343,7 +343,7 @@
             top: 60px;
             right: 0;
             border-radius: 5px;
-            background-color: rgb(253, 253, 253);
+            background-color: $text-color;
         }
 
         &::after{ 
@@ -416,4 +416,128 @@
         transform: scale(1.1);
         color: #42b983;
     }
+}
+
+.sexo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(17, 18, 19,.7);
+    z-index: 10;
+}
+
+.article-psicologo{
+    position: relative;
+    padding: 2em 0;
+    gap: 16px;
+    width: 60vw;
+    height: 80vh;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+}
+
+.article-headers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__image{
+        border-radius: 50%;
+        background-color: #ccc;
+        overflow: hidden;
+    }
+
+    &__img{
+        width: 180px;
+        height: 180px;
+    }
+
+    &__title{
+        margin-top: 24px;
+        margin-bottom: 0;
+        font-size: 1.8em;
+        font-weight: bold;
+        color: $title-color;
+    }
+
+    &__test{
+        display: flex;
+        flex-direction: column;
+        // flex: 15px;
+        text-align: center;
+    }
+
+    &__description{
+        margin-bottom: 25px;
+        line-height: 1.5;
+        width: 35ch;
+        color: $text-color;
+    }
+
+    &__inputs{
+        display: flex;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    
+    &__label{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        font-size: 1.2em;
+
+        & input{
+            width: 16px;
+            height: 16px;
+            border: none;
+            accent-color: $secondary-color;
+        }
+    }
+
+
+    &__button{
+        // letter-spacing: 1px;
+        font-size: 1.4em;
+        border: none;
+        background-color: transparent;
+        color: blue;
+
+        @include hover{
+            cursor: pointer;
+            filter: brightness(80%);
+        }
+    }
+
+    &__buttons{
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 2em;
+
+        & button{
+            border: none;
+            background-color: transparent;
+            color: blue;
+            font-size: 1.4em;
+
+            @include hover{
+                cursor: pointer;
+                filter: brightness(80%);
+            }
+        }
+    }
+}
+
+.psicologo-terapeutico--close{
+    top: 0;
+    right: 60px;
 }

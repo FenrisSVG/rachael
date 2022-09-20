@@ -1,7 +1,7 @@
 <template>
     <div class="antecedentes">
         <header class="antecedentes-header" v-scroll-reveal="{delay: 500}">
-            <div class="wave"></div>
+            <div class="wave2"></div>
             <div class="antecedentes-header__text">
                 <h2 class="antecedentes-header__title">Realiza tu
                     <span class="antecedentes-header__title-color">
@@ -354,7 +354,7 @@ to{mask-position:0 0}}
     color: var(--danger-color);
 }
 
-.wave{
+.wave2{
     position: absolute;
     top: 325px;
     width: 6000px;
