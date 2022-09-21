@@ -251,6 +251,14 @@
 							</div>
 						</div>
 					</div>
+					<!-- SPINNE R -->
+					<div class="article-headers__test
+							article-headers__test--spinner">
+						<p class="article-headers__description">
+							Estamos haciendo match con tu psicologo ideal...
+						</p>
+						<div class="spinner"></div>
+					</div>
 					<div class="article-headers__buttons"
 					id="psicologo-buttons">
 						<div class="prev-test" id="prev-test">
@@ -267,6 +275,31 @@
 		<Footer />
 	</div>
 </template>
+
+<style scoped>
+.article-headers__test--spinner{
+	bottom: 90px;
+}
+.spinner{
+	margin-inline-start: auto;
+	margin-inline-end: auto;
+	border: 4px solid rgba(0,0,0,.1);
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border-left-color: #09f;
+	animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg)
+	}
+}
+</style>
 
 <script>
 import { mapGetters } from "vuex";
@@ -289,7 +322,7 @@ export default {
 			men2: false,
 			woman2: false,
 			otro: false,
-			jove: false,
+			joven: false,
 			adolescente: false,
 			adulto: false,
 			viejo: false,
@@ -311,6 +344,9 @@ export default {
 		},
 		closeModal(e){
 			const close = document.querySelector('.psicologo-terapeutico--close')
+			const test = Array.from(
+				document.querySelectorAll(".article-headers__test")
+			);
 
 			if(e.target.classList.contains('sexo--show')){
 				e.target.classList.remove('sexo--show')
@@ -320,6 +356,8 @@ export default {
 				close.addEventListener('click', () =>{
 					close.parentElement.parentElement.parentElement
 					.classList.remove('sexo--show')
+					test.map(tests => tests.classList.remove('article-headers__test--opacity'))
+					test[0].classList.add('article-headers__test--opacity')
 				})
 			}
 
@@ -343,15 +381,16 @@ export default {
 
 			let cont = 0;
 
+			comenzar.addEventListener("click", () => {
+				setClass('next')
+				buttons.style.opacity = 1;
+			});
+
 			if (prev) {
 				prev.addEventListener("click", () => setClass("prev"));
 			}
 
-			if(comenzar){
-				comenzar.addEventListener("click", () => {
-					setClass("next")
-					buttons.style.opacity = 1;
-				});
+			if(next){
 				next.addEventListener("click", () => setClass("next"));
 			}
 
@@ -370,7 +409,25 @@ export default {
 			const setCont = (direction) => {
 				if (direction == "next") {
 					if (cont == test.length - 1) cont = 0;
-					else cont++;
+					else{
+						cont = 1
+						if(this.men2 || this.woman2 || this.otro){
+							cont = 2
+							if(this.joven || this.adolescente || this.adulto || this.viejo){
+								cont = 3
+								if(this.terapiaYes || this.terapiaNo){
+									cont = 4
+									if(this.hombre || this.mujer){
+										cont = 5
+										if(this.individual2 || this.pareja2){
+											cont = 6
+											buttons.style.opacity = 0;
+										}
+									}
+								}
+							}
+						}
+					}											
 				} else {
 					if (cont == 0) cont = test.lenght - 1;
 					else cont--;
