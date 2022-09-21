@@ -68,18 +68,18 @@
 				</div>
 				<aside class="psicologos-card__aside">
 					<div class="psicologos-card__aside-img">
-						<img src="../assets/desktop/psicologo.svg" alt="" />
+						<img src="../assets/desktop/psicologo.svg" alt="
+						icon svg men with a big cellphone" />
 					</div>
 					<div class="psicologos-card__aside-text">
 						<h2 class="psicologos-card__aside-title">
 							Encuentra a tu psicologo ideal
 						</h2>
 						<p>Te ayudamos a encontrar tu psicologo ideal</p>
-						<router-link
+						<button
 							class="psicologos-card__aside-link"
-							to="/"
-							rel="nofollow"
-							>Comenzar Ahora</router-link
+							@click="showModal"
+							>Comenzar Ahora</button
 						>
 					</div>
 				</aside>
@@ -92,14 +92,14 @@
 					/>
 				</div>
 			</div>
-			<div class="sexo">
+			<div class="sexo" id="sexo" @click="closeModal">
 				<article class="article-psicologo">
 					<div class="article-headers">
 						<div class="article-headers__image">
 							<img
 								src="../assets/desktop/psicologo.svg"
 								class="article-headers__img"
-								alt=""
+								alt="icon svg cellphone with a men"
 							/>
 						</div>
 						<div class="article-headers__text">
@@ -107,77 +107,102 @@
 								Encuentra a tu psicólogo ideal.
 							</h3>
 						</div>
-						<div class="modal-terapeutico--close psicologo-terapeutico--close"></div>
-						<!-- <div class="article-headers__test">
+						<div
+							class="modal-terapeutico--close psicologo-terapeutico--close"
+						></div>
+						<div
+							class="article-headers__test
+						article-headers__test--opacity"
+						>
 							<p class="article-headers__description">
 								¡Te ayudamos! Responde unas preguntas y haz match con tu
 								psicólogo.
 							</p>
-							<button class="article-headers__button">Comenzar.</button>
-						</div> -->
+							<button class="article-headers__button" id="comenzar">Comenzar.</button>
+						</div>
 						<div class="article-headers__test">
-							<p class="article-headers__description">¿Cuál es tu género?</p>
+							<p class="article-headers__description
+							article-headers__description--font">¿Cuál es tu género?</p>
 							<div class="article-headers__inputs">
-								<label for="female" class="article-headers__label">
-									<input type="checkbox" name="female" />
+								<label for="female2" class="article-headers__label">
+									<input type="checkbox" name="female2"
+									v-model="men2"
+									@change="woman2 = false, otro = false" />
 									Mujer.
 								</label>
 							</div>
 							<div class="article-headers__inputs">
-								<label for="male" class="article-headers__label">
-									<input type="checkbox" name="male" />
+								<label for="male2" class="article-headers__label">
+									<input type="checkbox" name="male2"
+									v-model="woman2"
+									@change="(men2 = false, otro = false)" />
 									Hombre.
 								</label>
 							</div>
 							<div class="article-headers__inputs">
 								<label for="otro" class="article-headers__label">
-									<input type="checkbox" name="otro" />
+									<input type="checkbox" name="otro"
+									v-model="otro"
+									@change="men2 = false, woman2 = false" />
 									Prefiero no mencionarlo.
 								</label>
 							</div>
 						</div>
-						<!-- <div class="article-headers__test">
-							<p class="article-headers__description">
+						<div class="article-headers__test">
+							<p class="article-headers__description
+							article-headers__description--font">
 								¿En qué rango de edad te encuentras?
 							</p>
 							<div class="article-headers__inputs">
 								<label for="joven" class="article-headers__label">
-									<input type="checkbox" name="joven" />
+									<input type="checkbox" name="joven"
+									v-model="joven"
+									@change="adolescente = false, adulto = false, viejo = false" />
 									18-25.
 								</label>
 							</div>
 							<div class="article-headers__inputs">
 								<label for="adolescente" class="article-headers__label">
-									<input type="checkbox" name="adolescente" />
+									<input type="checkbox" name="adolescente"
+									v-model="adolescente"
+									@change="joven = false, viejo = false, adulto = false" />
 									26-35.
 								</label>
 							</div>
 							<div class="article-headers__inputs">
 								<label for="adulto" class="article-headers__label">
-									<input type="checkbox" name="adulto" />
+									<input type="checkbox" name="adulto"
+									v-model="adulto"
+									@change="joven = false, adolescente = false, viejo = false" />
 									36-45.
 								</label>
 							</div>
 							<div class="article-headers__inputs">
 								<label for="viejo" class="article-headers__label">
-									<input type="checkbox" name="viejo" />
+									<input type="checkbox" name="viejo"
+									v-model="viejo"
+									@change="joven = false, adolescente = false, adulto = false" />
 									45+.
 								</label>
 							</div>
 						</div>
 						<div class="article-headers__test">
 							<p class="article-headers__description">
-								¿En qué rango de edad te encuentras?
+								¿Es tu primera vez recibiendo una terapia?
 							</p>
 							<div class="article-headers__inputs">
 								<label for="si" class="article-headers__label">
-									<input type="checkbox" name="si" />
+									<input type="checkbox" name="si"
+									v-model="terapiaYes"
+									@change="terapiaNo = false" />
 									Si.
 								</label>
 							</div>
 							<div class="article-headers__inputs">
 								<label for="no" class="article-headers__label">
-									<input type="checkbox" name="no" />
+									<input type="checkbox" name="no"
+									v-model="terapiaNo"
+									@change="terapiaYes = false" />
 									No.
 								</label>
 							</div>
@@ -189,13 +214,17 @@
 							</p>
 							<div class="article-headers__inputs">
 								<label for="hombre" class="article-headers__label">
-									<input type="checkbox" name="hombre" />
+									<input type="checkbox" name="hombre" 
+									v-model="hombre"
+									@change="mujer = false" />
 									Hombre.
 								</label>
 							</div>
 							<div class="article-headers__inputs">
 								<label for="mujer" class="article-headers__label">
-									<input type="checkbox" name="mujer" />
+									<input type="checkbox" name="mujer" 
+									v-model="mujer"
+									@change="hombre = false" />
 									Mujer.
 								</label>
 							</div>
@@ -205,23 +234,32 @@
 								¿Qué tipo de terapia buscas?
 							</p>
 							<div class="article-headers__inputs">
-								<label for="individual" class="article-headers__label">
-									<input type="checkbox" name="individual" />
+								<label for="individual2" class="article-headers__label">
+									<input type="checkbox" name="individual2"
+									v-model="individual2"
+									@change="pareja2 = false" />
 									Individual.
 								</label>
 							</div>
 							<div class="article-headers__inputs">
-								<label for="pareja" class="article-headers__label">
-									<input type="checkbox" name="pareja" />
+								<label for="pareja2" class="article-headers__label">
+									<input type="checkbox" name="pareja2"
+									v-model="pareja2"
+									@change="individual2 = false" />
 									Pareja.
 								</label>
 							</div>
-						</div> -->
+						</div>
 					</div>
-                    <div class="article-headers__buttons">
-                        <div class="prev-test"><button>Atrás</button></div>
-                        <div class="next-test"><button>Siguiente</button></div>
-                    </div>
+					<div class="article-headers__buttons"
+					id="psicologo-buttons">
+						<div class="prev-test" id="prev-test">
+							<button>Atrás</button>
+						</div>
+						<div class="next-test" id="next-test">
+							<button>Siguiente</button>
+						</div>
+					</div>
 				</article>
 			</div>
 		</div>
@@ -248,12 +286,106 @@ export default {
 	data() {
 		return {
 			motivo: ["Ansiedad", "Miedo", "Ansiedad por Separacion", "Terapia"],
+			men2: false,
+			woman2: false,
+			otro: false,
+			jove: false,
+			adolescente: false,
+			adulto: false,
+			viejo: false,
+			terapiaYes: false,
+			terapiaNo: false,
+			hombre: false,
+			mujer: false,
+			individual2: false,
+			pareja2: false
 		};
+	},
+	methods: {
+		showModal(e){
+			const sexo = document.getElementById('sexo')
+
+			if(e.target.classList.contains('psicologos-card__aside-link')){
+				sexo.classList.add('sexo--show')
+			}
+		},
+		closeModal(e){
+			const close = document.querySelector('.psicologo-terapeutico--close')
+
+			if(e.target.classList.contains('sexo--show')){
+				e.target.classList.remove('sexo--show')
+			}
+
+			if(close){
+				close.addEventListener('click', () =>{
+					close.parentElement.parentElement.parentElement
+					.classList.remove('sexo--show')
+				})
+			}
+
+			document.addEventListener('keydown', 
+				(e)=>{
+					if(e.key === 'Escape'){
+						close.parentElement.parentElement.parentElement
+						.classList.remove('sexo--show')
+					}
+				})
+			
+		},
+		testControls() {
+			const test = Array.from(
+				document.querySelectorAll(".article-headers__test")
+			);
+			const prev = document.getElementById("prev-test");
+			const next = document.getElementById("next-test");
+			const comenzar = document.getElementById("comenzar");
+			const buttons = document.getElementById("psicologo-buttons");
+
+			let cont = 0;
+
+			if (prev) {
+				prev.addEventListener("click", () => setClass("prev"));
+			}
+
+			if(comenzar){
+				comenzar.addEventListener("click", () => {
+					setClass("next")
+					buttons.style.opacity = 1;
+				});
+				next.addEventListener("click", () => setClass("next"));
+			}
+
+			const setClass = (direction) => {
+				try {
+					test.map((image) =>
+						image.classList.remove("article-headers__test--opacity")
+					);
+					setCont(direction);
+					test[cont].classList.add("article-headers__test--opacity");
+				} catch (err) {
+					console.log(err);
+				}
+			};
+
+			const setCont = (direction) => {
+				if (direction == "next") {
+					if (cont == test.length - 1) cont = 0;
+					else cont++;
+				} else {
+					if (cont == 0) cont = test.lenght - 1;
+					else cont--;
+
+				}
+			};
+		},
 	},
 	computed: {
 		...mapGetters({
 			psicologos: "filteredPsicologos",
 		}),
 	},
+	mounted(){
+		return this.testControls()
+	}
 };
 </script>

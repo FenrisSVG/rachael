@@ -52,7 +52,8 @@
                 transition: all .3s ease-in;
                 border: 1px solid transparent;
         
-                &:hover{
+                @include hover{
+                    cursor: pointer;
                     transform: translateY(-12%);
                     background-color: transparent;
                     border: 1px solid var(--danger-color);
@@ -428,8 +429,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transform: scale(0);
+    transition: transform .5s ease-in;
     background-color: rgba(17, 18, 19,.7);
     z-index: 10;
+
+    &--show{
+        transform: scale(1);
+    }
 }
 
 .article-psicologo{
@@ -443,9 +450,11 @@
 }
 
 .article-headers{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;   
 
     &__image{
         border-radius: 50%;
@@ -467,17 +476,34 @@
     }
 
     &__test{
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
         display: flex;
         flex-direction: column;
-        // flex: 15px;
+        transform: translate(-50%);
         text-align: center;
+        height: 180px;
+        opacity: 0;
+        transition: all .4s ease-in;
+
+        &--opacity{
+            opacity: 1;
+            z-index: 10;
+        }
     }
 
     &__description{
+        margin-top: 0;
         margin-bottom: 25px;
         line-height: 1.5;
         width: 35ch;
         color: $text-color;
+
+        &--font{
+            font-size: 1.5em;
+            margin-bottom: 8px;
+        }
     }
 
     &__inputs{
@@ -488,7 +514,7 @@
     
     &__label{
         display: flex;
-        gap: 15px;
+        gap: 12px;
         align-items: center;
         font-size: 1.2em;
 
@@ -500,20 +526,6 @@
         }
     }
 
-
-    &__button{
-        // letter-spacing: 1px;
-        font-size: 1.4em;
-        border: none;
-        background-color: transparent;
-        color: blue;
-
-        @include hover{
-            cursor: pointer;
-            filter: brightness(80%);
-        }
-    }
-
     &__buttons{
         position: absolute;
         bottom: 40px;
@@ -522,22 +534,25 @@
         justify-content: space-between;
         width: 100%;
         padding: 0 2em;
+        opacity: 0;
+        transition: opacity .4s ease-out;
+    }
+}
 
-        & button{
-            border: none;
-            background-color: transparent;
-            color: blue;
-            font-size: 1.4em;
+.article-headers__button,
+.article-headers__buttons button{
+    border: none;
+    background-color: transparent;
+    color: blue;
+    font-size: 1.4em;
 
-            @include hover{
-                cursor: pointer;
-                filter: brightness(80%);
-            }
-        }
+    @include hover{
+        cursor: pointer;
+        filter: brightness(80%);
     }
 }
 
 .psicologo-terapeutico--close{
-    top: 0;
-    right: 60px;
+    top: -50px;
+    right: 50px;
 }
