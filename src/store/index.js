@@ -8,8 +8,6 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     loggedIn: false,
-    lat: null,
-    lon: null,
     isFilter: false,
     trastornos: [
       {
@@ -292,8 +290,12 @@ export default new Vuex.Store({
       query: '',
       men: false,
       female: false,
+      hombre: false,
+      mujer: false,
       individual: false,
       pareja: false,
+      individual2: false,
+      pareja2: false,
       minutos50: false,
       minutos100: false
     },
@@ -301,12 +303,6 @@ export default new Vuex.Store({
     testStatus: false
   },
   mutations: {
-    SET_LAT(state,lat){
-      state.lat = lat
-    },
-    SET_LONG(state,lon){
-      state.lon = lon
-    },
     SET_QUERY(state,query){
       state.filter.query = query
     },
@@ -314,17 +310,33 @@ export default new Vuex.Store({
       state.filter.men = check
       state.filter.female = false
     },
+    SET_HOMBRE(state,check){
+      state.filter.hombre = check
+      state.filter.mujer = false
+    },
     SET_FEMALE(state,check){
       state.filter.female = check
       state.filter.men = false
+    },
+    SET_MUJER(state,check){
+      state.filter.mujer = check
+      state.filter.hombre = false
     },
     SET_INDIVIDUAL(state,check){
       state.filter.individual = check
       state.filter.pareja = false
     },
+    SET_INDIVIDUAL2(state,check){
+      state.filter.individual2 = check
+      state.filter.pareja2 = false
+    },
     SET_PAREJA(state,check){
       state.filter.pareja = check
       state.filter.individual = false
+    },
+    SET_PAREJA2(state,check){
+      state.filter.pareja2 = check
+      state.filter.individual2 = false
     },
     SET_50(state,check){
       state.filter.minutos50 = check
@@ -342,12 +354,6 @@ export default new Vuex.Store({
     },
   },
   getters:{
-    getLat(state){
-      return state.lat
-    },
-    getLon(state){
-      return state.lon
-    },
     filteredTrastornos(state){
       if(state.filter.query.length >= 1){
         state.isFilter = true
@@ -375,8 +381,21 @@ export default new Vuex.Store({
       if(state.filter.minutos100){
         return state.psicologos.filter(item=> item.duracion == state.filter.minutos100)
       }
+      if(state.filter.hombre && state.filter.individual2){
+        return state.psicologos.filter(item => item.gender !== state.filter.hombre || item.sesion !== state.filter.individual2)
+      }
+      if(state.filter.mujer && state.filter.individual2){
+        return state.psicologos.filter(item => item.gender === state.filter.mujer || item.sesion !== state.filter.individual2)
+      }
+      if(state.filter.hombre && state.filter.pareja2){
+        return state.psicologos.filter(item => item.gender !== state.filter.hombre || item.sesion === state.filter.pareja2)
+      }
+      if(state.filter.mujer && state.filter.pareja2){
+        return state.psicologos.filter(item => item.gender === state.filter.mujer || item.sesion === state.filter.pareja2)
+      }
       return state.psicologos
-    }
+    },
+    
   },
   actions: {
   },

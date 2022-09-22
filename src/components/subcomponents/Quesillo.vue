@@ -123,11 +123,9 @@
 	/* width: 100%; */
 	height: 500px;
 }
-
 .quesillo-img{
   position: relative;
 }
-
 .quesillo-img::before{
   content: 'Hola!';
   display: flex;
@@ -145,7 +143,6 @@
   background-color: #B9E2F8;
 
 }
-
 .quesillo-img:hover::before{
   width: 100%;
   height: 160px;
@@ -154,6 +151,16 @@
   letter-spacing: 3px;
   transform: translate(-23.2%,-50%);
 }
+
+.leaflet-popup-content-wrapper{
+	margin-bottom: 20px;
+}
+
+.leaflet-popup-content-text{
+	line-height: 1.5;
+	font-size: 32px;
+	border: 1px solid red;
+}
 </style>
 
 <script>
@@ -161,6 +168,8 @@ import Bot from "../inxdex.vue";
 import Footer from "../Footer.vue";
 import Important from "../Important.vue";
 import L from "leaflet";
+// import leafletSearch from 'leaflet-search'
+require('leaflet-routing-machine')
 import axios from "axios";
 // import {mapGetters, mapMutatios} from 'vuex'
 
@@ -279,22 +288,45 @@ export default {
 								}).addTo(map);
 
 								L.marker([data[0].lat, data[0].lon], {
-									alt: "Nicaragua",
+									alt: "Psicologo Marker",
+									title: 'Ubicación Psicologo.'
 								}).addTo(map);
 
 								L.marker([this.latitude, this.longitude], {
-									alt: "Nicaragua",
-								}).addTo(map);
-
+									alt: "Your bitacion marker",
+									title: "Tú posición."
+								}).bindPopup('<h5>Tu estas aqui</h5>').addTo(map);
+							
 								let fromLatLng = L.latLng(data[0].lat, data[0].lon);
 								let toLatLng = L.latLng(this.latitude, this.longitude);
 
 								let distance = fromLatLng.distanceTo(toLatLng);
-								console.log(distance);
+								
+								L.popup().setLatLng([data[0].lat,data[0].lon])
+									.setContent(`<h5 class="leaflet-popup-content-text"> Te encuentras a una distancia de <br /> ${distance.toFixed(3)} metros del objetivo</h5>`)
+									.openOn(map);
+				
+								// marker.bindPopup(`<b> Te encuentras a una distancia de  </b><br />${distance.toFixed(3)} <b> metros del objetivo</b>`).openPopup();
 
-								L.polyline([fromLatLng, toLatLng], {
-									color: "red",
-								}).addTo(map);
+								// L.polyline([fromLatLng, toLatLng], {
+								// 	color: "red",
+								// }).addTo(map);
+							
+								L.Routing.control({
+									waypoints: [
+										L.latLng(data[0].lat,data[0].lon),
+										L.latLng(this.latitude,this.longitude)
+										],
+									routeWhileDragging: true,
+									autoRoute: true,
+									language: 'es',
+									lineOptions: {
+										styles: [{color: 'black', weight: 5}]
+									},
+									useZoomParameter: true
+								}).addTo(map);	
+
+								L.Control.geocoder({defaultMarkGeocode: false}).addTo(map);
 							});
 					});
 				} catch (e) {
