@@ -306,8 +306,6 @@ export default {
 									.setContent(`<h5 class="leaflet-popup-content-text"> Te encuentras a una distancia de <br /> ${distance.toFixed(3)} metros del objetivo</h5>`)
 									.openOn(map);
 				
-								// marker.bindPopup(`<b> Te encuentras a una distancia de  </b><br />${distance.toFixed(3)} <b> metros del objetivo</b>`).openPopup();
-
 								// L.polyline([fromLatLng, toLatLng], {
 								// 	color: "red",
 								// }).addTo(map);
@@ -326,7 +324,6 @@ export default {
 									useZoomParameter: true
 								}).addTo(map);	
 
-								L.Control.geocoder({defaultMarkGeocode: false}).addTo(map);
 							});
 					});
 				} catch (e) {

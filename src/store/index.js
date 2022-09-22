@@ -382,16 +382,16 @@ export default new Vuex.Store({
         return state.psicologos.filter(item=> item.duracion == state.filter.minutos100)
       }
       if(state.filter.hombre && state.filter.individual2){
-        return state.psicologos.filter(item => item.gender !== state.filter.hombre || item.sesion !== state.filter.individual2)
+        return state.psicologos.filter(item => item.gender != state.filter.hombre && item.sesion != state.filter.individual2)
       }
       if(state.filter.mujer && state.filter.individual2){
-        return state.psicologos.filter(item => item.gender === state.filter.mujer || item.sesion !== state.filter.individual2)
+        return state.psicologos.filter(item => item.gender == state.filter.mujer && item.sesion != state.filter.individual2)
       }
       if(state.filter.hombre && state.filter.pareja2){
-        return state.psicologos.filter(item => item.gender !== state.filter.hombre || item.sesion === state.filter.pareja2)
+        return state.psicologos.filter(item => item.gender != state.filter.hombre && item.sesion == state.filter.pareja2)
       }
       if(state.filter.mujer && state.filter.pareja2){
-        return state.psicologos.filter(item => item.gender === state.filter.mujer || item.sesion === state.filter.pareja2)
+        return state.psicologos.filter(item => item.gender == state.filter.mujer && item.sesion == state.filter.pareja2)
       }
       return state.psicologos
     },
