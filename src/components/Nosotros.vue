@@ -21,7 +21,8 @@
 				</div>
 				<div class="nosotros-information">
 					<div class="wave w1">
-						<img src="../assets/svg/img2.svg" alt="ola de mar animacion" />
+						<img src="../assets/svg/img2.svg" alt="ola de mar animacion"
+						class="wave-img" />
 					</div>
 					<div class="nosotros-information__flex">
 						<div class="nosotros-information__image">
@@ -81,11 +82,22 @@
 	</div>
 </template>
 
-<!-- <style scoped>
+<style scoped>
 .wave{
-	background-image: url('../assets/svg/img2.svg');
+    position: absolute;
+	left: 0;
+    bottom: -20px;
+    width: 6000px;
+    height: 300px;
+	z-index: 10;
 }
-</style> -->
+
+.wave-img{
+	max-width: 100%;
+	height: 300px;
+}
+
+</style>
 
 <script>
 import Footer from "./Footer.vue";

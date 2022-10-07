@@ -1,5 +1,5 @@
 <template>
-    <div class="login-2" id="form-login-2">
+    <div class="login-2">
         <p class="login__title login__title--secondary">Inicio de Sesion</p>  
         <form method="POST" class="login-form login-form--secondary" id="form-login-2">
             <div class="login-form__container">
@@ -37,16 +37,18 @@ export default {
   },
   methods:{
     ...mapActions(['mocklogin']),
-    mostrarLogin(){
-      axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+    async mostrarLogin(){
+      await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
         opcion: 9,
         username: this.username
       }).then(res => {
+          if(res.status == 200){
             this.datas = res.data;
             this.datas.forEach(data =>{
-              this.user = data.username,
-              this.clave = data.clave
-            })
+            this.user = data.username,
+            this.clave = data.clave
+          })
+          }
       })
     },
     login(){
@@ -56,7 +58,6 @@ export default {
       //const name = document.getElementById('name');
 
       if(formLogin){
-
         formLogin.addEventListener('submit',(e)=>{
           e.preventDefault();
           if(this.username == this.user && this.password == this.clave){
@@ -80,7 +81,7 @@ export default {
                     confirmButtonColor: '#972745',
                     showCloseButton: true
                 })
-                this.mockLogin()
+                this.mocklogin()
                 this.$router.push('/')
             })()
           }else{

@@ -8,6 +8,10 @@
                         Entrevista
                     </span>
                 </h2>
+                <p class="antecedentes-header__text">
+                    Entrevista de autoevaluacion para diagnostico del 
+                    trastorno mental.
+                </p>
                 <div class="antecedentes-header__button">
                     <!-- <a href="#work"><span>¿Que puede hacer?</span></a> -->
                     <a href="#antecedentes"
@@ -16,7 +20,7 @@
             </div>
             <div class="antecedentes-header__illustration">
                 <img src="../assets/svg/interview.svg" alt="illustration two people in a interview psicology"
-                class="antecedentes-header__img">
+                class="antecedentes-header__img" loading="lazy">
             </div>
         </header>
 
@@ -363,10 +367,10 @@ to{mask-position:0 0}}
     background-image: url('../assets/svg/wd1.svg');
     /* background-repeat: no-repeat; */
     background-position: bottom;
-    animation: wave 7s linear infinite;
+    animation: wave2 7s linear infinite;
 }
 
-@keyframes wave{
+@keyframes wave2{
     0%{
         margin-left: 0;
     }

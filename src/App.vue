@@ -31,7 +31,8 @@
           >Nosotros</router-link>
         </li>
         <li class="main-menu__item main-menu__item--perfil" id="login" @click="show">
-          <span><i class="fas fa-user"></i></span>
+          <span><i class="fas fa-user
+            main-menu__item--perfil__icon"></i></span>
           <p class="main-menu__link" data-set="login" id="login-link" rel="nofollow">Login</p> 
           <!-- SUBMENU DEL LOGIN -->
           <div class="login" id="login-form">
