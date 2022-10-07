@@ -19,45 +19,13 @@
                 </div>
             </div>
             <div class="location-footer__buttons">
-                <button class="close" @click="closeLocation">Cerrar</button>
+                <button class="location-footer__close" @click="closeLocation">Cerrar</button>
             </div>
         </footer>
     </div>
 </template>
 
 <style scoped>
-    .location-footer__municipios{
-        display: none;
-    }
-
-    .location--hide{
-        display: none;
-    }
-
-    .location--show{
-        display: block;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    .close{
-        width: 300px;
-        height: 40px;
-        font-size: 1rem;
-        padding: 5px;
-        border: none;
-        outline: none;
-        letter-spacing: 1px;
-        border-radius: 5px;
-        color: #fff;
-        background-color: var(--secondary-color);
-    }
-
-    .location-close{
-        transform: scale(0);
-        transition: transform .4s ease;
-    }
-
     @media(Hover:hover){
         .close:hover{
             cursor: pointer;
@@ -85,7 +53,6 @@ export default{
                 try{
                     const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 17})
                     if(res.status !== 200) throw new Error(res.statusText)
-
                     this.municipios = res.data
                 }catch(e){
                     console.error(e)
@@ -119,13 +86,15 @@ export default{
                 let coords = geoLocationPosition.coords;
                 
                 await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${coords.latitude}&lon=${coords.longitude}`)
-                    .then(res => res.json())
+                    .then(res => res.status == 200 ? res.json() : console.log(res.statusText))
                     .then(data => {
                         store(!modal.classList.contains('location-close'))
                         setTimeout(()=>{
                             location.innerHTML = 'Ubicación encontrada.'
-                            pais.innerHTML = data.address.state + ', ' + data.address.country
-                            municipio.innerHTML = data.address.state + ', ' + data.address.region + ', ' + data.address.road
+                            pais.innerHTML = data.address.state + ', ' + data.address.country;
+                            (data.address.road === undefined)
+                                ? municipio.innerHTML = data.address.state + ', ' + data.address.region + ', ' + data.address.neighbourhood
+                                : municipio.innerHTML = data.address.state + ', ' + data.address.region + ', ' + data.address.road
                         },5000)
                 })
 
@@ -166,7 +135,6 @@ export default{
                             await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitud}&lon=${longitud}`)
                             .then(res => res.json())
                             .then(data => {
-                                console.log(data)
                                 setTimeout(()=>{
                                     geolocation.classList.remove('location--hide')
                                     location.innerHTML = 'Ubicación encontrada.'
@@ -199,7 +167,7 @@ export default{
         closeLocation(e){
             const modal = document.getElementById('location-modal');
 
-            (e.target.classList.contains('close')) && modal.classList.add('location-close')
+            (e.target.classList.contains('location-footer__close')) && modal.classList.add('location-close')
         }
     },
     mounted(){

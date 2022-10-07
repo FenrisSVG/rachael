@@ -7,11 +7,6 @@ import Signup from '../views/Signup.vue'
 import Login from '../views/Login.vue'
 import Nosotros from '../components/Nosotros.vue'
 import Antecedentes from '../views/Antecedentes.vue'
-import Trastornos from '../views/Trastornos.vue'
-import Trastornos2 from '../views/Trastornos2.vue'
-import Trastornos3 from '../views/Trastornos3.vue'
-import Trastornos4 from '../views/Trastornos4.vue'
-import Trastornos5 from '../views/Trastornos5.vue'
 import Autoevaluacion from '../views/Autoevaluacion.vue'
 import TestA from '../views/TestA.vue'
 import Historial from '../views/Historial.vue'
@@ -31,14 +26,6 @@ const routes = [
     name: 'Home',
     component: Home
   },
-  // {
-  //   path: '/rachael',
-  //   name: 'Rachael',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: Rachael
-  // },
   {
     path: '/test',
     name: 'Test',
@@ -114,14 +101,6 @@ const routes = [
     component: Historial
   },
   {
-    path: '/trastornos',
-    name: 'Trastornos',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: Trastornos
-  },
-  {
     path: '/psicologos',
     name: 'Psicologos',
     // route level code-splitting
@@ -129,38 +108,6 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: Psicologos,
     meta: {requiresAuth: true}
-  },
-  {
-    path: '/trastornos/:page',
-    name: 'Trastornos2',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: Trastornos2
-  },
-  {
-    path: '/trastornos/:page',
-    name: 'Trastornos3',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: Trastornos3
-  },
-  {
-    path: '/trastornos/:page',
-    name: 'Trastornos4',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: Trastornos4
-  },
-  {
-    path: '/trastornos/:page',
-    name: 'Trastornos5',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: Trastornos5
   },
   {
     path: '/psicologos/:query',
