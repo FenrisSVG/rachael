@@ -8,7 +8,7 @@
                         Entrevista
                     </span>
                 </h2>
-                <p class="antecedentes-header__text">
+                <p class="antecedentes-header__description">
                     Entrevista de autoevaluacion para diagnostico del 
                     trastorno mental.
                 </p>
@@ -32,7 +32,8 @@
                     <rect></rect>
                 </svg>
                 <header class="antecedentes-card__header">
-                    <img src="../assets/desktop/Sexo.jpg" alt="icons services psicology" loading="lazy">
+                    <img src="../assets/desktop/Sexo.jpg" alt="icons services psicology" loading="lazy"
+                    class="antecedentes-card__header-image">
                 </header>
                 <footer class="antecedentes-card__text">
                     <h6 class="antecedentes-card__text-title"><span>1. Datos Personales</span></h6>
@@ -255,13 +256,11 @@
                 <router-link to="/diagnostico/historial" class="antecedentes-yes__link">Ver Historial.</router-link>
                 <router-link to="/test/autoevaluacion/test-autoevaluacion" class="antecedentes-yes__link">Ir al Test de Autoevaluacion</router-link>
             </div>
-
-            <!-- <Autoevaluacion id="test-autoevaluacion" class="test-autoevaluacion" @trastornos="trastorno = $event"/>   -->
         </div>
 
         <div v-else class="not-login">
-            <h2>Vaya! Parece que no has iniciado sesion.</h2>
-            <span>Login</span>
+            <h2 class="not-login__title">Vaya! Parece que no has iniciado sesion.</h2>
+            <span class="not-login__span">Login</span>
             <button @click="redirectLogin" class="not-login__router">Login</button>
         </div>
 
@@ -306,66 +305,25 @@
     z-index: 10;
 }
 
-.not-login__router:hover{
-    animation: ani .7s steps(22) forwards;
-    cursor: pointer;
-}
-
 @keyframes ani{from{mask-position:0 0}
 to{mask-position:100% 0}}
 
 @keyframes ani2{from{mask-position:100% 0}
 to{mask-position:0 0}}
-
-.diagnostico-previo{
-    position: absolute;
-    width: 80%;
-    top: 58.5%;
-    left: 50%;
-    color: var(--title-color);
-    background-color: var(--primary-color);
-    border-radius: 5px;
-    transform: translate(-50%);
-    opacity: 0;
-    transition: opacity .8s ease-in-out;
-    z-index: -1;
-}
-
-.diagnostico-previo__text,
-.for-trastorno{
-    padding-left: 2em;
-}
-.diagnostico-previo__text{
-    color: var(--title-color);
-}
-
 .diagnostico-previo__text > *{
     margin: .8em 0;
 }
-
-.diagnostico-previo h2{
-    margin-top: 0;
-    padding: 1.5em 0;
-    text-align: center;
-    color: var(--title-color);
-    font-size: 20px;
-    background-color: var(--background-color);
-}
-
 .diagnostico-previo p span{
     letter-spacing: .5px;
     font-size: 18px;
     color: var(--danger-color);
 }
-
 .wave2{
     position: absolute;
     top: 325px;
     width: 6000px;
     height: 100%;
-    /* border: 1px solid red; */
     background-image: url('../assets/svg/wd1.svg');
-    /* background-repeat: no-repeat; */
     background-position: bottom;
     animation: wave2 7s linear infinite;
 }
@@ -378,38 +336,6 @@ to{mask-position:0 0}}
         margin-left: -1800px;
     }
 }
-.antecedentes-header__button a span{
-    position: relative;
-    z-index: 2;
-}
-.antecedentes-header__button a::after{
-    content: '';
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-bottom: 48px solid var(--secondary-color);
-    border-right: 48px solid transparent;
-    transform: translate(calc(-100% - 44px));
-    transition: all .5s ease-in-out;
-}
-
-.antecedentes-header__button a:hover::after{
-    transform: translate(0);
-}
-
-.antecedentes-header__button a:hover{
-    color: #000;
-}
-
-.antecedentes-card__header img{
-    padding-top: .8em;
-    max-width: 50%;
-    border-radius: 60%;
-}
-
 .antecedentes-card__text h6{
     font-size: 14px;
     margin-top: 14px;
@@ -420,72 +346,6 @@ to{mask-position:0 0}}
     color: var(--text-color);
     padding: .5em;
     font-size: 13px;
-}
-
-.entrevista-nav{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    margin: .5em auto;
-}
-
-.entrevista-nav span{
-    height: 70px;
-    width: 70px;
-    margin: 0 1em;
-    padding-top: 1.6em;
-    text-align: center;
-    border-radius: 50%;
-    color: #fff;
-    border: 1px solid var(--danger-color);
-    cursor: pointer;
-    transition: transform 1s ease;
-}
-
-.entrevista-nav--active{
-    transform: scale(1.2);
-}
-
-.antecedentes-input--active{
-    opacity: 1;
-    z-index: 310;
-}
-
-.not-login span{
-    bordeR: 1px solid var(--danger-color);
-    position: absolute;
-    top: 58%;
-    left: 46%;
-    padding: .5em 1em;
-    font-size: 18px;
-    letter-spacing: 1px;
-    border-radius: 5px;
-    color: #fff;
-}
-
-.not-login{
-    position: relative;
-    width: 80%;
-    background-color: var(--primary-color);
-    padding: 2em 0;
-    margin: 5em auto;
-    text-align: center;
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-.not-login h2{
-    font-size: 22px;
-    text-align: center;
-    color: var(--danger-color);
-}
-
-.cancel-event{
-    pointer-events: none
-}
-
-.antecedentes-ajustado{
-    height: 400px;
 }
 
 svg,rect{
@@ -511,7 +371,6 @@ rect{
         stroke-dashoffset: 0;
     }
 }
-
 </style>
 
 <script>

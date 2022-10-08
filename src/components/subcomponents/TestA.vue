@@ -1,29 +1,13 @@
 <template>
     <div class="contact">
       <!-- INFO DEL PACIENTE DEL TEST (ANTECEDENTES DATA) -->
-      <section class="contact-test">
-        <h2 class="contact-test__title"><strong>Paso 3:</strong><span> Test de autoevaluacion</span></h2>
-        <article class="contact-test__text">
-          <p class="contact-test__text-test">El test de autoevaluacion es un test con un seriado de preguntas acerca de sintomas,
-            desarrollo de personalidades y/o consecuencias que una persona puede tener por una experiencia pasada
-          </p>
-          <div class="contact-test__name">
-            <p class="contact-test__data">Nombre del Usuario: <br>
-            <span>{{nombre}}</span>
-            </p>
-          </div>
-          <div class="contact-test__surname">
-            <p class="contact-test__data">Apellido del Usuario: <br>
-            <span>{{apellido}}</span>
-            </p>
-          </div>
-          <div class="contact-test__date">
-            <p class="contact-test__data">Fecha a realizar el test: <br>
-            <span>{{fecha}}</span>
-            </p>
-          </div>
-        </article>
-      </section>
+      <Information test="Test de Autoevaluacion" 
+        description="El test de autoevaluacion es un test con un seriado de preguntas acerca de sintomas, desarrollo de personalidades y/o consecuencias que una persona puede tener por una experiencia pasada"
+        :usuario="nombre"
+        :apellido="apellido"
+        :fecha="fecha"
+        class="contact-test" 
+      />
 
       <div class="entrevista-nav">
         <span>3</span>
@@ -865,11 +849,12 @@
 <script>
 import axios from 'axios';
 import Footer from '../Footer.vue'
+import Information from './Information.vue'
 
 export default {
   name: 'TestA',
   components:{
-    Footer
+    Footer,Information
   },
   created(){
     return window.scrollTo(0,0)
@@ -1773,9 +1758,9 @@ export default {
         const consultar = document.getElementById('consultar')
         const contador = document.getElementById('contador')
 
-        let horas = 0
+        let horas = 72
         let minutos = 0
-        let segundos = 30
+        let segundos = 0
 
         const cargarSegundo = ()=>{
             let txtSegundos

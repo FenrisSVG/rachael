@@ -16,8 +16,8 @@
 
         <article class="historial-trastorno">
             <div class="historial-trastorno__header" id="funciona">
-                <h3>¿Que es el historial del Test de Autoevaluacion?</h3>
-                <p>El historial del <span>test de Autoevaluacion</span> es la seccion
+                <h3 class="historial-trastorno__header-title">¿Que es el historial del Test de Autoevaluacion?</h3>
+                <p class="historial-trastorno__header-text">El historial del <span>test de Autoevaluacion</span> es la seccion
                 donde usted como usuario tiene la opcion de poder ver el diagnostico
                 diagnosticado previamente en el test de Autoevaluacion por tanto si usted como
                 usuario no ha realizado el test de autoevaluacion no podra ver la pestaña siguiente y
@@ -26,30 +26,24 @@
             </div>
 
             <div class="historial-trastorno__footer" v-if="antecedentes !== ''">
-                <h3>Antecedentes del Paciente</h3>
+                <h3 class="historial-trastorno__footer-title">Antecedentes del Paciente</h3>
                 <div class="diagnosticos" v-for="(item,index) in antecedentes" :key="index">
                     <header class="antecedentes-info__data">
                         <div class="antecedentes-info__name">
-                            <h5>Nombre del Paciente:</h5>
-                            <p>{{item.nombre}}</p>
+                            <h5 class="antecedentes-info__data-title">Nombre del Paciente:</h5>
+                            <p class="antecedentes-info__data-text">{{item.nombre}}</p>
                         </div>
                         <div class="antecedentes-info__surname">
-                            <h5>Apellido del Paciente:</h5>
-                            <p>{{item.apellido}}</p>
+                            <h5 class="antecedentes-info__data-title">Apellido del Paciente:</h5>
+                            <p class="antecedentes-info__data-text">{{item.apellido}}</p>
                         </div>
                         <div class="antecedentes-info__date">
-                            <h5>Fecha del registro:</h5>
-                            <p>{{item.fecha_registro}}</p>
-                        </div>
-                        <!-- <h5>Nombre del Paciente:</h5>
-                        <p>{{item.nombre}}</p>
-                        <h5>Apellido del Paciente:</h5>
-                        <p>{{item.apellido}}</p>
-                        <h5>Fecha del registro:</h5>
-                        <p>{{item.fecha_registro}}</p> -->
+                            <h5 class="antecedentes-info__data-title">Fecha del registro:</h5>
+                            <p class="antecedentes-info__data-text">{{item.fecha_registro}}</p>
+                        </div>                       
                     </header>
                     <div class="antecedentes-info__text">
-                        <p>Segun los datos proporcionados nos podemos dar cuenta que usted como
+                        <p class="antecedentes-info__text-data">Segun los datos proporcionados nos podemos dar cuenta que usted como
                         usuario <span v-if="item.tratamiento == 1">ha recibido un tratamiento previo</span>
                         <span v-else>no ha recibido un tratamiento previo</span>, tiene una alimentacion
                         de <span>{{item.alimentacion}}</span>, tambien de acuerdo al consumo de sustancias 
@@ -65,20 +59,20 @@
                 </div>
             </div>
             <div class="historial-trastorno__footer" id="historial" v-if="historial !== []">
-                <h3>Tus diagnosticos anteriores de los trastornos:</h3>
+                <h3 class="historial-trastorno__footer-title">Tus diagnosticos anteriores de los trastornos:</h3>
                 <div class="diagnosticos" v-for="(item,index) in historial" :key="index">
-                    <h3>La prediccion previa del usuario: <span>{{item.username}}</span> tiene diagnosticado el siguiente trastorno</h3>
+                    <h3 class="diagnosticos-title">La prediccion previa del usuario: <span>{{item.username}}</span> tiene diagnosticado el siguiente trastorno</h3>
                     <div class="diagnosticos__trastorno">
-                        <h3>Trastorno Diagnosticado: </h3>
-                        <p>{{item.nombre}}</p>
+                        <h3 class="diagnosticos__title">Trastorno Diagnosticado: </h3>
+                        <p class="diagnosticos__text">{{item.nombre}}</p>
                     </div>
                     <div class="diagnosticos__sintomas">
-                        <h3>Sintomas del Trastorno:</h3>
+                        <h3 class="diagnosticos__title">Sintomas del Trastorno:</h3>
                         <pre class="sintomas__item">{{item.sintoma + '\n'}}</pre>
                     </div>
                     <div class="diagnosticos__description">
-                        <h3>¿Que quiere decir este trastorno?</h3>
-                        <p>{{item.descripccion}}</p>
+                        <h3 class="diagnosticos__title">¿Que quiere decir este trastorno?</h3>
+                        <p class="diagnosticos__text">{{item.descripccion}}</p>
                     </div>
                 </div>
             </div>
@@ -93,24 +87,6 @@
 </template>
 
 <style scoped>
-.antecedentes-info__data,.antecedentes-info__text{
-    text-align: left;
-}
-
-.antecedentes-info__data h5{
-    color: var(--title-color);
-    margin: .5em 0;
-    font-size: 16px;
-}
-
-.sintomas__item{
-    color: var(--danger-color);
-    font-size: 18px;
-}
-
-.diagnosticos{
-    margin: 2em 0;
-}
 .historial-article{
     display: flex;
     flex-direction: column;
@@ -122,61 +98,15 @@
     background-size: cover;
     background-position: center;
 }
-
-.historial-trastorno__header{
-    padding: 1.5em 3em 1em;
-}
-
-.historial-trastorno__header h3{
-    color: var(--title-color);
-}
-
-.historial-trastorno__header p{
-    color: var(--text-color);
-    line-height: 1.5;
-}
-
 .historial-trastorno__header p>span{
     color: var(--danger-color);
 }
-
-.historial-trastorno__footer{
-    padding: 0 3em 2em;
-}
-
-.historial-trastorno__footer h3{
-    color: var(--title-color);
-}
-
-.diagnosticos{
-    padding: 2.5em 3em;
-    text-align: center;
-    border-radius: 10px;
-    background-color: #000;
-}
-
 .diagnosticos > *{
     margin: 1.5em 0;
 }
-
 .diagnosticos h3:first-child{
     margin-top: 0;
 }
-
-.diagnosticos h3>span{
-    color: var(--danger-color);
-}
-
-.diagnosticos p{
-    font-size: 20px;
-    margin: .1em;
-    color: var(--danger-color);
-}
-
-.antecedentes-info__text p{
-    color: var(--text-color);
-}
-
 .antecedentes-info__text p span{
     color: var(--danger-color)
 }
@@ -228,7 +158,6 @@ export default {
                 trastorno: item.nombre
                 }).then(res => {
                     this.sintomas = res.data
-                    console.log(this.sintomas)
                 })
             })
         }

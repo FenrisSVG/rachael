@@ -1,5 +1,14 @@
 <template>
 	<div class="personalidad">
+		<Information
+			test="Test de Personalidad"
+			description="Este tipo de prueba tiene la finalidad de que segun las respuestas honestas del usuario, se determina que tipo de personalidad es la que tiene."
+			:usuario="nombre"
+			:apellido="apellido"
+			:fecha="fecha"
+			class="contact-test contact-test--personality"
+		/>
+
 		<header class="personalidad-header">
 			<h2 class="personalidad__title">Test de <span>Personalidad</span>.</h2>
 			<p class="personalidad__text">Responde las siguientes preguntas.</p>
@@ -274,20 +283,36 @@
 			contentClass="modal-content--personality"
 			trastornoClass="personalidad-diagnosticada"
 		/>
+		<Footer />
 	</div>
 </template>
 
+<style scoped>
+.contact-test--personality{
+	width: 60%;
+}
+</style>
+
 <script>
+import axios from "axios";
 import Modal from "./Modal.vue";
+import Information from "./Information.vue";
+import Footer from "../Footer.vue";
 
 export default {
 	name: "Personalidad",
 	components: {
-		Modal
+		Modal,
+		Information,
+		Footer
 	},
 	data() {
 		return {
+			fecha: null,
+			nombre: "Por favor, primero debe de iniciar sesion" ?? null,
+			apellido: "Por favor, primero debe iniciar sesion de su cuenta" ?? null,
 			personalidad: null ?? "",
+			username: null,
 			oneYes: false,
 			oneNo: false,
 			twoYes: false,
@@ -345,6 +370,48 @@ export default {
 				e.target.classList.remove("modal--show");
 			}
 		},
+		obtenerFecha() {
+			this.fecha = new Date().toDateString();
+
+			const username = document.getElementById("username-login");
+			// const login = document.getElementById('login-link')
+
+			// if(login.innerHTML !== 'Login'){
+			const response = async () => {
+				if (username) {
+					const res = await axios.post(
+						"http://localhost:8080/autoevaluacion/autoevaluacion.php",
+						{ opcion: 10, username: username.innerHTML }
+					);
+
+					if (res.data) {
+						console.log(res.data);
+						res.data.forEach((item) => {
+							this.nombre = item.nombre;
+							this.apellido = item.apellido;
+						});
+					}
+				}
+			};
+			response();
+			// }
+		},
+		getData(){ 
+			const username = document.getElementById("username-login");
+			if (username) {
+				if (username.innerHTML !== "") {
+					this.username = username.innerHTML;
+				}
+			}
+		},
+	},
+	mounted() {
+		this.$nextTick(() => {
+			return this.obtenerFecha();
+		});
+	},
+	beforeMount() {
+		return this.getData();
 	},
 };
 </script>

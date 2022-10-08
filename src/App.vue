@@ -24,7 +24,7 @@
         </li>
         <li class="main-menu__item">
           <router-link to="/test" class="main-menu__link" rel="nofollow"
-          data-section="home" data-value="autoevaluacion">Pruebas</router-link> 
+          data-section="home" data-value="autoevaluacion">Autoevaluacion</router-link> 
         </li>
         <li class="main-menu__item">
           <router-link to="/nosotros" class="main-menu__link" rel="nofollow"
