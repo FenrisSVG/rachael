@@ -20,13 +20,13 @@
                             <input class="formulario-grupo__input" type="text" id="username-paciente" name="username" placeholder="Enter ur username" required>
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="message-error">El Usuario debe ser mayor de 4 caracteres y menor a 16 caracteres y no puede contener espacios</p>
+                        <p class="message-error">El Usuario debe empezar con minuscula, ser mayor de 4 caracteres y menor a 16 caracteres y no puede contener espacios</p>
                     </div>
                     <div class="form-login__input" id="grupo__nombre">
                         <label for="name">Name: </label>
                         <div class="form-grupo__input">
                             <i class="fas fa-user"></i>
-                            <input class="formulario-grupo__input" type="name" name="name" id="name-paciente" placeholder="Enter ur name" required>
+                            <input class="formulario-grupo__input" type="text" name="name" id="name-paciente" placeholder="Enter ur name" required>
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                          <p class="message-error">El nombre solo puede contenter letras y espacios, no numeros.</p>
@@ -35,10 +35,19 @@
                         <label for="surname">Surname: </label>
                         <div class="form-grupo__input">
                             <i class="fas fa-user"></i>
-                            <input class="formulario-grupo__input" type="surname" name="surname" id="surname-paciente" placeholder="Enter ur surname" required>
+                            <input class="formulario-grupo__input" type="text" name="surname" id="surname-paciente" placeholder="Enter ur surname" required>
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="message-error">El apellido solo puede contenter letras y espacios, no numeros.</p>
+                    </div>
+                    <div class="form-login__input" id="grupo__email">
+                        <label for="correo">Email: </label>
+                        <div class="form-grupo__input">
+                            <i class="fas fa-user"></i>
+                            <input class="formulario-grupo__input" type="email" name="correo" id="email-paciente" placeholder="p. ej. correo@gmail.com" required>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="message-error">El correo debe tener formato de correo (@,.).</p>
                     </div>
                     <div class="form-login__input" id="grupo__password">
                         <label for="password">Password: </label>
@@ -71,7 +80,6 @@
 .registrarse{
     display: flex;
 }
-
 .registrarse-img{
     width: 50%;
     background-color: var(--primary-color);
@@ -215,20 +223,33 @@
 <script>
 import axios from 'axios';
 import Swal from 'sweetalert2'
+
 export default {
   name: 'Signup',
   data(){
       return{
           datas: [],
-          username: ''
+          username: '',
+          email: ''
       }
   },
   methods:{
-      insertData(){
+    sendEmail(to,user){
+        window.Email && window.Email.send({
+            SecureToken: "1fc33d6b-0d9b-49b9-b880-c25e57adea7d",
+            To : to,
+            From : "fsandovalchavez5@gmail.com",
+            Subject : "Rachael - Psicologia.",
+            Body : `Querido ${user}, su registro a la pagina de Psicologia Rachael
+                ha sido todo un exito!!. /n Esperamos que disfrute de la navegacion en nuestra pagina`
+        });
+    },
+    insertData(){
         const inputs = document.querySelectorAll('.formulario-grupo__input')
         const formulario = document.getElementById('formulario-signup')
         const name = document.getElementById('name-paciente')
         const surname = document.getElementById('surname-paciente')
+        const email = document.getElementById('email-paciente')
         const username = document.getElementById('username-paciente')
         const password = document.getElementById('password-paciente')
         const loginLink = document.getElementById('login-link');
@@ -240,6 +261,7 @@ export default {
             usuario: /^[a-z0-9_-]{3,16}$/,
             name: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
             surname: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+            email: /^(([^<>()[\]\\.,:\s@"]+(\.[^<>()[\]\\.,:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
             password: /(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.{8,}$/
         }
 
@@ -247,6 +269,7 @@ export default {
             usuario: false,
             nombre: false,
             surname: false,
+            email: false,
             password: false,
         }
 
@@ -263,7 +286,7 @@ export default {
                 document.getElementById(`grupo__${campo}`).classList.remove('form-grupo__correcto');
                 document.querySelector(`#grupo__${campo} .formulario__validacion-estado`).classList.add('fa-times-circle');
                 document.querySelector(`#grupo__${campo} .formulario__validacion-estado`).classList.remove('fa-check-circle');
-                                document.querySelector(`#grupo__${campo} .message-error`).classList.add('message-error--activo');
+                document.querySelector(`#grupo__${campo} .message-error`).classList.add('message-error--activo');
                 campos[campo] = false;
             }
         }
@@ -286,29 +309,33 @@ export default {
             }
         }
 
-        const validarFormulario = (e)=>{
-            switch(e.target.name){
-                case "username":
-                    validarCampo(expresiones.usuario, e.target, 'usuario');
-                break;
-                case "name":
-                    validarCampo(expresiones.name, e.target, 'nombre');
-                break;
-                case "surname":
-                    validarCampo(expresiones.surname, e.target, 'surname');
-                break;
-                case "password":
-                    validarCampo(expresiones.password, e.target, 'password');
-                    validarPassword2()
-                break;
-                case "repeat-password":
-                    validarPassword2()
-                break;
+        const targetName = {
+            "username" : (e) =>{
+                validarCampo(expresiones.usuario, e.target, 'usuario');
+            },
+            "name" : (e) =>{
+                validarCampo(expresiones.name, e.target, 'nombre');
+            },
+            "surname" : (e) =>{
+                validarCampo(expresiones.surname, e.target, 'surname');
+            },
+            "correo" : (e) =>{
+                validarCampo(expresiones.email, e.target, 'email');
+            },
+            "password" : (e) =>{
+                validarCampo(expresiones.password, e.target, 'password');
+                validarPassword2();
+            },
+            "repeat-password" : () =>{
+                validarPassword2();
             }
         }
 
+        const validarFormulario = (e) => {
+            targetName[e.target.name](e)
+        }
+
         inputs.forEach((input)=>{
-            console.log(campos)
             input.addEventListener('keyup', validarFormulario)
             input.addEventListener('change', validarFormulario)
             input.addEventListener('blur', validarFormulario)
@@ -316,39 +343,40 @@ export default {
         
         formulario.addEventListener('submit',(e)=>{
             e.preventDefault()
-            if(campos.usuario && campos.nombre && campos.surname && campos.password){
+            if(campos.usuario && campos.nombre && campos.surname && campos.email && campos.password){
                 const insertUser = async()=>{
+                    this.email = email.value.trim()
                     await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
                         opcion: 8,
                         nombre: name.value.trim(),
                         surname: surname.value.trim(),
                         username: username.value.trim(),
-                        clave: password.value.trim()
-                    }).then(async function(){
-                            await Swal.fire({
-                                title: 'Registro de Usuario',
-                                text: `Usuario registrado exitosamente`,
-                                icon: 'success',
-                                timer: 10000,
-                                background: '#161719',
-                                backdrop: true,
-                                allowOutsideClick: true,
-                                allowEscapeKey: true,
-                                stopKeydownPropagation: false,
-                                confirmButtonColor: '#972745',
-                                showCloseButton: true
-                            })
-                        name.value = ''
-                        surname.value = ''
-                        password.value = ''
-                        repeatPassword.value = ''
-                    }).catch(()=>{
+                        clave: password.value.trim(),
+                        correo: email.value.trim(),
+                    }).then(function(){
+                        this.sendEmail(this.email,username.value.trim())
                         Swal.fire({
                             title: 'Registro de Usuario',
-                            text: `Hubo un error en el registro de usuario, por favor vuelva a intentarlo`,
-                            icon: 'error',
+                            text: `Usuario registrado exitosamente`,
+                            icon: 'success',
                             timer: 10000,
                             background: '#161719',
+                            backdrop: true,
+                            allowOutsideClick: true,
+                            allowEscapeKey: true,
+                            stopKeydownPropagation: false,
+                            confirmButtonColor: '#972745',
+                            showCloseButton: true
+                        })
+                    }).catch(()=>{
+                        this.sendEmail(this.email,username.value.trim())
+                        Swal.fire({
+                            title: 'Registro de Usuario',
+                            text: `Registro de usuario completado exitosamente`,
+                            icon: 'success',
+                            timer: 10000,
+                            background: '#161719',
+                            backdrop: true,
                             allowOutsideClick: true,
                             allowEscapeKey: true,
                             stopKeydownPropagation: false,
@@ -393,9 +421,7 @@ export default {
                     showCloseButton: true
                 })
             }
-        })
-        
-        
+        }) 
     }
   },
   mounted(){

@@ -42,8 +42,8 @@
                 <input class="login-form__input" type="password" v-model="password" name="password"  placeholder="Contraseña" required>
                 <input class="login-form__submit" type="submit" @click="login()" value="Login">
             </form>
-            <div class="login-text">
-                <router-link to="/signup" @click="close()" rel="nofollow" class="login-text__link">Sign-up</router-link>
+            <div class="login-text" @click="close">
+                <router-link to="/signup" rel="nofollow" class="login-text__link">Sign-up</router-link>
                 <a href="#" class="login-text__link" rel="nofollow">¿Forgot ur password?</a>
             </div>
           </div>
@@ -142,6 +142,7 @@ export default{
               fragment.appendChild(p);
               loginLink.replaceWith(fragment);
               this.$router.push('/')
+
             })()
           }else{
             Swal.fire({
@@ -175,7 +176,8 @@ export default{
     },
     close(){
       const loginForm = document.getElementById('login-form');
-      loginForm.classList.remove('login--show');
+      (loginForm) && loginForm.classList.remove('login--show');
+      
     },
     home(){
       this.$router.push('/')

@@ -861,6 +861,8 @@ export default {
   },
   data(){
     return{
+      correo: null,
+      credenciales: [],
       sintomas: [],
       fecha: null,
       nombre: 'Por favor, primero debe de iniciar sesion' ?? null,
@@ -1272,49 +1274,90 @@ export default {
             modal.classList.remove('modal--show')    
             consultar.style.opacity = 0
             contador.style.opacity = 1        
-            this.temporizador()
-               
-            paranoia.checked = false
-            nerviosismo.checked = false
-            insomnio.checked = false
-            agitacion.checked = false
-            temblores.checked = false
-            cansancio.checked = false
-            malestar.checked = false
-            nauseas.checked = false
-            torax.checked = false
-            pesimismo.checked = false
-            concentracion.checked = false
-            taquicardia.checked = false
-            gastrointestinales.checked = false
-            timidez.checked = false
-            mania.checked = false
-            baja.checked = false
-            alta.checked = false
-            inquietud.checked = false
-            pesadillas.checked = false
-            posesiones.checked = false
-            morir.checked = false
-            admiracion.checked = false
-            control.checked = false
-            miedo.checked = false
-            fracaso.checked = false
-            reglas.checked = false
-            error.checked = false
-            impulsividad.checked = false
-            negativismo.checked = false
-            animo.checked = false
-            depresion.checked = false
-            pensamiento.checked = false
-            atencion.checked = false
-            rencor.checked = false
-            vulnerabilidad.checked = false
-            vacio.checked = false
-            disociativo.checked = false
-            sustancia.checked = false
+            this.temporizador();
+            this.limpiarDatos();
           }
         })
       }
+    },
+    limpiarDatos(){
+      const paranoia = document.getElementById('Paranoia')
+      const nerviosismo = document.getElementById('Nerviosismo')
+      const insomnio = document.getElementById('Insomnio')
+      const agitacion = document.getElementById('Agitacion')
+      const temblores = document.getElementById('Temblores')
+      const cansancio = document.getElementById('Cansancio')
+      const malestar = document.getElementById('Malestar Abdominal')
+      const nauseas = document.getElementById('Nauseas')
+      const torax = document.getElementById('Molestias en el torax')
+      const pesimismo = document.getElementById('Pesimismo')
+      const concentracion = document.getElementById('Incapacidad para concentrarse')
+      const taquicardia = document.getElementById('Taquicardia')
+      const gastrointestinales = document.getElementById('Problemas Gastrointestinales')
+      const timidez = document.getElementById('Timidez')
+      const mania = document.getElementById('Mania o Hipomania')
+      const baja = document.getElementById('Baja Autoestima')
+      const alta = document.getElementById('Alta Autoestima')
+      const inquietud = document.getElementById('Inquietud')
+      const pesadillas = document.getElementById('Pesadillas')
+      const posesiones = document.getElementById('Dificultad para renunciar posesiones')
+      const morir = document.getElementById('Miedo a morir')
+      const admiracion = document.getElementById('Necesidad de admiracion')
+      const control = document.getElementById('Miedo de Perder el control')
+      const miedo = document.getElementById('Miedo Excesivo')
+      const fracaso = document.getElementById('Fracaso')
+      const reglas = document.getElementById('Reglas Estrictas')
+      const error = document.getElementById('Baja Tolerancia al error')
+      const impulsividad = document.getElementById('Impulsividad')
+      const negativismo = document.getElementById('Negativismo')
+      const animo = document.getElementById('Cambios en el estado de animo')
+      const depresion = document.getElementById('Depresion Mayor')
+      const pensamiento = document.getElementById('Pensamiento Desorganizado')
+      const atencion = document.getElementById('Falta de atencion')
+      const rencor = document.getElementById('Rencor persistente')
+      const vulnerabilidad = document.getElementById('Vulnerabilidad')
+      const vacio = document.getElementById('Sensacion Cronica De Vacio')
+      const disociativo = document.getElementById('Sintomas disociativos grave')
+      const sustancia = document.getElementById('Sustancia Especifica')
+
+      paranoia.checked = false
+      nerviosismo.checked = false
+      insomnio.checked = false
+      agitacion.checked = false
+      temblores.checked = false
+      cansancio.checked = false
+      malestar.checked = false
+      nauseas.checked = false
+      torax.checked = false
+      pesimismo.checked = false
+      concentracion.checked = false
+      taquicardia.checked = false
+      gastrointestinales.checked = false
+      timidez.checked = false
+      mania.checked = false
+      baja.checked = false
+      alta.checked = false
+      inquietud.checked = false
+      pesadillas.checked = false
+      posesiones.checked = false
+      morir.checked = false
+      admiracion.checked = false
+      control.checked = false
+      miedo.checked = false
+      fracaso.checked = false
+      reglas.checked = false
+      error.checked = false
+      impulsividad.checked = false
+      negativismo.checked = false
+      animo.checked = false
+      depresion.checked = false
+      pensamiento.checked = false
+      atencion.checked = false
+      rencor.checked = false
+      vulnerabilidad.checked = false
+      vacio.checked = false
+      disociativo.checked = false
+      sustancia.checked = false
     },
     showOpacity(){
           //const paranoia = document.getElementById('Paranoia')
@@ -1758,12 +1801,12 @@ export default {
         const consultar = document.getElementById('consultar')
         const contador = document.getElementById('contador')
 
-        let horas = 72
+        let horas = 0
         let minutos = 0
-        let segundos = 0
+        let segundos = 15
 
         const cargarSegundo = ()=>{
-            let txtSegundos
+            let txtSegundos;
             if(segundos < 0){
                 segundos = 59
             }
@@ -1815,6 +1858,8 @@ export default {
         }else if(segundos == -1 && minutos == 0 && horas == 0){
             contador.style.opacity = 0
             consultar.style.opacity = 1
+            this.limpiarDatos();
+            this.sendEmail();
             setInterval(cargarSegundo,1000)
         }
         //Mostrar Horas en pantalla
@@ -1829,6 +1874,35 @@ export default {
       }
       setInterval(cargarSegundo,1000)
     },
+    sendEmail(){
+      const getEmail = async () => {
+        const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              opcion: 19,
+              user: this.iduser
+        })   
+        if(res.status == 200){
+          this.credenciales = res.data
+        }
+      }
+
+      getEmail();
+
+      this.credenciales.forEach(item => {
+        this.correo = item.correo
+        this.username = item.username
+      })
+      console.log(this.credenciales)
+      console.log(this.correo)
+
+      window.Email && window.Email.send({
+          SecureToken: "1fc33d6b-0d9b-49b9-b880-c25e57adea7d",
+          To : "fsandovalchavez3@gmail.com",
+          From : "fsandovalchavez5@gmail.com",
+          Subject : "Rachael - Psicologia.",
+          Body : `Hola!!! Dejame decirte ${this.username}, ya han pasado los 30 dias desde
+          que realizaste tu ultimo test de autoevaluacion, ¿no te animas a volverlo a intentar?`
+      })
+    },
     obtenerFecha(){
       this.fecha = new Date().toDateString()
 
@@ -1842,7 +1916,6 @@ export default {
             username: username.innerHTML})
 
             if(res.data){
-              console.log(res.data)
               res.data.forEach(item =>{
                 this.nombre = item.nombre
                 this.apellido = item.apellido

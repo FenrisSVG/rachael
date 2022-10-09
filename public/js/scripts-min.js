@@ -34,3 +34,5 @@ function load(){
 function store(value){
     localStorage.setItem('language',value)
 }
+
+

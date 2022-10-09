@@ -371,7 +371,12 @@ export default {
 			}
 		},
 		obtenerFecha() {
-			this.fecha = new Date().toDateString();
+			this.fecha = new Date().toLocaleDateString('es-ES',{
+				weekday: 'long',
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric'
+			});
 
 			const username = document.getElementById("username-login");
 			// const login = document.getElementById('login-link')
