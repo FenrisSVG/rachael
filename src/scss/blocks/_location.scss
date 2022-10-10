@@ -83,10 +83,13 @@
             letter-spacing: 1px;
             border-radius: 5px;
             color: #fff;
-            background-color: var(--secondary-color);
-
+            background-image: linear-gradient(to right, $secondary-color 0%, #4e4376  51%, $background-color 100%);
+            background-size: 200% auto;
+            transition: all .6s ease-in-out;
+            
             @include hover{
                 cursor: pointer;
+                background-position: right center; 
             }
         }
     }
@@ -107,5 +110,8 @@
         transition: transform .4s ease;
     }
 }
+
+        
+ 
 
 

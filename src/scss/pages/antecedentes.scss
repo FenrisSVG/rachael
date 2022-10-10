@@ -131,9 +131,15 @@
             text-decoration: none;
             border-radius: 6px;
             color: var(--text-color);
-            background-color: var(--danger-color);
+            background-image: linear-gradient(to right, $background-color 0%, #53346D  51%, $background-color  100%);
+            background-size: 200% auto;
             overflow: hidden;
             z-index: 10;
+            transition: all .5s ease-out;
+
+            @include hover{
+                background-position: right center; 
+            }
         }
     }
 }

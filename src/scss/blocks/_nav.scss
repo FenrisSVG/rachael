@@ -511,11 +511,12 @@
     height: 40px;
     font-size: 1.2rem;
     border-radius: 5px;
-    background-color: var(--secondary-color);
+    background-image: linear-gradient(to right, $danger-color 0%, #5FC3E4  51%, $danger-color  100%);
+    background-size: 200% auto;
+    transition: background .5s ease-in;
 
-    &:hover{
-        background-color: #65e3bb;
-        color: #333;
+    @include hover{
+        background-position: right center; 
     }
 
     &:focus{
@@ -525,8 +526,9 @@
 
 .login-text__link--secondary{
     font-size: 1rem;
+    color: linear-gradient(to right, #E55D87 0%, #5FC3E4  51%, #E55D87  100%);
 }
-
+    
 .login-text__link--padding{
     padding-right: 2em;
 }

@@ -47,15 +47,16 @@
         
             &-link{      
                 padding: .7em 1.4em;
-                background-color: var(--danger-color);
-                box-shadow: 0 5px 3px #ffffff33;
+                background-image: linear-gradient(to right, #9D50BB 0%, #6E48AA  51%, #9D50BB  100%);
+                background-size: 200% auto;
                 transition: all .3s ease-in;
                 border: 1px solid transparent;
-        
+
+                    
                 @include hover{
                     cursor: pointer;
                     transform: translateY(-12%);
-                    background-color: transparent;
+                    background-position: right center; 
                     border: 1px solid var(--danger-color);
                 }
             }
@@ -556,3 +557,6 @@
     top: -50px;
     right: 50px;
 }
+
+@keyframes ani{from{mask-position:0 0}
+to{mask-position:100% 0}}

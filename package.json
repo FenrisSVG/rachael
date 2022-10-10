@@ -54,7 +54,6 @@
     "sass": "^1.38.1",
     "smtpjs": "^0.0.1",
     "sweetalert2": "^11.2.1",
-    "vue-plugin-load-script": "^2.1.1",
     "vue-scroll-reveal": "^1.0.11",
     "vue-template-compiler": "^2.6.14",
     "webpack": "^4.46.0",

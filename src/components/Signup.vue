@@ -1,20 +1,21 @@
 <template>
     <div class="registrarse">
         <div class="registrarse-img">
-            <p>RACHAEL</p>
-            <img src="../assets/desktop/login.svg" alt="login image" loading="lazy">
-            <p>RACHAEL Y ASOCIADOS.</p>
+            <p class="registrarse-img__text">RACHAEL</p>
+            <img src="../assets/desktop/login.svg" alt="login image" loading="lazy"
+            class="registrarse-img__image">
+            <p class="registrarse-img__text registrarse-img__text--rachael">RACHAEL Y ASOCIADOS.</p>
         </div>
         <div class="login-data">
             <header class="login-data__header">
-                <h5>Registrarse.</h5>
+                <h5 class="login-data__title">Registrarse.</h5>
             </header>
             <hr>
             <footer class="login-data__footer">
                 <!-- FORMULARIO PARA LA BD -->
                 <form id="formulario-signup" class="form-login" autocomplete="off">
                     <div class="form-login__input" id="grupo__usuario">
-                        <label for="username">Usuario: </label>
+                        <label for="username" class="form-login__label">Usuario: </label>
                         <div class="form-grupo__input">
                             <i class="fas fa-user"></i>
                             <input class="formulario-grupo__input" type="text" id="username-paciente" name="username" placeholder="Enter ur username" required>
@@ -23,7 +24,7 @@
                         <p class="message-error">El Usuario debe empezar con minuscula, ser mayor de 4 caracteres y menor a 16 caracteres y no puede contener espacios</p>
                     </div>
                     <div class="form-login__input" id="grupo__nombre">
-                        <label for="name">Name: </label>
+                        <label for="name" class="form-login__label">Name: </label>
                         <div class="form-grupo__input">
                             <i class="fas fa-user"></i>
                             <input class="formulario-grupo__input" type="text" name="name" id="name-paciente" placeholder="Enter ur name" required>
@@ -32,7 +33,7 @@
                          <p class="message-error">El nombre solo puede contenter letras y espacios, no numeros.</p>
                     </div>
                     <div class="form-login__input" id="grupo__surname">
-                        <label for="surname">Surname: </label>
+                        <label for="surname" class="form-login__label">Surname: </label>
                         <div class="form-grupo__input">
                             <i class="fas fa-user"></i>
                             <input class="formulario-grupo__input" type="text" name="surname" id="surname-paciente" placeholder="Enter ur surname" required>
@@ -41,7 +42,7 @@
                         <p class="message-error">El apellido solo puede contenter letras y espacios, no numeros.</p>
                     </div>
                     <div class="form-login__input" id="grupo__email">
-                        <label for="correo">Email: </label>
+                        <label for="correo">class="form-login__label"Email: </label>
                         <div class="form-grupo__input">
                             <i class="fas fa-user"></i>
                             <input class="formulario-grupo__input" type="email" name="correo" id="email-paciente" placeholder="p. ej. correo@gmail.com" required>
@@ -50,7 +51,7 @@
                         <p class="message-error">El correo debe tener formato de correo (@,.).</p>
                     </div>
                     <div class="form-login__input" id="grupo__password">
-                        <label for="password">Password: </label>
+                        <label for="password" class="form-login__label">Password: </label>
                         <div class="form-grupo__input">
                             <i class="fas fa-unlock-alt"></i>
                             <input class="formulario-grupo__input" type="password" name="password" id="password-paciente" placeholder="Enter ur password" required>
@@ -59,7 +60,7 @@
                         <p class="message-error">La contraseña debe empezar con mayuscula, ser mayor o igual a 8 carectees y llevar un caracter especial (ej., @)</p>
                     </div>
                     <div class="form-login__input" id="grupo__password2">
-                        <label for="repeat-password">Repeat Password: </label>
+                        <label for="repeat-password" class="form-login__label">Repeat Password: </label>
                         <div class="form-grupo__input">
                             <i class="fas fa-unlock-alt"></i>
                             <input class="formulario-grupo__input" type="password" name="repeat-password" id="repeat-password" placeholder="Enter ur password" required>
@@ -68,157 +69,14 @@
                         <p class="message-error">Las contraseñas no coinciden</p>
                     </div>
                     <div class="form-login__submit">
-                        <input type="submit" value="Sign-Up">
+                        <input type="submit" value="Sign-Up"
+                        class="form-login__submit-input">
                     </div>
                 </form>
             </footer>
         </div>
     </div>
 </template>
-
-<style scoped>
-.registrarse{
-    display: flex;
-}
-.registrarse-img{
-    width: 50%;
-    background-color: var(--primary-color);
-    border-radius: 10px 0 0 10px;
-}
-
-.registrarse-img p{
-    color:  var(--secondary-color);
-    padding: .8em 3em;
-    letter-spacing: 2px;
-    font-size:  15px;
-}
-
-.registrarse-img img{
-    max-width: 85%;
-    margin: 0 auto;
-    padding: 2.5em;
-}
-
-.login-data{
-    width:  50%;
-    height:  auto;
-    flex-grow:  1;
-    padding:  2.5em 4em;
-    color: #fff;
-    background-color: var(--background-color);
-    border-radius: 0 10px 10px 0;
-}
-
-.login-data__footer{
-    margin-top: 1.6em;
-}
-
-.login-data__header h5{
-    font-size:  22px;
-}
-
-.form-grupo__input{
-    position:  relative;
-    display:  flex;
-    flex-direction: column;
-    padding-top:  .4em;
-}
-
-.form-grupo__input label{
-    font-size:  14px;
-    padding-bottom:  .4em;
-}
-
-.form-login__input{
-    margin-top: .4em;
-}
-
-.form-grupo__input i{
-    position:  absolute;
-    top: 15px;
-    left: 15px;
-    color:  var(--danger-color);
-}
-
-.form-grupo__input input{
-    outline: none;
-    height:  35px;
-    padding-left: 40px;
-    width: 90%;
-    border-radius: 6px;
-    font-size: 15px;
-    border:  1px solid #ccc;
-}
-
-.form-login__submit{
-    margin-top: 1.2em;
-}
-
-.form-login__submit input{
-    padding:  .5em 0;
-    width:  90%;
-    background-color: var(--secondary-color);
-    color:  #fff;
-    outline: none;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.form-login__submit input:hover{
-    background-color: #55e3bb;
-    color: #333;
-}
-
-.form-login__input input:focus{
-    border:  1px solid #ee4400;
-    transition: border .4s ease-in;
-}
-
-.form-login__input input:focus + i{
-    color:  #ee4400;
-    transition: color .4s ease-in;
-}
-
-.form-grupo__input i:nth-of-type(2){
-    left: 85%;
-    opacity: 0;
-    transition: opacity .3s ease-in;
-}
-
-.registrarse-img p:nth-child(3){
-    color:  #fff;
-    text-align: center;
-    font-size: 22px;
-    margin:  0 auto;
-    letter-spacing: 1px;
-}
-
-.message-error{
-    display: none;
-    font-size: 13px;
-    color: var(--danger-color);
-    font-weight: bold;
-}
-
-.message-error--activo{
-    display: block;
-}
-
-.form-grupo__correcto .form-grupo__input i:nth-of-type(2){
-    color: var(--secondary-color);
-    opacity: 1;
-}
-
-.form-grupo__incorrecto .form-grupo__input i:nth-of-type(2){
-    color: var(--danger-color);
-    opacity: 1;
-}
-
-.form-grupo__incorrecto .form-grupo__input input{
-    border: 3px solid var(--danger-color)
-}
-</style>
 
 <script>
 import axios from 'axios';

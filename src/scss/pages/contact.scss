@@ -71,7 +71,7 @@
         padding: .2em 0 .7em;
         border-radius: 0 0 7px 7px;
         /* transform: translate(-50%); */
-        transition: opacity .8s ease-in;
+        transition: all .8s ease-in;
         background-color: var(--primary-color);
         opacity: 1;
 
@@ -276,6 +276,15 @@
     }
 }
 
+.modal__notEnoughInformation{
+    margin-top: auto;
+
+    & hr{
+        width: 100%;
+        background-color: var(--secondary-color)
+    }
+}
+
 .trastorno-diagnosticado{
     color: var(--danger-color);
 }
@@ -299,7 +308,7 @@
     margin-top: 50px;
     transform: translate(-50%);
     background-color: var(--primary-color);
-    width: 70%;
+    width: 68%;
     border-radius: 5px;
     padding: 1em 0;
     opacity: 0;
@@ -349,6 +358,10 @@
         color: #dedede;
         font-weight: bold;
     }
+}
+
+.show-opacity{
+    transition: all .8s ease-in;
 }
 
 @media(Hover:hover){

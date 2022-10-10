@@ -747,16 +747,13 @@
           </div>
       </form>
 
+
       <div class="cont-temporizador" id="contador">
-        <h2>El test de autoevaluacion se reactivara en:</h2>
+        <h2>El test de autoevaluacion se reactivara en 30 días.:</h2>
           <div class="sky">
             <div class="bloque">
-              <div class="dias" id="dias">00</div>
-              <p>Dias</p>
-            </div>
-            <div class="bloque">
                 <div class="horas" id="horas">--</div>
-                <p>Horas</p>
+                <p>Horas (30 dias)</p>
             </div>
             <div class="bloque">
                 <div class="minutos" id="minutos">--</div>
@@ -799,15 +796,6 @@
 </template>
 
 <style scoped>
-.modal__notEnoughInformation{
-  margin-top: auto;
-}
-
-.modal_notEnoughInformation hr{
-  width: 100%;
-  background-color: var(--secondary-color)
-}
-
 .detalle-autoevaluacion__img{
   overflow: hidden;
   margin: 1.5em 0 1.5em;
@@ -819,18 +807,15 @@
   max-width: 100%;
   border-radius: .3em;
 }
-
 .detalle-autoevaluacion__footer label:nth-child(3){
   margin-left: 1em;
 }
-
 .entrevista-nav{
     width: 50%;
     display: flex;
     justify-content: center;
     margin: .5em auto;
 }
-
 .entrevista-nav span{
     height: 70px;
     width: 70px;
@@ -909,6 +894,7 @@ export default {
           id2: 'tipo'
         }
       ],
+      timerUpdate: 0,
       iduser: null,
       username: null,
       nerviosismo: false,
@@ -1795,84 +1781,79 @@ export default {
       }
     },
     temporizador(){
-        const segundo = document.getElementById('segundos')
-        const minuto = document.getElementById('minutos')
-        const hora = document.getElementById('horas')
-        const consultar = document.getElementById('consultar')
-        const contador = document.getElementById('contador')
-
-        let horas = 0
-        let minutos = 0
-        let segundos = 15
-
-        const cargarSegundo = ()=>{
-            let txtSegundos;
-            if(segundos < 0){
-                segundos = 59
-            }
-            if(segundos < 10){
-                txtSegundos = `0${segundos}`
-            }else{
-                txtSegundos = segundos
-            }
-
-            if(segundo){
-              segundo.innerHTML = txtSegundos;
-            }
-            segundos--
-
-            cargarMinutos(segundos);
-        }
-
-        const cargarMinutos = (segundos)=>{
-            let txtMinutos
-
-            if(segundos == -1 && minutos !== 0){
-                setTimeout(() =>{
-                    minutos--
-                },500)
-            }else if(segundos == -1 && minutos == 0){
-                setTimeout(() =>{
-                    minutos = 59
-                },500)
-            }
-            //Mostrar Minutos en pantalla
-            if(minutos < 10){
-                txtMinutos = `0${minutos}`
-            }else{
-                txtMinutos = minutos;
-            }
-            if(minuto){
-              minuto.innerHTML = txtMinutos
-            }
-            cargarHoras(segundos,minutos)
+      const segundo = document.getElementById('segundos')
+      const minuto = document.getElementById('minutos')
+      const hora = document.getElementById('horas')
+      const consultar = document.getElementById('consultar')
+      const contador = document.getElementById('contador')
+      let horas = 720
+      let minutos = 0
+      let segundos = 0
+      const cargarSegundo = ()=>{
+          let txtSegundos;
+          if(segundos < 0){
+              segundos = 59
+          }
+          if(segundos < 10){
+              txtSegundos = `0${segundos}`
+          }else{
+              txtSegundos = segundos
+          }
+          if(segundo){
+            segundo.innerHTML = txtSegundos;
+          }
+          segundos--
+          cargarMinutos(segundos);
       }
-
-      const cargarHoras = (segundos,minutos)=>{
-          let txtHoras;
-
-        if(segundos == -1 && minutos == 0 && horas !== 0){
-            setTimeout(() =>{
-                horas--;
-            },500)
-        }else if(segundos == -1 && minutos == 0 && horas == 0){
-            contador.style.opacity = 0
-            consultar.style.opacity = 1
-            this.limpiarDatos();
-            this.sendEmail();
-            setInterval(cargarSegundo,1000)
-        }
-        //Mostrar Horas en pantalla
-        if(horas < 10){
-            txtHoras = `0${horas}`;
-        }else{
-            txtHoras = horas;
-        }
-        if(hora){
-          hora.innerHTML = txtHoras
-        }
+      const cargarMinutos = (segundos)=>{
+          let txtMinutos
+          if(segundos == -1 && minutos !== 0){
+              setTimeout(() =>{
+                  minutos--
+              },500)
+          }else if(segundos == -1 && minutos == 0){
+              setTimeout(() =>{
+                  minutos = 59
+              },500)
+          }
+          //Mostrar Minutos en pantalla
+          if(minutos < 10){
+              txtMinutos = `0${minutos}`
+          }else{
+              txtMinutos = minutos;
+          }
+          if(minuto){
+            minuto.innerHTML = txtMinutos
+          }
+          cargarHoras(segundos,minutos)
+    }
+    const cargarHoras = (segundos,minutos)=>{
+        let txtHoras;
+      if(segundos == -1 && minutos == 0 && horas !== 0){
+          setTimeout(() =>{
+              horas--;
+          },500)
+      }else if(segundos == -1 && minutos == 0 && horas == 0){
+          contador.style.opacity = 0
+          consultar.style.opacity = 1
+          this.limpiarDatos();
+          this.sendEmail();
+          clearInterval(this.timerUpdate)
+          this.timerUpdate = setInterval(cargarSegundo,1000)
       }
-      setInterval(cargarSegundo,1000)
+      //Mostrar Horas en pantalla
+      if(horas < 10){
+          txtHoras = `0${horas}`;
+      }else{
+          txtHoras = horas;
+      }
+      if(hora){
+        hora.innerHTML = txtHoras
+      }
+    }
+    clearInterval(this.timerUpdate)
+    this.timerUpdate = setInterval(cargarSegundo,1000)
+    setInterval(cargarSegundo,1000)
     },
     sendEmail(){
       const getEmail = async () => {
@@ -1929,11 +1910,14 @@ export default {
   },
   mounted(){
     this.$nextTick(()=>{
-      return this.mostrar(),this.obtenerFecha()
+      return this.mostrar(),this.obtenerFecha(),this.temporizador()
     })
   },
   beforeMount(){
     return this.getData()
+  },
+  beforeDestroy(){
+    clearInterval(this.timerUpdate)
   }
 }
 </script>
