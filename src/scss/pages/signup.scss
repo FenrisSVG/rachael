@@ -86,15 +86,17 @@
     &-input{
         padding:  .5em 0;
         width:  90%;
-        background-color: var(--secondary-color);
+        background-image: linear-gradient(to right, $danger-color 0%, $primary-color  51%, $danger-color  100%);
         color:  #fff;
         outline: none;
         border: none;
+        transition: 0.5s;
+        background-size: 200% auto;
         border-radius: 4px;
         cursor: pointer;
 
         @include hover{
-            background-color: #55e3bb;
+            background-position: right center;
             color: #333;
         }
     }

@@ -1,14 +1,18 @@
 <template>
-    <div class="location" id="location-modal">
+    <div class="location" id="location-modal"
+    data-test-id="location-test">
         <header class="location-header">
             <i class="fa-solid fa-location-dot location-header__icon"></i>
-            <p class="location-header__text" id="location">Buscando ubicacion.....</p>
+            <p class="location-header__text" id="location"
+            data-test-id="location-search">Buscando ubicacion.....</p>
         </header>
         <footer class="location-footer">
             <div class="location-footer__coords">
                 <div class="location-footer__text" id="geolocation">
-                    <p class="location-footer__pais" id="pais">Buscando....</p>
-                    <p class="location-footer__municipio" id="municipio">Buscando...</p>
+                    <p class="location-footer__pais" id="pais"
+                    data-test-id="location-pais">Buscando....</p>
+                    <p class="location-footer__municipio" id="municipio"
+                    data-test-id="location-municipio">Buscando...</p>
                 </div>
                 <div class="location-footer__municipios" id="select">
                     <label for="municipios">Seleccione su Municipio</label>
@@ -19,7 +23,8 @@
                 </div>
             </div>
             <div class="location-footer__buttons">
-                <button class="location-footer__close" @click="closeLocation">Cerrar</button>
+                <button class="location-footer__close" @click="closeLocation"
+                data-test-id="location-button">Cerrar</button>
             </div>
         </footer>
     </div>

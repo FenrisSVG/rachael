@@ -738,7 +738,7 @@
           </div>
 
           <div class="form-container__button">
-            <input type="submit" value="Consultar" class="button" id="btn-test">
+            <input type="submit" value="Consultar" class="form-container__button-submit" id="btn-test">
           </div>
 
           <div class="controls-test">
@@ -790,7 +790,7 @@
           </div>
         </div>
       </div>
-      
+      <Bot />
       <Footer/>
     </div>
 </template>
@@ -835,11 +835,12 @@
 import axios from 'axios';
 import Footer from '../Footer.vue'
 import Information from './Information.vue'
+import Bot from '../inxdex.vue'
 
 export default {
   name: 'TestA',
   components:{
-    Footer,Information
+    Footer,Information,Bot
   },
   created(){
     return window.scrollTo(0,0)

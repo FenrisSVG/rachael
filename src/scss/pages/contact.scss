@@ -131,21 +131,23 @@
             color: $danger-color;
         }
     }
-
+            
     &__button{
         margin-bottom: 0;
         text-align: center;
         z-index: 100;
 
-        & .button{
+        &-submit{
             padding: 1em 1.5em;
             border-radius: 5px;
             border: none;
             color: #fff;
-            background-color: $danger-color;
+            background-image: linear-gradient(to right, #4DA0B0 0%, #D39D38  51%, #4DA0B0  100%);
+            transition: 0.5s;
+            background-size: 200% auto;
 
             &:hover{
-                background-color: #992750;
+                background-position: right center;
                 color: #eee;
                 cursor: pointer;
             }

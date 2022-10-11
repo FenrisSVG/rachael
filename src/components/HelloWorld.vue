@@ -2,14 +2,15 @@
 	<div class="main">
 		<Location/>
 		<!-- Contenido central -->
-		<main class="container" v-scroll-reveal="{ delay: 400 }">
+		<main class="container" v-scroll-reveal="{ delay: 400 }"
+		data-test-id="main-test">
 			<!-- LOGO -->
 			<img
 				alt="Rachael IA image"
 				srcset="
 					../assets/desktop/main.webp,
-					../assets/desktop/main.webp 2x
-				"
+					../assets/desktop/main.webp 2x"
+				data-test-id="main-image"
 			/>
 			<div class="container-text">
 				<svg>
@@ -25,7 +26,7 @@
 									data-section="home"
 									data-value="pageTitle"
 									data-atropos-offset="5"
-								>
+									data-test-id="main-title">
 									{{ title }}
 								</h1>
 							</div>

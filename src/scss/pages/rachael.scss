@@ -119,20 +119,23 @@ body::-webkit-scrollbar-track-piece:start {
     border-radius: 0 0 0 5px;
 }
 
-.chat__submit input{
+
+.chat__submit-input{
     height: 38px;
     border: 0;
-    background-color: $danger-color;
+    background-image: linear-gradient(to right, $secondary-color 0%, $title-color  51%, $secondary-color  100%);
     font-weight: 500;
     font-size: 17px;
     color: aliceblue;
+    transition: 0.5s;
+    background-size: 200% auto;
     cursor: pointer;
     border-radius: 0 5px 5px 0;
     overflow: hidden;
 
     &:hover{
         color: var(--text-color);
-        background-color: #a25
+        background-position: right center;
     }
 }
 
