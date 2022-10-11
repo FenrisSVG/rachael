@@ -13,6 +13,7 @@ import Historial from '../views/Historial.vue'
 import Messi from '../views/Messi.vue'
 import Personalidad from '../views/Personalidad.vue'
 import Bicho from '../views/Bicho.vue'
+import Maryelly from '../views/Maryelly.vue'
 import Quesillo from '../views/Quesillo.vue'
 import Psicologos from '../views/Psicologos.vue'
 import PageNotFound from '../views/PageNotFound.vue'
@@ -132,6 +133,14 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: Bicho
+  },
+  {
+    path: '/psicologos/:query',
+    name: 'Maryelly',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: Maryelly
   },
   {
     path: '*',

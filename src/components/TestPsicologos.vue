@@ -17,10 +17,7 @@
 				<div
 					class="modal-terapeutico--close psicologo-terapeutico--close"
 				></div>
-				<div
-					class="article-headers__test
-						article-headers__test--opacity"
-				>
+				<div class="article-headers__test article-headers__test--opacity">
 					<p class="article-headers__description">
 						¡Te ayudamos! Responde unas preguntas y haz match con tu psicólogo.
 					</p>
@@ -30,8 +27,9 @@
 				</div>
 				<div class="article-headers__test">
 					<p
-						class="article-headers__description
-							article-headers__description--font"
+						class="
+							article-headers__description article-headers__description--font
+						"
 					>
 						¿Cuál es tu género?
 					</p>
@@ -71,8 +69,9 @@
 				</div>
 				<div class="article-headers__test">
 					<p
-						class="article-headers__description
-							article-headers__description--font"
+						class="
+							article-headers__description article-headers__description--font
+						"
 					>
 						¿En qué rango de edad te encuentras?
 					</p>
@@ -164,7 +163,7 @@
 								type="checkbox"
 								name="hombre"
 								v-model="hombre"
-								class="article-headers-input"							
+								class="article-headers-input"
 							/>
 							Hombre.
 						</label>
@@ -190,8 +189,8 @@
 							<input
 								type="checkbox"
 								name="individual2"
-								v-model="individual2"	
-								class="article-headers-input"							
+								v-model="individual2"
+								class="article-headers-input"
 							/>
 							Individual.
 						</label>
@@ -202,7 +201,7 @@
 								type="checkbox"
 								name="pareja2"
 								v-model="pareja2"
-								class="article-headers-input"								
+								class="article-headers-input"
 							/>
 							Pareja.
 						</label>
@@ -210,10 +209,7 @@
 				</div>
 			</div>
 			<!-- SPINNER -->
-			<div
-				class="article-headers__test
-							article-headers__test--spinner"
-			>
+			<div class="article-headers__test article-headers__test--spinner">
 				<p class="article-headers__description">
 					Estamos haciendo match con tu psicologo ideal...
 				</p>
@@ -233,35 +229,35 @@
 
 <style scoped>
 .article-headers__test--spinner {
-    bottom: 90px;
+	bottom: 90px;
 }
 .spinner {
-    margin-inline-start: auto;
-    margin-inline-end: auto;
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border-left-color: #09f;
-    animation: spin 1.5s linear infinite;
+	margin-inline-start: auto;
+	margin-inline-end: auto;
+	border: 4px solid rgba(0, 0, 0, 0.1);
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border-left-color: #09f;
+	animation: spin 1.5s linear infinite;
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 </style>
 
 <script>
 export default {
-    name: 'TestPsicologos',
-    data(){
-        return{
-            men2: false,
+	name: "TestPsicologos",
+	data() {
+		return {
+			men2: false,
 			woman2: false,
 			otro: false,
 			joven: false,
@@ -270,10 +266,10 @@ export default {
 			viejo: false,
 			terapiaYes: false,
 			terapiaNo: false,
-        }
-    },
-    methods:{
-        closeModal(e) {
+		};
+	},
+	methods: {
+		closeModal(e) {
 			const close = document.querySelector(".psicologo-terapeutico--close");
 			const test = Array.from(
 				document.querySelectorAll(".article-headers__test")
@@ -314,13 +310,15 @@ export default {
 				}
 			});
 		},
-        cleanData() {
-			const inputs = document.querySelectorAll('.class="article-headers-input"')
+		cleanData() {
+			const inputs = document.querySelectorAll(
+				'.class="article-headers-input"'
+			);
 
-			inputs.forEach(item => {
-				item.value = ''
-			})
-			
+			inputs.forEach((item) => {
+				item.value = "";
+			});
+
 			this.men2 = false;
 			this.female2 = false;
 			this.otro = false;
@@ -328,11 +326,11 @@ export default {
 			this.adolescente = false;
 			this.adulto = false;
 			this.viejo = false;
-            
+
 			this.terapiaYes = false;
 			this.terapiaNo = false;
 		},
-        testControls() {
+		testControls() {
 			const test = Array.from(
 				document.querySelectorAll(".article-headers__test")
 			);
@@ -380,17 +378,21 @@ export default {
 								cont = 3;
 								if (this.terapiaYes || this.terapiaNo) {
 									cont = 4;
-									if (this.$store.state.filter.hombre
-                                        || this.$store.state.filter.mujer) {
+									if (
+										this.$store.state.filter.hombre ||
+										this.$store.state.filter.mujer
+									) {
 										cont = 5;
-										if (this.$store.state.filter.individual2
-                                            || this.$store.state.filter.pareja2) {
+										if (
+											this.$store.state.filter.individual2 ||
+											this.$store.state.filter.pareja2
+										) {
 											cont = 6;
 											buttons.style.opacity = 0;
 											setTimeout(() => {
 												sexo.classList.remove("sexo--show");
 											}, 5000);
-											this.cleanData()
+											this.cleanData();
 										}
 									}
 								}
@@ -403,9 +405,9 @@ export default {
 				}
 			};
 		},
-    },
-    computed:{
-        hombre: {
+	},
+	computed: {
+		hombre: {
 			get() {
 				return this.$store.state.filter.hombre;
 			},
@@ -437,10 +439,10 @@ export default {
 				this.$store.commit("SET_PAREJA2", val);
 			},
 		},
-    },
-    mounted(){
-        return this.testControls();
-    }
-}
+	},
+	mounted() {
+		return this.testControls();
+	},
+};
 </script>
 

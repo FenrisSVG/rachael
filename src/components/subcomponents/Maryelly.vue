@@ -1,6 +1,6 @@
 <template>
 	<section class="quesillo">
-		<h2 class="quesillo-title">Sobre el Psicologo Alexander Espinoza.</h2>
+		<h2 class="quesillo-title">Sobre la Psicologa Maryelly.</h2>
 		<article class="article-quesillo">
 			<header class="article-quesillo__header">
 				<div class="quesillo-img">
@@ -16,13 +16,13 @@
 					:key="index"
 				>
 					<h6 class="quesillo-text__title">
-						Psicologo {{ item.Nombre }} {{ item.Apellido }}
+						Psicologa {{ item.Nombre }} {{ item.Apellido }}
 					</h6>
 					<p class="quesillo-text__info">
 						<span>Dirección:</span> {{ item.Direccion }}
 					</p>
 					<p class="quesillo-text__info">
-						<span>Nacionalidad: </span> Enviado de Dios.
+						<span>Nacionalidad: </span> XD.
 					</p>
 					<p class="quesillo-text__info">
 						<span>Modelo de Trabajo Terapeutico:</span>
@@ -40,22 +40,18 @@
 						<span>Celular:</span> {{ item.Celular }}
 					</p>
 					<aside class="aside-quesillo">
-						<span class="aside-quesillo__item">Diversidad</span>
+						<span class="aside-quesillo__item">BeReal Brrrr</span>
 						<span class="aside-quesillo__item"
-							>Equilibrio e Inteligencia Emocional</span
+							>Soy penuda.</span
 						>
-						<span class="aside-quesillo__item">Soledad</span>
+						<span class="aside-quesillo__item">Smirnoff Apple</span>
 					</aside>
 					<p class="quesillo-text__info">
-						¿Es que hay algo que este hombre no puede hacer bien? "Te propongo
-						trabajar juntos sobre la base de un modelo vincular en donde te
-						brindaré herramientas para convivir con las personas que te rodean
-						respetando las diferencias, identificando los conflictos y
-						aprendiendo a utilizar el diálogo y la conversación como modo de
-						superar problemas familiares, de pareja, con compañeros de trabajo o
-						amigos. Revisaremos los vínculos que te preocupan y te hacen sufrir
-						para recuperar/reinventar tus ganas, energía y placer de estar y
-						vivir con las personas que te rodean".
+						Si voy con mis amigos por cerveza a un bar, y ese bar no tiene
+                        la delicadeza de una bebida como lo es la smirnoff bebida de los dioses
+                        con sabor natural de manzana de la mismisima manzada de los paraisos
+                        que comio Adan y Eva en los principios de la historia, entonces yo le doy un 
+                        0/5 estrellas a ese bar y prefiero no beber nada a probar otra cerveza.
 					</p>
 				</div>
 			</header>
@@ -102,8 +98,8 @@
 				<div class="atencion">
 					<h6 class="atencion-title">Sobre mi</h6>
 					<p>
-						"Yo soy GOD y ustedes zzzzzzz", *le critica los componentes de la pc
-						y se pone a jugar pokemon*
+						"BeReal Brrrrrrrrrrrrrrrrrrrr hoy me toca a mi, wuuu es la hora
+                        de #BeReal Prefiero probar tierra a una cerveza que no sea Smirnoff"
 					</p>
 				</div>
 			</div>
@@ -167,13 +163,11 @@ import Bot from "../inxdex.vue";
 import Footer from "../Footer.vue";
 import Important from "../Important.vue";
 import L from "leaflet";
-// import leafletSearch from 'leaflet-search'
 require("leaflet-routing-machine");
 import axios from "axios";
-// import {mapGetters, mapMutatios} from 'vuex'
 
 export default {
-	name: "Quesillo",
+	name: "Maryelly",
 	components: {
 		Bot,
 		Important,
@@ -187,19 +181,19 @@ export default {
 			psicologos: [],
 			atencion: [
 				{
-					name: "Conflictos de Pareja",
+					name: "¿Quien Soy?",
 				},
 				{
-					name: "Diversidad",
+					name: "Personalidad",
 				},
 				{
-					name: "Identidad de Genero",
+					name: "Uy no si supieras",
 				},
 				{
 					name: "Problemas familiares",
 				},
 				{
-					name: "Terapia de Pareja",
+					name: "Terapia Individual",
 				},
 				{
 					name: "Conflictos Personales",
@@ -211,32 +205,32 @@ export default {
 					name: "Problemas de Comunicacion",
 				},
 				{
-					name: "Soledad",
+					name: "Ay wey alkapone",
 				},
 			],
 			experiencia: [
 				{
-					name: "Consultoría y asesoramiento en comportamiento organizacional",
+					name: "Psicologa privada de Joe Biden",
 				},
 				{
-					name: "Asesoramiento en procesos de cambio y crisis organizacional en Argentina y LATAM.",
+					name: "Psicologa privada de Romeo Santos.",
 				},
 				{
-					name: "Consultorio privado",
+					name: "Bad bunny veive brrrrrrr",
 				},
 			],
 			academica: [
 				{
-					name: "Instituto Pedagogico La Salle - Managua",
+					name: "¿Instituto? Que es eso. #BeReal.",
 				},
 				{
-					name: "Licenciatura en psicología.",
+					name: "Licenciatura en Smirnoff.",
 				},
 				{
 					name: "Universidad Nacional de Ingenieria - Managua",
 				},
 				{
-					name: "Universidad de Hardvard",
+					name: "Universidad de Hardvard.",
 				},
 			],
 		};
@@ -247,7 +241,7 @@ export default {
 				try {
 					const res = await axios.post(
 						"http://rachaelbd.42web.io/autoevaluacion.php",
-						{ opcion: 14, ID: 1 }
+						{ opcion: 14, ID: 4 }
 					);
 					if (res.status !== 200) throw Error(res.statusText);
 

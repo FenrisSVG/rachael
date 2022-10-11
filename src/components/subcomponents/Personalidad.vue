@@ -385,7 +385,7 @@ export default {
 			const response = async () => {
 				if (username) {
 					const res = await axios.post(
-						"http://localhost:8080/autoevaluacion/autoevaluacion.php",
+						"http://rachaelbd.42web.io/autoevaluacion.php",
 						{ opcion: 10, username: username.innerHTML }
 					);
 

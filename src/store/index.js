@@ -58,6 +58,8 @@ export default new Vuex.Store({
         sesion: 1,
         duracion: 1,
         modelo: 'Cognitivo-conductual',
+        router: 'Maryelly',
+        link: 'mayerly'
     },
     {
         id: 5,

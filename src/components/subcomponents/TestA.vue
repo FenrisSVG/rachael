@@ -979,10 +979,10 @@ export default {
   methods:{
    mostrar(){
       const sintomas = async()=>{
-        const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 1})
+        const res = await axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{opcion: 1})
         this.sintomas = res.data
      
-        await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 4})
+        await axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{opcion: 4})
         .then(res => {
           this.copyTrastornos = res.data
           })
@@ -1033,13 +1033,13 @@ export default {
 
       const getId = async()=>{
         try{
-          const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+          const res = await axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 10,
               username: this.username
           })
           res.data.forEach(item => this.iduser = item.iduser)
 
-          await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+          await axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 5,
               user: this.iduser
           })
@@ -1052,35 +1052,35 @@ export default {
       if(paranoia){
           if(paranoia.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 22);
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
                 opcion: 6,
                 idtrastorno: 22
             }).catch(err => console.log(err))
           }else if(nerviosismo.checked && agitacion.checked && temblores.checked && concentracion.checked
           && taquicardia.checked && gastrointestinales.checked && pensamiento.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 2)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 2
             }).catch(err => console.log(err))
           }else if(agitacion.checked && nauseas.checked && concentracion.checked && taquicardia.checked
           && inquietud.checked && pesadillas.checked && miedo.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 3)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 3
             }).catch(err => console.log(err))
           }else if(nerviosismo.checked && agitacion.checked && temblores.checked && nauseas.checked
           && gastrointestinales.checked && inquietud.checked && pesadillas.checked && miedo.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 4)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 4
             }).catch(err => console.log(err))
           }else if(nerviosismo.checked && agitacion.checked && nauseas.checked && concentracion.checked
           && taquicardia.checked && timidez.checked && inquietud.checked && miedo.checked){
               this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 5)
-              axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 5
             }).catch(err => console.log(err))
@@ -1088,76 +1088,76 @@ export default {
           && nauseas.checked && torax.checked && concentracion.checked && taquicardia.checked && gastrointestinales.checked
           && inquietud.checked && morir.checked && control.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 6)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 6
             }).catch(err => console.log(err))
           }else if(nerviosismo.checked && timidez.checked && baja.checked && miedo.checked
           && fracaso.checked && negativismo.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 7)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 7
             }).catch(err => console.log(err))
           }else if(nerviosismo.checked && nauseas.checked && gastrointestinales.checked && miedo.checked
           && pensamiento.checked && vulnerabilidad.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 8)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 8
             }).catch(err => console.log(err))
           }else if(nerviosismo.checked && agitacion.checked && taquicardia.checked && inquietud.checked
           && fracaso.checked && reglas.checked && error.checked ){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 9)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 9
             }).catch(err => console.log(err))
           }else if(agitacion.checked && nauseas.checked && baja.checked && inquietud.checked
           && reglas.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 10)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 10
             }).catch(err => console.log(err))
           }else if(pesimismo.checked && posesiones.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 11)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 11
             }).catch(err => console.log(err))
           }else if(nerviosismo.checked && malestar.checked && nauseas.checked && pesimismo.checked
           && baja.checked && inquietud.checked && reglas.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 12)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 12
             }).catch(err => console.log(err))
           }else if(pesimismo.checked && baja.checked && inquietud.checked && miedo.checked 
           || depresion.checked && vacio.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 13)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 13
             }).catch(err => console.log(err))
           }else if(pesimismo.checked && concentracion.checked && baja.checked && morir.checked
           && control.checked && vacio.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 14)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 14
             }).catch(err => console.log(err))
           }else if(nerviosismo.checked && insomnio.checked && agitacion.checked && pensamiento.checked
           || sustancia.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 15)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 15
             }).catch(err => console.log(err))
           }else if(nerviosismo.checked && temblores.checked && cansancio.checked && nauseas.checked
           && torax.checked && concentracion.checked && inquietud.checked && morir.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 16)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 16
             }).catch(err => console.log(err))
@@ -1165,21 +1165,21 @@ export default {
           && malestar.checked && nauseas.checked && torax.checked && concentracion.checked && gastrointestinales.checked
           && morir.checked && control.checked ){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 17)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 17
             }).catch(err => console.log(err))
           }else if(nerviosismo.checked && agitacion.checked && inquietud.checked && miedo.checked
           && pensamiento.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 18)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 18
             }).catch(err => console.log(err))
           }else if(nauseas.checked && torax.checked && concentracion.checked && inquietud.checked
           && pesadillas.checked && reglas.checked && error.checked && impulsividad.checked){
               this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 19)
-              axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
                 opcion: 6,
                 idtrastorno: 19
               }).catch(err => console.log(err))
@@ -1187,38 +1187,38 @@ export default {
           && torax.checked && concentracion.checked && taquicardia.checked && gastrointestinales.checked 
           && inquietud.checked && morir.checked){
              this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 20)
-              axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
                 opcion: 6,
                 idtrastorno: 20
               }).catch(err => console.log(err))
           }else if(agitacion.checked && concentracion.checked && taquicardia.checked && gastrointestinales.checked
           && inquietud.checked && morir.checked && control.checked && miedo.checked){
               this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 21)
-              axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
                 opcion: 6,
                 idtrastorno: 21
               }).catch(err => console.log(err))
           }else if(atencion.checked && vulnerabilidad.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 23)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 23
             }).catch(err => console.log(err))
           }else if(paranoia.checked && vacio.checked && disociativo.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 24)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 24
             }).catch(err => console.log(err))
           }else if(admiracion.checked && miedo.checked && fracaso.checked && atencion.checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 26)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 26
             }).catch(err => console.log(err))
           }else if(control.checked && miedo .checked){
             this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 27)
-            axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+            axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 27
             }).catch(err => console.log(err))
@@ -1226,21 +1226,21 @@ export default {
             if(alta.checked && impulsividad.checked && depresion.checked
               && pensamiento.checked && vacio.checked){
               this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 28)
-              axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 28
             }).catch(err => console.log(err))
             }else if(nerviosismo.checked && agitacion.checked && alta.checked && impulsividad.checked
             && depresion.checked && sustancia.checked){
               this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 29)
-              axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+              axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 6,
               idtrastorno: 29
               }).catch(err => console.log(err))
             }
           }else if(mania.checked && animo.checked && pensamiento.checked && rencor.checked){
                 this.trastornos = this.copyTrastornos.filter(item => item.idtrastorno == 30)
-                axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+                axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
                   opcion: 6,
                   idtrastorno: 30
                 }).catch(err => console.log(err))
@@ -1858,7 +1858,7 @@ export default {
     },
     sendEmail(){
       const getEmail = async () => {
-        const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
+        const res = await axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
               opcion: 19,
               user: this.iduser
         })   
@@ -1894,7 +1894,7 @@ export default {
       // if(login.innerHTML !== 'Login'){
         const response = async () =>{
           if(username){
-            const res = await axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{opcion: 10,
+            const res = await axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{opcion: 10,
             username: username.innerHTML})
 
             if(res.data){

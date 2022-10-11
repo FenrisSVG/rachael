@@ -61,9 +61,9 @@
 						id="consulta"
 						placeholder="¿Cual es el motivo de tu consulta?"
 					>
-						<option v-for="(item, index) in motivo" :key="index" value="">{{
-							item
-						}}</option>
+						<option v-for="(item, index) in motivo" :key="index" value="">
+							{{ item }}
+						</option>
 					</select>
 				</div>
 				<aside class="psicologos-card__aside">
@@ -79,8 +79,11 @@
 							Encuentra a tu psicologo ideal
 						</h2>
 						<p>Te ayudamos a encontrar tu psicologo ideal</p>
-						<button class="psicologos-card__aside-link" @click="showModal"
-						id="psicologos-card-button">
+						<button
+							class="psicologos-card__aside-link"
+							@click="showModal"
+							id="psicologos-card-button"
+						>
 							Comenzar Ahora
 						</button>
 					</div>
@@ -160,7 +163,7 @@ export default {
 	computed: {
 		...mapGetters({
 			psicologos: "filteredPsicologos",
-		})
-	}
+		}),
+	},
 };
 </script>
