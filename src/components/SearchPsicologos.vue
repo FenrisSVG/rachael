@@ -142,6 +142,12 @@ export default {
                 }
             })
         }
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                modal.classList.remove('modal--show') 
+            }
+        });
     }
   }
 }

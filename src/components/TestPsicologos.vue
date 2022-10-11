@@ -164,7 +164,7 @@
 								type="checkbox"
 								name="hombre"
 								v-model="hombre"
-								
+								class="article-headers-input"							
 							/>
 							Hombre.
 						</label>
@@ -175,7 +175,7 @@
 								type="checkbox"
 								name="mujer"
 								v-model="mujer"
-								
+								class="article-headers-input"
 							/>
 							Mujer.
 						</label>
@@ -190,8 +190,8 @@
 							<input
 								type="checkbox"
 								name="individual2"
-								v-model="individual2"
-								
+								v-model="individual2"	
+								class="article-headers-input"							
 							/>
 							Individual.
 						</label>
@@ -202,14 +202,14 @@
 								type="checkbox"
 								name="pareja2"
 								v-model="pareja2"
-								
+								class="article-headers-input"								
 							/>
 							Pareja.
 						</label>
 					</div>
 				</div>
 			</div>
-			<!-- SPINNE R -->
+			<!-- SPINNER -->
 			<div
 				class="article-headers__test
 							article-headers__test--spinner"
@@ -315,6 +315,12 @@ export default {
 			});
 		},
         cleanData() {
+			const inputs = document.querySelectorAll('.class="article-headers-input"')
+
+			inputs.forEach(item => {
+				item.value = ''
+			})
+			
 			this.men2 = false;
 			this.female2 = false;
 			this.otro = false;

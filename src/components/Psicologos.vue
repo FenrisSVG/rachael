@@ -79,7 +79,8 @@
 							Encuentra a tu psicologo ideal
 						</h2>
 						<p>Te ayudamos a encontrar tu psicologo ideal</p>
-						<button class="psicologos-card__aside-link" @click="showModal">
+						<button class="psicologos-card__aside-link" @click="showModal"
+						id="psicologos-card-button">
 							Comenzar Ahora
 						</button>
 					</div>

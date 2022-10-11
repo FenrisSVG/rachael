@@ -214,18 +214,23 @@ export default {
 
 			container.classList.toggle("bot-container--show", !openBot);
 			bot.classList.toggle("bot", openBot);
-			bot.classList.toggle("icon-fixed--close", !openBot);
-
-			// if(e.target.classList.contains('bot')){
-			//     container.classList.add('bot-container--show')
-			//     bot.classList.remove('bot')
-			//     bot.classList.add('icon-fixed--close')
-			// }else if(e.target.classList.contains('icon-fixed--close')){
-			//     container.classList.remove('bot-container--show')
-			//     bot.classList.add('bot')
-			//     bot.classList.remove('icon-fixed--close')
-			// }
+			bot.classList.toggle("icon-fixed--close", !openBot);			
 		},
+		closeBot(){
+			const bot = document.getElementById("bot");
+			const container = document.getElementById("container");
+
+			document.addEventListener("keydown", (e) => {
+				if (e.key === "Escape") {
+					container.classList.remove("bot-container--show");
+					bot.classList.add("bot");
+					bot.classList.remove("icon-fixed--close");
+				}
+			});
+		}
 	},
+	mounted(){
+		this.closeBot()
+	}
 };
 </script>
