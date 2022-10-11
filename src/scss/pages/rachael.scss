@@ -21,8 +21,6 @@
         margin-top: auto;
         transform: scale(0);
         transition: transform .4s ease;
-        // pointer-events: none;
-        // z-index: -1;
         
         &--show{
             transform: scale(1);
