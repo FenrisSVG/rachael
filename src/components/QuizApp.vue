@@ -64,8 +64,8 @@
                 class="quiz-results">
                     <h2 class="quiz-results__title">Results</h2>
                     <div class="quiz-results__answers">
-                        <p class="quiz-results__correct">Correc Answer: <span>{{correctAnswer}}</span></p>
-                        <p class="quiz-results__incorrect">Correc Answer: {{correcAnswer}}</p>
+                        <p class="quiz-results__correct">Correct Answer: <span>{{correctAnswer}}</span></p>
+                        <p class="quiz-results__incorrect">Wrong Answer: {{wrongAnswer}}</p>
                     </div>
                 </div>
 			</div>

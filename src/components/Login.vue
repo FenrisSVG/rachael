@@ -38,7 +38,7 @@ export default {
   methods:{
     ...mapActions(['mocklogin']),
     async mostrarLogin(){
-      await axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
+      await axios.post('http://localhohost:8080/autoevaluacion/autoevaluacion.php',{
         opcion: 9,
         username: this.username
       }).then(res => {

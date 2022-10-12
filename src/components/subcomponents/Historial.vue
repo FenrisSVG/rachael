@@ -197,7 +197,7 @@ export default {
 		getData() {
 			const getId = async () => {
 				const res = await axios.post(
-					"http://rachaelbd.42web.io/autoevaluacion.php",
+					"http://localhohost:8080/autoevaluacion/autoevaluacion.php",
 					{
 						opcion: 10,
 						username: this.username,
@@ -206,7 +206,7 @@ export default {
 				res.data.forEach((item) => (this.iduser = item.iduser));
 
 				const antecedente = await axios.post(
-					"http://rachaelbd.42web.io/autoevaluacion.php",
+					"http://localhohost:8080/autoevaluacion/autoevaluacion.php",
 					{
 						opcion: 13,
 						user: this.iduser,
@@ -215,7 +215,7 @@ export default {
 				this.antecedentes = antecedente.data;
 
 				const response = await axios.post(
-					"http://rachaelbd.42web.io/autoevaluacion.php",
+					"http://localhohost:8080/autoevaluacion/autoevaluacion.php",
 					{
 						opcion: 7,
 						user: this.iduser,
@@ -232,7 +232,7 @@ export default {
 
 				this.historial.forEach((item) => {
 					axios
-						.post("http://rachaelbd.42web.io/autoevaluacion.php", {
+						.post("http://localhohost:8080/autoevaluacion/autoevaluacion.php", {
 							opcion: 14,
 							trastorno: item.nombre,
 						})

@@ -56,7 +56,7 @@ export default{
         getMunicipio(){
            const getMunicipios = async()=>{
                 try{
-                    const res = await axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{opcion: 17})
+                    const res = await axios.post('http://localhohost:8080/autoevaluacion/autoevaluacion.php',{opcion: 17})
                     if(res.status !== 200) throw new Error(res.statusText)
                     this.municipios = res.data
                 }catch(e){
@@ -103,7 +103,7 @@ export default{
                         },5000)
                 })
 
-                await axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
+                await axios.post('http://localhohost:8080/autoevaluacion/autoevaluacion.php',{
                     opcion: 15,
                     latitude: coords.latitude,
                     longitude: coords.longitude
@@ -157,7 +157,7 @@ export default{
                                 },2000)
                             })
 
-                            await axios.post('http://rachaelbd.42web.io/autoevaluacion.php',{
+                            await axios.post('http://localhohost:8080/autoevaluacion/autoevaluacion.php',{
                                 opcion: 15,
                                 latitude: latitud,
                                 longitude: longitud
