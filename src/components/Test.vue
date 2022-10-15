@@ -72,7 +72,7 @@
 							/>
 						</svg>
 					</div>
-					<span>Realizar</span>
+					<span>Realizar Test</span>
 				</router-link>
 			</footer>
 		</section>
@@ -115,7 +115,7 @@
 							/>
 						</svg>
 					</div>
-					<span>Realizar</span>
+					<span>Realizar Test </span>
 				</router-link>
 			</footer>
 		</section>
@@ -158,7 +158,7 @@
 							/>
 						</svg>
 					</div>
-					<span>Realizar</span>
+					<span>Realizar Test</span>
 				</router-link>
 			</footer>
 		</section>

@@ -5,7 +5,7 @@ import Home from '../views/Home.vue'
 import Test from '../views/Test.vue'
 import Signup from '../views/Signup.vue'
 import Login from '../views/Login.vue'
-// import Nosotros from '../components/Nosotros.vue'
+import Nosotros from '../components/Nosotros.vue'
 import QuizApp from '../components/QuizApp.vue'
 import Antecedentes from '../views/Antecedentes.vue'
 import Autoevaluacion from '../views/Autoevaluacion.vue'
@@ -75,7 +75,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: QuizApp
+    component: Nosotros
   },
   {
     path: '/test/:query',
@@ -93,6 +93,14 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: TestA
+  },
+  {
+    path: '/test/autoevaluacion/psicometrico',
+    name: 'QuizApp',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: QuizApp
   },
   {
     path: '/diagnostico/historial',

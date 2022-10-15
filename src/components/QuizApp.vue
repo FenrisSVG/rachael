@@ -3,9 +3,9 @@
 		<Information
 			test="Test Psicometrico"
 			description="Test psicometrico destinado a poner aqui una larga descripcion"
-			usuario="José"
-			apellido="Ramón"
-			fecha="Hoy"
+			:usuario="nombre"
+			:apellido="apellido"
+			:fecha="fecha"
 			class="contact-test"
 		/>
 
@@ -78,7 +78,7 @@
 <script>
 import Information from "./subcomponents/Information.vue";
 import Footer from "./Footer.vue";
-
+import axios from 'axios'
 export default {
 	name: "QuizApp",
 	components: {
@@ -92,6 +92,9 @@ export default {
             correctAnswer: 0,
             wrongAnswer: 0,
 			count: 3,
+			fecha: null,
+			nombre: "Por favor, primero debe de iniciar sesion" ?? null,
+			apellido: "Por favor, primero debe iniciar sesion de su cuenta" ?? null,
 			questions: [
 				{
 					id: 1,
@@ -130,6 +133,53 @@ export default {
 		showResults() {
             this.index++
         },
+		obtenerFecha() {
+			this.fecha = new Date().toLocaleDateString('es-ES',{
+				weekday: 'long',
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric'
+			});
+
+			const username = document.getElementById("username-login");
+			// const login = document.getElementById('login-link')
+
+			// if(login.innerHTML !== 'Login'){
+			const response = async () => {
+				if (username) {
+					const res = await axios.post(
+						"http://localhost:8080/autoevaluacion/autoevaluacion.php",
+						{ opcion: 10, username: username.innerHTML }
+					);
+
+					if (res.data) {
+						console.log(res.data);
+						res.data.forEach((item) => {
+							this.nombre = item.nombre;
+							this.apellido = item.apellido;
+						});
+					}
+				}
+			};
+			response();
+			// }
+		},
+		getData(){ 
+			const username = document.getElementById("username-login");
+			if (username) {
+				if (username.innerHTML !== "") {
+					this.username = username.innerHTML;
+				}
+			}
+		},
+	},
+	mounted() {
+		this.$nextTick(() => {
+			return this.obtenerFecha();
+		});
+	},
+	beforeMount() {
+		return this.getData();
 	},
 };
 </script>
