@@ -5,12 +5,13 @@
 			description="Test psicometrico destinado a poner aqui una larga descripcion"
 			usuario="José"
 			apellido="Ramón"
-			fecha="hoy"
+			fecha="Hoy"
 			class="contact-test"
 		/>
 
 		<div class="quiz-container" v-if="questions.length > 0">
-			<h2 class="quiz-title">Test Psicometrico para estudiantes.</h2>
+			<h2 class="quiz-title">Test <span>Psicometrico</span> para 
+				<span>estudiantes</span>.</h2>
 			<div class="quiz-container__test">
 				<div class="quiz-container__show"
                 v-if="index < count">
@@ -37,7 +38,7 @@
 							:value="key"
 							class="hidden"
 							:id="key"
-							@change="answered(e)"
+							@change="answered"
 							:disabled="selectedAnswer !== ''"
                             v-model="selectedAnswer"
 						/>
@@ -49,36 +50,40 @@
 							v-show="selectedAnswer !== '' && index < count - 1"
 							@click="nextQuestion"
 						>
-							Next %gt
+							Siguiente &gt;
 						</button>
 						<button
 							class="quiz-container__button-next"
 							v-show="selectedAnswer !== '' && index === count - 1"
 							@click="showResults"
 						>
-							Finish!
+							Completado!
 						</button>
 					</div>
 				</div>
                 <div v-else
                 class="quiz-results">
-                    <h2 class="quiz-results__title">Results</h2>
+                    <h2 class="quiz-results__title">Resultados del Test Psicometrico.</h2>
                     <div class="quiz-results__answers">
-                        <p class="quiz-results__correct">Correct Answer: <span>{{correctAnswer}}</span></p>
-                        <p class="quiz-results__incorrect">Wrong Answer: {{wrongAnswer}}</p>
+                        <p class="quiz-results__correct">Respuestas Correctas: <span>{{correctAnswer}}</span></p>
+                        <p class="quiz-results__incorrect">Respuestas Incorrectas: <span>{{wrongAnswer}}</span></p>
                     </div>
                 </div>
 			</div>
 		</div>
+		<Footer />
 	</div>
 </template>
 
 <script>
 import Information from "./subcomponents/Information.vue";
+import Footer from "./Footer.vue";
+
 export default {
 	name: "QuizApp",
 	components: {
 		Information,
+		Footer
 	},
 	data() {
 		return {
@@ -106,7 +111,7 @@ export default {
 					question:
 						"Albert Einstein had trouble with mathematics when he was in school?",
 					answer: { a: "True", b: "False" },
-					correctAnswer: "b",
+					correctAnswer: "a",
 				},
 			],
 		};
@@ -114,7 +119,7 @@ export default {
 	methods: {
 		answered(e) {
 			this.selectedAnswer = e.target.value;
-            (this.selectedAnswer == this.questions[this.index][this.correctAnswer])
+            (this.selectedAnswer == this.questions[this.index]['correctAnswer'])
                 ? this.correctAnswer ++
                 : this.wrongAnswer ++
 		},

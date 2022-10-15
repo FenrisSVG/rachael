@@ -163,7 +163,7 @@ export default{
       }
     },
     mostrarLogin(){
-      axios.post('http://localhohost:8080/autoevaluacion/autoevaluacion.php',{
+      axios.post('http://localhost:8080/autoevaluacion/autoevaluacion.php',{
         opcion: 9,
         username: this.username
       }).then(res => {

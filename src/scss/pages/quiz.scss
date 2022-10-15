@@ -1,0 +1,109 @@
+.quiz{
+    border: 1px solid red;
+    display: grid;
+    place-items: center;
+    padding-bottom: 1em;
+
+    &-container{
+        border: 1px solid blue;
+        padding: 1em;
+
+        &__test{
+            padding: 12px 20px 20px;
+            border-radius: 5px;
+            width: 550px;
+            height: 370px;
+            margin-top: 8px;
+            background-color: #ccc;
+        }
+
+        &__question{
+            color: $primary-color;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        &__label{
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+            width: 100%;
+            border-radius: 7px;
+            padding: 8px 12px;
+            font-size: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            
+            @include hover{
+                cursor: pointer;
+                background-color: #ccc;
+            }
+
+            &--correct{
+                background-color: $secondary-color;
+            }
+
+            &--incorrect{
+                background-color: $danger-color;
+            }
+        }
+
+        &__button{
+            display: flow-root;
+            margin-top: 12px;
+            
+            &-next{
+                padding: 8px 15px;
+                font-weight: bold;
+                border-radius: 25px;
+                color: $text-color;
+                border: none;
+                background-color: $link-color;
+
+                @include hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &-title{
+        font-size: 2em;
+        letter-spacing: 1px;
+        text-align: center;
+        font-weight: bold;
+        color: $title-color;
+
+        & span{
+            color: $danger-color;
+        }
+    }
+
+    &-results{
+        &__title{
+            letter-spacing: 1px;
+            font-weight: bold;
+            font-size: 2em;
+            color: $link-color;
+        }
+
+        &__correct,
+        &__incorrect{
+            letter-spacing: 1px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        &__correct span{
+            color: $secondary-color;
+        }
+
+        &__incorrect span{
+            color: $danger-color;
+        }
+    }
+}
+
+.hidden{
+    display: none;
+}

@@ -741,7 +741,7 @@ export default {
 			const getEstado = async () => {
 				try {
 					const res = await axios.post(
-						"http://localhohost:8080/autoevaluacion/autoevaluacion.php",
+						"http://localhost:8080/autoevaluacion/autoevaluacion.php",
 						{
 							opcion: 12,
 							username: this.user,
@@ -791,7 +791,7 @@ export default {
 			const getInput = async () => {
 				try {
 					const res = await axios.post(
-						"http://localhohost:8080/autoevaluacion/autoevaluacion.php",
+						"http://localhost:8080/autoevaluacion/autoevaluacion.php",
 						{
 							opcion: 10,
 							username: this.user,
@@ -960,7 +960,7 @@ export default {
 			}
 
 			axios
-				.post("http://localhohost:8080/autoevaluacion/autoevaluacion.php", {
+				.post("http://localhost:8080/autoevaluacion/autoevaluacion.php", {
 					opcion: 11,
 					tratamiento: tratamientos,
 					motivo: motivoVisita,

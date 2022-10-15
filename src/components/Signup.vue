@@ -319,7 +319,7 @@ export default {
 					const insertUser = async () => {
 						this.email = email.value.trim();
 						await axios
-							.post("http://localhohost:8080/autoevaluacion/autoevaluacion.php", {
+							.post("http://localhost:8080/autoevaluacion/autoevaluacion.php", {
 								opcion: 8,
 								nombre: name.value.trim(),
 								surname: surname.value.trim(),
@@ -361,7 +361,7 @@ export default {
 							});
 						this.usernameBuscar = username.value.trim();
 						const res = await axios.post(
-							"http://localhohost:8080/autoevaluacion/autoevaluacion.php",
+							"http://localhost:8080/autoevaluacion/autoevaluacion.php",
 							{
 								opcion: 3,
 							}

@@ -206,7 +206,7 @@ export default {
 			const psicologo = async () => {
 				try {
 					const res = await axios.post(
-						"http://localhohost:8080/autoevaluacion/autoevaluacion.php",
+						"http://localhost:8080/autoevaluacion/autoevaluacion.php",
 						{ opcion: 14, ID: 2 }
 					);
 					if (res.status !== 200) throw Error(res.statusText);
@@ -214,7 +214,7 @@ export default {
 					this.psicologos = res.data;
 
 					await axios
-						.post("http://localhohost:8080/autoevaluacion/autoevaluacion.php", {
+						.post("http://localhost:8080/autoevaluacion/autoevaluacion.php", {
 							opcion: 16,
 						})
 						.then((res) => {

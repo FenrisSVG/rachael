@@ -76,6 +76,7 @@
 				</router-link>
 			</footer>
 		</section>
+		<!-- PERSONALIDAD -->
 		<section class="test" v-scroll-reveal="{ delay: 300 }">
 			<header class="test-header">
 				<img
@@ -98,6 +99,49 @@
 					class="test-footer__link"
 					rel="nofollow"
 					:to="{ name: 'Personalidad', params: { query: 'personalidad' } }"
+				>
+					<div class="test-footer--icon">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="16"
+							height="16"
+							fill="currentColor"
+							class="bi bi-arrow-right-short"
+							viewBox="0 0 16 16"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+							/>
+						</svg>
+					</div>
+					<span>Realizar</span>
+				</router-link>
+			</footer>
+		</section>
+		<!-- PSICOMETRICO -->
+		<section class="test" v-scroll-reveal="{ delay: 300 }">
+			<header class="test-header">
+				<img
+					src="../assets/desktop/test-psicologico.jpeg"
+					alt=""
+					loading="lazy"
+				/>
+			</header>
+			<div class="test-body">
+				<h2 class="test-body__title">Test <span>Psicometrico.</span></h2>
+				<p class="test-body__text">
+					Examen dedicado a evaluar la diferente caracteristica psicologica,
+					como habilidades, capacidades, cogniciones y sentimientos. En esta
+					pagina, ofrecemos un tipo de test psicologico para conocerte mejor a
+					ti mismo y para detectr posibles transtorno o problema que tengas...
+				</p>
+			</div>
+			<footer class="test-footer">
+				<router-link
+					class="test-footer__link"
+					rel="nofollow"
+					:to="{ name: 'QuizApp', params: { query: 'psicometrico' } }"
 				>
 					<div class="test-footer--icon">
 						<svg
