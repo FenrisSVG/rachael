@@ -151,6 +151,48 @@ export default {
 					answer: { a: "Vela", b: "Recarga",c: "Lámpara", d: 'Fósforo' },
 					correctAnswer: "b",
 				},
+				{
+					id: 9,
+					question:
+						"Los siguientes grupos de letras, excepto uno, siguen un mismo patrón. Elije el grupo de letras diferente al resto:",
+					answer: { a: "RTW", b: "QOM", c: "IKG", d: 'IKM' },
+					correctAnswer: "a",
+				},
+				{
+					id: 10,
+					question:
+						"Los siguientes grupos de letras, excepto uno, siguen un mismo patró. Eliga el grupo de letras diferente al resto:",
+					answer: { a: "H", b: "Z",c: "Q", d: 'T' },
+					correctAnswer: "c",
+				},
+				{
+					id: 11,
+					question:
+						"Enmedio de una frase ¿Cómo se escribe la siguiente palabra? '_irenáico'",
+					answer: { a: "p", b: "P"},
+					correctAnswer: "a",
+				},
+				{
+					id: 12,
+					question:
+						"Enmedio de una frase ¿Cómo se escribe la sigueinte palabra? '_ios'",
+					answer: { a: "d", b: "D"},
+					correctAnswer: "b",
+				},
+				{
+					id: 13,
+					question:
+						"Enmedio de una frase ¿Cómo se escribe la siguiente palabra? '_irectivo'",
+					answer: { a: "d", b: "D"},
+					correctAnswer: "a",
+				},
+				{
+					id: 14,
+					question:
+						"Las dos siguientes sumas ¿Dan un mismo resultado? '3 + 4 + 3 y 2 + 5 + 3'",
+					answer: { a: "Verdadero", b: "Falso"},
+					correctAnswer: "a",
+				},
 			],
 		};
 	},
