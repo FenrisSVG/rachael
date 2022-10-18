@@ -99,22 +99,57 @@ export default {
 				{
 					id: 1,
 					question:
-						"Rolex is a company that specializes in what type of product?",
-					answer: { a: "Bags", b: "Watches", c: "Shoes", d: "Laptops" },
+						"es a PLUMA como PEZ es a",
+					answer: { a: "Aire - Mar", b: "Ave - Escama", c: "Ave - Mar", d: "Huevo - Escama" },
 					correctAnswer: "b",
 				},
 				{
 					id: 2,
-					question: "When did Facebook Launch?",
-					answer: { a: "2005", b: "2008", c: "2003", d: "2004" },
-					correctAnswer: "b",
+					question: "es a PASTEL como LIMON es a ",
+					answer: { a: "Sabroso - Agrio", b: "Dulce - Aspero", c: "Dulce - Acido", d: "Delicioso - Acido" },
+					correctAnswer: "c",
 				},
 				{
 					id: 3,
 					question:
-						"Albert Einstein had trouble with mathematics when he was in school?",
-					answer: { a: "True", b: "False" },
+						"r,a,s,b,t,c,u,d,?",
+					answer: { a: "T", b: "V",c: "M", d: 'A' },
+					correctAnswer: "b",
+				},
+				{
+					id: 4,
+					question:
+						"a,c,b,d,c,e,d,f,e,g",
+					answer: { a: "F", b: "I",c: "H", d: 'D' },
 					correctAnswer: "a",
+				},
+				{
+					id: 5,
+					question:
+						"5,11,17,23,29,...",
+					answer: { a: "37", b: "34",c: "39", d: '35' },
+					correctAnswer: "d",
+				},
+				{
+					id: 6,
+					question:
+						"Indica el sinónimo de 'pedazo'",
+					answer: { a: "Amarrete", b: "Trozo",c: "Humillación", d: 'Lamento' },
+					correctAnswer: "b",
+				},
+				{
+					id: 7,
+					question:
+						"¿Si me encuentro en una maratón y en plena carrera mi persona le gana al segundo, en que posición termino la carreta?",
+					answer: { a: "Primero", b: "Tercero",c: "Bleach", d: 'Segundo' },
+					correctAnswer: "d",
+				},
+				{
+					id: 8,
+					question:
+						"Entras en una habitación oscura, con unos fósforos en la mano y no hay electricidad, pero te encuentras una vela, una recarga de gas y una lámpara de petróleo. ¿Que enciendes primero?",
+					answer: { a: "Vela", b: "Recarga",c: "Lámpara", d: 'Fósforo' },
+					correctAnswer: "b",
 				},
 			],
 		};
