@@ -31,6 +31,7 @@
             width: 70%;
             line-height: 1.5;
             margin: 0 auto 1.5em;
+            color: $text-color;
         }
 
         &__link{
@@ -511,7 +512,7 @@
     &__title{
         font-size: 22px;
         text-align: center;
-        color: $title-color
+        color: $danger-color;
     }
 
     &__span{
