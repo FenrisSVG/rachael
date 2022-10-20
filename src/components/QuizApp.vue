@@ -100,7 +100,7 @@ export default {
 			selectedAnswer: "",
 			correctAnswer: 0,
 			wrongAnswer: 0,
-			count: 14,
+			count: 20,
 			fecha: null,
 			nombre: "Por favor, primero debe de iniciar sesion" ?? null,
 			apellido: "Por favor, primero debe iniciar sesion de su cuenta" ?? null,
@@ -129,19 +129,19 @@ export default {
 				},
 				{
 					id: 3,
-					question: "r,a,s,b,t,c,u,d,?",
+					question: "Adivine la siguiente letra de la siguiente secuencia: r,a,s,b,t,c,u,d,?",
 					answer: { a: "T", b: "V", c: "M", d: "A" },
 					correctAnswer: "b",
 				},
 				{
 					id: 4,
-					question: "a,c,b,d,c,e,d,f,e,g",
+					question: "Adivine la siguiente letra de la siguiente secuencia: a,c,b,d,c,e,d,f,e,g",
 					answer: { a: "F", b: "I", c: "H", d: "D" },
 					correctAnswer: "a",
 				},
 				{
 					id: 5,
-					question: "5,11,17,23,29,...",
+					question: "Que numero es el siguiente de la siguiente serie: 5,11,17,23,29,...",
 					answer: { a: "37", b: "34", c: "39", d: "35" },
 					correctAnswer: "d",
 				},
@@ -161,7 +161,7 @@ export default {
 				{
 					id: 8,
 					question:
-						"Entras en una habitación oscura, con unos fósforos en la mano y no hay electricidad, pero te encuentras una vela, una recarga de gas y una lámpara de petróleo. ¿Que enciendes primero?",
+						"Entras en una habitación oscura, con fósforos a mano y no hay electricidad, pero encuentras una vela, una recarga de gas y una lámpara de petróleo. ¿Que enciendes primero?",
 					answer: { a: "Vela", b: "Recarga", c: "Lámpara", d: "Fósforo" },
 					correctAnswer: "b",
 				},
@@ -206,6 +206,48 @@ export default {
 						"Las dos siguientes sumas ¿Dan un mismo resultado? '3 + 4 + 3 y 2 + 5 + 3'",
 					answer: { a: "Verdadero", b: "Falso" },
 					correctAnswer: "a",
+				},
+				{
+					id: 15,
+					question:
+						"Enmedio de una frase ¿Cómo se escribiria la sig. palabra? '_egovia.'",
+					answer: { a: "s", b: "S" },
+					correctAnswer: "b",
+				},
+				{
+					id: 16,
+					question:
+						"Los siguientes grupos de letras, excepto uno, siguen un mismo patrón. ¿Cual es el dferente?",
+					answer: { a: "APBQ", b: "EUFV", c: "CRDT", d: "GWHX" },
+					correctAnswer: "c",
+				},
+				{
+					id: 17,
+					question:
+						"¿Cuál es el vestido que se pone la mujer, que el esposo no le ve nunca?",
+					answer: { a: "Batón de nacimiento", b: "Viuda.", c:"Vestido de novia." },
+					correctAnswer: "b",
+				},
+				{
+					id: 18,
+					question:
+						"¿En que equipo juega el famoso jugador Cristiano Ronaldo?",
+					answer: { a: "El Bicho FC", b: "Siuuuuu", c: "Manchester United.", d: "Real Madrid." },
+					correctAnswer: "c",
+				},
+				{
+					id: 19,
+					question:
+						"De qué manera haría usted el 19 para que quitándole uno, le quedaran 20?",
+					answer: { a: "con números romanos", b: "Con palitos", c:"No se puede", d: "Con números chinos." },
+					correctAnswer: "a",
+				},
+				{
+					id: 20,
+					question:
+						"¿De qué llenarías un cántaro para que pese menos que vacío?",
+					answer: { a: "De agua", b: "De pluma", c:"De Hidrógeno", d: "De agujeros." },
+					correctAnswer: "d",
 				},
 			],
 		};
@@ -272,5 +314,8 @@ export default {
 	beforeMount() {
 		return this.getData();
 	},
+	created(){
+		return window.scrollTo(0, 0);
+	}
 };
 </script>

@@ -339,15 +339,15 @@ export default {
 			let bResponse = 0;
 
 			const PERSONALITY_aRESPONSE = {
-				1: "Marihuano",
-				2: "Marihuano",
-				3: "Marihuano",
-				4: "Drogadicto",
-				5: "Drogadicto",
-				6: "Drogadicto",
-				7: "Alcoholico",
-				8: "Alcoholico",
-				9: "Alcoholico",
+				1: "Eres una persona egoista",
+				2: "Eres una persona egoista",
+				3: "Eres una persona egoista",
+				4: "Poco egoista pero te preocupas por los demás.",
+				5: "Poco egoista pero te preocupas por los demás.",
+				6: "Poco egoista pero te preocupas por los demás.",
+				7: "Eres un amor de persona.",
+				8: "Eres un amor de persona.",
+				9: "Eres un amor de persona.",
 			};
 
 			const DEFAULT_RESPONSE =
@@ -364,11 +364,18 @@ export default {
 			this.personalidad = diagnostic || bResponse;
 
 			modal.classList.add("modal--show");
+			this.limpiarDatos()
 		},
 		modalShow(e) {
 			if (e.target.classList.contains("modal")) {
 				e.target.classList.remove("modal--show");
+				
 			}
+		},
+		limpiarDatos(){
+			const inputs = document.querySelectorAll('.personalidad__input')
+
+			inputs.forEach(input => input.checked = false)
 		},
 		obtenerFecha() {
 			this.fecha = new Date().toLocaleDateString('es-ES',{
@@ -414,6 +421,9 @@ export default {
 		this.$nextTick(() => {
 			return this.obtenerFecha();
 		});
+	},
+	created(){
+		return window.scrollTo(0, 0);
 	},
 	beforeMount() {
 		return this.getData();

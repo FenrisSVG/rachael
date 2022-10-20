@@ -312,11 +312,11 @@ export default {
 		},
 		cleanData() {
 			const inputs = document.querySelectorAll(
-				'.class="article-headers-input"'
+				'.article-headers-input'
 			);
 
 			inputs.forEach((item) => {
-				item.value = "";
+				item.check = false;
 			});
 
 			this.men2 = false;
